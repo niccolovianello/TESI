@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2532660189962923676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1475544013307151705}
+  - component: {fileID: 6233196060916031752}
+  m_Layer: 0
+  m_Name: ItemAssets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1475544013307151705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2532660189962923676}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6233196060916031752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2532660189962923676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbefa100d452444690bf47613e2f169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magicInventorySO: {fileID: 11400000, guid: a289aa7d46d52de4cba34ff0a1711903, type: 2}
+  prefabItemCollectable: {fileID: 0}
+  enemy: {fileID: 8559927149924817565, guid: 1ff802344ba404b15a922b11b77ce336, type: 3}
+  gem: {fileID: 8134186224298519009, guid: 1d61eb0c3e3034937a0c428a490fc617, type: 3}
+  whiteFragment: {fileID: 313028691031775437, guid: d150ee8002f5a4cb29ca924395a4051a, type: 3}
+  artifactSprite1: {fileID: 0}
+  artifactSprite2: {fileID: 0}
+  artifactSprite3: {fileID: 0}
+  artifactSprite4: {fileID: 0}
+  artifactSprite5: {fileID: 0}
+  artifactGO1: {fileID: 0}
+  artifactGO2: {fileID: 0}
+  artifactGO3: {fileID: 0}
+  artifactGO4: {fileID: 0}
+  artifactGO5: {fileID: 0}

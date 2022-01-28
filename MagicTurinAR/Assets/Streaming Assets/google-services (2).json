@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "843402398492",
+    "firebase_url": "https://tesi-ar-location-based-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "tesi-ar-location-based",
+    "storage_bucket": "tesi-ar-location-based.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843402398492:android:581702b5a8177eb31b88d9",
+        "android_client_info": {
+          "package_name": "com.tesi.locationbased.ar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "843402398492-1elfag86aq00moic4d386insd78kqmc3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa0NESEleydIlyM7geFc2uMKaBRfTmNQg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "843402398492-1elfag86aq00moic4d386insd78kqmc3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "843402398492-oge5i1n001qmkakftn5hfcmshkfed120.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tesi.locationbased.ar"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
