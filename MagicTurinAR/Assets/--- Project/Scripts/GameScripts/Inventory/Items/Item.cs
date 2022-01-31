@@ -53,6 +53,6 @@ public abstract class Item : MonoBehaviour, ItemInterface
     }
 
 
-    abstract public void RenderItem(int typeRole);
+    abstract public void DoNotRenderItem();
     
 }

@@ -2,12 +2,16 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
+using MirrorBasics;
+using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
 public class MagicItem : Item
 {
     
     [SerializeField] public MagicPlayer magicPlayer;
+    public NetworkPlayer networkPlayer;
     public ItemType itemType;
+    public ItemTypePlayer itemTypePlayer;
     public int idObjectCode;
     public enum ItemType
     {
@@ -16,6 +20,13 @@ public class MagicItem : Item
         Book,
         Gem,
         WhiteMagicFragment
+    }
+
+    public enum ItemTypePlayer
+    {
+        Explorer,
+        Wiseman,
+        Hunter
     }
 
 
@@ -41,15 +52,28 @@ public class MagicItem : Item
 
         player = FindObjectOfType<Player>();
         magicPlayer = FindObjectOfType<MagicPlayer>();
+        NetworkPlayer[] networkPlayers = FindObjectsOfType<NetworkPlayer>();
 
-        
-       
+        foreach (NetworkPlayer nt in networkPlayers)
+        {
+            if (nt.isLocalPlayer)
+            {
+                networkPlayer = nt;
+                if ((int)networkPlayer.TypePlayerIndex != (int)itemTypePlayer)
+                {
+                    DoNotRenderItem();
+                }
+                break;
+            }
+                
+        }
+
         if (uiInventory == null)
         {
             Debug.LogWarning("uiInventory null!");
             Destroy(gameObject);
         }
-            
+           
     }
 
     public override void OnMouseDown()
@@ -132,8 +156,8 @@ public class MagicItem : Item
         //canvasItem.enabled = false;
     }
 
-    public override void RenderItem(int typeRole)
+    public override void DoNotRenderItem()
     {
-        
+        this.gameObject.SetActive(false);
     }
 }

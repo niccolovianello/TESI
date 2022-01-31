@@ -13,8 +13,9 @@ namespace MirrorBasics
     public class NetworkPlayer : LobbyNetworkPlayer
     {
         [SyncVar(hook = nameof(SetTypeRole))]
-        public int TypePlayerIndex = 0;
+        public int TypePlayerIndex;
 
+        public TypePlayer TypePlayerEnum;
 
 
         public StoreDataScript storeDataScript;
@@ -23,6 +24,13 @@ namespace MirrorBasics
         private UILobby UILobby;
 
 
+
+        public enum TypePlayer
+        {
+            Explorer,
+            Wiseman,
+            Hunter
+        }
 
         internal override void Start()
         {
@@ -74,16 +82,18 @@ namespace MirrorBasics
 
         [Command]
 
-        public void SetRole(int roleIndex)
+        public void SetRole(TypePlayer roleIndex)
         {
             
-            TypePlayerIndex = roleIndex;
-            storeDataScript.SetRoleData(roleIndex);
+            TypePlayerEnum = roleIndex;
+            TypePlayerIndex = (int)roleIndex;
+            storeDataScript.SetRoleData((int) roleIndex);
         }
 
         void SetTypeRole(int oldIndex, int newIndex)
         {
             TypePlayerIndex = newIndex;
+            TypePlayerEnum = (TypePlayer)newIndex;
 
             UIPlayerScript[] playersUiPrefabs = FindObjectsOfType<UIPlayerScript>();
             foreach (UIPlayerScript uiPlayer in playersUiPrefabs)

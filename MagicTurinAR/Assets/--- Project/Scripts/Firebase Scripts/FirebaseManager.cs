@@ -304,8 +304,10 @@ using UnityEngine.SceneManagement;
             //Data has been retrieved
             DataSnapshot snapshot = DBTask.Result;
 
-            data.role = System.Int16.Parse(snapshot.Child("role").Value.ToString());
-           
+            int result = System.Int16.Parse(snapshot.Child("role").Value.ToString());
+            data.role = (StoreDataScript.TextRole)result;
+
+
         }
     }
 }

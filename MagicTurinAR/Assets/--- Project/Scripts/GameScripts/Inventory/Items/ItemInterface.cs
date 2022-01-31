@@ -9,7 +9,7 @@ public interface ItemInterface
 
     public bool IsClickable();
 
-    public void RenderItem(int typeRole);
+    public void DoNotRenderItem();
 
  
 }

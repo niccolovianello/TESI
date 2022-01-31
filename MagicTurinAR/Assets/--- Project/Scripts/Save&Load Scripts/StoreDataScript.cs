@@ -4,25 +4,27 @@ using UnityEngine;
 
 public class StoreDataScript : MonoBehaviour
 {
-    public int role = 0;
+    public TextRole role;
 
     public enum TextRole
     {
 
-        None = 0,
-        Explorer = 1,
-        Wiseman = 2,
-        Hunter = 3
+
+        Explorer,
+        Wiseman,
+        Hunter
 
 
     }
 
     public int GetRoleIntData()
     {
-        return role;
+        return (int)role;
     }
-    public void SetRoleData(int _role) {
+    public void SetRoleData(int _role)
+    {
 
-        role = _role;
+        role =(TextRole) _role;
+        
     }
 }
