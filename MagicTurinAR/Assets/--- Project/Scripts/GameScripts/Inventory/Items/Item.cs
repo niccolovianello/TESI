@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 
 [Serializable]
-[RequireComponent(typeof(SphereCollider))]
+
 public abstract class Item : MonoBehaviour, ItemInterface
 {
     private float maxClickDistance = 10;
@@ -18,10 +18,6 @@ public abstract class Item : MonoBehaviour, ItemInterface
     private float floatAmplitude = 0.005f;
     private float floatFrequency = 0.5f;
 
-    public float colliderRadius = 3;
-    public Vector3 colliderCenter;
-    public SphereCollider colliderItem;
-    
     //[SerializeField] public Canvas canvasItem;
     //[SerializeField] public TMP_Text textWarning;
 
@@ -32,9 +28,9 @@ public abstract class Item : MonoBehaviour, ItemInterface
     [SerializeField] public int amount ;
 
     
-  
-  
     public abstract void OnMouseDown();
+    
+    public abstract void RenderItem(int typeRole);
 
     
     void Update()
@@ -53,6 +49,6 @@ public abstract class Item : MonoBehaviour, ItemInterface
     }
 
 
-    abstract public void RenderItem(int typeRole);
+    
     
 }

@@ -22,18 +22,11 @@ public class MagicItem : Item
 
     private void Awake()
     {
-        colliderCenter = new Vector3(0, 3, 0);
-        colliderItem = GetComponent<SphereCollider>();
-        colliderItem.isTrigger = true;
-        colliderItem.radius = colliderRadius;
-        colliderItem.center = colliderCenter;
-
         //canvasItem = GetComponentInChildren<Canvas>();
         //textWarning = GetComponentInChildren<TMP_Text>();
         //Debug.Log(canvasItem);
         //canvasItem.enabled = false;
         uiInventory = FindObjectOfType<UIInventory>();
-
     }
 
     private void Start()
@@ -120,7 +113,7 @@ public class MagicItem : Item
                 //canvasItem.enabled = true;
                 //textWarning.text = "This item is too far, get closer!";
                 StartCoroutine(DisableTextWarning());
-                // avvisa che l'oggetto è troppo lontano
+                // avvisa che l'oggetto ï¿½ troppo lontano
             }
         }
     }
