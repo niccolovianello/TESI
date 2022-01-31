@@ -66,7 +66,7 @@ public class MagicItem : Item
             Debug.LogWarning("uiInventory null!");
             Destroy(gameObject);
         }
-           
+
     }
 
     public override void OnMouseDown()

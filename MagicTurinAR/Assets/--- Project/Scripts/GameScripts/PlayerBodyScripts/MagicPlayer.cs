@@ -15,15 +15,7 @@ public class MagicPlayer : Player
     public UIManager _uiManager;
 
 
-    private void Start()
-    {
-        uiInventory = FindObjectOfType<UIInventory>();
-        _uiManager = FindObjectOfType<UIManager>();
-        inventory = new MagicInventory(ClickOnItemInInventory);
-        uiInventory.SetInventory(inventory);
-
-        Debug.Log(uiInventory);
-    }
+    
     public void SetUIManager(UIManager uiManager)
     {
         _uiManager = uiManager;

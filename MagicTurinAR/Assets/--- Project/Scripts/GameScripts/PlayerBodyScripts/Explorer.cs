@@ -7,8 +7,7 @@ using UnityEngine;
 public class Explorer : MagicPlayer
 {
 
-
-   
+    
 
     private void Update()
     {

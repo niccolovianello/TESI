@@ -19,6 +19,14 @@ public class UIInventory : MonoBehaviour
     public GameObject itemToSeeInAr;
 
     public string sceneArtifactAR;
+    public enum TypePlayerUI
+    { 
+        Explorer,
+        Wiseman,
+        Hunter
+    
+    }
+    public TypePlayerUI typePlayerUI;
 
 
 
