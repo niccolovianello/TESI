@@ -51,10 +51,9 @@ namespace MirrorBasics
 
         public enum TypePlayer
         {
-            None = 0,
-            Explorer = 1,
-            Wiseman = 2,
-            Hunter = 3
+            Explorer,
+            Wiseman,
+            Hunter
         }
 
         
@@ -140,7 +139,7 @@ namespace MirrorBasics
 
         public void ApplyExplorerRole()
         {
-            NetworkPlayer.localPlayer.SetRole(((int)TypePlayer.Explorer));
+            NetworkPlayer.localPlayer.SetRole(NetworkPlayer.TypePlayer.Explorer);
             boxDescription.enabled = false;
             if(NetworkPlayer.localPlayer.peerIsTheHost ==true)
                 beginGameButton.SetActive(true);
@@ -151,7 +150,7 @@ namespace MirrorBasics
 
         public void ApplyHunterRole()
         {
-            NetworkPlayer.localPlayer.SetRole(((int)TypePlayer.Hunter));
+            NetworkPlayer.localPlayer.SetRole(NetworkPlayer.TypePlayer.Hunter);
             boxDescription.enabled = false;
             if (NetworkPlayer.localPlayer.peerIsTheHost == true)
                 beginGameButton.SetActive(true);
@@ -160,7 +159,7 @@ namespace MirrorBasics
 
         public void ApplyWiseManRole()
         {
-            NetworkPlayer.localPlayer.SetRole(((int)TypePlayer.Wiseman));
+            NetworkPlayer.localPlayer.SetRole(NetworkPlayer.TypePlayer.Wiseman);
             boxDescription.enabled = false;
             if (NetworkPlayer.localPlayer.peerIsTheHost == true)
                 beginGameButton.SetActive(true);

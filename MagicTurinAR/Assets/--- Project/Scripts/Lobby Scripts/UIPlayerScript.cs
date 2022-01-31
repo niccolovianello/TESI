@@ -13,14 +13,12 @@ namespace MirrorBasics
         
         public enum TextRole
         {
-        
-            None = 0,
-            Explorer = 1,
-            Wiseman = 2,
-            Hunter = 3
-        
-
-    }
+         
+            Explorer,
+            Wiseman,
+            Hunter,
+            None
+        }
 
         [SerializeField] UILobby uiLobby;
         public NetworkPlayer networkPlayer;
@@ -42,17 +40,17 @@ namespace MirrorBasics
             text.text = "Player " + networkPlayer.playerIndex.ToString();
             switch (_player.storeDataScript.role)
             {
-                case 0:
-                    role.text = "N";
-                    break;
-                case 1:
+                case StoreDataScript.TextRole.Explorer:
                     role.text = "E";
                     break;
-                case 2:
+                case StoreDataScript.TextRole.Wiseman:
                     role.text = "W";
                     break;
-                case 3:
+                case StoreDataScript.TextRole.Hunter:
                     role.text = "H";
+                    break;
+                default:
+                    role.text = "N";
                     break;
             }
         }
@@ -60,19 +58,19 @@ namespace MirrorBasics
         public void SetTextRole(NetworkPlayer _player)
         {
             this.networkPlayer = _player;
-            switch (_player.TypePlayerIndex)
+            switch (_player.TypePlayerEnum)
             {
-                case 0:
-                    role.text = "N";
-                    break;
-                case 1:
+                case NetworkPlayer.TypePlayer.Explorer:
                     role.text = "E";
                     break;
-                case 2:
+                case NetworkPlayer.TypePlayer.Wiseman:
                     role.text = "W";
                     break;
-                case 3:
+                case NetworkPlayer.TypePlayer.Hunter:
                     role.text = "H";
+                    break;
+                default:
+                    role.text = "N";
                     break;
             }
         }
