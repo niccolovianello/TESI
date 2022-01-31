@@ -41,7 +41,7 @@ public class NetworkManagerCustom : NetworkManager
     {
         base.OnClientChangeScene(newSceneName, sceneOperation, customHandling);
 
-        //Debug.Log("blblbl");
+        
         //SceneManager.LoadSceneAsync("Explorer_Main", LoadSceneMode.Additive);
   }
 
