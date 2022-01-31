@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7559501917362498206}
   - component: {fileID: 2230043285543447303}
+  - component: {fileID: 651362759554181223}
   m_Layer: 0
   m_Name: MAP_EgyptianHistory
   m_TagString: Untagged
@@ -44,13 +45,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9380ce1c04024583b4ad084a350ca011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderRadius: 3
+  colliderCenter: {x: 0, y: 0, z: 0}
+  colliderItem: {fileID: 0}
   uiInventory: {fileID: 0}
   player: {fileID: 0}
   itemGO: {fileID: 0}
   amount: 0
   magicPlayer: {fileID: 0}
+  networkPlayer: {fileID: 0}
   itemType: 2
+  itemTypePlayer: 0
   idObjectCode: 0
+--- !u!135 &651362759554181223
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101065494649350354}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1942217605516902434
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160d861eeb641274c8c3eba7caf90957, type: 3}
+  m_Name: Goblin
+  m_EditorClassIdentifier: 
+  id: 5
+  itemTypeIndex: 0
+  isStackable: 0
+  description: High quality devil head, with high quality magic powers.
+  Sprite: {fileID: 21300000, guid: fb6a43c81a1528140ac09576162289ab, type: 3}
+  prefab: {fileID: 8270834496314205526, guid: 4755defc655dd314cb0307c08dadceb4, type: 3}
