@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6189726299142022314}
-  - component: {fileID: -678850798745981471}
   - component: {fileID: 290798547187920791}
   m_Layer: 0
   m_Name: Map_Rune_EARTH
@@ -33,19 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &-678850798745981471
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7052887938567239426}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &290798547187920791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,17 +44,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9380ce1c04024583b4ad084a350ca011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   colliderRadius: 3
   colliderCenter: {x: 0, y: 0, z: 0}
   colliderItem: {fileID: 0}
+=======
+>>>>>>> Stashed changes
   uiInventory: {fileID: 0}
   player: {fileID: 0}
   itemGO: {fileID: 0}
   amount: 0
   magicPlayer: {fileID: 0}
+<<<<<<< Updated upstream
   networkPlayer: {fileID: 0}
   itemType: 0
   itemTypePlayer: 2
+=======
+  itemType: 1
+>>>>>>> Stashed changes
   idObjectCode: 0
 --- !u!1001 &6218109548388733787
 PrefabInstance:
@@ -131,8 +124,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18cacb4a2bd123a459bb3c336b1932e7, type: 3}
+--- !u!1 &6524097798007287306 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 18cacb4a2bd123a459bb3c336b1932e7, type: 3}
+  m_PrefabInstance: {fileID: 6218109548388733787}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5891148997863781552 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 18cacb4a2bd123a459bb3c336b1932e7, type: 3}
   m_PrefabInstance: {fileID: 6218109548388733787}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &2810921472972583251
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6524097798007287306}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0.05561325, y: 0.0010117891, z: -0.06708993}

@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1446091763622617314}
+  - component: {fileID: 4523144473219312520}
   m_Layer: 0
-  m_Name: LockedBook
+  m_Name: MAP_SpellBook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,6 +32,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4523144473219312520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3318257362989346472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9380ce1c04024583b4ad084a350ca011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiInventory: {fileID: 0}
+  player: {fileID: 0}
+  itemGO: {fileID: 0}
+  amount: 0
+  magicPlayer: {fileID: 0}
+  itemType: 2
+  idObjectCode: 0
 --- !u!1001 &5642751609248467012
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 788417336179791473}
   m_Layer: 0
-  m_Name: BookA31
+  m_Name: AR_TurinArtifacts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

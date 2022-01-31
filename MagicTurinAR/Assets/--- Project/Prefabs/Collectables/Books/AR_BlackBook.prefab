@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4180650811236850748}
   m_Layer: 0
-  m_Name: BookA
+  m_Name: AR_BlackBook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
