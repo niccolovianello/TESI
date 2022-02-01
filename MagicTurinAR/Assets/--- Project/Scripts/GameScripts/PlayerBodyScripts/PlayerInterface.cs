@@ -12,4 +12,10 @@ public interface PlayerInterface
 
     public void ClickOnItem(Item item);
 
+    public void RenderPlayerBody();
+
+    public void NotRenerPlayerBody();
+
+
+
 }

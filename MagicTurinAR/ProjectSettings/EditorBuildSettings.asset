@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/--- Project/Scenes/AR_LookAtItem.unity
     guid: 5f7ffc03fa38f4703b906fcac0d7d4bb
+  - enabled: 0
+    path: Assets/--- Project/Scenes/CameraTouchMovement.unity
+    guid: 29160ef5e1ae9e94cac751c96b06f5f1
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 989a62b8a14ea41ff9cefbdb6159ee58, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 751faa78e3e9a4741bde9b8ba0058dc7, type: 2}

@@ -17,6 +17,7 @@ public class UILookAtItemAR : MonoBehaviour
         gm.networkPlayerCamera.enabled = true;
         gm.audioListener.enabled = true;
         gm.EnableMainGame();
+        gm.RenderPlayerBody();
     }
     
 }

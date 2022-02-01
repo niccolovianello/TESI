@@ -33,10 +33,6 @@ public class GameManager : Singleton<GameManager>
     {
         mainGame.SetActive(false);
 
-        //    parentObjPlayer = GameObject.Find("/ParentPlayer");
-        //    parentObjItems = GameObject.Find("ParentItems");
-        //    parentObjEnemies = GameObject.Find("ParentEnemies");
-        //}
 
     }
     public void EnableMainGame()
@@ -61,6 +57,7 @@ public class GameManager : Singleton<GameManager>
             if (player.isLocalPlayer)
             {
                 networkPlayer = player;
+               
                 networkPlayerCamera = player.GetComponentInChildren<Camera>();
                 audioListener = player.GetComponentInChildren<AudioListener>();
                 //networkPlayer.GetComponent<NetworkTransform>().clientAuthority = true;
@@ -96,8 +93,11 @@ public class GameManager : Singleton<GameManager>
         
         //networkPlayer.gameObject.AddComponent<ImmediatePositionWithLocationProvider>();
         networkPlayer.gameObject.AddComponent<RotateWithLocationProvider>();
+
+
+     
         
-        
+
         ItemAssets itemAssets = FindObjectOfType<ItemAssets>();
 
         //networkPlayer.gameObject.AddComponent<ControllerMovement>();
@@ -118,6 +118,9 @@ public class GameManager : Singleton<GameManager>
 
                 networkPlayer.gameObject.AddComponent<Explorer>();
                 Explorer explorer = networkPlayer.GetComponent<Explorer>();
+                currentPlayer = explorer;
+                
+
 
                 items = FindObjectsOfType<MagicItem>();
 
@@ -143,6 +146,9 @@ public class GameManager : Singleton<GameManager>
 
                 networkPlayer.gameObject.AddComponent<Wiseman>();
                 Wiseman wiseman = networkPlayer.GetComponent<Wiseman>();
+                currentPlayer = wiseman;
+               
+
 
                 items = FindObjectsOfType<MagicItem>();
 
@@ -162,6 +168,8 @@ public class GameManager : Singleton<GameManager>
 
                 networkPlayer.gameObject.AddComponent<Hunter>();
                 Hunter hunter = networkPlayer.GetComponent<Hunter>();
+                currentPlayer = hunter;
+                
 
                 items = FindObjectsOfType<MagicItem>();
 
@@ -178,30 +186,45 @@ public class GameManager : Singleton<GameManager>
 
 
         }
-        
-        
-        
 
-       
+        currentPlayer.playerbody = TransformExtensions.FindObjectsWithTag(networkPlayer.gameObject.transform, "Body")[0];
 
-
-       
-
-    
-        
-
-
-        
-
-
-       
-
-
-      
-
-        //networkPlayer.gameObject.transform.parent = parentObjPlayer.transform;
 
     }
 
 
+
+    public void NotRenderPlayerBody()
+    {
+        currentPlayer.NotRenerPlayerBody();
+    }
+
+    public void RenderPlayerBody()
+    {
+        currentPlayer.RenderPlayerBody();
+    }
+
+}
+
+public static class TransformExtensions
+{
+    public static List<GameObject> FindObjectsWithTag(this Transform parent, string tag)
+    {
+        List<GameObject> taggedGameObjects = new List<GameObject>();
+
+        for (int i = 0; i < parent.childCount; i++)
+        {
+            Transform child = parent.GetChild(i);
+            if (child.tag == tag)
+            {
+                taggedGameObjects.Add(child.gameObject);
+            }
+            if (child.childCount > 0)
+            {
+                taggedGameObjects.AddRange(FindObjectsWithTag(child, tag));
+            }
+            Debug.Log("bimbo " + i);
+        }
+        return taggedGameObjects;
+    }
 }
