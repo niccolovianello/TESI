@@ -16,5 +16,10 @@ public abstract class Player : MonoBehaviour, PlayerInterface
 
 
     public void ClickOnItem(Item item) { }
-    
+
+    public abstract void RenderPlayerBody();
+
+
+    public abstract void NotRenerPlayerBody();
+
 }

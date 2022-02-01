@@ -97,8 +97,7 @@ public class UIInventory : MonoBehaviour
 
     public void OpenWindowToAr(MagicItemSO item)
     {
-        itemToSeeInAr = item.prefab;
-        //Debug.Log(itemToSeeInAr);
+        itemToSeeInAr = item.prefab;        
         windowToAR.gameObject.SetActive(true);
     }
 
@@ -120,6 +119,7 @@ public class UIInventory : MonoBehaviour
         gameManager.networkPlayerCamera.enabled = false;
         gameManager.audioListener.enabled = false;
         gameManager.DisableMainGame();
+        gameManager.NotRenderPlayerBody();
         
     }
 

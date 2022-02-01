@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - External Camera
   - Spawn Point
+  - Body
   layers:
   - Default
   - TransparentFX

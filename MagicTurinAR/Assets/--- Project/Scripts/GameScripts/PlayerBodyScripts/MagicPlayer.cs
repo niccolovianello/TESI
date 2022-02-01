@@ -14,12 +14,18 @@ public class MagicPlayer : Player
     
     public MagicInventory inventory;
     public UIManager _uiManager;
+    public GameObject playerbody;
 
 
     
     public void SetUIManager(UIManager uiManager)
     {
         _uiManager = uiManager;
+    }
+
+    public void SetPlayerBody(GameObject _playerbody)
+    {
+        this.playerbody = _playerbody;
     }
 
     public void InitializeInventory()
@@ -67,6 +73,16 @@ public class MagicPlayer : Player
         uiInventory.OpenWindowToAr(item);
     }
 
+    public override void RenderPlayerBody()
+    {
+        playerbody.SetActive(true);
+    }
+
+    public override void NotRenerPlayerBody()
+    {
+        playerbody.SetActive(false);
+    }
+
 
     // metodi player
 
@@ -85,5 +101,5 @@ public class MagicPlayer : Player
         return whitePower > 0;
     }
 
-   
+  
 }

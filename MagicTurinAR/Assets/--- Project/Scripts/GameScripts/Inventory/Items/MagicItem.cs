@@ -155,4 +155,6 @@ public class MagicItem : Item
     {
         this.gameObject.SetActive(false);
     }
+
+    
 }
