@@ -18,7 +18,6 @@ public class GameManager : Singleton<GameManager>
     public GameObject parentObjItems;
     public GameObject parentObjEnemies;
     public NetworkPlayer networkPlayer;
-    private GameObject networkPlayerBody;
     public Camera networkPlayerCamera;
     public AudioListener audioListener;
     public MagicPlayer CurrentPlayer => currentPlayer;
@@ -58,9 +57,7 @@ public class GameManager : Singleton<GameManager>
             if (player.isLocalPlayer)
             {
                 networkPlayer = player;
-                networkPlayerBody = transform.FindObjectsWithTag("Body")[0];
-                if (networkPlayerBody != null)
-                    Debug.LogError("PlayerBody parent not found!");
+               
                 networkPlayerCamera = player.GetComponentInChildren<Camera>();
                 audioListener = player.GetComponentInChildren<AudioListener>();
                 //networkPlayer.GetComponent<NetworkTransform>().clientAuthority = true;
@@ -96,8 +93,11 @@ public class GameManager : Singleton<GameManager>
         
         //networkPlayer.gameObject.AddComponent<ImmediatePositionWithLocationProvider>();
         networkPlayer.gameObject.AddComponent<RotateWithLocationProvider>();
+
+
+     
         
-        
+
         ItemAssets itemAssets = FindObjectOfType<ItemAssets>();
 
         //networkPlayer.gameObject.AddComponent<ControllerMovement>();
@@ -118,7 +118,9 @@ public class GameManager : Singleton<GameManager>
 
                 networkPlayer.gameObject.AddComponent<Explorer>();
                 Explorer explorer = networkPlayer.GetComponent<Explorer>();
-                explorer.playerbody = networkPlayerBody;
+                currentPlayer = explorer;
+                
+
 
                 items = FindObjectsOfType<MagicItem>();
 
@@ -144,7 +146,9 @@ public class GameManager : Singleton<GameManager>
 
                 networkPlayer.gameObject.AddComponent<Wiseman>();
                 Wiseman wiseman = networkPlayer.GetComponent<Wiseman>();
-                wiseman.playerbody = networkPlayerBody;
+                currentPlayer = wiseman;
+               
+
 
                 items = FindObjectsOfType<MagicItem>();
 
@@ -164,7 +168,8 @@ public class GameManager : Singleton<GameManager>
 
                 networkPlayer.gameObject.AddComponent<Hunter>();
                 Hunter hunter = networkPlayer.GetComponent<Hunter>();
-                hunter.playerbody = networkPlayerBody;
+                currentPlayer = hunter;
+                
 
                 items = FindObjectsOfType<MagicItem>();
 
@@ -181,11 +186,13 @@ public class GameManager : Singleton<GameManager>
 
 
         }
-        
+
+        currentPlayer.playerbody = TransformExtensions.FindObjectsWithTag(networkPlayer.gameObject.transform, "Body")[0];
+
 
     }
 
-    
+
 
     public void NotRenderPlayerBody()
     {
@@ -216,6 +223,7 @@ public static class TransformExtensions
             {
                 taggedGameObjects.AddRange(FindObjectsWithTag(child, tag));
             }
+            Debug.Log("bimbo " + i);
         }
         return taggedGameObjects;
     }
