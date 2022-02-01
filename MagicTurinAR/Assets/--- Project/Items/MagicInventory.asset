@@ -13,11 +13,20 @@ MonoBehaviour:
   m_Name: MagicInventory
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 11400000, guid: 8b6b706300a02cc4b81043325106359c, type: 2}
-  - {fileID: 11400000, guid: 4fd0bf53aee11274593995f2b0d7b746, type: 2}
-  - {fileID: 11400000, guid: f4320185effa2204ab5df793440b4295, type: 2}
-  - {fileID: 11400000, guid: bccafd51beaec694e98eb81a747c940d, type: 2}
-  - {fileID: 11400000, guid: 3b650798bae771343a366af641ded13b, type: 2}
+  - {fileID: 11400000, guid: 8821a5f07cf4f324aa650f2149c09739, type: 2}
+  - {fileID: 11400000, guid: f195d3a4cfa9a18419144bf2bea83a01, type: 2}
+  - {fileID: 11400000, guid: 780dde88bd429e74e9ada60f6460919e, type: 2}
+  - {fileID: 11400000, guid: f4bf9336bae571c469fd3261dfe9389a, type: 2}
+  - {fileID: 11400000, guid: e573e664c34dd8a47981837182b5d642, type: 2}
   - {fileID: 11400000, guid: 3e0c68c204777aa46af242c26b87b106, type: 2}
   - {fileID: 11400000, guid: 633f2ca434b8d2f4988b3aa107c3faa6, type: 2}
   - {fileID: 11400000, guid: 990ac35b3880c6d469c40e668d1bd344, type: 2}
+  - {fileID: 11400000, guid: 7112ad7a32d46c64c99ac8591f87483b, type: 2}
+  - {fileID: 11400000, guid: dc7b5fc6baca95d43b5b7f5ba4039298, type: 2}
+  - {fileID: 11400000, guid: 6e898ab3308d4694d84057a46f583891, type: 2}
+  - {fileID: 11400000, guid: 86b38bab922c14a4cb88289630c4cc6b, type: 2}
+  - {fileID: 11400000, guid: 7c4d1102a9692704c8a1e49846565c2a, type: 2}
+  - {fileID: 11400000, guid: 9f2c2479d9f2ef549a9794cac2015795, type: 2}
+  - {fileID: 11400000, guid: 264fe7fdf11c47e4b853cdfd6f0affe2, type: 2}
+  - {fileID: 11400000, guid: 70466054d9416b24696f6c8fcb3b7e38, type: 2}
+  - {fileID: 11400000, guid: cdaa9196c76f5cb46bc6d3cee67573a6, type: 2}

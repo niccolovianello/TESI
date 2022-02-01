@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4306332575651891528}
+  - component: {fileID: 5943274831230681326}
+  - component: {fileID: 7783895457720800961}
   m_Layer: 0
   m_Name: AR_Rune_GAME
   m_TagString: Untagged
@@ -31,6 +33,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5943274831230681326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111386588671115546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9380ce1c04024583b4ad084a350ca011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiInventory: {fileID: 0}
+  player: {fileID: 0}
+  itemGO: {fileID: 0}
+  amount: 0
+  magicPlayer: {fileID: 0}
+  networkPlayer: {fileID: 0}
+  itemType: 2
+  itemTypePlayer: 2
+  idObjectCode: 12
+--- !u!135 &7783895457720800961
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111386588671115546}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.0238776
+  m_Center: {x: 0, y: 0.8664484, z: 0}
 --- !u!1001 &2146793100661885017
 PrefabInstance:
   m_ObjectHideFlags: 0

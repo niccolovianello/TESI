@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160d861eeb641274c8c3eba7caf90957, type: 3}
   m_Name: Diamond
   m_EditorClassIdentifier: 
-  id: 5
-  itemTypeIndex: 0
+  id: 9
+  itemType: 0
   isStackable: 0
   description: This diamond hides strong dark magic. Use it carefully.
   Sprite: {fileID: 21300000, guid: 1d213d540c86fc04898926807caedebf, type: 3}

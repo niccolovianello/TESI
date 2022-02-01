@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WhiteFragment
   m_EditorClassIdentifier: 
   id: 2000
-  itemTypeIndex: 4
+  itemType: 4
   isStackable: 1
   description: fish and chips
   Sprite: {fileID: 21300000, guid: 222d62d87db5931498bb85845842b0d3, type: 3}

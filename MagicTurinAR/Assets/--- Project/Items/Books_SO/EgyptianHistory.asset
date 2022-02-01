@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160d861eeb641274c8c3eba7caf90957, type: 3}
   m_Name: EgyptianHistory
   m_EditorClassIdentifier: 
-  id: 0
-  itemTypeIndex: 0
+  id: 2
+  itemType: 1
   isStackable: 0
   description: A great source of information about Egyptian culture.
   Sprite: {fileID: 21300000, guid: de7455278797cc241ad368ad92a96827, type: 3}

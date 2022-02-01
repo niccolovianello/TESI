@@ -50,44 +50,45 @@ public class UIManager : MonoBehaviour
         switch (networkplayer.TypePlayerEnum)
         {
             case NetworkPlayer.TypePlayer.Explorer:
-                Destroy(GUI_hunter.gameObject);
-                Destroy(GUI_wiseman.gameObject);
+
+                GUI_hunter.gameObject.SetActive(false);
+                GUI_wiseman.gameObject.SetActive(false);
                 GUI_explorer.gameObject.SetActive(true);
                 
                 menu_explorer.SetActive(false);
                 menu = menu_explorer;
                 
                 break;
-            case NetworkPlayer.TypePlayer.Wiseman:
-                Destroy(GUI_explorer.gameObject);
-                Destroy(GUI_hunter.gameObject);
 
+            case NetworkPlayer.TypePlayer.Wiseman:
+
+                GUI_explorer.gameObject.SetActive(false);
+                GUI_hunter.gameObject.SetActive(false);
                 GUI_wiseman.gameObject.SetActive(true);
                 
                 menu_wiseman.SetActive(false);
                 menu = menu_wiseman;
 
                 break;
+
             case NetworkPlayer.TypePlayer.Hunter:
-                Destroy(GUI_explorer.gameObject);
-                Destroy(GUI_wiseman.gameObject);
-                
+
+                GUI_explorer.gameObject.SetActive(false);
+                GUI_wiseman.gameObject.SetActive(false);
                 GUI_hunter.gameObject.SetActive(true);
+
                 menu_hunter.SetActive(false);
                 menu = menu_hunter;
 
                 break;
 
             default:
+
                 break;
 
         }
 
-        player.uiInventory = menu.GetComponent<UIInventory>();
-        player.inventory = new MagicInventory(player.ClickOnItemInInventory);
-        player.uiInventory.SetInventory(player.inventory);
-
-        Debug.Log(player.uiInventory);
+        player.InitializeInventory();
 
 
 

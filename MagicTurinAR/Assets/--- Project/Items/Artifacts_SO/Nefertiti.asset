@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160d861eeb641274c8c3eba7caf90957, type: 3}
   m_Name: Nefertiti
   m_EditorClassIdentifier: 
-  id: 5
-  itemTypeIndex: 0
+  id: 7
+  itemType: 0
   isStackable: 0
   description: Nefertiti's bust, directly from 1345 BC.
   Sprite: {fileID: 21300000, guid: 44792ea18ccd570408e2c2575de998b6, type: 3}

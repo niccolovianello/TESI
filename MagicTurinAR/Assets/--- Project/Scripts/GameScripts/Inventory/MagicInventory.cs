@@ -30,7 +30,7 @@ public class MagicInventory : Inventory
             //bool itemAlreadyInInventory = false;
             foreach (MagicItemSO MagicItem in ItemAssets.Instance.magicInventorySO.items)
             {
-                if (MagicItem.itemTypeIndex == (int)magicItem.itemType)
+                if ((int)MagicItem.itemType == (int) magicItem.itemType)
                 {
                     Debug.Log("entrato");
                     MagicItem.prefab.GetComponent<Item>().amount++;

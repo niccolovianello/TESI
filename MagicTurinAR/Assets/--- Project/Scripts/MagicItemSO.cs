@@ -7,7 +7,17 @@ public class MagicItemSO : ScriptableObject
 {
     public int id;
  
-    public int itemTypeIndex;
+    public ItemType itemType;
+
+    public enum ItemType
+    { 
+        Artifact,
+        Book,
+        Rune,
+        Gem,
+        WhiteFragment,
+        
+    }
 
     public bool isStackable;
 

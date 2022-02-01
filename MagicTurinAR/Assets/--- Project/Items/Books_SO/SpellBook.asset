@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160d861eeb641274c8c3eba7caf90957, type: 3}
   m_Name: SpellBook
   m_EditorClassIdentifier: 
-  id: 0
-  itemTypeIndex: 0
+  id: 3
+  itemType: 1
   isStackable: 0
   description: This book contains the most powerful spells.
   Sprite: {fileID: 21300000, guid: 0dd8a9d08179fb440bcea9b1d234532c, type: 3}

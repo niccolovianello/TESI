@@ -16,8 +16,8 @@ public class MagicItem : Item
     public enum ItemType
     {
         Artifact,
-        Rune,
         Book,
+        Rune,
         Gem,
         WhiteMagicFragment
     }
@@ -77,11 +77,13 @@ public class MagicItem : Item
             {
 
                 Debug.Log(uiInventory);
+                int debugObjectMissing = 0;
                 foreach (MagicItemSO miSO in ItemAssets.Instance.magicInventorySO.items)
                 {
 
                     if (this.idObjectCode == miSO.id)
                     {
+                        debugObjectMissing++;
                         if (miSO.isStackable)
                         {
                             switch (itemType)
@@ -122,11 +124,11 @@ public class MagicItem : Item
                         }
                     }
 
-                    else
-                    {
-                        Debug.LogError("Object missing in Inventory Scriptable Object's instance");
-                    }
+                }
 
+                if (debugObjectMissing == 0)
+                {                   
+                        Debug.LogError("Object missing in Inventory Scriptable Object's instance");                   
                 }
 
                 // aggiungi roba all'inventario

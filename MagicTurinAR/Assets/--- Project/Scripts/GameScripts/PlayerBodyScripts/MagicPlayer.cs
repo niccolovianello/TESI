@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static MagicItemSO;
 
 public class MagicPlayer : Player
 {
@@ -21,15 +22,25 @@ public class MagicPlayer : Player
         _uiManager = uiManager;
     }
 
+    public void InitializeInventory()
+    {
+        uiInventory = FindObjectOfType<UIInventory>();
+        Debug.Log(uiInventory);
+        inventory = new MagicInventory(ClickOnItemInInventory);
+        uiInventory.SetInventory(inventory);
+
+       
+    }
+
     public void ClickOnItemInInventory(MagicItemSO item)
     {
        
-        switch (item.itemTypeIndex)
+        switch (item.itemType)
         {
-            case (int)MagicItem.ItemType.WhiteMagicFragment:
+            case ItemType.WhiteFragment:
                 IncrementWhiteEnergy();
                 break;
-            case (int)MagicItem.ItemType.Gem:
+            case ItemType.Gem:
                 // faccio funzione gemme
 
                 break;

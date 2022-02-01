@@ -145,8 +145,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.217528
+  m_Center: {x: -0.00000011920929, y: 2.9523592, z: 0}
 --- !u!114 &1277612673809504535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,10 +159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9380ce1c04024583b4ad084a350ca011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxClickDistance: 10
-  rotateSpeed: 50
-  floatAmplitude: 2
-  floatFrequency: 0.5
   colliderRadius: 3
   colliderCenter: {x: 0, y: 0, z: 0}
   colliderItem: {fileID: 0}
@@ -171,7 +167,9 @@ MonoBehaviour:
   itemGO: {fileID: 0}
   amount: 0
   magicPlayer: {fileID: 0}
+  networkPlayer: {fileID: 0}
   itemType: 3
+  itemTypePlayer: 0
   idObjectCode: 1000
 --- !u!1 &8872300721585069014
 GameObject:
