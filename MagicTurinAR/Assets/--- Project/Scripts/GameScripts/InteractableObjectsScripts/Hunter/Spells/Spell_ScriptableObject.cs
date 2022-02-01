@@ -11,7 +11,7 @@ public class Spell_ScriptableObject : ScriptableObject
     public float Damage = 10f;
     public float Radius = .5f;
     
-    public const float MAX_FORCE = 500f;
+    public const float MAX_FORCE = 2000f;
 
     public float GetMaxForce() => MAX_FORCE;
 

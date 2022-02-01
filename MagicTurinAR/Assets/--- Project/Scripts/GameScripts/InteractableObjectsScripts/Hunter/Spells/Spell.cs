@@ -17,9 +17,13 @@ public class Spell : MonoBehaviour
     //public void SetForce(float force) => this.force = force;
 
     public void SetSpellToCast(Spell_ScriptableObject spellSo) => SpellToCast = spellSo;
-    
 
-    /*
+    private void Start()
+    {
+        Destroy(gameObject, SpellToCast.Lifetime);
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
@@ -27,11 +31,18 @@ public class Spell : MonoBehaviour
             Demon demon = other.GetComponent<Demon>();
             demon.Damage(SpellToCast.Damage);
         }
-        // Hit FX (sound, particles, ...)
-        Destroy(gameObject);
-    }
-    */
 
+        if (other.gameObject.CompareTag("MainCamera"))
+        {
+            return;
+        }
+        
+        Destroy(gameObject);
+        
+    }
+    
+
+    /*
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.gameObject.CompareTag("Enemy"))
@@ -42,11 +53,12 @@ public class Spell : MonoBehaviour
         // Hit FX (sound, particles, ...)
         //Destroy(gameObject);
     }
+    */
 
-    public void Cast(float force)
+    public void Cast(float force, float torque)
     {
         collider = GetComponent<SphereCollider>();
-        collider.isTrigger = false;
+        collider.isTrigger = true;
         collider.radius = SpellToCast.Radius;
         
         rigidbody = GetComponent<Rigidbody>();
@@ -54,7 +66,7 @@ public class Spell : MonoBehaviour
         
         
         rigidbody.AddForce(transform.forward * force);
-        //rigidbody.AddTorque(transform.right * torque);
+        rigidbody.AddTorque(transform.right * torque);
     }
 
     

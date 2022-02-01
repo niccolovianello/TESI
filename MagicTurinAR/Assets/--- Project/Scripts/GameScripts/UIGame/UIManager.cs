@@ -33,7 +33,6 @@ public class UIManager : MonoBehaviour
     
     void Start()
     {
-        
         firebaseManager = FindObjectOfType<FirebaseManager>();
         storeDataScript = FindObjectOfType<StoreDataScript>();
         player = FindObjectOfType<MagicPlayer>();

@@ -18,15 +18,14 @@ public class CastSpell : MonoBehaviour
 
         Spell spell = Instantiate(spellToCast, spellCastPoint.position, spellCastPoint.rotation);
         spell.SetSpellToCast(SpellSO);
-        //spell.SetForce(force);
 
-        spell.Cast(force);
+        spell.Cast(force, torque);
     }
     
     
     private float CalculateForce(float timer)
     {
-        float maxForceHoldDownTime = 2f;
+        float maxForceHoldDownTime = 1f;
         float holdTimeNormalized = Mathf.Clamp01(timer / maxForceHoldDownTime);
         float forceValue = holdTimeNormalized * SpellSO.GetMaxForce();
 
