@@ -11,6 +11,10 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private Slider slider;
     [SerializeField] private float maxHealth;
     private float currentHealth;
+
+    public float CurrentHealth => currentHealth;
+    
+    
     // Start is called before the first frame update
     void Start()
     {

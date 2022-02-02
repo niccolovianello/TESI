@@ -2,13 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
+using Random = Unity.Mathematics.Random;
+
 
 public class Demon : Enemy
 {
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private Text life;
-    [SerializeField] private float walkSpeed;
+    // [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
     [SerializeField] private Transform AR_Player;
     [SerializeField] private float dangerDistance;
@@ -21,13 +24,13 @@ public class Demon : Enemy
 
     [SerializeField] private LayerMask layers;
 
-    [SerializeField] private Material material;
-
     private Vector3 direction;
     
     private float currentHealth;
 
     private Animator animator;
+
+    private Renderer[] renderers;
 
 
     private void Awake()
@@ -36,7 +39,18 @@ public class Demon : Enemy
         currentHealth = maxHealth;
     }
 
-    
+    private void Start()
+    {
+        renderers = GetComponentsInChildren<Renderer>();
+
+        foreach (Renderer renderer in renderers)
+        {
+            renderer.material.shader = Shader.Find("Shader Graphs/Skeleton_Alpha");
+        }
+        
+    }
+
+
     private void Update()
     {
         if (life != null)
@@ -65,13 +79,6 @@ public class Demon : Enemy
             
             else
             {
-                /*
-                int dirx;
-                int diry;
-                int dirz;
-                direction = new Vector3(dirx, diry, dirz);
-                */
-
                 animator.SetBool("Aware", false);
             }
         }
@@ -85,14 +92,10 @@ public class Demon : Enemy
 
     public void Damage(float damage)
     {
-        StartCoroutine(HitClip());
-
         currentHealth -= damage;
         
-        if (currentHealth <= 0)
-        {
-            StartCoroutine(DeathClip());
-        }
+        if (currentHealth <= 0) StartCoroutine(DeathClip());
+        else StartCoroutine(HitClip());
     }
 
     private bool isAware()
@@ -114,28 +117,33 @@ public class Demon : Enemy
     // ANIMATOR COROUTINES
     private IEnumerator DeathClip()
     {
-        animator.SetBool("Death", true);
-        yield return new WaitForSeconds(5f);
+        animator.SetTrigger("Death");
+        yield return new WaitForSeconds(3f);
 
-        
-        //fixare
-        for (float alpha = 1; alpha > 0; alpha--)
-        {
-            material.SetFloat("Alpha", alpha);
-            yield return new WaitForSeconds(.05f);
-        }
-
-        soul.transform.position = transform.position + new Vector3 (0,1f,0);
+        soul.transform.position = transform.position;
         soul.gameObject.SetActive(true);
 
+        float alpha = 0.95f;
+
+        do
+        {
+            foreach (Renderer renderer in renderers)
+            {
+                renderer.material.SetFloat("_Alpha", alpha);
+            }
+            
+            alpha -= 0.025f;
+            yield return new WaitForSeconds(.025f);
+            
+        } while (alpha > 0f);
+        
         Destroy(gameObject);
     }
 
     private IEnumerator HitClip()
     {
-        animator.SetBool("Hit", true);
+        animator.SetTrigger("Damage");
         yield return new WaitForSeconds(.5f);
-        animator.SetBool("Hit", false);
     }
 
     private IEnumerator AttackClip()
