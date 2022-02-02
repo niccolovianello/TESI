@@ -10,7 +10,7 @@ public class MagicPlayer : Player
    // [SerializeField] private List<MagicItem> items = new List<MagicItem>();
 
 
-    private int whitePower = 100;
+    
     
     public MagicInventory inventory;
     public UIManager _uiManager;
@@ -91,15 +91,7 @@ public class MagicPlayer : Player
         
     }
     
-    public void ReduceWhitePower()
-    {
-        whitePower--;
-    }
-
-    public bool HasWhitePower()
-    {
-        return whitePower > 0;
-    }
+    
 
   
 }

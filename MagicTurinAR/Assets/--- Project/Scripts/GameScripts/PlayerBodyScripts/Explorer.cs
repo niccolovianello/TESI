@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class Explorer : MagicPlayer
 {
+    private int whitePower = 100;
 
-    
 
     private void Update()
     {
@@ -27,8 +27,16 @@ public class Explorer : MagicPlayer
         }
     }
 
+    public void ReduceWhitePower()
+    {
+        whitePower--;
+    }
 
-  
+    public bool HasWhitePower()
+    {
+        return whitePower > 0;
+    }
 
-    
+
+
 }

@@ -14,6 +14,7 @@ public class UIInventory : MonoBehaviour
     public Transform itemSlotContainer;
     public Transform itemSlotTemplate;
     public TMP_Text textGems;
+    public TMP_Text textWhiteFragment;
     public Image windowToAR;
 
     public GameObject itemToSeeInAr;
@@ -52,6 +53,11 @@ public class UIInventory : MonoBehaviour
     public void UpdateGemsCount(int amountGems)
     {
         textGems.text = amountGems.ToString();
+    }
+
+    public void UpdateWhiteFragmentCount(int amountWhiteFragment)
+    {
+        textWhiteFragment.text = amountWhiteFragment.ToString();
     }
     private void RefreshItems()
     {
@@ -122,5 +128,7 @@ public class UIInventory : MonoBehaviour
         gameManager.NotRenderPlayerBody();
         
     }
+
+   
 
 }

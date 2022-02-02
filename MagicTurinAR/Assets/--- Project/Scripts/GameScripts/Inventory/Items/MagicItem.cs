@@ -99,6 +99,10 @@ public class MagicItem : Item
 
                                 case ItemType.WhiteMagicFragment:
                                     {
+                                        int amountToPass = magicPlayer.inventory.AddItemToInventory(miSO, this);
+                                        Debug.Log(amountToPass);
+                                        uiInventory.UpdateWhiteFragmentCount(amountToPass);
+                                        Destroy(gameObject);
                                         break;
                                     }
 

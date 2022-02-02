@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public abstract class Player : MonoBehaviour, PlayerInterface
+public abstract class Player : NetworkBehaviour, PlayerInterface
 {
     
     public bool IsNearTeamMembers()

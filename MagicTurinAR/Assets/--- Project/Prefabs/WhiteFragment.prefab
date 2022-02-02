@@ -59,9 +59,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9380ce1c04024583b4ad084a350ca011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderRadius: 3
-  colliderCenter: {x: 0, y: 0, z: 0}
-  colliderItem: {fileID: 0}
   uiInventory: {fileID: 0}
   player: {fileID: 0}
   itemGO: {fileID: 0}

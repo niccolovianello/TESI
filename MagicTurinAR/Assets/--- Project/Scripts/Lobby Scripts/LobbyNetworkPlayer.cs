@@ -161,8 +161,11 @@ namespace MirrorBasics
             }
             if(isClient)
                 FindObjectOfType<UILobby>().gameObject.SetActive(false);
-
+            Camera camera = FindObjectOfType<Camera>();
+            if (camera.tag == "External Camera")
+                camera.gameObject.SetActive(false);
             SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
+
 
             
             NetworkServer.SpawnObjects();
