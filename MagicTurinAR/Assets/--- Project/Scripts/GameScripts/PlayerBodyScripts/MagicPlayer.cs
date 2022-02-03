@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static MagicItemSO;
+using MirrorBasics;
+using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
 public class MagicPlayer : Player
 {
@@ -15,9 +17,21 @@ public class MagicPlayer : Player
     public MagicInventory inventory;
     public UIManager _uiManager;
     public GameObject playerbody;
+    public NetworkPlayer networkPlayer;
 
 
-    
+    private void Start()
+    {
+        NetworkPlayer[] npls = FindObjectsOfType<NetworkPlayer>();
+        foreach (NetworkPlayer nt in npls)
+        {
+            if (nt.isLocalPlayer)
+            {
+                networkPlayer = nt;
+            }
+        }
+    }
+
     public void SetUIManager(UIManager uiManager)
     {
         _uiManager = uiManager;
@@ -34,6 +48,7 @@ public class MagicPlayer : Player
         Debug.Log(uiInventory);
         inventory = new MagicInventory(ClickOnItemInInventory);
         uiInventory.SetInventory(inventory);
+
 
        
     }

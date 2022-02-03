@@ -223,7 +223,7 @@ public static class TransformExtensions
             {
                 taggedGameObjects.AddRange(FindObjectsWithTag(child, tag));
             }
-            Debug.Log("bimbo " + i);
+          
         }
         return taggedGameObjects;
     }

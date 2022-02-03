@@ -101,5 +101,20 @@ namespace MirrorBasics
                 uiPlayer.SetTextRole(uiPlayer.GetNetworkPlayer());
             }
         }
+
+        [Command]
+        public void SendWhiteMagic(GameObject target, int whiteMagicToSend)
+        {
+            Debug.Log("Wiseman manda magia bianca");
+            NetworkIdentity opponentIdentity = target.GetComponent<NetworkIdentity>();
+            TargetReceiveWhiteMagic(opponentIdentity.connectionToClient, whiteMagicToSend);
+        }
+
+
+        [TargetRpc]
+        public void TargetReceiveWhiteMagic(NetworkConnection target, int whiteMagicReceived)
+        {
+            Debug.Log("Player receives white magic:" + whiteMagicReceived);
+        }
     }
 }

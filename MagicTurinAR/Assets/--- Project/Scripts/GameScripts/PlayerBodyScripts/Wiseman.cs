@@ -44,7 +44,8 @@ public class Wiseman : MagicPlayer
 
                     if (touchedObject.tag == "Player")
                     {
-                        SendWhiteMagic(touchedObject, whiteMagicToSend);
+                        Debug.Log(this);
+                        networkPlayer.SendWhiteMagic(touchedObject, whiteMagicToSend);
                         uiInventory.textGems.text = (Int32.Parse(uiInventory.textGems.text) - 1).ToString();
                         foreach (MagicItemSO item in ItemAssets.Instance.magicInventorySO.items)
                         {
@@ -60,18 +61,5 @@ public class Wiseman : MagicPlayer
 
         }
     }
-    [Command]
-    public void SendWhiteMagic(GameObject target, int whiteMagicToSend)
-    {
-        Debug.Log("Wiseman manda magia bianca");
-        NetworkIdentity opponentIdentity = target.GetComponent<NetworkIdentity>();
-        TargetReceiveWhiteMagic(opponentIdentity.connectionToClient, whiteMagicToSend);
-    }
-
-
-    [TargetRpc]
-    public void TargetReceiveWhiteMagic(NetworkConnection target, int whiteMagicReceived)
-    {
-        Debug.Log("Player receives white magic:" + whiteMagicReceived);
-    }
+   
 }
