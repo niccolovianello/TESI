@@ -9,7 +9,7 @@ public class MagicPlayer : Player
 {
 
     [SerializeField] public UIInventory uiInventory;
-   // [SerializeField] private List<MagicItem> items = new List<MagicItem>();
+    // [SerializeField] private List<MagicItem> items = new List<MagicItem>();
 
 
     
@@ -59,7 +59,7 @@ public class MagicPlayer : Player
         switch (item.itemType)
         {
             case ItemType.WhiteFragment:
-                IncrementWhiteEnergy();
+                //IncrementWhiteEnergy();
                 break;
             case ItemType.Gem:
                 // faccio funzione gemme
@@ -98,15 +98,4 @@ public class MagicPlayer : Player
         playerbody.SetActive(false);
     }
 
-
-    // metodi player
-
-    public void IncrementWhiteEnergy()
-    {
-        
-    }
-    
-    
-
-  
 }

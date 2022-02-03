@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Explorer : MagicPlayer
 {
-    private int whitePower = 100;
+    public int whitePower = 0;
 
 
     private void Update()
@@ -35,6 +35,14 @@ public class Explorer : MagicPlayer
     public bool HasWhitePower()
     {
         return whitePower > 0;
+    }
+    
+    public void IncrementWhiteEnergy(int increment)
+    {
+        whitePower += increment;
+        
+        if (whitePower > 100) whitePower = 100;
+        Debug.Log("Explorer:" + whitePower);
     }
 
 

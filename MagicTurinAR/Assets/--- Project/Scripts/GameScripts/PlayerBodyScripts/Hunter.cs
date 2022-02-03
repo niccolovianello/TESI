@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hunter : MagicPlayer
 {
-    [SerializeField]private int whitePower = 100;
+    [SerializeField] private int whitePower = 0;
     [SerializeField] private int whiteMagicForSpecialAttack = 50;
 
     [SerializeField] private float maxHealth;
@@ -23,5 +23,16 @@ public class Hunter : MagicPlayer
     {
         whitePower -= whiteMagicForSpecialAttack;
         
+    }
+    
+    // metodi player
+
+    public void IncrementWhiteEnergy(int increment)
+    {
+        whitePower += increment;
+
+        if (whitePower > 100) whitePower = 100;
+        
+        Debug.Log("Hunter:" + whitePower);
     }
 }

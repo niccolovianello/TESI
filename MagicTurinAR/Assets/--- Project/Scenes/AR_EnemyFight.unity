@@ -5988,6 +5988,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1480915484599925089, guid: 345876c1c26e1c943a39707a4b84ce03, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4065617981142174932, guid: 345876c1c26e1c943a39707a4b84ce03, type: 3}
       propertyPath: m_Name
       value: Skeleton
@@ -6074,7 +6078,7 @@ PrefabInstance:
       objectReference: {fileID: 1943218730}
     - target: {fileID: 6013871590613210509, guid: 345876c1c26e1c943a39707a4b84ce03, type: 3}
       propertyPath: attackRadius
-      value: 0.5
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6013871590613210509, guid: 345876c1c26e1c943a39707a4b84ce03, type: 3}
       propertyPath: layers.m_Bits

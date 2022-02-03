@@ -24,6 +24,8 @@ public class Demon : Enemy
 
     [SerializeField] private LayerMask layers;
 
+    private bool hit = false;
+
     private Vector3 direction;
     
     private float currentHealth;
@@ -59,7 +61,7 @@ public class Demon : Enemy
             else life.text = currentHealth.ToString();
         }
 
-        if (currentHealth > 0)
+        if (currentHealth > 0 && !hit)
         {
             if (isAware())
             {
@@ -143,7 +145,9 @@ public class Demon : Enemy
     private IEnumerator HitClip()
     {
         animator.SetTrigger("Damage");
-        yield return new WaitForSeconds(.5f);
+        hit = true;
+        yield return new WaitForSeconds(1f);
+        hit = false;
     }
 
     private IEnumerator AttackClip()

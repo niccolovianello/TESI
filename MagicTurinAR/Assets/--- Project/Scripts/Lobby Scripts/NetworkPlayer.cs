@@ -114,7 +114,20 @@ namespace MirrorBasics
         [TargetRpc]
         public void TargetReceiveWhiteMagic(NetworkConnection target, int whiteMagicReceived)
         {
-            Debug.Log("Player receives white magic:" + whiteMagicReceived);
+            MagicPlayer magicPlayer = FindObjectOfType<MagicPlayer>();
+            
+            if (magicPlayer is Explorer)
+            {
+                Explorer explorer = magicPlayer.GetComponent<Explorer>();
+                Debug.Log(explorer);
+                explorer.IncrementWhiteEnergy(whiteMagicReceived);
+            }
+            if (magicPlayer is Hunter)
+            {
+                Hunter hunter = magicPlayer.GetComponent<Hunter>();
+                Debug.Log(hunter);
+                hunter.IncrementWhiteEnergy(whiteMagicReceived);
+            }
         }
     }
 }
