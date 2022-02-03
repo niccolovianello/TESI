@@ -45,16 +45,8 @@ public class Wiseman : MagicPlayer
                     if (touchedObject.tag == "Player")
                     {
                         Debug.Log(this);
-                        networkPlayer.SendWhiteMagic(touchedObject, whiteMagicToSend);
-                        uiInventory.textGems.text = (Int32.Parse(uiInventory.textGems.text) - 1).ToString();
-                        foreach (MagicItemSO item in ItemAssets.Instance.magicInventorySO.items)
-                        {
-                            if (item.id == 2000) // White Fragment specific code
-                            {
-                                item.prefab.GetComponent<MagicItem>().amount--;
-                            }
-                        
-                        }
+                        uiInventory.OpenWindowToSendWhiteMagic(networkPlayer, touchedObject, whiteMagicToSend);
+                       
                     }
                 }
             }
