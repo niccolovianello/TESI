@@ -17,6 +17,7 @@ public class UIInventory : MonoBehaviour
     public Transform itemSlotTemplate;
     public TMP_Text textGems;
     public TMP_Text textWhiteFragment;
+    public TMP_Text textWhiteMagicToSend;
     public Image windowToAR;
     public Image wndowToSendWhiteMagic;
     public Button confirmSendWhiteMagic;
@@ -125,14 +126,23 @@ public class UIInventory : MonoBehaviour
             {
                 if (item.id == 2000 && item.prefab.GetComponent<MagicItem>().amount > 0) // White Fragment specific code
                 {
-                    item.prefab.GetComponent<MagicItem>().amount--;
-                    networkPlayer.SendWhiteMagic(touchedObject, whiteMagicToSend);
-                    textGems.text = (System.Int32.Parse(textGems.text) - 1).ToString();
-                    break;
+                    int nfragmet = System.Int32.Parse(textWhiteMagicToSend.text);
+                    if (item.prefab.GetComponent<MagicItem>().amount >= nfragmet)
+                    {
+                        item.prefab.GetComponent<MagicItem>().amount -= nfragmet;
+                        networkPlayer.SendWhiteMagic(touchedObject, whiteMagicToSend * nfragmet);
+                        textGems.text = (System.Int32.Parse(textGems.text) - nfragmet).ToString();
+                        break;
+                    }
+                    else {
+
+                        Debug.LogError("You don't have enough white fragments!");
+                    }
+                   
                 }
                 else if (item.prefab.GetComponent<MagicItem>().amount > 0)
                 {
-                    Debug.Log("You have not white magic enough!");
+                    Debug.LogError("You have not white magic enough!");
                 }
 
             }
@@ -165,6 +175,24 @@ public class UIInventory : MonoBehaviour
         
     }
 
-   
+    public void IncreaseWhiteMagicToSend()
+    {
+        int wm = System.Int32.Parse(textWhiteMagicToSend.text);
+        foreach (MagicItemSO item in ItemAssets.Instance.magicInventorySO.items)
+            if (item.id == 2000 && wm < item.prefab.GetComponent<MagicItem>().amount)
+                wm++;
+        textWhiteMagicToSend.text = wm.ToString();
+    }
+
+    public void DecreaseWhiteMagicToSend()
+    {
+        int wm = System.Int32.Parse(textWhiteMagicToSend.text);
+       
+        if(wm >0)
+            wm--;
+       textWhiteMagicToSend.text = wm.ToString();
+    }
+
+
 
 }

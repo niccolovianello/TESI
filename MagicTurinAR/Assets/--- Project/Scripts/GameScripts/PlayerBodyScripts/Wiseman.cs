@@ -6,7 +6,7 @@ using System;
 
 public class Wiseman : MagicPlayer
 {
-    [SerializeField] private int whiteMagicToSend = 100;
+    [SerializeField] private int whiteMagicToSend = 25;
     private void Update()
     {
         //if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
@@ -41,8 +41,9 @@ public class Wiseman : MagicPlayer
                 {
 
                     GameObject touchedObject = hit.transform.gameObject;
+                    MagicPlayer touchedPlayer = touchedObject.GetComponent<MagicPlayer>();
 
-                    if (touchedObject.tag == "Player")
+                    if (touchedObject.tag == "Player" && !(touchedPlayer is Wiseman))
                     {
                         Debug.Log(this);
                         uiInventory.OpenWindowToSendWhiteMagic(networkPlayer, touchedObject, whiteMagicToSend);
