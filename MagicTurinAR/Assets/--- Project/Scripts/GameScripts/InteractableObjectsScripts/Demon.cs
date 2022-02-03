@@ -24,7 +24,7 @@ public class Demon : Enemy
 
     [SerializeField] private LayerMask layers;
 
-    private bool hit = false;
+    private bool hit;
 
     private Vector3 direction;
     
@@ -157,7 +157,6 @@ public class Demon : Enemy
 
         foreach (Collider collider in colliders)
         {
-            Debug.Log(collider);
             collider.GetComponent<HealthManager>().DecreaseHealth();
         }
         yield return new WaitForSeconds(3f);
