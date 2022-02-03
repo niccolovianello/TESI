@@ -1,10 +1,6 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
-using Random = Unity.Mathematics.Random;
 
 
 public class Demon : Enemy
@@ -144,7 +140,11 @@ public class Demon : Enemy
 
     private IEnumerator HitClip()
     {
-        animator.SetTrigger("Damage");
+        bool lessThan = Random.Range(0, 10) < 5;
+        
+        if(lessThan) animator.SetTrigger("Damage");
+        else animator.SetTrigger("Knockback");
+        
         hit = true;
         yield return new WaitForSeconds(1f);
         hit = false;
