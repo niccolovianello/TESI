@@ -78,7 +78,7 @@ using UnityEngine.SceneManagement;
 
     #endregion
 
-    public void SaveData(StoreDataScript data)
+    public void SaveData(StoreData data)
     {
         Debug.Log(username);
         StartCoroutine(UpdateUsernameAuth(username));
@@ -282,7 +282,7 @@ using UnityEngine.SceneManagement;
         }
     #endregion
 
-    public IEnumerator LoadUserData(StoreDataScript data)
+    public IEnumerator LoadUserData(StoreData data)
     {
         Debug.Log(DBreference);
         Debug.Log("Start coroutine");
@@ -305,7 +305,7 @@ using UnityEngine.SceneManagement;
             DataSnapshot snapshot = DBTask.Result;
 
             int result = System.Int16.Parse(snapshot.Child("role").Value.ToString());
-            data.role = (StoreDataScript.TextRole)result;
+            data.role = (StoreData.TextRole)result;
 
 
         }

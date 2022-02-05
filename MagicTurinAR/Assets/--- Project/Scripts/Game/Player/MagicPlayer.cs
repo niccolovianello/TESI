@@ -10,9 +10,6 @@ public class MagicPlayer : Player
 
     [SerializeField] public UIInventory uiInventory;
     // [SerializeField] private List<MagicItem> items = new List<MagicItem>();
-
-
-    
     
     public MagicInventory inventory;
     public UIManager _uiManager;
@@ -93,7 +90,7 @@ public class MagicPlayer : Player
         playerbody.SetActive(true);
     }
 
-    public override void NotRenerPlayerBody()
+    public override void NotRenderPlayerBody()
     {
         playerbody.SetActive(false);
     }

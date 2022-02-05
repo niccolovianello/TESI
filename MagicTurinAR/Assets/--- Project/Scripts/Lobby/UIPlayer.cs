@@ -6,14 +6,13 @@ using UnityEngine.UI;
 
 namespace MirrorBasics
 {
-    public class UIPlayerScript : MonoBehaviour
+    public class UIPlayer : MonoBehaviour
     {
         [SerializeField] Text text;
         [SerializeField] Text role;
         
         public enum TextRole
         {
-         
             Explorer,
             Wiseman,
             Hunter,
@@ -26,8 +25,6 @@ namespace MirrorBasics
         private void Start()
         {
             uiLobby = FindObjectOfType<UILobby>();
-
-           
         }
 
         public NetworkPlayer GetNetworkPlayer()
@@ -38,15 +35,15 @@ namespace MirrorBasics
         {
             this.networkPlayer = _player;
             text.text = "Player " + networkPlayer.playerIndex.ToString();
-            switch (_player.storeDataScript.role)
+            switch (_player.storeData.role)
             {
-                case StoreDataScript.TextRole.Explorer:
+                case StoreData.TextRole.Explorer:
                     role.text = "E";
                     break;
-                case StoreDataScript.TextRole.Wiseman:
+                case StoreData.TextRole.Wiseman:
                     role.text = "W";
                     break;
-                case StoreDataScript.TextRole.Hunter:
+                case StoreData.TextRole.Hunter:
                     role.text = "H";
                     break;
                 default:

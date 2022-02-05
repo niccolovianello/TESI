@@ -132,7 +132,8 @@ public class GameManager : Singleton<GameManager>
                     item.magicPlayer = explorer;
                 }
 
-                break;
+                break; 
+            
             case NetworkPlayer.TypePlayer.Wiseman:
                 networkPlayerCamera.gameObject.AddComponent<WhiteFragmentFactory>();
                 WhiteFragmentFactory whiteFragmentFactory = networkPlayerCamera.GetComponent<WhiteFragmentFactory>();
@@ -160,6 +161,7 @@ public class GameManager : Singleton<GameManager>
                     item.magicPlayer = wiseman;
                 }
                 break;
+            
             case NetworkPlayer.TypePlayer.Hunter:
                 networkPlayerCamera.gameObject.AddComponent<EnemyFactory>();
                 EnemyFactory enemyFactory = networkPlayerCamera.GetComponent<EnemyFactory>();
@@ -181,10 +183,6 @@ public class GameManager : Singleton<GameManager>
                     item.magicPlayer = hunter;
                 }
                 break;
-            default:
-                break;
-
-
         }
 
         currentPlayer.playerbody = TransformExtensions.FindObjectsWithTag(networkPlayer.gameObject.transform, "Body")[0];
@@ -196,7 +194,7 @@ public class GameManager : Singleton<GameManager>
 
     public void NotRenderPlayerBody()
     {
-        currentPlayer.NotRenerPlayerBody();
+        currentPlayer.NotRenderPlayerBody();
     }
 
     public void RenderPlayerBody()

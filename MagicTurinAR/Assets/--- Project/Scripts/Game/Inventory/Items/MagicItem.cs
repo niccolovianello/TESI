@@ -9,10 +9,14 @@ public class MagicItem : Item
 {
     
     [SerializeField] public MagicPlayer magicPlayer;
+    
     public NetworkPlayer networkPlayer;
     public ItemType itemType;
     public ItemTypePlayer itemTypePlayer;
     public int idObjectCode;
+    
+    public GameObject warning;
+    
     public enum ItemType
     {
         Artifact,
@@ -29,14 +33,10 @@ public class MagicItem : Item
         Hunter
     }
 
-
-
     private void Awake()
     {
-        //canvasItem = GetComponentInChildren<Canvas>();
-        //textWarning = GetComponentInChildren<TMP_Text>();
-        //Debug.Log(canvasItem);
-        //canvasItem.enabled = false;
+        warning = GameObject.Find("/Warning");
+        warning.SetActive(false);
         uiInventory = FindObjectOfType<UIInventory>();
     }
 
@@ -52,7 +52,7 @@ public class MagicItem : Item
             if (nt.isLocalPlayer)
             {
                 networkPlayer = nt;
-                if ((int)networkPlayer.TypePlayerIndex != (int)itemTypePlayer)
+                if (networkPlayer.TypePlayerIndex != (int)itemTypePlayer)
                 {
                     DoNotRenderItem();
                 }
@@ -75,13 +75,11 @@ public class MagicItem : Item
         {
             if (IsClickable())
             {
-
                 Debug.Log(uiInventory);
                 int debugObjectMissing = 0;
                 foreach (MagicItemSO miSO in ItemAssets.Instance.magicInventorySO.items)
                 {
-
-                    if (this.idObjectCode == miSO.id)
+                    if (idObjectCode == miSO.id)
                     {
                         debugObjectMissing++;
                         if (miSO.isStackable)
@@ -111,7 +109,6 @@ public class MagicItem : Item
                                         Debug.LogWarning("Are you sure that this object should be stackable?");
                                         break;
                                     }
-
                             }
                         }
                         else
@@ -127,37 +124,33 @@ public class MagicItem : Item
                             }
                         }
                     }
-
                 }
 
                 if (debugObjectMissing == 0)
                 {                   
                         Debug.LogError("Object missing in Inventory Scriptable Object's instance");                   
                 }
-
-                // aggiungi roba all'inventario
             }
 
             else
             {
-                //canvasItem.enabled = true;
-                //textWarning.text = "This item is too far, get closer!";
-                StartCoroutine(DisableTextWarning());
-                // avvisa che l'oggetto � troppo lontano
+                StartCoroutine(Warning());
             }
         }
     }
 
 
-    public IEnumerator DisableTextWarning()
+    public IEnumerator Warning()
     {
-        yield return new WaitForSeconds(4f);
-        //canvasItem.enabled = false;
+        warning.transform.position = transform.position;
+        warning.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        warning.SetActive(false);
     }
 
     public override void DoNotRenderItem()
-    {
-        this.gameObject.SetActive(false);
+    {   
+        gameObject.SetActive(false);
     }
 
     

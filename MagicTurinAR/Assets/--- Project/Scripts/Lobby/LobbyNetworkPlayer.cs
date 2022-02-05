@@ -52,7 +52,7 @@ namespace MirrorBasics
         #region HOST COMMANDS
         public void HostGame()
         {
-            string _matchID = MatchMakerScript.GetRandomMatchID();
+            string _matchID = MatchMaker.GetRandomMatchID();
             peerIsTheHost = true;
             CmdHostGame(_matchID);
         }
@@ -62,7 +62,7 @@ namespace MirrorBasics
         {
             matchID = _matchID;
             networkMatch = GetComponent<NetworkMatch>();
-            if (MatchMakerScript.istance.HostGame(_matchID, gameObject, out playerIndex))
+            if (MatchMaker.istance.HostGame(_matchID, gameObject, out playerIndex))
             {
                 Debug.Log($"<color = green>Game hosted succesfully</color>");
                 networkMatch.matchId = _matchID.toGuid();
@@ -98,7 +98,7 @@ namespace MirrorBasics
         {
             matchID = _matchID;
 
-            if (MatchMakerScript.istance.JoinGame(_matchID, gameObject, out playerIndex))
+            if (MatchMaker.istance.JoinGame(_matchID, gameObject, out playerIndex))
             {
                 Debug.Log($"<color = green>Game joined succesfully</color>" + playerIndex);
                 networkMatch.matchId = _matchID.toGuid();
@@ -135,7 +135,7 @@ namespace MirrorBasics
         void CmdBeginGame()
         {
 
-            MatchMakerScript.istance.BeginGame(matchID);
+            MatchMaker.istance.BeginGame(matchID);
             //Debug.Log("<color = red>Game Beginning</color>");
 
 

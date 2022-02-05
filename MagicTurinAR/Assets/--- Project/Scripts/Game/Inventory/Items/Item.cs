@@ -27,11 +27,8 @@ public abstract class Item : MonoBehaviour, ItemInterface
 
     public Player player;
     public GameObject itemGO;
-    [SerializeField] public int amount ;
+    [SerializeField] public int amount;
 
-    
-  
-  
     public abstract void OnMouseDown();
 
     

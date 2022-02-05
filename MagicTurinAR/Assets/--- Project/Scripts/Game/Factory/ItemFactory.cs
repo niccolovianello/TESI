@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-
 public abstract class ItemFactory : Singleton<ItemFactory>
 {
     [SerializeField] public float waitTime;
@@ -13,20 +12,15 @@ public abstract class ItemFactory : Singleton<ItemFactory>
     
     [SerializeField] public GameObject itemPrefab;
 
-    [SerializeField] public Item itemPrefabScript;
-
-
     [SerializeField] public Player player;
+    
+    //TEST
+    public GameObject rif;
+    
     [SerializeField] private GameObject parentObjectsFactory;
 
     private List<Item> aliveItems = new List<Item>();
 
-
-    private void Awake()
-    {
-        //Assert.IsNotNull(itemPrefab);
-        //Assert.IsNotNull(player);
-    }
     void Start()
     {
         player = FindObjectOfType<MagicPlayer>();
@@ -35,19 +29,14 @@ public abstract class ItemFactory : Singleton<ItemFactory>
         {
             InstantiateItem();
         }
-
-        StartCoroutine(GenerateItem());
         
-
-
-
+        StartCoroutine(GenerateItem());
     }
 
     private IEnumerator GenerateItem()
     {
         while (true)
         {
-            Debug.Log("Istantiate");
             InstantiateItem();
             yield return new WaitForSeconds(waitTime);
         }
@@ -55,17 +44,19 @@ public abstract class ItemFactory : Singleton<ItemFactory>
 
     private void InstantiateItem()
     {
+        //float x = player.transform.position.x + GenerateRange();
+        //float y = player.transform.position.y;
+        //float z = player.transform.position.z + GenerateRange();
         
-        float x = player.transform.position.x + GenerateRange();
-        float y = player.transform.position.y;
-        float z = player.transform.position.z + GenerateRange();
+        float x = rif.transform.position.x + GenerateRange();
+        float y = rif.transform.position.y;
+        float z = rif.transform.position.z + GenerateRange();
 
         GameObject itemToIstantiate = Instantiate(itemPrefab, new Vector3(x, y, z), Quaternion.identity);
-        itemToIstantiate.transform.parent = parentObjectsFactory.transform;
+        //itemToIstantiate.transform.parent = parentObjectsFactory.transform;
 
         aliveItems.Add(itemToIstantiate.GetComponent<Item>());
     }
-
     
     private float GenerateRange()
     {
@@ -83,6 +74,5 @@ public abstract class ItemFactory : Singleton<ItemFactory>
     {
         player = magicPlayer;
     }
-
 
 }

@@ -18,7 +18,7 @@ namespace MirrorBasics
         public TypePlayer TypePlayerEnum;
 
 
-        public StoreDataScript storeDataScript;
+        public StoreData storeData;
         FirebaseManager firebaseManager;
         public static NetworkPlayer localPlayer;
         private UILobby UILobby;
@@ -42,7 +42,7 @@ namespace MirrorBasics
 
             Debug.Log("START PLAYER BEHAVIOUR");
 
-            storeDataScript = GetComponent<StoreDataScript>();
+            storeData = GetComponent<StoreData>();
 
 
             // loading da overridta from Firebase realtime database
@@ -50,7 +50,7 @@ namespace MirrorBasics
             if (!isServer || (isServer && isClient))
             {
                 firebaseManager = FindObjectOfType<FirebaseManager>();
-                firebaseManager.StartCoroutine(firebaseManager.LoadUserData(storeDataScript));
+                firebaseManager.StartCoroutine(firebaseManager.LoadUserData(storeData));
             }
                 
 
@@ -87,7 +87,7 @@ namespace MirrorBasics
             
             TypePlayerEnum = roleIndex;
             TypePlayerIndex = (int)roleIndex;
-            storeDataScript.SetRoleData((int) roleIndex);
+            storeData.SetRoleData((int) roleIndex);
         }
 
         void SetTypeRole(int oldIndex, int newIndex)
@@ -95,8 +95,8 @@ namespace MirrorBasics
             TypePlayerIndex = newIndex;
             TypePlayerEnum = (TypePlayer)newIndex;
 
-            UIPlayerScript[] playersUiPrefabs = FindObjectsOfType<UIPlayerScript>();
-            foreach (UIPlayerScript uiPlayer in playersUiPrefabs)
+            UIPlayer[] playersUiPrefabs = FindObjectsOfType<UIPlayer>();
+            foreach (UIPlayer uiPlayer in playersUiPrefabs)
             {
                 uiPlayer.SetTextRole(uiPlayer.GetNetworkPlayer());
             }

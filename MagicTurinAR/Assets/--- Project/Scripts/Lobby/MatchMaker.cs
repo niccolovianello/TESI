@@ -13,7 +13,7 @@ namespace MirrorBasics
     public class Match {
 
         public string matchID;
-        readonly SyncListGameObject players = new SyncListGameObject(); // errore lo da perchè non riesce a deserielizzare players?
+        readonly SyncListGameObject players = new SyncListGameObject(); // errore lo da perchï¿½ non riesce a deserielizzare players?
 
         public Match(string matchID, GameObject player)
         {
@@ -42,9 +42,9 @@ namespace MirrorBasics
 
 
 
-    public class MatchMakerScript : NetworkBehaviour
+    public class MatchMaker : NetworkBehaviour
     {
-        public static MatchMakerScript istance;
+        public static MatchMaker istance;
 
         readonly SyncListMatch matches = new SyncListMatch();
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoreDataScript : MonoBehaviour
+public class StoreData : MonoBehaviour
 {
     public TextRole role;
 

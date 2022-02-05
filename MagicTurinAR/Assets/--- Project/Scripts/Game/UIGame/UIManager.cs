@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     private NetworkPlayer networkplayer;
 
     public FirebaseManager firebaseManager;
-    public StoreDataScript storeDataScript;
+    public StoreData storeData;
     
     
     public void Awake()
@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         firebaseManager = FindObjectOfType<FirebaseManager>();
-        storeDataScript = FindObjectOfType<StoreDataScript>();
+        storeData = FindObjectOfType<StoreData>();
         player = FindObjectOfType<MagicPlayer>();
 
         foreach (NetworkPlayer pl in FindObjectsOfType<NetworkPlayer>())
@@ -120,6 +120,6 @@ public class UIManager : MonoBehaviour
     public void onClickSaveButton()
     {
         Debug.Log("Button Save clicked");
-        firebaseManager.SaveData(storeDataScript);
+        firebaseManager.SaveData(storeData);
     }
 }

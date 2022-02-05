@@ -125,7 +125,7 @@ namespace MirrorBasics
         public void SpawnPlayerUIPrefab(NetworkPlayer networkPlayer)
         {
             GameObject newUIPlayer = Instantiate(UIPlayerPrefab, UIPlayerParent);
-            newUIPlayer.GetComponent<UIPlayerScript>().SetPlayer(networkPlayer);
+            newUIPlayer.GetComponent<UIPlayer>().SetPlayer(networkPlayer);
             networkPlayer.SetUiPlayerOfNetworkPlayer(newUIPlayer);
            
             newUIPlayer.transform.SetSiblingIndex(networkPlayer.playerIndex - 1);
@@ -144,7 +144,7 @@ namespace MirrorBasics
             if(NetworkPlayer.localPlayer.peerIsTheHost ==true)
                 beginGameButton.SetActive(true);
 
-            NetworkPlayer.localPlayer.uiPlayer.GetComponent<UIPlayerScript>().SetTextRole(NetworkPlayer.localPlayer);
+            NetworkPlayer.localPlayer.uiPlayer.GetComponent<UIPlayer>().SetTextRole(NetworkPlayer.localPlayer);
           
         }
 
@@ -154,7 +154,7 @@ namespace MirrorBasics
             boxDescription.enabled = false;
             if (NetworkPlayer.localPlayer.peerIsTheHost == true)
                 beginGameButton.SetActive(true);
-            NetworkPlayer.localPlayer.uiPlayer.GetComponent<UIPlayerScript>().SetTextRole(NetworkPlayer.localPlayer);
+            NetworkPlayer.localPlayer.uiPlayer.GetComponent<UIPlayer>().SetTextRole(NetworkPlayer.localPlayer);
         }
 
         public void ApplyWiseManRole()
@@ -163,7 +163,7 @@ namespace MirrorBasics
             boxDescription.enabled = false;
             if (NetworkPlayer.localPlayer.peerIsTheHost == true)
                 beginGameButton.SetActive(true);
-            NetworkPlayer.localPlayer.uiPlayer.GetComponent<UIPlayerScript>().SetTextRole(NetworkPlayer.localPlayer);
+            NetworkPlayer.localPlayer.uiPlayer.GetComponent<UIPlayer>().SetTextRole(NetworkPlayer.localPlayer);
         }
 
         public void ClientOrServerView(NetworkPlayer np)

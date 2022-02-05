@@ -10,9 +10,7 @@ public abstract class Player : NetworkBehaviour, PlayerInterface
     {
         return false;
     }
-
     
-
     public abstract void OpenDialogWindowToSeeArtifactsInAR(MagicItemSO item);
 
 
@@ -21,6 +19,6 @@ public abstract class Player : NetworkBehaviour, PlayerInterface
     public abstract void RenderPlayerBody();
 
 
-    public abstract void NotRenerPlayerBody();
+    public abstract void NotRenderPlayerBody();
 
 }

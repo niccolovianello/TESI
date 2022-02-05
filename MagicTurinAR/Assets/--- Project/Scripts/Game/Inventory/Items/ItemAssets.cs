@@ -11,9 +11,7 @@ public class ItemAssets : MonoBehaviour
     { 
         Instance = this;
     }
-
     
-
     public Transform prefabItemCollectable;
 
     [Header("Enemy Prefab")]
