@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44407925, g: 0.49333048, b: 0.5723981, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5396,6 +5396,7 @@ GameObject:
   - component: {fileID: 1132131155}
   - component: {fileID: 1132131154}
   - component: {fileID: 1132131153}
+  - component: {fileID: 1132131156}
   m_Layer: 5
   m_Name: WindowWhiteMagic
   m_TagString: Untagged
@@ -5466,6 +5467,21 @@ RectTransform:
   m_AnchoredPosition: {x: -0.00024414062, y: -84.0553}
   m_SizeDelta: {x: 980.0005, y: 623.82947}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1132131156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132131152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
 --- !u!1 &1206883210
 GameObject:
   m_ObjectHideFlags: 0
@@ -6573,6 +6589,10 @@ PrefabInstance:
     - target: {fileID: 4980642883382643396, guid: 67c9b9fd57ef6405ea3d3d0931a6f17e, type: 3}
       propertyPath: m_enableVertexGradient
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980642883473219035, guid: 67c9b9fd57ef6405ea3d3d0931a6f17e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c9b9fd57ef6405ea3d3d0931a6f17e, type: 3}

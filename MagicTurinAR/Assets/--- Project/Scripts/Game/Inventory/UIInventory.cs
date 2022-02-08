@@ -7,11 +7,12 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using MirrorBasics;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
+using UnityEditor.Events;
 
 public class UIInventory : MonoBehaviour
 {
 
-    private NetworkPlayer networkPlayer;
+    
     private MagicInventory inventory;
     public Transform itemSlotContainer;
     public Transform itemSlotTemplate;
@@ -116,37 +117,45 @@ public class UIInventory : MonoBehaviour
 
     public void OpenWindowToSendWhiteMagic(NetworkPlayer nt, GameObject touchedObject, int whiteMagicToSend)
     {
-
+        Debug.Log("inizia magia");
         wndowToSendWhiteMagic.gameObject.SetActive(true);
-        confirmSendWhiteMagic.onClick.AddListener(() =>
-        {
-            
-            
-            foreach (MagicItemSO item in ItemAssets.Instance.magicInventorySO.items)
-            {
-                if (item.id == 2000 && item.prefab.GetComponent<MagicItem>().amount > 0) // White Fragment specific code
-                {
-                    int nfragmet = System.Int32.Parse(textWhiteMagicToSend.text);
-                    if (item.prefab.GetComponent<MagicItem>().amount >= nfragmet)
-                    {
-                        item.prefab.GetComponent<MagicItem>().amount -= nfragmet;
-                        networkPlayer.SendWhiteMagic(touchedObject, whiteMagicToSend * nfragmet);
-                        textGems.text = (System.Int32.Parse(textGems.text) - nfragmet).ToString();
-                        break;
-                    }
-                    else {
 
-                        Debug.LogError("You don't have enough white fragments!");
-                    }
-                   
-                }
-                else if (item.prefab.GetComponent<MagicItem>().amount > 0)
+        confirmSendWhiteMagic.onClick.RemoveAllListeners();
+
+        confirmSendWhiteMagic.onClick.AddListener(delegate { SendWhiteMagic(nt, touchedObject, whiteMagicToSend); });
+           
+    }
+
+    public void SendWhiteMagic(NetworkPlayer nt, GameObject touchedObject, int whiteMagicToSend)
+    {
+        Debug.Log("manda magia");
+
+        foreach (MagicItemSO item in ItemAssets.Instance.magicInventorySO.items)
+        {
+            if (item.id == 2000 && item.prefab.GetComponent<MagicItem>().amount > 0) // White Fragment specific code
+            {
+                int nfragmet = System.Int32.Parse(textWhiteMagicToSend.text);
+                if (item.prefab.GetComponent<MagicItem>().amount >= nfragmet)
                 {
-                    Debug.LogError("You have not white magic enough!");
+                    item.prefab.GetComponent<MagicItem>().amount -= nfragmet;
+                    nt.SendWhiteMagic(touchedObject, whiteMagicToSend * nfragmet);
+                    textGems.text = (System.Int32.Parse(textGems.text) - nfragmet).ToString();
+                    break;
+                }
+                else
+                {
+
+                    Debug.LogError("You don't have enough white fragments!");
                 }
 
             }
-        });
+            else if (item.prefab.GetComponent<MagicItem>().amount > 0)
+            {
+                Debug.LogError("You have not white magic enough!");
+            }
+
+
+        }
     }
     public void CloseWindowToAr()
     {

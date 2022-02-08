@@ -15,7 +15,7 @@ public abstract class ItemFactory : Singleton<ItemFactory>
     [SerializeField] public Player player;
     
     //TEST
-    public GameObject rif;
+   // public GameObject rif;
     
     [SerializeField] private GameObject parentObjectsFactory;
 
@@ -48,9 +48,9 @@ public abstract class ItemFactory : Singleton<ItemFactory>
         //float y = player.transform.position.y;
         //float z = player.transform.position.z + GenerateRange();
         
-        float x = rif.transform.position.x + GenerateRange();
-        float y = rif.transform.position.y;
-        float z = rif.transform.position.z + GenerateRange();
+        float x = player.transform.position.x + GenerateRange();
+        float y = player.transform.position.y;
+        float z = player.transform.position.z + GenerateRange();
 
         GameObject itemToIstantiate = Instantiate(itemPrefab, new Vector3(x, y, z), Quaternion.identity);
         //itemToIstantiate.transform.parent = parentObjectsFactory.transform;

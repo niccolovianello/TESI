@@ -14,8 +14,9 @@ public class MagicItem : Item
     public ItemType itemType;
     public ItemTypePlayer itemTypePlayer;
     public int idObjectCode;
-    
-    public GameObject warning;
+
+    public GameObject distanceWarning;
+    public Canvas distanceWarningCanvas;
     
     public enum ItemType
     {
@@ -35,8 +36,9 @@ public class MagicItem : Item
 
     private void Awake()
     {
-        warning = GameObject.Find("/Warning");
-        warning.SetActive(false);
+        distanceWarning = GameObject.Find("Warning");
+        distanceWarningCanvas = distanceWarning.GetComponentInChildren<Canvas>();
+        distanceWarningCanvas.enabled = false;
         uiInventory = FindObjectOfType<UIInventory>();
     }
 
@@ -134,18 +136,18 @@ public class MagicItem : Item
 
             else
             {
-                StartCoroutine(Warning());
+                StartCoroutine(DistanceWarningActivation());
             }
         }
     }
 
 
-    public IEnumerator Warning()
+    public IEnumerator DistanceWarningActivation()
     {
-        warning.transform.position = transform.position;
-        warning.SetActive(true);
+        distanceWarning.transform.position = transform.position;
+        distanceWarningCanvas.enabled = true;
         yield return new WaitForSeconds(3f);
-        warning.SetActive(false);
+        distanceWarningCanvas.enabled = false;
     }
 
     public override void DoNotRenderItem()
