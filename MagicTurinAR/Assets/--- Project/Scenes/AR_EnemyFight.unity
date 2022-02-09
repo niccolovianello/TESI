@@ -607,7 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 550912948}
-  maxHealth: 100
+  maxMana: 100
 --- !u!136 &909465777
 CapsuleCollider:
   m_ObjectHideFlags: 0

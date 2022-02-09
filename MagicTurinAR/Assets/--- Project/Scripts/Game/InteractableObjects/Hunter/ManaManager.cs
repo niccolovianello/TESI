@@ -4,47 +4,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthManager : MonoBehaviour
+public class ManaManager : MonoBehaviour
 {
-
     // [SerializeField] private Hunter hunter;
     [SerializeField] private Slider slider;
-    [SerializeField] private float maxHealth;
-    private float currentHealth;
+    [SerializeField] private float maxMana;
+    private float currentMana;
 
     public float CurrentHealth
     {
-        get => currentHealth;
-        set => currentHealth = value;
+        get => currentMana;
+        set => currentMana = value;
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
-        slider.maxValue = maxHealth;
+        currentMana = maxMana;
+        slider.maxValue = maxMana;
     }
 
     // Update is called once per frame
     void Update()
     {
-        slider.value = currentHealth;
+        slider.value = currentMana;
     }
 
-    public void DecreaseHealth(float damage)
+    public void DecreaseMana(float damage)
     {
-        currentHealth -= damage;
+        currentMana -= damage;
 
-        if (currentHealth <= 0)
+        if (currentMana <= 0)
         {
+            // TODO
             // esci dalla missione
             // noob
         }
     }
     
-    public void IncreaseHealth(float increment)
+    public void IncreaseMana(float increment)
     {
-        currentHealth += increment;
+        currentMana += increment;
     }
 }

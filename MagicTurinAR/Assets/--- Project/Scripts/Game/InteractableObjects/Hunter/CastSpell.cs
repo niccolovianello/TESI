@@ -9,7 +9,7 @@ public class CastSpell : MonoBehaviour
 
     private float force;
     private float torque;
-    private HealthManager healthManager;
+    private ManaManager manaManager;
     
     public void Cast(float timer)
     {
@@ -20,8 +20,8 @@ public class CastSpell : MonoBehaviour
         spell.SetSpellToCast(SpellSO);
 
         spell.Cast(force, torque);
-        healthManager = FindObjectOfType<HealthManager>();
-        healthManager.DecreaseHealth(SpellSO.Cost);
+        manaManager = FindObjectOfType<ManaManager>();
+        manaManager.DecreaseMana(SpellSO.Cost);
     }
     
     

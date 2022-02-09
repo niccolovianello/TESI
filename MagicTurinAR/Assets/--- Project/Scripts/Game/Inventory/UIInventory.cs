@@ -145,7 +145,6 @@ public class UIInventory : MonoBehaviour
                 }
                 else
                 {
-
                     Debug.LogError("You don't have enough white fragments!");
                 }
 
