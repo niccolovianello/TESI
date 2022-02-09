@@ -139,7 +139,7 @@ public class UIInventory : MonoBehaviour
                 if (item.prefab.GetComponent<MagicItem>().amount >= nfragmet)
                 {
                     item.prefab.GetComponent<MagicItem>().amount -= nfragmet;
-                    nt.SendWhiteMagic(touchedObject, whiteMagicToSend * nfragmet);
+                    nt.CmdSendWhiteMagic(touchedObject, whiteMagicToSend * nfragmet);
                     textGems.text = (System.Int32.Parse(textGems.text) - nfragmet).ToString();
                     break;
                 }

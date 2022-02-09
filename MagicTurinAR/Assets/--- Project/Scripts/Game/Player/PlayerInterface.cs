@@ -5,7 +5,7 @@ using UnityEngine;
 public interface PlayerInterface
 {
     
-    public bool IsNearTeamMembers();
+    public bool IsCloseToTeamMembers();
     
     public void OpenDialogWindowToSeeArtifactsInAR(MagicItemSO item);
 

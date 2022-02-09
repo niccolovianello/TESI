@@ -54,5 +54,23 @@ public class Wiseman : MagicPlayer
 
         }
     }
-   
+
+    public void IncrementGems()
+    {
+        int amountToPass = 0;
+        foreach (MagicItemSO MagicItem in ItemAssets.Instance.magicInventorySO.items)
+        {
+            if ((int)MagicItem.id == 1000)
+            {
+                Debug.Log("incrementGems");
+                MagicItem.prefab.GetComponent<Item>().amount++;
+                //itemAlreadyInInventory = true;
+                //Debug.Log(Item.amount);
+                amountToPass = MagicItem.prefab.GetComponent<Item>().amount;
+            }
+        }
+        //Debug.Log(amountToPass);
+        uiInventory.UpdateGemsCount(amountToPass);
+    }
+
 }

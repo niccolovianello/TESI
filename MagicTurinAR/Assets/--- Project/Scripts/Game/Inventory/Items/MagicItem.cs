@@ -90,19 +90,28 @@ public class MagicItem : Item
                             {
                                 case ItemType.Gem:
                                     {
-                                        int amountToPass = magicPlayer.inventory.AddItemToInventory(miSO, this);
-                                        Debug.Log(amountToPass);
-                                        uiInventory.UpdateGemsCount(amountToPass);
-                                        Destroy(gameObject);
+                                        //int amountToPass = magicPlayer.inventory.AddItemToInventory(miSO, this);
+                                        //Debug.Log(amountToPass);
+                                        //uiInventory.UpdateGemsCount(amountToPass);
+                                        if (magicPlayer.IsCloseToTeamMembers())
+                                        {
+                                            networkPlayer.CmdSendGem();
+                                            Destroy(gameObject);
+                                            
+                                        }
                                         break;
+
                                     }
 
                                 case ItemType.WhiteMagicFragment:
                                     {
-                                        int amountToPass = magicPlayer.inventory.AddItemToInventory(miSO, this);
-                                        Debug.Log(amountToPass);
-                                        uiInventory.UpdateWhiteFragmentCount(amountToPass);
-                                        Destroy(gameObject);
+                                        if (magicPlayer.IsCloseToTeamMembers())
+                                        {
+                                            int amountToPass = magicPlayer.inventory.AddItemToInventory(miSO, this);
+                                            Debug.Log(amountToPass);
+                                            uiInventory.UpdateWhiteFragmentCount(amountToPass);
+                                            Destroy(gameObject);
+                                        }                                     
                                         break;
                                     }
 

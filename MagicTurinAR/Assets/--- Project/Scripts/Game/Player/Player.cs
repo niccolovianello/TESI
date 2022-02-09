@@ -5,11 +5,9 @@ using Mirror;
 
 public abstract class Player : NetworkBehaviour, PlayerInterface
 {
-    
-    public bool IsNearTeamMembers()
-    {
-        return false;
-    }
+
+    public abstract bool IsCloseToTeamMembers();
+
     
     public abstract void OpenDialogWindowToSeeArtifactsInAR(MagicItemSO item);
 

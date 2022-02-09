@@ -15,6 +15,7 @@ public class MagicPlayer : Player
     public UIManager _uiManager;
     public GameObject playerbody;
     public NetworkPlayer networkPlayer;
+    public int maxDistanceFromTHeOthers = 50;
 
 
     private void Start()
@@ -71,14 +72,11 @@ public class MagicPlayer : Player
         
     }
 
+    
+
 
 
     //metodi Interfaccia
-    public bool IsNearTeamMembers()
-    {
-        return true;
-    }
-
 
     public override void OpenDialogWindowToSeeArtifactsInAR(MagicItemSO item)
     {
@@ -95,4 +93,20 @@ public class MagicPlayer : Player
         playerbody.SetActive(false);
     }
 
+    public override bool IsCloseToTeamMembers()
+    {
+        bool isNear = false;
+
+        foreach (NetworkPlayer nt in FindObjectsOfType<NetworkPlayer>())
+        {
+            if (!nt.isLocalPlayer && Vector3.Distance(this.transform.position, nt.transform.position) < maxDistanceFromTHeOthers)
+            {
+                isNear = true;
+            }
+        
+        }
+
+        return isNear;
+        
+    }
 }

@@ -17,34 +17,21 @@ public class MagicInventory : Inventory
     }
     
     public int AddItemToInventory(MagicItemSO item, MagicItem magicItem)
-    {
-
-        
-        //magicItem.itemGO = item.prefab;
-
+    {       
 
         int returnedAmount = 1;
         if (item.isStackable)
         {
 
-            //bool itemAlreadyInInventory = false;
             foreach (MagicItemSO MagicItem in ItemAssets.Instance.magicInventorySO.items)
             {
                 if ((int)MagicItem.itemType == (int) magicItem.itemType)
                 {
                     Debug.Log("entrato");
-                    MagicItem.prefab.GetComponent<Item>().amount++;
-                    //itemAlreadyInInventory = true;
-                    //Debug.Log(Item.amount);
+                    MagicItem.prefab.GetComponent<Item>().amount++;                  
                     returnedAmount = MagicItem.prefab.GetComponent<Item>().amount;
                 }
             }
-
-            //if (!itemAlreadyInInventory)
-            //{
-            //    itemList.Add(item);
-
-            //}
         }
 
         else

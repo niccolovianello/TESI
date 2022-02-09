@@ -68,10 +68,7 @@ namespace MirrorBasics
                 UILobby.istance.SpawnPlayerUIPrefab(this);
 
             }
-
-            
-
-            
+           
         }
 
         private void OnDestroy()
@@ -103,16 +100,16 @@ namespace MirrorBasics
         }
 
         [Command]
-        public void SendWhiteMagic(GameObject target, int whiteMagicToSend)
+        public void CmdSendWhiteMagic(GameObject target, int whiteMagicToSend)
         {
             Debug.Log("Wiseman manda magia bianca");
             NetworkIdentity opponentIdentity = target.GetComponent<NetworkIdentity>();
-            TargetReceiveWhiteMagic(opponentIdentity.connectionToClient, whiteMagicToSend);
+            RpcTargetReceiveWhiteMagic(opponentIdentity.connectionToClient, whiteMagicToSend);
         }
 
 
         [TargetRpc]
-        public void TargetReceiveWhiteMagic(NetworkConnection target, int whiteMagicReceived)
+        public void RpcTargetReceiveWhiteMagic(NetworkConnection target, int whiteMagicReceived)
         {
             MagicPlayer magicPlayer = FindObjectOfType<MagicPlayer>();
             
@@ -128,6 +125,31 @@ namespace MirrorBasics
                 Debug.Log(hunter);
                 hunter.IncrementWhiteEnergy(whiteMagicReceived);
             }
+        }
+
+
+        [Command]
+        public void CmdSendGem()
+        {
+
+            Debug.Log("Send Gem");
+            RpcReceiveGem();
+        }
+
+
+        [ClientRpc]
+        public void RpcReceiveGem()
+        {
+            MagicPlayer magicPlayer = FindObjectOfType<MagicPlayer>();
+
+            if (magicPlayer is Wiseman)
+            {
+                Wiseman wiseman = magicPlayer.GetComponent<Wiseman>();
+                Debug.Log("Wiseman riceve gemma");
+                wiseman.IncrementGems();
+            }
+            
+            
         }
     }
 }
