@@ -45,7 +45,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.95284915
-  m_Center: {x: 0, y: 2.461136, z: 0}
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!114 &8604268565583015658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +67,8 @@ MonoBehaviour:
   itemType: 0
   itemTypePlayer: 0
   idObjectCode: 9
+  distanceWarning: {fileID: 0}
+  distanceWarningCanvas: {fileID: 0}
 --- !u!1001 &1313779563992728054
 PrefabInstance:
   m_ObjectHideFlags: 0

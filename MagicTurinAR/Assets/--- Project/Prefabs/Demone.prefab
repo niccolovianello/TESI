@@ -1181,7 +1181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8559927149924817565}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: -1.59, z: 5.46}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 3729755147244491645}
@@ -1223,6 +1223,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   life: {fileID: 0}
+  runSpeed: 0
+  AR_Player: {fileID: 0}
+  dangerDistance: 0
+  attackDistance: 0
+  attackPoint: {fileID: 0}
+  attackRadius: 0
+  viewAngle: 0
+  soul: {fileID: 0}
+  layers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!136 &5706175812331965034
 CapsuleCollider:
   m_ObjectHideFlags: 0

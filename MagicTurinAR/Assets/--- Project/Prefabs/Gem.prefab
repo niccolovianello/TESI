@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 8.26}
+  m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 12.003, y: 6.9844}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2854450608857767470
@@ -146,7 +146,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.217528
-  m_Center: {x: -0.00000011920929, y: 2.9523592, z: 0}
+  m_Center: {x: -0.00000011920929, y: 0, z: 0}
 --- !u!114 &1277612673809504535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,9 +159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9380ce1c04024583b4ad084a350ca011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderRadius: 3
-  colliderCenter: {x: 0, y: 0, z: 0}
-  colliderItem: {fileID: 0}
   uiInventory: {fileID: 0}
   player: {fileID: 0}
   itemGO: {fileID: 0}
@@ -171,6 +168,8 @@ MonoBehaviour:
   itemType: 3
   itemTypePlayer: 0
   idObjectCode: 1000
+  distanceWarning: {fileID: 0}
+  distanceWarningCanvas: {fileID: 0}
 --- !u!1 &8872300721585069014
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9263b14d076414287a28eb0003253550, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9263b14d076414287a28eb0003253550, type: 3}
       propertyPath: m_LocalPosition.z

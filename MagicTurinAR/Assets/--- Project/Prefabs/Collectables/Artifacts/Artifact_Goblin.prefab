@@ -67,6 +67,8 @@ MonoBehaviour:
   itemType: 0
   itemTypePlayer: 0
   idObjectCode: 6
+  distanceWarning: {fileID: 0}
+  distanceWarningCanvas: {fileID: 0}
 --- !u!1001 &8270834495256568810
 PrefabInstance:
   m_ObjectHideFlags: 0

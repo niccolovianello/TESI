@@ -43,17 +43,16 @@ public class Spell : MonoBehaviour
     
 
     /*
+    
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.gameObject.CompareTag("Enemy"))
-        {
-            Demon demon = collision.collider.GetComponent<Demon>();
-            demon.Damage(SpellToCast.Damage);
-        }
         // Hit FX (sound, particles, ...)
         //Destroy(gameObject);
+        
+        Destroy(gameObject);
     }
     */
+    
 
     public void Cast(float force, float torque)
     {

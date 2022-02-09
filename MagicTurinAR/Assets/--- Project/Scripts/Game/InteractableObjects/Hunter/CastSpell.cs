@@ -8,8 +8,8 @@ public class CastSpell : MonoBehaviour
     public Spell_ScriptableObject SpellSO;
 
     private float force;
-    
     private float torque;
+    private HealthManager healthManager;
     
     public void Cast(float timer)
     {
@@ -20,6 +20,8 @@ public class CastSpell : MonoBehaviour
         spell.SetSpellToCast(SpellSO);
 
         spell.Cast(force, torque);
+        healthManager = FindObjectOfType<HealthManager>();
+        healthManager.DecreaseHealth(SpellSO.Cost);
     }
     
     

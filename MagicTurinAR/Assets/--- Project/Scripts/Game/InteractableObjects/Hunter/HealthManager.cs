@@ -12,9 +12,13 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private float maxHealth;
     private float currentHealth;
 
-    public float CurrentHealth => currentHealth;
-    
-    
+    public float CurrentHealth
+    {
+        get => currentHealth;
+        set => currentHealth = value;
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +32,19 @@ public class HealthManager : MonoBehaviour
         slider.value = currentHealth;
     }
 
-    public void DecreaseHealth()
+    public void DecreaseHealth(float damage)
     {
-        currentHealth -= 10;
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            // esci dalla missione
+            // noob
+        }
+    }
+    
+    public void IncreaseHealth(float increment)
+    {
+        currentHealth += increment;
     }
 }

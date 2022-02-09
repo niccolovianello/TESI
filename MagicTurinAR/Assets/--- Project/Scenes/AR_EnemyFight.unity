@@ -350,7 +350,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   fillImage: {fileID: 1091444249}
-  requiredHoldTime: 2
+  requiredHoldTime: 1
 --- !u!114 &619088311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -958,7 +958,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   fillImage: {fileID: 1091444249}
-  requiredHoldTime: 2
+  requiredHoldTime: 1
 --- !u!114 &1838787216
 MonoBehaviour:
   m_ObjectHideFlags: 0

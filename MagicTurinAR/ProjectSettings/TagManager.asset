@@ -7,7 +7,7 @@ TagManager:
   - Enemy
   - External Camera
   - Spawn Point
-  - EnemyHand
+  - Spell
   layers:
   - Default
   - TransparentFX

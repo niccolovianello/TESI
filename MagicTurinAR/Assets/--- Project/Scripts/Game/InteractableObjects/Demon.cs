@@ -91,8 +91,12 @@ public class Demon : Enemy
     public void Damage(float damage)
     {
         currentHealth -= damage;
-        
-        if (currentHealth <= 0) StartCoroutine(DeathClip());
+
+        if (currentHealth <= 0)
+        {
+            GetComponent<Collider>().enabled = false;
+            StartCoroutine(DeathClip());
+        }
         else StartCoroutine(HitClip());
     }
 
@@ -157,8 +161,9 @@ public class Demon : Enemy
 
         foreach (Collider collider in colliders)
         {
-            collider.GetComponent<HealthManager>().DecreaseHealth();
+            collider.GetComponent<HealthManager>().DecreaseHealth(Random.Range(7f, 13f));
         }
+        
         yield return new WaitForSeconds(3f);
     }
 
