@@ -1,38 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(HealthManager))]
 public class Hunter : MagicPlayer
 {
-    [SerializeField] private int whitePower = 0;
-    [SerializeField] private int whiteMagicForSpecialAttack = 50;
 
-    [SerializeField] private float maxHealth;
+    [SerializeField] private HealthManager healthManager;
 
-    private float currentHealth;
-
-
-    public float CurrentHealth => currentHealth;
-
-    public void DecreaseHealth()
+    private void Awake()
     {
-        currentHealth -= 10;
+        healthManager = GetComponent<HealthManager>();
     }
 
-    public void DecreaseWhiteMagicPower()
+    public void DecreaseHealth(float damage)
     {
-        whitePower -= whiteMagicForSpecialAttack;
-        
+        healthManager.CurrentHealth -= damage;
     }
-    
+
     // metodi player
 
-    public void IncrementWhiteEnergy(int increment)
+    public void IncrementWhiteEnergy(float increment)
     {
-        whitePower += increment;
+        healthManager.IncreaseHealth(increment);
 
-        if (whitePower > 100) whitePower = 100;
+        if (healthManager.CurrentHealth > 100) healthManager.CurrentHealth = 100;
         
-        Debug.Log("Hunter:" + whitePower);
+        Debug.Log("Hunter:" + healthManager.CurrentHealth);
     }
+    
 }
