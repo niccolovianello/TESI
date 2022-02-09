@@ -53,7 +53,7 @@ public abstract class ItemFactory : Singleton<ItemFactory>
         float z = player.transform.position.z + GenerateRange();
 
         GameObject itemToIstantiate = Instantiate(itemPrefab, new Vector3(x, y, z), Quaternion.identity);
-        //itemToIstantiate.transform.parent = parentObjectsFactory.transform;
+        itemToIstantiate.transform.parent = parentObjectsFactory.transform;
 
         aliveItems.Add(itemToIstantiate.GetComponent<Item>());
     }

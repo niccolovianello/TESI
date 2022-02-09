@@ -140,7 +140,9 @@ public class UIInventory : MonoBehaviour
                 {
                     item.prefab.GetComponent<MagicItem>().amount -= nfragmet;
                     nt.CmdSendWhiteMagic(touchedObject, whiteMagicToSend * nfragmet);
-                    textGems.text = (System.Int32.Parse(textGems.text) - nfragmet).ToString();
+                    textWhiteFragment.text = item.prefab.GetComponent<MagicItem>().amount.ToString();
+                    textWhiteMagicToSend.text = "0";
+                    Debug.Log(item.prefab.GetComponent<MagicItem>().amount);
                     break;
                 }
                 else
