@@ -8898,7 +8898,7 @@ MonoBehaviour:
   textWhiteMagicToSend: {fileID: 235861678}
   windowToAR: {fileID: 1118492986}
   wndowToSendWhiteMagic: {fileID: 1132131153}
-  confirmSendWhiteMagic: {fileID: 1846784623}
+  confirmSendWhiteMagic: {fileID: 1921078701}
   itemToSeeInAr: {fileID: 0}
   sceneArtifactAR: AR_LookAtItem
   typePlayerUI: 1

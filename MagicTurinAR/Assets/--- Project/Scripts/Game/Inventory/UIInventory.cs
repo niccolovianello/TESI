@@ -7,7 +7,6 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using MirrorBasics;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
-using UnityEditor.Events;
 
 public class UIInventory : MonoBehaviour
 {
@@ -49,6 +48,7 @@ public class UIInventory : MonoBehaviour
 
         inventory.OnItemListChanged += Inventory_OnItemListChanged;
         RefreshItems();
+
 
     }
 
@@ -119,11 +119,12 @@ public class UIInventory : MonoBehaviour
     {
         Debug.Log("inizia magia");
         wndowToSendWhiteMagic.gameObject.SetActive(true);
-
         confirmSendWhiteMagic.onClick.RemoveAllListeners();
 
-        confirmSendWhiteMagic.onClick.AddListener(delegate { SendWhiteMagic(nt, touchedObject, whiteMagicToSend); });
-           
+        confirmSendWhiteMagic.onClick.AddListener(() => SendWhiteMagic(nt, touchedObject, whiteMagicToSend));
+        Debug.Log("Dopo il listener");
+
+
     }
 
     public void SendWhiteMagic(NetworkPlayer nt, GameObject touchedObject, int whiteMagicToSend)

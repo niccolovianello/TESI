@@ -43,7 +43,7 @@ public class Wiseman : MagicPlayer
                     GameObject touchedObject = hit.transform.gameObject;
                     MagicPlayer touchedPlayer = touchedObject.GetComponent<MagicPlayer>();
 
-                    if (touchedObject.tag == "Player" && !(touchedPlayer is Wiseman))
+                    if (touchedObject.tag == "Player" && !(touchedPlayer is Wiseman)) 
                     {
                         Debug.Log(this);
                         uiInventory.OpenWindowToSendWhiteMagic(networkPlayer, touchedObject, whiteMagicToSend);
