@@ -9,8 +9,8 @@ public class ProceduralNumberGenerator
     public static int GetNextNumber()
     {
         string currentNum = key.Substring(currentPosition++ % key.Length, 1);
-        return int.Parse(currentNum); // se vogliamo riprodurre sempre lo stesso labirinto
+        //return int.Parse(currentNum); // se vogliamo riprodurre sempre lo stesso labirinto
 
-        //return Random.Range(1, 5);
+        return Random.Range(1, 5);
     }
 }
