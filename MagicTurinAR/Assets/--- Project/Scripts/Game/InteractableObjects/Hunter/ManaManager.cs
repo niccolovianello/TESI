@@ -1,17 +1,14 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ManaManager : MonoBehaviour
 {
-    // [SerializeField] private Hunter hunter;
     [SerializeField] private Slider slider;
     [SerializeField] private float maxMana;
+    
     private float currentMana;
 
-    public float CurrentHealth
+    public float CurrentMana
     {
         get => currentMana;
         set => currentMana = value;
@@ -31,16 +28,9 @@ public class ManaManager : MonoBehaviour
         slider.value = currentMana;
     }
 
-    public void DecreaseMana(float damage)
+    public void DecreaseMana(float cost)
     {
-        currentMana -= damage;
-
-        if (currentMana <= 0)
-        {
-            // TODO
-            // esci dalla missione
-            // noob
-        }
+        currentMana -= cost;
     }
     
     public void IncreaseMana(float increment)
