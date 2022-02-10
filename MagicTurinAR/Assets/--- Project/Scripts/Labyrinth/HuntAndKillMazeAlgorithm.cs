@@ -51,7 +51,7 @@ public class HuntAndKillMazeAlgorithm : MazeAlgorithm
                 currentRow++;
 
             }
-            else if (direction == 3 && CellIsAvailable(currentRow, currentColumn+1))
+            else if (direction == 3 && CellIsAvailable(currentRow, currentColumn +1))
             {
                 //east
                 DestroyWallIfExists(mazeCells[currentRow, currentColumn].eastWall); 
@@ -59,7 +59,7 @@ public class HuntAndKillMazeAlgorithm : MazeAlgorithm
                 currentColumn++;
 
             }
-            else if (direction == 4 && CellIsAvailable(currentRow + 1, currentColumn))
+            else if (direction == 4 && CellIsAvailable(currentRow , currentColumn -1))
             {
                 //weast
                 DestroyWallIfExists(mazeCells[currentRow, currentColumn].weastWall); // overkill perchè si creano solo south wall e eastern wall
@@ -109,7 +109,7 @@ public class HuntAndKillMazeAlgorithm : MazeAlgorithm
         {
             availableRoutes++;
         }
-        if (column > mazeColumns-1  && !mazeCells[row, column + 1].visited)
+        if (column < mazeColumns-1  && !mazeCells[row, column + 1].visited)
         {
             availableRoutes++;
         }
