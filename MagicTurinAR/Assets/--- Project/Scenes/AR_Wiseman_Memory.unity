@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5400245468795486348, guid: e91d6d15f11cc4ad29bb1a41ae9aa381, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5400245468795486348, guid: e91d6d15f11cc4ad29bb1a41ae9aa381, type: 3}
       propertyPath: m_LocalPosition.x
@@ -180,67 +180,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e91d6d15f11cc4ad29bb1a41ae9aa381, type: 3}
---- !u!1001 &1893589549
+--- !u!1001 &1735446616
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2630159037159778859, guid: 871658d11f94ac54f92bece374e4796d, type: 3}
+    - target: {fileID: 1706157613232448947, guid: 47451f983a965cb40b4c0694eaf106de, type: 3}
+      propertyPath: m_Name
+      value: MemoryCard_MuseoEgizio
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082543071819218697, guid: 47451f983a965cb40b4c0694eaf106de, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 2630159037159778859, guid: 871658d11f94ac54f92bece374e4796d, type: 3}
+    - target: {fileID: 2082543071819218697, guid: 47451f983a965cb40b4c0694eaf106de, type: 3}
       propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082543071819218697, guid: 47451f983a965cb40b4c0694eaf106de, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2630159037159778859, guid: 871658d11f94ac54f92bece374e4796d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2630159037159778859, guid: 871658d11f94ac54f92bece374e4796d, type: 3}
+    - target: {fileID: 2082543071819218697, guid: 47451f983a965cb40b4c0694eaf106de, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2630159037159778859, guid: 871658d11f94ac54f92bece374e4796d, type: 3}
+    - target: {fileID: 2082543071819218697, guid: 47451f983a965cb40b4c0694eaf106de, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2630159037159778859, guid: 871658d11f94ac54f92bece374e4796d, type: 3}
+    - target: {fileID: 2082543071819218697, guid: 47451f983a965cb40b4c0694eaf106de, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2630159037159778859, guid: 871658d11f94ac54f92bece374e4796d, type: 3}
+    - target: {fileID: 2082543071819218697, guid: 47451f983a965cb40b4c0694eaf106de, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2630159037159778859, guid: 871658d11f94ac54f92bece374e4796d, type: 3}
+    - target: {fileID: 2082543071819218697, guid: 47451f983a965cb40b4c0694eaf106de, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2630159037159778859, guid: 871658d11f94ac54f92bece374e4796d, type: 3}
+    - target: {fileID: 2082543071819218697, guid: 47451f983a965cb40b4c0694eaf106de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2630159037159778859, guid: 871658d11f94ac54f92bece374e4796d, type: 3}
+    - target: {fileID: 2082543071819218697, guid: 47451f983a965cb40b4c0694eaf106de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2630159037159778859, guid: 871658d11f94ac54f92bece374e4796d, type: 3}
+    - target: {fileID: 2082543071819218697, guid: 47451f983a965cb40b4c0694eaf106de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4613239290581967016, guid: 871658d11f94ac54f92bece374e4796d, type: 3}
-      propertyPath: m_Name
-      value: tessera
-      objectReference: {fileID: 0}
-    - target: {fileID: 8372313372352327889, guid: 871658d11f94ac54f92bece374e4796d, type: 3}
-      propertyPath: m_PlayAutomatically
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 871658d11f94ac54f92bece374e4796d, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 47451f983a965cb40b4c0694eaf106de, type: 3}
 --- !u!1 &2007077862
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,5 +328,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
