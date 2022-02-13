@@ -20,6 +20,7 @@ public class MemoryCard : MonoBehaviour
 
     private void OnMouseDown()
     {
-        animation.Play();
+        animation.PlayQueued("Scoprire", QueueMode.PlayNow);
+        animation.PlayQueued("Coprire", QueueMode.CompleteOthers);
     }
 }
