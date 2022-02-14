@@ -99,6 +99,11 @@ public class MagicItem : Item
                                             Destroy(gameObject);
                                             
                                         }
+                                        else if (!magicPlayer.IsCloseToTeamMembers())
+                                        {
+                                            Debug.Log("You are too far from your team mates!");
+                                        }
+
                                         break;
 
                                     }
@@ -111,7 +116,12 @@ public class MagicItem : Item
                                             Debug.Log(amountToPass);
                                             uiInventory.UpdateWhiteFragmentCount(amountToPass);
                                             Destroy(gameObject);
-                                        }                                     
+                                        }
+                                        else if (!magicPlayer.IsCloseToTeamMembers())
+                                        {
+                                            Debug.Log("You are too far from your team mates!");
+                                        }
+
                                         break;
                                     }
 
@@ -126,13 +136,19 @@ public class MagicItem : Item
                         {
                             //Debug.Log(uiInventory);                          
                             Debug.Log(this.name);
-                            if (miSO.id == this.idObjectCode)
+                            if (miSO.id == this.idObjectCode && magicPlayer.IsCloseToTeamMembers())
                             {
                                 int amountToPass = magicPlayer.inventory.AddItemToInventory(miSO, this);
                                 Debug.Log("Aggiunto a inventario " + this.gameObject.name);
                                 Destroy(gameObject);
                                 break;
                             }
+                            else if (!magicPlayer.IsCloseToTeamMembers())
+                            {
+                                Debug.Log("You are too far from your team mates!");
+                            }
+
+
                         }
                     }
                 }

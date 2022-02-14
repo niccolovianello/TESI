@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97dc4df5abf425b45aa8f628ddc4a8c4, type: 3}
+  m_Name: Missione3
+  m_EditorClassIdentifier: 
+  id: 2
+  playerType: 1
+  sceneName: MazeGame
+  textBeginMission: 'Click "ok" to start the mission! You will have to solve a very
+    intricate maze to discover the coordinates of the next demon''s hideout! '
+  textFinishMission: You solve it! It wasn't easy right? Oh it was? Click "ok" to
+    solve more compex ones!
+  missionCopleted: 0
+  coordinateXExplorerMission: 0
+  coordinateYExplorerMission: 0
+  goalExporerMissionPrefab: {fileID: 0}
