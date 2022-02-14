@@ -32,8 +32,6 @@ public class GameManager : Singleton<GameManager>
     public void DisableMainGame()
     {
         mainGame.SetActive(false);
-
-
     }
     public void EnableMainGame()
     {

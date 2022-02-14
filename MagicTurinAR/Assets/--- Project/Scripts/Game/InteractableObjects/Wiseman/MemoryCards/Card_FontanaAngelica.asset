@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03fcb1980e2fdae47bdb983e5ccfc2ce, type: 3}
   m_Name: Card_FontanaAngelica
   m_EditorClassIdentifier: 
-  id: 8
+  id: 1
+  card: {fileID: 6779420373083153192, guid: 871658d11f94ac54f92bece374e4796d, type: 3}

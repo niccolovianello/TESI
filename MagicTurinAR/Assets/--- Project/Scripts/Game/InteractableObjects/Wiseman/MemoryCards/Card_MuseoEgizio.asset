@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03fcb1980e2fdae47bdb983e5ccfc2ce, type: 3}
   m_Name: Card_MuseoEgizio
   m_EditorClassIdentifier: 
-  id: 5
+  id: 4
+  card: {fileID: 8224739047217630129, guid: 47451f983a965cb40b4c0694eaf106de, type: 3}

@@ -15,7 +15,7 @@ public class MemoryCard : MonoBehaviour
         collider = GetComponent<BoxCollider>();
         collider.isTrigger = true;
 
-        animation = GetComponent<Animation>();
+        animation = GetComponentInChildren<Animation>();
     }
 
     private void OnMouseDown()
@@ -23,4 +23,6 @@ public class MemoryCard : MonoBehaviour
         animation.PlayQueued("Scoprire", QueueMode.PlayNow);
         animation.PlayQueued("Coprire", QueueMode.CompleteOthers);
     }
+
+    
 }

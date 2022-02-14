@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03fcb1980e2fdae47bdb983e5ccfc2ce, type: 3}
   m_Name: "Card_Rond\xF2DellaForca"
   m_EditorClassIdentifier: 
-  id: 9
+  id: 7
+  card: {fileID: 5667397386647332640, guid: b6e755dbd662a86458761216f3800290, type: 3}

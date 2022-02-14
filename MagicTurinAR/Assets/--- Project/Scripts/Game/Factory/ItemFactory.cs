@@ -49,7 +49,7 @@ public abstract class ItemFactory : Singleton<ItemFactory>
         //float z = player.transform.position.z + GenerateRange();
         
         float x = player.transform.position.x + GenerateRange();
-        float y = player.transform.position.y;
+        float y = player.transform.position.y + 2f;
         float z = player.transform.position.z + GenerateRange();
 
         GameObject itemToIstantiate = Instantiate(itemPrefab, new Vector3(x, y, z), Quaternion.identity);

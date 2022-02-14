@@ -6,4 +6,6 @@ using UnityEngine;
 public class MemoryCard_ScriptableObject : ScriptableObject
 {
     public int id;
+
+    public MemoryCard card;
 }

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03fcb1980e2fdae47bdb983e5ccfc2ce, type: 3}
   m_Name: Card_PortoneDelDiavolo
   m_EditorClassIdentifier: 
-  id: 8
+  id: 6
+  card: {fileID: 4597716428034487693, guid: 329ca634643b9b942beaaf75066f33f1, type: 3}
