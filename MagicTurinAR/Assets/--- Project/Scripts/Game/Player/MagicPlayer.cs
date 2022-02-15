@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static MagicItemSO;
-using MirrorBasics;
+using UnityEngine.UI;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
 public class MagicPlayer : Player
@@ -17,8 +18,21 @@ public class MagicPlayer : Player
     public NetworkPlayer networkPlayer;
     public int maxDistanceFromTHeOthers = 50;
 
+    public Slider manaBar;
+    
+    public ManaManager manaManager;
+    
+    public float maxMana = 100;
+    public float currentMana;
 
-    private void Start()
+    public float CurrentMana
+    {
+        get => currentMana;
+        set => currentMana = value;
+    }
+    
+    
+    private void Awake()
     {
         NetworkPlayer[] npls = FindObjectsOfType<NetworkPlayer>();
         foreach (NetworkPlayer nt in npls)
@@ -28,8 +42,10 @@ public class MagicPlayer : Player
                 networkPlayer = nt;
             }
         }
+        
+        manaBar = GameObject.Find("ManaBar").GetComponent<Slider>();
     }
-
+    
     public void SetUIManager(UIManager uiManager)
     {
         _uiManager = uiManager;
@@ -37,7 +53,7 @@ public class MagicPlayer : Player
 
     public void SetPlayerBody(GameObject _playerbody)
     {
-        this.playerbody = _playerbody;
+        playerbody = _playerbody;
     }
 
     public void InitializeInventory()
@@ -47,8 +63,6 @@ public class MagicPlayer : Player
         inventory = new MagicInventory(ClickOnItemInInventory);
         uiInventory.SetInventory(inventory);
 
-
-       
     }
 
     public void ClickOnItemInInventory(MagicItemSO item)
