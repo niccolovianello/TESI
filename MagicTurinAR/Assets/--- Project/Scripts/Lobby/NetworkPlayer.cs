@@ -164,6 +164,7 @@ namespace MirrorBasics
         public void RcpBeginNextMission()
         {
             MissionsManager MM = FindObjectOfType<MissionsManager>();
+            MM.ChangeLevel();
             MM.StartMission();
         }
     }

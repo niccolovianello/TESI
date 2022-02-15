@@ -18,6 +18,7 @@ public class TargetExplorerScript : MonoBehaviour
         targetCollider = GetComponent<Collider>();
         missionManager = FindObjectOfType<MissionsManager>();
         NotRenderTargetExplorer();
+        
     }
 
     private void Update()
@@ -27,7 +28,7 @@ public class TargetExplorerScript : MonoBehaviour
             rendered = true;
             RenderTargetExplorer();
         }
-        else if (Vector3.Distance(this.gameObject.transform.position, magicPlayer.gameObject.transform.position) < distanceToEnableRender && rendered == true)
+        else if (Vector3.Distance(this.gameObject.transform.position, magicPlayer.gameObject.transform.position) > distanceToEnableRender && rendered == true)
         {
             rendered = false;
             NotRenderTargetExplorer();

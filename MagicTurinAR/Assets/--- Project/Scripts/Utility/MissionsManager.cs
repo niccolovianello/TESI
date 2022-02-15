@@ -28,8 +28,8 @@ public class MissionsManager : MonoBehaviour
     public TMP_Text textWndowStartLevel;
 
     [Header("ExplorerPrefabs")]
-    public GameObject areaTargetExplorerPrefab;
-    public GameObject targetExplorerPrefab;
+    private GameObject areaTargetExplorerPrefab;
+    private GameObject targetExplorerPrefab;
 
 
     private void Start()
@@ -45,6 +45,7 @@ public class MissionsManager : MonoBehaviour
             }
         }
         magicPlayer = networkPlayer.GetComponent<MagicPlayer>();
+        StartMission();
     }
     public void ChangeLevel()
     {
@@ -56,13 +57,14 @@ public class MissionsManager : MonoBehaviour
 
     public void StartMission()
     {
-        ChangeLevel();
+       
 
         switch (currentMission.playerType)
         {
             case MissionSO.PlayerType.Explorer:
                 if (magicPlayer is Explorer)
                 {
+                    Debug.Log("StartMission!");
                     OpenStartMissionWindow();
                     textWndowStartLevel.text = currentMission.textBeginMission;
                     
@@ -71,6 +73,7 @@ public class MissionsManager : MonoBehaviour
             case MissionSO.PlayerType.Wiseman:
                 if (magicPlayer is Wiseman)
                 {
+                    Debug.Log("StartMission!");
                     OpenStartMissionWindow();
                     textWndowStartLevel.text = currentMission.textBeginMission;
                 }
@@ -78,6 +81,7 @@ public class MissionsManager : MonoBehaviour
             case MissionSO.PlayerType.Hunter:
                 if (magicPlayer is Hunter)
                 {
+                    Debug.Log("StartMission!");
                     OpenStartMissionWindow();
                     textWndowStartLevel.text = currentMission.textBeginMission;
                 }
@@ -95,9 +99,11 @@ public class MissionsManager : MonoBehaviour
                 if (magicPlayer is Explorer)
                 {
                     Vector3 coordinateAreaTarget = new Vector3(currentMission.coordinateXExplorerMissionArea, 0, currentMission.coordinateZExplorerMissionArea);
-                    Vector3 coordinateTarget = new Vector3(currentMission.coordinateXExplorerMission, 0, currentMission.coordinateZExplorerMission);
-                    areaTargetExplorerPrefab = Instantiate(currentMission.goalExporerMissionPrefab, coordinateAreaTarget, Quaternion.identity);
-                    targetExplorerPrefab = Instantiate(currentMission.goalExporerMissionPrefab, coordinateTarget, Quaternion.identity);
+                    Vector3 coordinateTarget = new Vector3(currentMission.coordinateXExplorerMission, 1.5f, currentMission.coordinateZExplorerMission);
+                    areaTargetExplorerPrefab = Instantiate(currentMission.goalExplorerMissionAreaPrefab, coordinateAreaTarget, Quaternion.identity);
+                    targetExplorerPrefab = Instantiate(currentMission.goalExplorerMissionPrefab, coordinateTarget, Quaternion.identity);
+
+                    Debug.Log(targetExplorerPrefab.transform.position);
                 }
                 break;
             case MissionSO.PlayerType.Wiseman:
