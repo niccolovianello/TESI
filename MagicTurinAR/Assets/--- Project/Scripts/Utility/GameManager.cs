@@ -58,7 +58,6 @@ public class GameManager : Singleton<GameManager>
                
                 networkPlayerCamera = player.GetComponentInChildren<Camera>();
                 audioListener = player.GetComponentInChildren<AudioListener>();
-                //networkPlayer.GetComponent<NetworkTransform>().clientAuthority = true;
                 playerEnterInGameEvent.Invoke();
                 
                 break;

@@ -18,11 +18,20 @@ public class MissionSO : ScriptableObject
     public string sceneName;
     public string textBeginMission;
     public string textFinishMission;
-    public bool missionCopleted;
-    
+    public bool missionCompleted;
+
+
+    [Header("TargetAreaInfo")]
+
+    public float coordinateXExplorerMissionArea;
+    public float coordinateZExplorerMissionArea;
+    public GameObject goalExporerMissionAreaPrefab;
+
+    [Header("TargetInfo")]
     public float coordinateXExplorerMission;
-    public float coordinateYExplorerMission;
+    public float coordinateZExplorerMission;
     public GameObject goalExporerMissionPrefab;
+  
 
 
 

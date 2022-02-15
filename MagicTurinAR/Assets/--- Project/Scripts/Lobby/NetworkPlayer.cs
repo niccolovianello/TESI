@@ -151,5 +151,20 @@ namespace MirrorBasics
             
             
         }
+
+        [Command]
+        public void CmdBeginNextMission()
+        {
+
+            RcpBeginNextMission();
+        }
+
+
+        [ClientRpc]
+        public void RcpBeginNextMission()
+        {
+            MissionsManager MM = FindObjectOfType<MissionsManager>();
+            MM.StartMission();
+        }
     }
 }
