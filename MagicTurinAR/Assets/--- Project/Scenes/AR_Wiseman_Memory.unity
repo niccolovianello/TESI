@@ -272,15 +272,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cards:
-  - {fileID: 11400000, guid: 8b98986fc13397e4d8a908404232cfb1, type: 2}
-  - {fileID: 11400000, guid: 6adb66dd8f78b2847b252306c64bb335, type: 2}
-  - {fileID: 11400000, guid: b4607085df018c04fb44fa7e0d1663c6, type: 2}
-  - {fileID: 11400000, guid: 348d28cc8bf2f254786ba01ad9a17b4e, type: 2}
-  - {fileID: 11400000, guid: 9a8403c9d659f0f4dace6dfd2f2dead5, type: 2}
-  - {fileID: 11400000, guid: 8585f0fe81a6f0248ab6619780166d2c, type: 2}
-  - {fileID: 11400000, guid: 8691ef0f31de8ea49875218cf40a5114, type: 2}
-  - {fileID: 11400000, guid: 3da9d91065803904a9df20ad938c17bb, type: 2}
-  - {fileID: 11400000, guid: c3f00c68c96411f47825d2915a154897, type: 2}
+  - {fileID: 6779420373083153192, guid: 871658d11f94ac54f92bece374e4796d, type: 3}
+  - {fileID: 4789455413633745296, guid: e9793bb0ee6a0ed41bbfc0e6081520ff, type: 3}
+  - {fileID: 5327212085007129214, guid: f66b9b0e7ebd71e4c838a4f0568d595b, type: 3}
+  - {fileID: 8224739047217630129, guid: 47451f983a965cb40b4c0694eaf106de, type: 3}
+  - {fileID: 4733874946814675772, guid: e8bd6769316b675459aca1fcd058fafa, type: 3}
+  - {fileID: 4597716428034487693, guid: 329ca634643b9b942beaaf75066f33f1, type: 3}
+  - {fileID: 5667397386647332640, guid: b6e755dbd662a86458761216f3800290, type: 3}
+  - {fileID: 5126117271349023368, guid: 414a9626f6c5fce4dac706103fc8dd8b, type: 3}
+  - {fileID: 1709549207099218507, guid: 5dc1c0b184bbf8b4fba459c9513878b5, type: 3}
 --- !u!1 &300239156
 GameObject:
   m_ObjectHideFlags: 0
