@@ -1,12 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Mirror;
-using System;
 
 public class Wiseman : MagicPlayer
 {
-    [SerializeField] private int whiteMagicToSend = 25;
+    [SerializeField] private float whiteMagicToSend = 25f;
+
+    private void Start()
+    {
+        Destroy(manaBar.gameObject);
+    }
+
     private void Update()
     {
         //if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
@@ -47,11 +49,9 @@ public class Wiseman : MagicPlayer
                     {
                         Debug.Log(this);
                         uiInventory.OpenWindowToSendWhiteMagic(networkPlayer, touchedObject, whiteMagicToSend);
-                       
                     }
                 }
             }
-
         }
     }
 

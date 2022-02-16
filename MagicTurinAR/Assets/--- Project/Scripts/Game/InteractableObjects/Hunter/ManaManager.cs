@@ -3,38 +3,27 @@ using UnityEngine.UI;
 
 public class ManaManager : MonoBehaviour
 {
-    [SerializeField] private Slider slider;
-    [SerializeField] private float maxMana;
+    private Slider slider;
+    private float maxMana;
     
     private float currentMana;
+    
 
-    public float CurrentMana
+    public float MaxMana
     {
-        get => currentMana;
-        set => currentMana = value;
+        set => maxMana = value;
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        currentMana = maxMana;
-        slider.maxValue = maxMana;
+        slider = GameObject.Find("ManaBar").GetComponent<Slider>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetMana(float mana)
     {
+        currentMana = mana;
         slider.value = currentMana;
-    }
-
-    public void DecreaseMana(float cost)
-    {
-        currentMana -= cost;
-    }
-    
-    public void IncreaseMana(float increment)
-    {
-        currentMana += increment;
     }
 }

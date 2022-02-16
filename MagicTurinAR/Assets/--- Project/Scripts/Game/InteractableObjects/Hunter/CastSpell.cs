@@ -12,14 +12,14 @@ public class CastSpell : MonoBehaviour
 
     private float force;
     private float torque;
-    private ManaManager manaManager;
+    private Hunter hunter;
 
 
     public void Cast(float timer)
     {
-        manaManager = FindObjectOfType<ManaManager>();
+        hunter = FindObjectOfType<Hunter>();
 
-        if (manaManager.CurrentMana < SpellSO.Cost)
+        if (hunter.CurrentMana < SpellSO.Cost)
         {
             StartCoroutine(ManaWarning());
         }
@@ -34,7 +34,7 @@ public class CastSpell : MonoBehaviour
 
             spell.Cast(force, torque);
         
-            manaManager.DecreaseMana(SpellSO.Cost);
+            hunter.DecreaseMana(SpellSO.Cost);
         }
     }
     
