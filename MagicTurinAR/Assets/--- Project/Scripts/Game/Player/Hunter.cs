@@ -7,7 +7,7 @@ public class Hunter : MagicPlayer
     private void Start()
     {
         manaManager = GetComponent<ManaManager>();
-        manaManager.MaxMana = maxMana;
+        manaManager.SetMaxMana(maxMana);
         manaManager.SetMana(currentMana);
     }
 

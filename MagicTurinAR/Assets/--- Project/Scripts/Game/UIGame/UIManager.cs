@@ -43,7 +43,6 @@ public class UIManager : MonoBehaviour
             {
                 networkplayer = pl;
             }
-        
         }
 
         switch (networkplayer.TypePlayerEnum)

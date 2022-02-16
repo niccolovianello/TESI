@@ -13,7 +13,7 @@ public class Explorer : MagicPlayer
     private void Start()
     {
         manaManager = GetComponent<ManaManager>();
-        manaManager.MaxMana = maxMana;
+        manaManager.SetMaxMana(maxMana);
     }
 
     private void Update()
