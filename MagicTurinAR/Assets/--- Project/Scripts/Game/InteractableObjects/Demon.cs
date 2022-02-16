@@ -140,6 +140,8 @@ public class Demon : Enemy
         } while (alpha > 0f);
         
         Destroy(gameObject);
+        MissionsManager MM = FindObjectOfType<MissionsManager>();
+        MM.OpenFinishMissionWindow();
     }
 
     private IEnumerator HitClip()

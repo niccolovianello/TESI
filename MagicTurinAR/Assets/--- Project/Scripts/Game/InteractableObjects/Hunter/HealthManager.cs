@@ -25,7 +25,14 @@ public class HealthManager : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("Salute finita.");
+            PlayerDeath();
             // GameManager unloada la scena e torna a GameMain 
         }
+    }
+
+    public void PlayerDeath()
+    {
+        UIFightDemonInterface uiFight = FindObjectOfType<UIFightDemonInterface>();
+        uiFight.PlayerDefeatedByDemon();
     }
 }
