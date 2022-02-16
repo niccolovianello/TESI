@@ -8,7 +8,7 @@ public class MazeGoalScript : MonoBehaviour
     {
         if (other.gameObject.GetComponent<PlayerMazeMovement>())
         {
-            Debug.Log("Hai Vinto!");
+            FindObjectOfType<MissionsManager>().OpenFinishMissionWindow();
         }
     }
     
