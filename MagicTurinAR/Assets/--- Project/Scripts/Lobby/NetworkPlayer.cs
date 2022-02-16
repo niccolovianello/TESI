@@ -22,6 +22,7 @@ namespace MirrorBasics
         FirebaseManager firebaseManager;
         public static NetworkPlayer localPlayer;
         private UILobby UILobby;
+        public GameObject playerBody;
 
 
 
@@ -167,5 +168,17 @@ namespace MirrorBasics
             MM.ChangeLevel();
             MM.StartMission();
         }
+
+        public void RenderPlayerBody()
+        {
+            playerBody.SetActive(true);
+        }
+
+        public void NotRenderPlayerBody()
+        {
+            playerBody.SetActive(false);
+        }
     }
+
+  
 }

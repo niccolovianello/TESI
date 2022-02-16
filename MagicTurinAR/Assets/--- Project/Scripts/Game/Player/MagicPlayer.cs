@@ -14,7 +14,6 @@ public class MagicPlayer : Player
     
     public MagicInventory inventory;
     public UIManager _uiManager;
-    public GameObject playerbody;
     public NetworkPlayer networkPlayer;
     public int maxDistanceFromTHeOthers = 50;
 
@@ -23,7 +22,7 @@ public class MagicPlayer : Player
     public ManaManager manaManager;
     
     public float maxMana = 100;
-    public float currentMana;
+    public float currentMana = 100;
 
     public float CurrentMana
     {
@@ -44,16 +43,12 @@ public class MagicPlayer : Player
         }
         
         manaBar = GameObject.Find("ManaBar").GetComponent<Slider>();
+        //currentMana = maxMana;
     }
     
     public void SetUIManager(UIManager uiManager)
     {
         _uiManager = uiManager;
-    }
-
-    public void SetPlayerBody(GameObject _playerbody)
-    {
-        playerbody = _playerbody;
     }
 
     public void InitializeInventory()
@@ -97,15 +92,7 @@ public class MagicPlayer : Player
         uiInventory.OpenWindowToAr(item);
     }
 
-    public override void RenderPlayerBody()
-    {
-        playerbody.SetActive(true);
-    }
-
-    public override void NotRenderPlayerBody()
-    {
-        playerbody.SetActive(false);
-    }
+  
 
     public override bool IsCloseToTeamMembers()
     {

@@ -8,6 +8,7 @@ public class Hunter : MagicPlayer
     {
         manaManager = GetComponent<ManaManager>();
         manaManager.MaxMana = maxMana;
+        manaManager.SetMana(currentMana);
     }
 
     public void IncreaseMana(float increment)

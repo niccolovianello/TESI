@@ -182,7 +182,7 @@ public class GameManager : Singleton<GameManager>
                 break;
         }
 
-        currentPlayer.playerbody = TransformExtensions.FindObjectsWithTag(networkPlayer.gameObject.transform, "Body")[0];
+        
 
 
     }
@@ -191,12 +191,12 @@ public class GameManager : Singleton<GameManager>
 
     public void NotRenderPlayerBody()
     {
-        currentPlayer.NotRenderPlayerBody();
+        networkPlayer.NotRenderPlayerBody();
     }
 
     public void RenderPlayerBody()
     {
-        currentPlayer.RenderPlayerBody();
+        networkPlayer.RenderPlayerBody();
     }
 
 }

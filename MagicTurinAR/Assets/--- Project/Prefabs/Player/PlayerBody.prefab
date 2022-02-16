@@ -326,7 +326,8 @@ MonoBehaviour:
   audioListener: {fileID: 7329252831735408337}
   TypePlayerIndex: 0
   TypePlayerEnum: 0
-  storeDataScript: {fileID: 0}
+  storeData: {fileID: 0}
+  playerBody: {fileID: 6082783568779403221}
 --- !u!114 &7305670688462521459
 MonoBehaviour:
   m_ObjectHideFlags: 0

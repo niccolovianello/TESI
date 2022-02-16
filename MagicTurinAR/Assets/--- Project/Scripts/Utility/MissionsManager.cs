@@ -111,7 +111,7 @@ public class MissionsManager : MonoBehaviour
                 {
                     SceneManager.LoadSceneAsync(currentMission.sceneName, LoadSceneMode.Additive);
                     gameManager.DisableMainGame();
-                    magicPlayer.NotRenderPlayerBody();
+                    networkPlayer.NotRenderPlayerBody();
                     gameManager.networkPlayerCamera.enabled = false;
                     gameManager.audioListener.enabled = false;
 
@@ -122,7 +122,7 @@ public class MissionsManager : MonoBehaviour
                 {
                     SceneManager.LoadSceneAsync(currentMission.sceneName, LoadSceneMode.Additive);
                     gameManager.DisableMainGame();
-                    magicPlayer.NotRenderPlayerBody();
+                    networkPlayer.NotRenderPlayerBody();
                     gameManager.networkPlayerCamera.enabled = false;
                     gameManager.audioListener.enabled = false;
                 }
@@ -145,7 +145,7 @@ public class MissionsManager : MonoBehaviour
             case MissionSO.PlayerType.Wiseman:
                 if (magicPlayer is Wiseman)
                 {
-                    magicPlayer.RenderPlayerBody();
+                    networkPlayer.RenderPlayerBody();
                     SceneManager.UnloadSceneAsync(currentMission.sceneName);
                     gameManager.networkPlayerCamera.enabled = true;
                     gameManager.audioListener.enabled = true;
@@ -156,7 +156,7 @@ public class MissionsManager : MonoBehaviour
             case MissionSO.PlayerType.Hunter:
                 if (magicPlayer is Hunter)
                 {
-                    magicPlayer.RenderPlayerBody();
+                    networkPlayer.RenderPlayerBody();
                     SceneManager.UnloadSceneAsync(currentMission.sceneName);
                     gameManager.networkPlayerCamera.enabled = true;
                     gameManager.audioListener.enabled = true;
