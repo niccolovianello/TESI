@@ -64,6 +64,19 @@ public class MemoryManager : MonoBehaviour
             {
                 // there is a match!
                 // SFX, VFX...
+
+                /*
+                 
+                 not working!!
+                 
+                foreach (MemoryCard card in cardInstances)
+                {
+                    if (card.CardId == newCard.CardId)
+                    {
+                        cardInstances.Remove(card);
+                    }
+                }
+                 */
                 
                 Debug.Log(cardInstances.Count);
                 Destroy(oldCard.gameObject);

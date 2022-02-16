@@ -4,25 +4,18 @@ using System.Collections.Generic;
 using Mapbox.Map;
 using UnityEngine;
 
-[RequireComponent(typeof(ManaManager))]
 public class Explorer : MagicPlayer
 {
+    public int whitePower = 0;
 
-    private float powerCost = .1f;
-
-    private void Start()
-    {
-        manaManager = GetComponent<ManaManager>();
-        manaManager.MaxMana = maxMana;
-    }
 
     private void Update()
     {
         if (_uiManager.GetPower.activeSelf)
         {
-            if (HasMana())
+            if (HasWhitePower())
             {
-                DecreaseMana(powerCost);
+                ReduceWhitePower();
             }
 
             else
@@ -34,34 +27,22 @@ public class Explorer : MagicPlayer
         }
     }
 
-
-    public bool HasMana()
+    public void ReduceWhitePower()
     {
-        return currentMana > 0;
+        whitePower--;
+    }
+
+    public bool HasWhitePower()
+    {
+        return whitePower > 0;
     }
     
-    public void IncreaseMana(float increment)
+    public void IncrementWhiteEnergy(int increment)
     {
-        currentMana += increment;
-
-        if (currentMana > 100)
-        {
-            currentMana = 100;
-        }
+        whitePower += increment;
         
-        manaManager.SetMana(currentMana);
-    }
-    
-    public void DecreaseMana(float cost)
-    {
-        currentMana -= cost;
-
-        if (currentMana < 0)
-        {
-            currentMana = 0;
-        }
-        
-        manaManager.SetMana(currentMana);
+        if (whitePower > 100) whitePower = 100;
+        Debug.Log("Explorer:" + whitePower);
     }
 
 

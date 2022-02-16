@@ -1,37 +1,29 @@
 using UnityEngine;
 
 [RequireComponent(typeof(ManaManager))]
+[RequireComponent(typeof(HealthManager))]
 public class Hunter : MagicPlayer
 {
 
-    private void Start()
+    [SerializeField] private ManaManager manaManager;
+    [SerializeField] private HealthManager healthManager;
+    
+    private void Awake()
     {
         manaManager = GetComponent<ManaManager>();
-        manaManager.MaxMana = maxMana;
+        healthManager = GetComponent<HealthManager>();
     }
 
-    public void IncreaseMana(float increment)
+    public void IncrementWhiteEnergy(float increment)
     {
-        currentMana += increment;
+        manaManager.IncreaseMana(increment);
 
-        if (currentMana > 100)
+        if (manaManager.CurrentMana > 100)
         {
-            currentMana = 100;
+            manaManager.CurrentMana = 100;
         }
         
-        manaManager.SetMana(currentMana);
-    }
-    
-    public void DecreaseMana(float cost)
-    {
-        currentMana -= cost;
-
-        if (currentMana < 0)
-        {
-            currentMana = 0;
-        }
-        
-        manaManager.SetMana(currentMana);
+        Debug.Log("Hunter:" + manaManager.CurrentMana);
     }
     
 }

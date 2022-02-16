@@ -7,12 +7,15 @@ public abstract class Player : NetworkBehaviour, PlayerInterface
 {
 
     public abstract bool IsCloseToTeamMembers();
+
     
     public abstract void OpenDialogWindowToSeeArtifactsInAR(MagicItemSO item);
-    
+
+
     public void ClickOnItem(Item item) { }
 
     public abstract void RenderPlayerBody();
+
 
     public abstract void NotRenderPlayerBody();
 

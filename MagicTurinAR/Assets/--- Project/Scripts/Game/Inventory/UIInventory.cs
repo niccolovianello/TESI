@@ -115,7 +115,7 @@ public class UIInventory : MonoBehaviour
         windowToAR.gameObject.SetActive(true);
     }
 
-    public void OpenWindowToSendWhiteMagic(NetworkPlayer nt, GameObject touchedObject, float whiteMagicToSend)
+    public void OpenWindowToSendWhiteMagic(NetworkPlayer nt, GameObject touchedObject, int whiteMagicToSend)
     {
         Debug.Log("inizia magia");
         wndowToSendWhiteMagic.gameObject.SetActive(true);
@@ -127,7 +127,7 @@ public class UIInventory : MonoBehaviour
 
     }
 
-    public void SendWhiteMagic(NetworkPlayer nt, GameObject touchedObject, float whiteMagicToSend)
+    public void SendWhiteMagic(NetworkPlayer nt, GameObject touchedObject, int whiteMagicToSend)
     {
         Debug.Log("manda magia");
 

@@ -9,16 +9,17 @@ public class CastSpell : MonoBehaviour
     [SerializeField] private Spell_ScriptableObject SpellSO;
     [SerializeField] private TMP_Text manaWarning;
     
+
     private float force;
     private float torque;
-    private Hunter hunter;
+    private ManaManager manaManager;
 
 
     public void Cast(float timer)
     {
-        hunter = FindObjectOfType<Hunter>();
+        manaManager = FindObjectOfType<ManaManager>();
 
-        if (hunter.CurrentMana < SpellSO.Cost)
+        if (manaManager.CurrentMana < SpellSO.Cost)
         {
             StartCoroutine(ManaWarning());
         }
@@ -33,7 +34,7 @@ public class CastSpell : MonoBehaviour
 
             spell.Cast(force, torque);
         
-            hunter.DecreaseMana(SpellSO.Cost);
+            manaManager.DecreaseMana(SpellSO.Cost);
         }
     }
     

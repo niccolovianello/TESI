@@ -100,7 +100,7 @@ namespace MirrorBasics
         }
 
         [Command]
-        public void CmdSendWhiteMagic(GameObject target, float whiteMagicToSend)
+        public void CmdSendWhiteMagic(GameObject target, int whiteMagicToSend)
         {
             Debug.Log("Wiseman manda magia bianca");
             NetworkIdentity opponentIdentity = target.GetComponent<NetworkIdentity>();
@@ -109,7 +109,7 @@ namespace MirrorBasics
 
 
         [TargetRpc]
-        public void RpcTargetReceiveWhiteMagic(NetworkConnection target, float whiteMagicReceived)
+        public void RpcTargetReceiveWhiteMagic(NetworkConnection target, int whiteMagicReceived)
         {
             MagicPlayer magicPlayer = FindObjectOfType<MagicPlayer>();
             
@@ -117,13 +117,13 @@ namespace MirrorBasics
             {
                 Explorer explorer = magicPlayer.GetComponent<Explorer>();
                 Debug.Log(explorer);
-                explorer.IncreaseMana(whiteMagicReceived);
+                explorer.IncrementWhiteEnergy(whiteMagicReceived);
             }
             if (magicPlayer is Hunter)
             {
                 Hunter hunter = magicPlayer.GetComponent<Hunter>();
                 Debug.Log(hunter);
-                hunter.IncreaseMana(whiteMagicReceived);
+                hunter.IncrementWhiteEnergy(whiteMagicReceived);
             }
         }
 
