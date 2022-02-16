@@ -16,8 +16,8 @@ public class UIFightDemonInterface : MonoBehaviour
     public void RestartFight()
     {
         canvasWindowPlayerDefeat.enabled = false;
-        string currentSceneName = SceneManager.GetActiveScene().name;
+        string currentSceneName = FindObjectOfType<MissionsManager>().currentMission.sceneName;
         SceneManager.UnloadSceneAsync(currentSceneName);
-        SceneManager.LoadSceneAsync(currentSceneName);
+        SceneManager.LoadSceneAsync(currentSceneName, LoadSceneMode.Additive);
     }
 }

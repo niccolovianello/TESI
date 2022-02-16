@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/--- Project/Scenes/MazeGame.unity
     guid: 29160ef5e1ae9e94cac751c96b06f5f1
+  - enabled: 1
+    path: Assets/--- Project/Scenes/AR_EnemyFight.unity
+    guid: ebdf84c5fc428488fa53bc83c02c3c7f
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 989a62b8a14ea41ff9cefbdb6159ee58, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 751faa78e3e9a4741bde9b8ba0058dc7, type: 2}
