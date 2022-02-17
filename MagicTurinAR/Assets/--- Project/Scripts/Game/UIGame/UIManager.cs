@@ -26,9 +26,14 @@ public class UIManager : MonoBehaviour
     public FirebaseManager firebaseManager;
     public StoreData storeData;
 
-    [Header("WindowDestroyGem")]
-    public Canvas windowToDestroyGem;
+    [Header("WindowDestroyGemWiseman")]
+    public Canvas windowToDestroyGemWiseman;
+   
+
+    [Header("WindowDestroyGemHunter")]
+    public Canvas windowToDestroyGemHunter;
     public string sceneToDestroyGemName;
+    
 
 
 
@@ -128,21 +133,44 @@ public class UIManager : MonoBehaviour
         firebaseManager.SaveData(storeData);
     }
 
-    public void OpenWindowToDestroyGem()
+    public void OpenWindowToDestroyGemWiseman()
     {
-        windowToDestroyGem.enabled = true;
+        windowToDestroyGemWiseman.enabled = true;
     }
 
-    public void CloseWindowToDestroyGem()
+    public void CloseWindowToDestroyGemWiseman()
     {
-        windowToDestroyGem.enabled = false;
+        windowToDestroyGemWiseman.enabled = false;
+    }
+
+    public void SendSceneDestroyGem()
+    {
+
+        networkplayer.CmdDestroyGem();
+        CloseWindowToDestroyGemWiseman();
+       
+
+    }
+
+    public void OpenWindowToDestroyGemHunter()
+    {
+        windowToDestroyGemHunter.enabled = true;
+
+    }
+
+    public void CloseWindowToDestroyGemHunter()
+    {
+        windowToDestroyGemHunter.enabled = false;
+
     }
 
     public void OpenSceneDestroyGem()
     {
-
-        networkplayer.CmdDestroyGem(sceneToDestroyGemName);
-       
-
+        CloseWindowToDestroyGemHunter();
+        GameManager gm = FindObjectOfType<GameManager>();
+        SceneManager.LoadSceneAsync(sceneToDestroyGemName, LoadSceneMode.Additive);
+        gm.DisableMainGame();
+        networkplayer.NotRenderPlayerBody();
+        gm.PlayerCameraObject.SetActive(false);
     }
 }
