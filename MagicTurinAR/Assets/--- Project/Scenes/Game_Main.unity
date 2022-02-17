@@ -4783,8 +4783,8 @@ MonoBehaviour:
   player: {fileID: 0}
   firebaseManager: {fileID: 0}
   storeData: {fileID: 0}
-  windowToDestroyGemWiseman: {fileID: 0}
-  windowToDestroyGemHunter: {fileID: 0}
+  windowToDestroyGemWiseman: {fileID: 40218303}
+  windowToDestroyGemHunter: {fileID: 220439280}
   sceneToDestroyGemName: AR_DestroyGem
 --- !u!1 &753049744
 GameObject:
@@ -6668,8 +6668,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Do you want to send a gem to the hunter to destroy it and generate new
-    white magic?
+  m_text: Do you want to refine the gem that wiseman send to you? If you don't do
+    it now tou will lose the gem.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
