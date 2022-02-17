@@ -15,8 +15,8 @@ public class MagicItem : Item
     public ItemTypePlayer itemTypePlayer;
     public int idObjectCode;
 
-    public GameObject distanceWarning;
-    public Canvas distanceWarningCanvas;
+    private GameObject distanceWarning;
+    private Canvas distanceWarningCanvas;
     
     public enum ItemType
     {

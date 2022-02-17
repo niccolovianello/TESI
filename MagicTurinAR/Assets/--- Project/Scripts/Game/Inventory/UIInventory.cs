@@ -204,6 +204,18 @@ public class UIInventory : MonoBehaviour
        textWhiteMagicToSend.text = wm.ToString();
     }
 
+    public void SendGemToHunter()
+    {
+        foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+        {
+            if (np.isLocalPlayer)
+                FindObjectOfType<UIManager>().OpenWindowToDestroyGem();
+
+
+
+        }
+    }
+
 
 
 }

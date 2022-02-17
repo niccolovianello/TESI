@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using MirrorBasics;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -24,8 +25,13 @@ public class UIManager : MonoBehaviour
 
     public FirebaseManager firebaseManager;
     public StoreData storeData;
-    
-    
+
+    [Header("WindowDestroyGem")]
+    public Canvas windowToDestroyGem;
+    public string sceneToDestroyGemName;
+
+
+
     public void Awake()
     {
         //Assert.IsNotNull(menu);
@@ -120,5 +126,25 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("Button Save clicked");
         firebaseManager.SaveData(storeData);
+    }
+
+    public void OpenWindowToDestroyGem()
+    {
+        windowToDestroyGem.enabled = true;
+    }
+
+    public void CloseWindowToDestroyGem()
+    {
+        windowToDestroyGem.enabled = false;
+    }
+
+    public void OpenSceneDestroyGem()
+    {
+        GameManager gm = FindObjectOfType<GameManager>();
+        SceneManager.LoadSceneAsync(sceneToDestroyGemName, LoadSceneMode.Additive);
+        gm.DisableMainGame();
+        networkplayer.NotRenderPlayerBody();
+        gm.PlayerCameraObject.SetActive(false);
+
     }
 }

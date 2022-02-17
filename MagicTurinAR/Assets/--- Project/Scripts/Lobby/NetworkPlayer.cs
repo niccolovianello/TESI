@@ -178,6 +178,25 @@ namespace MirrorBasics
         {
             playerBody.SetActive(false);
         }
+
+        [Command]
+        public void CmdDestroyGem()
+        {
+
+            RpcDestroyGem();
+        }
+
+
+        [ClientRpc]
+        public void RpcDestroyGem()
+        {
+            MagicPlayer mp = FindObjectOfType<MagicPlayer>();
+
+            if (mp is Hunter)
+            {
+                FindObjectOfType<UIManager>().OpenWindowToDestroyGem();
+            }
+        }
     }
 
   

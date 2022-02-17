@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class MazeGoalScript : MonoBehaviour
 {
+    private PlayerMazeMovement mp;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<PlayerMazeMovement>())
         {
+            mp = FindObjectOfType<PlayerMazeMovement>();
+            Destroy(mp.gameObject);            
             FindObjectOfType<MissionsManager>().OpenFinishMissionWindow();
+            Destroy(gameObject);
         }
     }
     

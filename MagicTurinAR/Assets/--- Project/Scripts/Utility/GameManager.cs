@@ -22,9 +22,12 @@ public class GameManager : Singleton<GameManager>
     public AudioListener audioListener;
     public MagicPlayer CurrentPlayer => currentPlayer;
     public GameObject mainGame;
-    private GameObject prefabToShowInAR;
+    public GameObject prefabToShowInAR;   
     UnityEvent playerEnterInGameEvent;
 
+
+
+    public GameObject PlayerCameraObject= null;
 
 
     public GameObject PrefabToShowInAr => prefabToShowInAR;
@@ -58,6 +61,7 @@ public class GameManager : Singleton<GameManager>
                
                 networkPlayerCamera = player.GetComponentInChildren<Camera>();
                 audioListener = player.GetComponentInChildren<AudioListener>();
+                PlayerCameraObject = player.GetComponentInChildren<Camera>().gameObject;
                 playerEnterInGameEvent.Invoke();
                 
                 break;

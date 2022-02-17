@@ -112,9 +112,7 @@ public class MissionsManager : MonoBehaviour
                     SceneManager.LoadSceneAsync(currentMission.sceneName, LoadSceneMode.Additive);
                     gameManager.DisableMainGame();
                     networkPlayer.NotRenderPlayerBody();
-                    gameManager.networkPlayerCamera.enabled = false;
-                    gameManager.audioListener.enabled = false;
-
+                    gameManager.PlayerCameraObject.SetActive(false);
                 }
                 break;
             case MissionSO.PlayerType.Hunter:
@@ -123,8 +121,7 @@ public class MissionsManager : MonoBehaviour
                     SceneManager.LoadSceneAsync(currentMission.sceneName, LoadSceneMode.Additive);
                     gameManager.DisableMainGame();
                     networkPlayer.NotRenderPlayerBody();
-                    gameManager.networkPlayerCamera.enabled = false;
-                    gameManager.audioListener.enabled = false;
+                    gameManager.PlayerCameraObject.SetActive(false);
                 }
                 break;
         }
@@ -147,8 +144,7 @@ public class MissionsManager : MonoBehaviour
                 {
                     networkPlayer.RenderPlayerBody();
                     SceneManager.UnloadSceneAsync(currentMission.sceneName);
-                    gameManager.networkPlayerCamera.enabled = true;
-                    gameManager.audioListener.enabled = true;
+                    gameManager.PlayerCameraObject.SetActive(true);
                     gameManager.EnableMainGame();
 
                 }
@@ -158,8 +154,7 @@ public class MissionsManager : MonoBehaviour
                 {
                     networkPlayer.RenderPlayerBody();
                     SceneManager.UnloadSceneAsync(currentMission.sceneName);
-                    gameManager.networkPlayerCamera.enabled = true;
-                    gameManager.audioListener.enabled = true;
+                    gameManager.PlayerCameraObject.SetActive(true);
                     gameManager.EnableMainGame();
                 }
                 break;

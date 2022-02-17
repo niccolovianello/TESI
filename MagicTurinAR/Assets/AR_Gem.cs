@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using MirrorBasics;
+using NetworkPlayer = MirrorBasics.NetworkPlayer;
+
 
 public class AR_Gem : MonoBehaviour
 {
 
-    [SerializeField] private int attempts;
+    private int attempts;
 
     private void Start()
     {
@@ -15,10 +19,16 @@ public class AR_Gem : MonoBehaviour
     {
         if (attempts == 0)
         {
+            GameManager gameManager = FindObjectOfType<GameManager>();
+            NetworkPlayer networkPlayer = gameManager.networkPlayer;
             // explosion
-            // fx
-            
+            // fx           
+            gameManager.DisableMainGame();
+            networkPlayer.NotRenderPlayerBody();
+            gameManager.PlayerCameraObject.SetActive(false);
+            SceneManager.UnloadSceneAsync("AR_DestroyGem");
             Destroy(gameObject);
+            
         }
     }
 
