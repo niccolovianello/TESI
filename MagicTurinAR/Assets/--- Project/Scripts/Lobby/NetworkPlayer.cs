@@ -180,22 +180,29 @@ namespace MirrorBasics
         }
 
         [Command]
-        public void CmdDestroyGem()
+        public void CmdDestroyGem(string sceneToDestroyGem)
         {
 
-            RpcDestroyGem();
+            RpcDestroyGem(sceneToDestroyGem);
         }
 
 
         [ClientRpc]
-        public void RpcDestroyGem()
+        public void RpcDestroyGem(string sceneToDestroyGem)
         {
             MagicPlayer mp = FindObjectOfType<MagicPlayer>();
 
             if (mp is Hunter)
             {
                 FindObjectOfType<UIManager>().OpenWindowToDestroyGem();
+                GameManager gm = FindObjectOfType<GameManager>();
+                SceneManager.LoadSceneAsync(sceneToDestroyGem, LoadSceneMode.Additive);
+                gm.DisableMainGame();
+                NotRenderPlayerBody();
+                gm.PlayerCameraObject.SetActive(false);
             }
+
+           
         }
     }
 

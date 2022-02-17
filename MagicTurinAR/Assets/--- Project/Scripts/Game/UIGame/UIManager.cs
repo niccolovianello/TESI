@@ -140,11 +140,9 @@ public class UIManager : MonoBehaviour
 
     public void OpenSceneDestroyGem()
     {
-        GameManager gm = FindObjectOfType<GameManager>();
-        SceneManager.LoadSceneAsync(sceneToDestroyGemName, LoadSceneMode.Additive);
-        gm.DisableMainGame();
-        networkplayer.NotRenderPlayerBody();
-        gm.PlayerCameraObject.SetActive(false);
+
+        networkplayer.CmdDestroyGem(sceneToDestroyGemName);
+       
 
     }
 }
