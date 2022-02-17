@@ -19,14 +19,7 @@ public class AR_Gem : MonoBehaviour
     {
         if (attempts == 0)
         {
-            GameManager gameManager = FindObjectOfType<GameManager>();
-            NetworkPlayer networkPlayer = gameManager.networkPlayer;
-            // explosion
-            // fx           
-            gameManager.DisableMainGame();
-            networkPlayer.NotRenderPlayerBody();
-            gameManager.PlayerCameraObject.SetActive(false);
-            SceneManager.UnloadSceneAsync("AR_DestroyGem");
+            FindObjectOfType<UIDestroyGemScript>().OpenBackToGameWindow();
             Destroy(gameObject);
             
         }
