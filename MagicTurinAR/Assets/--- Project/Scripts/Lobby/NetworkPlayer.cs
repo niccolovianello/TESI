@@ -206,7 +206,39 @@ namespace MirrorBasics
 
            
         }
+
+        [Command]
+        public void CmdSendWhiteMagicFromGem(int nfragment)
+        {
+
+            RpcWhiteMagicFromGem(nfragment);
+        }
+
+
+        [ClientRpc]
+        public void RpcWhiteMagicFromGem(int nfragment)
+        {
+
+            MagicPlayer mp = FindObjectOfType<MagicPlayer>();
+
+            if (mp is Wiseman)
+            {
+                foreach (MagicItemSO item in ItemAssets.Instance.magicInventorySO.items)
+                {
+                    if (item.id == 2000 && item.prefab.GetComponent<MagicItem>().amount > 0) // WhiteFragment specific code
+                    {
+                        item.prefab.GetComponent<MagicItem>().amount+=nfragment;
+                        FindObjectOfType<UIInventory>().UpdateWhiteFragmentCount(item.prefab.GetComponent<MagicItem>().amount);
+                        
+
+                    }
+
+
+                }
+            }
+        }
+
     }
 
-  
+
 }

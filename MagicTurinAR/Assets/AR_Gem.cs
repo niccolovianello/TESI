@@ -19,7 +19,7 @@ public class AR_Gem : MonoBehaviour
     {
         if (attempts == 0)
         {
-            FindObjectOfType<UIDestroyGemScript>().OpenBackToGameWindow();
+            FindObjectOfType<UIDestroyGemScript>().OpenBackToGameWindow(3);
             Destroy(gameObject);
             
         }

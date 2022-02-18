@@ -145,8 +145,23 @@ public class UIManager : MonoBehaviour
 
     public void SendSceneDestroyGem()
     {
+        foreach (MagicItemSO item in ItemAssets.Instance.magicInventorySO.items)
+        {
+            if (item.id == 1000 && item.prefab.GetComponent<MagicItem>().amount > 0) // Gem specific code
+            {
+                item.prefab.GetComponent<MagicItem>().amount--;
+                FindObjectOfType<UIInventory>().UpdateGemsCount(item.prefab.GetComponent<MagicItem>().amount);
+                networkplayer.CmdDestroyGem();
 
-        networkplayer.CmdDestroyGem();
+            }
+
+
+        }
+
+
+
+
+        
         CloseWindowToDestroyGemWiseman();
        
 

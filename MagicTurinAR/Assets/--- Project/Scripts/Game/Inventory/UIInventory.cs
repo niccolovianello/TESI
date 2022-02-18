@@ -209,10 +209,10 @@ public class UIInventory : MonoBehaviour
         foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
         {
             if (np.isLocalPlayer)
+            {
                 FindObjectOfType<UIManager>().OpenWindowToDestroyGemWiseman();
-
-
-
+               
+            }
         }
     }
 
