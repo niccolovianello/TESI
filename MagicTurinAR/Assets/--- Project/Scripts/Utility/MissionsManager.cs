@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Mapbox.Unity.MeshGeneration.Factories;
 using UnityEngine;
 using MirrorBasics;
 using UnityEngine.UI;
@@ -30,6 +31,7 @@ public class MissionsManager : MonoBehaviour
     [Header("ExplorerPrefabs")]
     private GameObject areaTargetExplorerPrefab;
     private GameObject targetExplorerPrefab;
+    private DirectionsFactory directions;
 
 
     private void Start()
@@ -51,14 +53,10 @@ public class MissionsManager : MonoBehaviour
     {
         currentMissionIndex++;
         currentMission = magicTurinLevels.missions[currentMissionIndex];
-        
-
     }
 
     public void StartMission()
     {
-       
-
         switch (currentMission.playerType)
         {
             case MissionSO.PlayerType.Explorer:
@@ -86,7 +84,6 @@ public class MissionsManager : MonoBehaviour
                     textWndowStartLevel.text = currentMission.textBeginMission;
                 }
                 break;
-            
         }
     }
 
@@ -98,12 +95,14 @@ public class MissionsManager : MonoBehaviour
             case MissionSO.PlayerType.Explorer:
                 if (magicPlayer is Explorer)
                 {
+                    /*
                     Vector3 coordinateAreaTarget = new Vector3(currentMission.coordinateXExplorerMissionArea, 0, currentMission.coordinateZExplorerMissionArea);
                     Vector3 coordinateTarget = new Vector3(currentMission.coordinateXExplorerMission, 1.5f, currentMission.coordinateZExplorerMission);
                     areaTargetExplorerPrefab = Instantiate(currentMission.goalExplorerMissionAreaPrefab, coordinateAreaTarget, Quaternion.identity);
                     targetExplorerPrefab = Instantiate(currentMission.goalExplorerMissionPrefab, coordinateTarget, Quaternion.identity);
 
                     Debug.Log(targetExplorerPrefab.transform.position);
+                    */
                 }
                 break;
             case MissionSO.PlayerType.Wiseman:

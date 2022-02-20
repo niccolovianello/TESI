@@ -1,24 +1,44 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Mapbox.Map;
+using Mapbox.Directions;
+using Mapbox.Examples;
+using Mapbox.Unity.Map;
+using Mapbox.Unity.MeshGeneration.Factories;
 using UnityEngine;
 
 [RequireComponent(typeof(ManaManager))]
 public class Explorer : MagicPlayer
 {
+    
+    [SerializeField] private Transform targetArea;
 
     private float powerCost = .1f;
+    private DirectionsFactory directions;
+    private SpawnOnMap target;
+    
 
+    private MissionsManager _missionsManager;
+    
+
+
+    private void Awake()
+    {
+        _missionsManager = FindObjectOfType<MissionsManager>();
+        directions = FindObjectOfType<DirectionsFactory>();
+        target = FindObjectOfType<AbstractMap>().GetComponent<SpawnOnMap>();
+    }
+    
     private void Start()
     {
+        target.SetNewTargetLocation(targetArea, _missionsManager.currentMission.latitude, _missionsManager.currentMission.longitude);
+        directions._waypoints[0] = transform;
+        directions._waypoints[1] = targetArea;
+        directions.gameObject.SetActive(false);
         manaManager = GetComponent<ManaManager>();
         manaManager.SetMaxMana(maxMana);
     }
 
     private void Update()
     {
-        if (_uiManager.GetPower.activeSelf)
+        if (directions.gameObject.activeSelf)
         {
             if (HasMana())
             {
@@ -29,7 +49,7 @@ public class Explorer : MagicPlayer
             {
                 GameObject directionMesh = GameObject.Find("direction waypoint " + " entity");
                 directionMesh.Destroy();
-                _uiManager.TogglePower();
+                ToggleNavigation();
             }
         }
     }
@@ -63,7 +83,12 @@ public class Explorer : MagicPlayer
         
         manaManager.SetMana(currentMana);
     }
-
+    
+    
+    public void ToggleNavigation()
+    {
+        directions.gameObject.SetActive(!directions.gameObject.activeSelf);
+    }
 
 
 }

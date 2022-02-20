@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "NewMission", menuName = "MagicItems/Mission")]
 public class MissionSO : ScriptableObject
@@ -12,7 +11,6 @@ public class MissionSO : ScriptableObject
         Explorer,
         Wiseman,
         Hunter
-
     }
 
     public string sceneName;
@@ -22,7 +20,9 @@ public class MissionSO : ScriptableObject
 
 
     [Header("TargetAreaInfo")]
-
+    public float latitude;
+    public float longitude;
+    
     public float coordinateXExplorerMissionArea;
     public float coordinateZExplorerMissionArea;
     public GameObject goalExplorerMissionAreaPrefab;
@@ -31,9 +31,6 @@ public class MissionSO : ScriptableObject
     public float coordinateXExplorerMission;
     public float coordinateZExplorerMission;
     public GameObject goalExplorerMissionPrefab;
-  
-
-
 
 }
     

@@ -51,5 +51,19 @@
 				spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
 			}
 		}
+
+		// CUSTOM METHOD
+		public void SetNewTargetLocation(Transform target, float latitude, float longitude)
+		{
+			_markerPrefab = target.gameObject;
+			List<string> locations = new List<string>(_locationStrings);
+			locations.Clear();
+			locations.Add(latitude + ", " + longitude);
+			_locationStrings = locations.ToArray();
+			var instance = Instantiate(_markerPrefab);
+			instance.transform.localPosition = _map.GeoToWorldPosition(_locations[0], true);
+			instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
+		}
+
 	}
 }

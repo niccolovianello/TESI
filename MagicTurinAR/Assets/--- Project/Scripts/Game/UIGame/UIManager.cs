@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject GUI_explorer;
     [SerializeField] private GameObject GUI_wiseman;
     [SerializeField] private GameObject GUI_hunter;
-    [SerializeField] private GameObject power;
+    
 
     [SerializeField] private MagicPlayer player;
     private NetworkPlayer networkplayer;
@@ -34,13 +34,6 @@ public class UIManager : MonoBehaviour
     public Canvas windowToDestroyGemHunter;
     public string sceneToDestroyGemName;
     
-
-
-
-    public void Awake()
-    {
-        //Assert.IsNotNull(menu);
-    }
     
     void Start()
     {
@@ -104,7 +97,7 @@ public class UIManager : MonoBehaviour
         //player.SetUIManager(this);
     }
 
-    public GameObject GetPower => power;
+    
     
 
     //private void Update()
@@ -122,10 +115,7 @@ public class UIManager : MonoBehaviour
         Debug.Log("toggle");
     }
     
-    public void TogglePower()
-    {
-        power.SetActive(!power.activeSelf);
-    }
+    
 
     public void onClickSaveButton()
     {
