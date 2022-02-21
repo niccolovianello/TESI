@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8716,8 +8716,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1450087518}
-  - component: {fileID: 1450087521}
-  - component: {fileID: 1450087520}
   - component: {fileID: 1450087519}
   m_Layer: 5
   m_Name: GUI_Hunter
@@ -8761,8 +8759,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5108f4a72606442409004d5a0d3c51d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSlotContainer: {fileID: 0}
-  itemSlotTemplate: {fileID: 0}
+  itemSlotContainer: {fileID: 1791117081}
+  itemSlotTemplate: {fileID: 495062914}
   textGems: {fileID: 0}
   textWhiteFragment: {fileID: 0}
   textWhiteMagicToSend: {fileID: 0}
@@ -8772,44 +8770,6 @@ MonoBehaviour:
   itemToSeeInAr: {fileID: 0}
   sceneArtifactAR: AR_LookAtItem
   typePlayerUI: 2
---- !u!114 &1450087520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450087517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.9176471, g: 0.8941177, b: 0.8235295, a: 0.7411765}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1450087521
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450087517}
-  m_CullTransparentMesh: 1
 --- !u!1 &1457529405
 GameObject:
   m_ObjectHideFlags: 0
