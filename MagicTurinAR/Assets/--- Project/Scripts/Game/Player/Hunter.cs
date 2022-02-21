@@ -7,9 +7,6 @@ public class Hunter : MagicPlayer
 
     private void Start()
     {
-        DirectionsFactory directions = FindObjectOfType<DirectionsFactory>();
-        directions.gameObject.SetActive(false);
-
         manaManager = GetComponent<ManaManager>();
         manaManager.SetMaxMana(maxMana);
         manaManager.SetMana(currentMana);

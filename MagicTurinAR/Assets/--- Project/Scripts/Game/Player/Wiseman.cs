@@ -7,8 +7,6 @@ public class Wiseman : MagicPlayer
 
     private void Start()
     {
-        DirectionsFactory directions = FindObjectOfType<DirectionsFactory>();
-        directions.gameObject.SetActive(false);
         Destroy(manaBar.gameObject);
     }
 

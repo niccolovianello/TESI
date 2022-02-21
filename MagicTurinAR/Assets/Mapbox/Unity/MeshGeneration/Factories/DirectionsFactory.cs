@@ -160,6 +160,16 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 			_directionsGO.AddComponent<MeshRenderer>().material = _material;
 			return _directionsGO;
 		}
+
+		public void SetMeshModifier(MeshModifier meshModifier)
+		{
+			MeshModifiers[0] = meshModifier;
+		}
+		
+		public void SetDirectionMaterial(Material material)
+		{
+			_material = material;
+		}
 	}
 
 }

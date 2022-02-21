@@ -2,6 +2,8 @@ using Mapbox.Directions;
 using Mapbox.Examples;
 using Mapbox.Unity.Map;
 using Mapbox.Unity.MeshGeneration.Factories;
+using Mapbox.Unity.MeshGeneration.Modifiers;
+using UnityEditor;
 using UnityEngine;
 
 [RequireComponent(typeof(ManaManager))]
@@ -12,16 +14,22 @@ public class Explorer : MagicPlayer
 
     private float powerCost = .1f;
     private DirectionsFactory directions;
-   
-    
-
 
     private void Awake()
     {
-       
-        directions = FindObjectOfType<DirectionsFactory>();
-        directions._waypoints[0] = this.transform;
-        directions._waypoints[1] = this.transform;
+
+        directions = new GameObject().AddComponent<DirectionsFactory>();
+        
+        MeshModifier mm = (MeshModifier) AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/1_DataExplorer/Traffic/DirectionLoft.asset", typeof(MeshModifier));
+        directions.SetMeshModifier(mm);
+        
+        Material mat = (Material) AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/Resources/DirectionMaterial.mat", typeof(Material));
+        directions.SetDirectionMaterial(mat);
+        
+        directions._waypoints[0] = transform;
+        directions._waypoints[1] = transform;
+
+        Instantiate(directions, Vector3.zero, Quaternion.identity);
 
         directions.gameObject.SetActive(false);
 
