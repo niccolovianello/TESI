@@ -18,18 +18,18 @@ public class Explorer : MagicPlayer
     private void Awake()
     {
 
-        directions = new GameObject().AddComponent<DirectionsFactory>();
+        directions = new GameObject("Directions").AddComponent<DirectionsFactory>();
         
         MeshModifier mm = (MeshModifier) AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/1_DataExplorer/Traffic/DirectionLoft.asset", typeof(MeshModifier));
-        directions.SetMeshModifier(mm);
+        directions.GetComponent<DirectionsFactory>().SetMeshModifier(mm);
         
         Material mat = (Material) AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/Resources/DirectionMaterial.mat", typeof(Material));
-        directions.SetDirectionMaterial(mat);
+        directions.GetComponent<DirectionsFactory>().SetDirectionMaterial(mat);
         
         directions._waypoints[0] = transform;
         directions._waypoints[1] = transform;
 
-        Instantiate(directions, Vector3.zero, Quaternion.identity);
+        //Instantiate(directions, Vector3.zero, Quaternion.identity);
 
         directions.gameObject.SetActive(false);
 

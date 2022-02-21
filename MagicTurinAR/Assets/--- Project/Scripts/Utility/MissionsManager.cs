@@ -20,7 +20,7 @@ public class MissionsManager : MonoBehaviour
     private NetworkPlayer networkPlayer;
     private MagicPlayer magicPlayer;
     private GameManager gameManager;
-    private SpawnOnMap target;
+    private SpawnOnMap spawnOnMap;
 
     [Header("WindowFinishLevel")]
     public Canvas windowFinishLevel;
@@ -39,7 +39,6 @@ public class MissionsManager : MonoBehaviour
 
     private void Start()
     {
-        target = FindObjectOfType<AbstractMap>().GetComponent<SpawnOnMap>();
         currentMission = magicTurinLevels.missions[currentMissionIndex];
         NetworkPlayer[] networkplayers = FindObjectsOfType<NetworkPlayer>();
         gameManager = FindObjectOfType<GameManager>();
@@ -99,16 +98,20 @@ public class MissionsManager : MonoBehaviour
             case MissionSO.PlayerType.Explorer:
                 if (magicPlayer is Explorer)
                 {
-                    
-
+                    /*
                     Vector3 coordinateAreaTarget = new Vector3(currentMission.latitudeArea, 0, currentMission.longitudeArea);
                     Vector3 coordinateTarget = new Vector3(currentMission.latitudeTarget, 1.5f, currentMission.longitudeTarget);
                     areaTargetExplorerPrefab = Instantiate(currentMission.goalExplorerMissionAreaPrefab, coordinateAreaTarget, Quaternion.identity);
-                    targetExplorerPrefab = Instantiate(currentMission.goalExplorerMissionPrefab, coordinateTarget, Quaternion.identity);
-
+                    targetExplorerPrefab = Instantiate(currentMission.goalExplorerMissionPrefab, coordinateTarget, Quaternion.identity)
+                    
+                    
                     Debug.Log(targetExplorerPrefab.transform.position);
+                    
+                    */
+                    
+                    spawnOnMap = FindObjectOfType<AbstractMap>().GetComponent<SpawnOnMap>();
 
-                    target.SetNewTargetLocation(currentMission.goalExplorerMissionPrefab.gameObject.transform, currentMission.latitudeTarget, currentMission.longitudeTarget);
+                    spawnOnMap.SetNewTargetLocation(currentMission.latitudeArea, currentMission.longitudeArea, currentMission.latitudeTarget, currentMission.longitudeTarget);
 
                     // Initialization for the target location of navigation power
                     Explorer ex = FindObjectOfType<Explorer>();

@@ -21,7 +21,7 @@
 		float _spawnScale = 100f;
 
 		[SerializeField]
-		GameObject _markerPrefab;
+		GameObject _areaPrefab, _targetPrefab;
 
 		List<GameObject> _spawnedObjects;
 
@@ -33,7 +33,7 @@
 			{
 				var locationString = _locationStrings[i];
 				_locations[i] = Conversions.StringToLatLon(locationString);
-				var instance = Instantiate(_markerPrefab);
+				var instance = Instantiate(_areaPrefab);
 				instance.transform.localPosition = _map.GeoToWorldPosition(_locations[i], true);
 				instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
 				_spawnedObjects.Add(instance);
@@ -53,16 +53,25 @@
 		}
 
 		// CUSTOM METHOD
-		public void SetNewTargetLocation(Transform target, float latitude, float longitude)
+		public void SetNewTargetLocation(float areaLat, float areaLon, float targetLat, float targetLon)
 		{
-			_markerPrefab = target.gameObject;
+			_locationStrings[0] = areaLat + ", " + areaLon;
+			_locationStrings[1] = targetLat + ", " + targetLon;
+			
+			/*
 			List<string> locations = new List<string>(_locationStrings);
 			locations.Clear();
 			locations.Add(latitude + ", " + longitude);
 			_locationStrings = locations.ToArray();
-			var instance = Instantiate(_markerPrefab);
-			instance.transform.localPosition = _map.GeoToWorldPosition(_locations[0], true);
-			instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
+			*/
+			
+			var area = Instantiate(_areaPrefab);
+			area.transform.localPosition = _map.GeoToWorldPosition(_locations[0], true);
+			area.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
+			
+			var target = Instantiate(_targetPrefab);
+			target.transform.localPosition = _map.GeoToWorldPosition(_locations[1], true);
+			target.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
 		}
 
 	}
