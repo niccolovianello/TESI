@@ -12,26 +12,25 @@ public class Explorer : MagicPlayer
 
     private float powerCost = .1f;
     private DirectionsFactory directions;
-    private SpawnOnMap target;
-    
-
-    private MissionsManager _missionsManager;
+   
     
 
 
     private void Awake()
     {
-        _missionsManager = FindObjectOfType<MissionsManager>();
+       
         directions = FindObjectOfType<DirectionsFactory>();
-        target = FindObjectOfType<AbstractMap>().GetComponent<SpawnOnMap>();
+        directions._waypoints[0] = this.transform;
+        directions._waypoints[1] = this.transform;
+
+        directions.gameObject.SetActive(false);
+
     }
     
     private void Start()
     {
-        target.SetNewTargetLocation(targetArea, _missionsManager.currentMission.latitude, _missionsManager.currentMission.longitude);
-        directions._waypoints[0] = transform;
-        directions._waypoints[1] = targetArea;
-        directions.gameObject.SetActive(false);
+       
+       
         manaManager = GetComponent<ManaManager>();
         manaManager.SetMaxMana(maxMana);
     }
@@ -88,6 +87,16 @@ public class Explorer : MagicPlayer
     public void ToggleNavigation()
     {
         directions.gameObject.SetActive(!directions.gameObject.activeSelf);
+    }
+
+    public void InitializeNavigationPower(Transform playerTransform, Transform targetTransform)
+    {
+        Debug.Log(directions);
+        Debug.Log("PlayerTransform: " + playerTransform + "\n TargetTransform: " + targetTransform);
+        directions._waypoints[0] = playerTransform;
+        directions._waypoints[1] = targetTransform;
+
+        directions.gameObject.SetActive(false);
     }
 
 

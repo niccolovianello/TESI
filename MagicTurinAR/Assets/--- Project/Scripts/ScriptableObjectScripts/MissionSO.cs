@@ -20,16 +20,15 @@ public class MissionSO : ScriptableObject
 
 
     [Header("TargetAreaInfo")]
-    public float latitude;
-    public float longitude;
+    public float latitudeArea;
+    public float longitudeArea;
     
-    public float coordinateXExplorerMissionArea;
-    public float coordinateZExplorerMissionArea;
+    
     public GameObject goalExplorerMissionAreaPrefab;
 
     [Header("TargetInfo")]
-    public float coordinateXExplorerMission;
-    public float coordinateZExplorerMission;
+    public float latitudeTarget;
+    public float longitudeTarget;
     public GameObject goalExplorerMissionPrefab;
 
 }

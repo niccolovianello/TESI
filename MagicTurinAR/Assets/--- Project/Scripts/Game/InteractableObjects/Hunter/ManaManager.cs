@@ -8,7 +8,7 @@ public class ManaManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slider = GameObject.Find("ManaBar").GetComponent<Slider>();
+        slider = GameObject.Find("/LevelWindowsGUI/ManaBar").GetComponent<Slider>();
     }
 
     public void SetMana(float mana)
