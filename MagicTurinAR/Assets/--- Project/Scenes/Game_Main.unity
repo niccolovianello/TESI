@@ -12416,7 +12416,8 @@ MonoBehaviour:
   _map: {fileID: 7898121503528828760}
   _locationStrings: []
   _spawnScale: 1
-  _markerPrefab: {fileID: 0}
+  _areaPrefab: {fileID: 3590798186009698721, guid: 0d1a1a82c5f3bfd47bbff6c5d032f1a8, type: 3}
+  _targetPrefab: {fileID: 6406397067323488402, guid: 7791fea763aec1e4c9fce77a4e7f6ab8, type: 3}
 --- !u!1 &7786010876916520414
 GameObject:
   m_ObjectHideFlags: 0

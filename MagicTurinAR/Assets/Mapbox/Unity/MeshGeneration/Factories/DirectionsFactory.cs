@@ -28,8 +28,7 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 		[SerializeField]
 		[Range(1,10)]
 		private float UpdateFrequency = 2;
-
-
+		
 
 		private Directions _directions;
 		private int _counter;
@@ -39,7 +38,9 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 
 		protected virtual void Awake()
 		{
+			_map = FindObjectOfType<AbstractMap>();
 			_waypoints = new Transform[3];
+			MeshModifiers = new MeshModifier[1];
 			
 			if (_map == null)
 			{

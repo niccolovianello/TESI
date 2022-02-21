@@ -27,6 +27,8 @@
 
 		void Start()
 		{
+			_locationStrings = new [] {"0,0", "0,0"};
+			
 			_locations = new Vector2d[_locationStrings.Length];
 			_spawnedObjects = new List<GameObject>();
 			for (int i = 0; i < _locationStrings.Length; i++)
@@ -55,8 +57,8 @@
 		// CUSTOM METHOD
 		public void SetNewTargetLocation(float areaLat, float areaLon, float targetLat, float targetLon)
 		{
-			_locationStrings[0] = areaLat + ", " + areaLon;
-			_locationStrings[1] = targetLat + ", " + targetLon;
+			_locationStrings[0] = areaLat + "," + areaLon;
+			_locationStrings[1] = targetLat + "," + targetLon;
 			
 			/*
 			List<string> locations = new List<string>(_locationStrings);

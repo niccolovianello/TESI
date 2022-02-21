@@ -99,10 +99,10 @@ public class Explorer : MagicPlayer
 
     public void InitializeNavigationPower(Transform playerTransform, Transform targetTransform)
     {
-        Debug.Log(directions);
-        Debug.Log("PlayerTransform: " + playerTransform + "\n TargetTransform: " + targetTransform);
+        
         directions._waypoints[0] = playerTransform;
         directions._waypoints[1] = targetTransform;
+        Debug.Log(directions._waypoints[1]);
 
         directions.gameObject.SetActive(false);
     }
