@@ -8764,7 +8764,7 @@ MonoBehaviour:
   textGems: {fileID: 0}
   textWhiteFragment: {fileID: 0}
   textWhiteMagicToSend: {fileID: 0}
-  windowToAR: {fileID: 0}
+  windowToAR: {fileID: 271503484}
   wndowToSendWhiteMagic: {fileID: 0}
   confirmSendWhiteMagic: {fileID: 0}
   itemToSeeInAr: {fileID: 0}
@@ -11899,8 +11899,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5108f4a72606442409004d5a0d3c51d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSlotContainer: {fileID: 0}
-  itemSlotTemplate: {fileID: 0}
+  itemSlotContainer: {fileID: 674811518}
+  itemSlotTemplate: {fileID: 1045950325}
   textGems: {fileID: 724399722}
   textWhiteFragment: {fileID: 33977858}
   textWhiteMagicToSend: {fileID: 235861678}
