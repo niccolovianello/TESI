@@ -1,3 +1,4 @@
+using Mapbox.Unity.MeshGeneration.Factories;
 using UnityEngine;
 
 public class Wiseman : MagicPlayer
@@ -6,6 +7,8 @@ public class Wiseman : MagicPlayer
 
     private void Start()
     {
+        DirectionsFactory directions = FindObjectOfType<DirectionsFactory>();
+        directions.gameObject.SetActive(false);
         Destroy(manaBar.gameObject);
     }
 

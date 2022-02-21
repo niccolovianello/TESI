@@ -1,3 +1,4 @@
+using Mapbox.Unity.MeshGeneration.Factories;
 using UnityEngine;
 
 [RequireComponent(typeof(ManaManager))]
@@ -6,6 +7,9 @@ public class Hunter : MagicPlayer
 
     private void Start()
     {
+        DirectionsFactory directions = FindObjectOfType<DirectionsFactory>();
+        directions.gameObject.SetActive(false);
+
         manaManager = GetComponent<ManaManager>();
         manaManager.SetMaxMana(maxMana);
         manaManager.SetMana(currentMana);
