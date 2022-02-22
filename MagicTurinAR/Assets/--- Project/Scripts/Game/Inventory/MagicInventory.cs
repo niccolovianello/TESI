@@ -51,6 +51,25 @@ public class MagicInventory : Inventory
     {
         clickItemAction(item);
     }
+
+    public int AddGem()
+    {
+        int returnedAmount = 1;
+        foreach (MagicItemSO MagicItem in ItemAssets.Instance.magicInventorySO.items)
+        {
+            
+            if ((int)MagicItem.itemType == 1000)
+            {
+                Debug.Log("entrato");
+                MagicItem.prefab.GetComponent<Item>().amount++;
+                returnedAmount = MagicItem.prefab.GetComponent<Item>().amount;
+            }
+        }
+
+        OnItemListChanged?.Invoke(this, EventArgs.Empty);
+        return returnedAmount;
+        
+    }
 }
     
     

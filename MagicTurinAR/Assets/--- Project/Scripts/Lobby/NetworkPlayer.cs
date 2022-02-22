@@ -184,12 +184,14 @@ namespace MirrorBasics
         {
 
             RpcDestroyGem();
+            Debug.Log("CMD mandare gemma");
         }
 
 
         [ClientRpc]
         public void RpcDestroyGem()
         {
+            Debug.Log("Gemma arrivata");
             MagicPlayer mp = FindObjectOfType<MagicPlayer>();
 
             if (mp is Hunter)

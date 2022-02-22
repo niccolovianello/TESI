@@ -12,6 +12,11 @@ public class Wiseman : MagicPlayer
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            uiInventory.UpdateGemsCount(inventory.AddGem()); 
+           
+        }
         //if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
         //{
         //    Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
