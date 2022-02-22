@@ -5,7 +5,7 @@ using MirrorBasics;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
 using UnityEngine.SceneManagement;
 
-public class UIDestroyGemScript : MonoBehaviour
+public class UIDestroyGem : MonoBehaviour
 {
     public Canvas windowToBackToTheGame;
     public int nfragment;

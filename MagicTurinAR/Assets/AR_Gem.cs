@@ -1,8 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using MirrorBasics;
-using NetworkPlayer = MirrorBasics.NetworkPlayer;
-
 
 public class AR_Gem : MonoBehaviour
 {
@@ -19,9 +15,8 @@ public class AR_Gem : MonoBehaviour
     {
         if (attempts == 0)
         {
-            FindObjectOfType<UIDestroyGemScript>().OpenBackToGameWindow(3);
+            FindObjectOfType<UIDestroyGem>().OpenBackToGameWindow(3);
             Destroy(gameObject);
-            
         }
     }
 
