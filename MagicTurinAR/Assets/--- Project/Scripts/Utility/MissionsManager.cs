@@ -20,7 +20,7 @@ public class MissionsManager : MonoBehaviour
     private NetworkPlayer networkPlayer;
     private MagicPlayer magicPlayer;
     private GameManager gameManager;
-    private SpawnOnMap spawnOnMap;
+    private SpawnOnMap_Custom _spawnOnMapCustom;
 
     [Header("WindowFinishLevel")]
     public Canvas windowFinishLevel;
@@ -109,9 +109,9 @@ public class MissionsManager : MonoBehaviour
                     
                     */
                     
-                    spawnOnMap = FindObjectOfType<AbstractMap>().GetComponent<SpawnOnMap>();
+                    _spawnOnMapCustom = FindObjectOfType<AbstractMap>().GetComponent<SpawnOnMap_Custom>();
 
-                    spawnOnMap.SetNewTargetLocation(currentMission.latitudeArea, currentMission.longitudeArea, currentMission.latitudeTarget, currentMission.longitudeTarget);
+                    _spawnOnMapCustom.SetNewTargetLocation(currentMission.latitudeArea, currentMission.longitudeArea, currentMission.latitudeTarget, currentMission.longitudeTarget);
 
                     // Initialization for the target location of navigation power
                     Explorer ex = FindObjectOfType<Explorer>();
