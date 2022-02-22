@@ -13,11 +13,12 @@ public class Explorer : MagicPlayer
     
 
     private float powerCost = .1f;
-    private DirectionsFactory directions;
+    // private DirectionsFactory directions;
 
     private void Awake()
     {
 
+        /*
         directions = new GameObject("Directions").AddComponent<DirectionsFactory>();
 
         MeshModifier mm = (MeshModifier)AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/1_DataExplorer/Traffic/DirectionLoft.asset", typeof(MeshModifier));
@@ -32,6 +33,7 @@ public class Explorer : MagicPlayer
         
 
         directions.gameObject.SetActive(false);
+        */
 
     }
     
@@ -48,6 +50,7 @@ public class Explorer : MagicPlayer
 
     private void Update()
     {
+        /*
         if (directions.gameObject.activeSelf)
         {
             if (HasMana())
@@ -62,6 +65,7 @@ public class Explorer : MagicPlayer
                 ToggleNavigation();
             }
         }
+        */
     }
 
 
@@ -97,15 +101,17 @@ public class Explorer : MagicPlayer
     
     public void ToggleNavigation()
     {
-        directions.gameObject.SetActive(!directions.gameObject.activeSelf);
+        //directions.gameObject.SetActive(!directions.gameObject.activeSelf);
     }
 
-    public void InitializeNavigationPower( Transform targetTransform)
-    {      
+    public void InitializeNavigationPower(Transform targetTransform)
+    {
+        /*
         directions._waypoints[1] = targetTransform;
         Debug.Log(directions._waypoints[1]);
 
         directions.gameObject.SetActive(false);
+        */
     }
 
 

@@ -21,9 +21,6 @@ EditorBuildSettings:
     path: Assets/--- Project/Scenes/AR_LookAtItem.unity
     guid: 5f7ffc03fa38f4703b906fcac0d7d4bb
   - enabled: 1
-    path: Assets/--- Project/Scenes/AR_Wiseman_Memory.unity
-    guid: 28ad722dd0e1e9f419c119418e0b50cd
-  - enabled: 1
     path: Assets/--- Project/Scenes/MazeGame.unity
     guid: 29160ef5e1ae9e94cac751c96b06f5f1
   - enabled: 1
