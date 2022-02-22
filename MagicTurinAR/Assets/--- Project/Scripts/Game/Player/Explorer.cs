@@ -18,20 +18,20 @@ public class Explorer : MagicPlayer
     private void Awake()
     {
 
-        directions = new GameObject("Directions").AddComponent<DirectionsFactory>();
+        //directions = new GameObject("Directions").AddComponent<DirectionsFactory>();
         
-        MeshModifier mm = (MeshModifier) AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/1_DataExplorer/Traffic/DirectionLoft.asset", typeof(MeshModifier));
-        directions.GetComponent<DirectionsFactory>().SetMeshModifier(mm);
+        //MeshModifier mm = (MeshModifier) AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/1_DataExplorer/Traffic/DirectionLoft.asset", typeof(MeshModifier));
+        //directions.GetComponent<DirectionsFactory>().SetMeshModifier(mm);
         
-        Material mat = (Material) AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/Resources/DirectionMaterial.mat", typeof(Material));
-        directions.GetComponent<DirectionsFactory>().SetDirectionMaterial(mat);
+        //Material mat = (Material) AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/Resources/DirectionMaterial.mat", typeof(Material));
+        //directions.GetComponent<DirectionsFactory>().SetDirectionMaterial(mat);
         
-        directions._waypoints[0] = transform;
-        directions._waypoints[1] = transform;
+        //directions._waypoints[0] = transform;
+        //directions._waypoints[1] = transform;
 
-        //Instantiate(directions, Vector3.zero, Quaternion.identity);
+        ////Instantiate(directions, Vector3.zero, Quaternion.identity);
 
-        directions.gameObject.SetActive(false);
+        //directions.gameObject.SetActive(false);
 
     }
     
@@ -45,20 +45,20 @@ public class Explorer : MagicPlayer
 
     private void Update()
     {
-        if (directions.gameObject.activeSelf)
-        {
-            if (HasMana())
-            {
-                DecreaseMana(powerCost);
-            }
+        //if (directions.gameObject.activeSelf)
+        //{
+        //    if (HasMana())
+        //    {
+        //        DecreaseMana(powerCost);
+        //    }
 
-            else
-            {
-                GameObject directionMesh = GameObject.Find("direction waypoint " + " entity");
-                directionMesh.Destroy();
-                ToggleNavigation();
-            }
-        }
+        //    else
+        //    {
+        //        GameObject directionMesh = GameObject.Find("direction waypoint " + " entity");
+        //        directionMesh.Destroy();
+        //        ToggleNavigation();
+        //    }
+        //}
     }
 
 
@@ -99,7 +99,7 @@ public class Explorer : MagicPlayer
 
     public void InitializeNavigationPower(Transform playerTransform, Transform targetTransform)
     {
-        
+
         directions._waypoints[0] = playerTransform;
         directions._waypoints[1] = targetTransform;
         Debug.Log(directions._waypoints[1]);
