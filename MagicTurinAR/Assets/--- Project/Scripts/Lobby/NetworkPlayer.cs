@@ -214,6 +214,7 @@ namespace MirrorBasics
         {
 
             RpcWhiteMagicFromGem(nfragment);
+            Debug.Log("Gemma distrutta");
         }
 
 
@@ -227,7 +228,7 @@ namespace MirrorBasics
             {
                 foreach (MagicItemSO item in ItemAssets.Instance.magicInventorySO.items)
                 {
-                    if (item.id == 2000 && item.prefab.GetComponent<MagicItem>().amount > 0) // WhiteFragment specific code
+                    if (item.id == 2000) // WhiteFragment specific code
                     {
                         item.prefab.GetComponent<MagicItem>().amount+=nfragment;
                         FindObjectOfType<UIInventory>().UpdateWhiteFragmentCount(item.prefab.GetComponent<MagicItem>().amount);
