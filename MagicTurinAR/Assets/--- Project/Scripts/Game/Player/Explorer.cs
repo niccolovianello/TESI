@@ -10,7 +10,7 @@ using UnityEngine;
 public class Explorer : MagicPlayer
 {
     
-    [SerializeField] private Transform targetArea;
+    
 
     private float powerCost = .1f;
     private DirectionsFactory directions;
@@ -18,20 +18,20 @@ public class Explorer : MagicPlayer
     private void Awake()
     {
 
-        //directions = new GameObject("Directions").AddComponent<DirectionsFactory>();
-        
-        //MeshModifier mm = (MeshModifier) AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/1_DataExplorer/Traffic/DirectionLoft.asset", typeof(MeshModifier));
-        //directions.GetComponent<DirectionsFactory>().SetMeshModifier(mm);
-        
-        //Material mat = (Material) AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/Resources/DirectionMaterial.mat", typeof(Material));
-        //directions.GetComponent<DirectionsFactory>().SetDirectionMaterial(mat);
-        
-        //directions._waypoints[0] = transform;
-        //directions._waypoints[1] = transform;
+        directions = new GameObject("Directions").AddComponent<DirectionsFactory>();
 
-        ////Instantiate(directions, Vector3.zero, Quaternion.identity);
+        MeshModifier mm = (MeshModifier)AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/1_DataExplorer/Traffic/DirectionLoft.asset", typeof(MeshModifier));
+        directions.GetComponent<DirectionsFactory>().SetMeshModifier(mm);
 
-        //directions.gameObject.SetActive(false);
+        Material mat = (Material)AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/Resources/DirectionMaterial.mat", typeof(Material));
+        directions.GetComponent<DirectionsFactory>().SetDirectionMaterial(mat);
+
+        directions._waypoints[0] = transform;
+        directions._waypoints[1] = transform;
+
+        
+
+        directions.gameObject.SetActive(false);
 
     }
     
@@ -41,24 +41,27 @@ public class Explorer : MagicPlayer
        
         manaManager = GetComponent<ManaManager>();
         manaManager.SetMaxMana(maxMana);
+        manaManager.SetMana(maxMana);
+        
+        Debug.Log(maxMana);
     }
 
     private void Update()
     {
-        //if (directions.gameObject.activeSelf)
-        //{
-        //    if (HasMana())
-        //    {
-        //        DecreaseMana(powerCost);
-        //    }
+        if (directions.gameObject.activeSelf)
+        {
+            if (HasMana())
+            {
+                DecreaseMana(powerCost);
+            }
 
-        //    else
-        //    {
-        //        GameObject directionMesh = GameObject.Find("direction waypoint " + " entity");
-        //        directionMesh.Destroy();
-        //        ToggleNavigation();
-        //    }
-        //}
+            else
+            {
+                GameObject directionMesh = GameObject.Find("direction waypoint " + " entity");
+                directionMesh.Destroy();
+                ToggleNavigation();
+            }
+        }
     }
 
 
@@ -97,10 +100,8 @@ public class Explorer : MagicPlayer
         directions.gameObject.SetActive(!directions.gameObject.activeSelf);
     }
 
-    public void InitializeNavigationPower(Transform playerTransform, Transform targetTransform)
-    {
-
-        directions._waypoints[0] = playerTransform;
+    public void InitializeNavigationPower( Transform targetTransform)
+    {      
         directions._waypoints[1] = targetTransform;
         Debug.Log(directions._waypoints[1]);
 

@@ -114,6 +114,12 @@ public class UIManager : MonoBehaviour
         menu.SetActive(!menu.activeSelf);
         Debug.Log("toggle");
     }
+
+    public void ToggleNavigationPower()
+    {
+        Explorer ex = FindObjectOfType<Explorer>();
+        ex.ToggleNavigation();
+    }
     
     
 

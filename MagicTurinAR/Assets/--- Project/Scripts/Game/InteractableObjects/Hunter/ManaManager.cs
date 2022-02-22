@@ -19,5 +19,7 @@ public class ManaManager : MonoBehaviour
     public void SetMaxMana(float maxMana)
     {
         slider.maxValue = maxMana;
+        
+        
     }
 }

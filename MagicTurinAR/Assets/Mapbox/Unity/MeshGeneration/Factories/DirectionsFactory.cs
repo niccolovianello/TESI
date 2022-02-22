@@ -38,7 +38,7 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 
 		protected virtual void Awake()
 		{
-			_map = FindObjectOfType<AbstractMap>();
+			
 			_waypoints = new Transform[2];
 			MeshModifiers = new MeshModifier[1];
 			
