@@ -28,14 +28,14 @@ public class NetworkManagerCustom : NetworkManager
         uiLobby.SetNumberClients(uiLobby.GetNumberClients() + 1);
     }
 
-    public override void OnServerDisconnect(NetworkConnection conn)
-    {
-        base.OnServerDisconnect(conn);
+    //public override void OnServerDisconnect(NetworkConnection conn)
+    //{
+    //    base.OnServerDisconnect(conn);
 
-        Debug.Log("disconnesso");
-        uiLobby = FindObjectOfType<UILobby>();
-        uiLobby.SetNumberClients(uiLobby.GetNumberClients() - 1);
-    }
+    //    Debug.Log("disconnesso");
+    //    uiLobby = FindObjectOfType<UILobby>();
+    //    uiLobby.SetNumberClients(uiLobby.GetNumberClients() - 1);
+    //}
 
     public override void OnClientChangeScene(string newSceneName, SceneOperation sceneOperation, bool customHandling)
     {
