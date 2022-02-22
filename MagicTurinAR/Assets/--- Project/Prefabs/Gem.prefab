@@ -162,7 +162,7 @@ MonoBehaviour:
   uiInventory: {fileID: 0}
   player: {fileID: 0}
   itemGO: {fileID: 0}
-  amount: 3
+  amount: 0
   magicPlayer: {fileID: 0}
   networkPlayer: {fileID: 0}
   itemType: 3

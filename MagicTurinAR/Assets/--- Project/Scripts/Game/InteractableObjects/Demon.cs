@@ -1,7 +1,9 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using MirrorBasics;
+using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
 public class Demon : Enemy
 {
@@ -141,7 +143,23 @@ public class Demon : Enemy
         
         Destroy(gameObject);
         MissionsManager MM = FindObjectOfType<MissionsManager>();
-        MM.OpenFinishMissionWindow();
+        GameManager gm = FindObjectOfType<GameManager>();
+        NetworkPlayer networkPlayer = null;
+        if (gm.GetIsMission())
+            MM.OpenFinishMissionWindow();
+        else
+        {
+            foreach (NetworkPlayer nt in FindObjectsOfType<NetworkPlayer>())
+            {
+                if(nt.isLocalPlayer)
+                networkPlayer = nt;
+            }
+            networkPlayer.RenderPlayerBody();
+            SceneManager.UnloadSceneAsync("AR_EnemyFight");
+            gm.PlayerCameraObject.SetActive(true);
+            gm.EnableMainGame();
+        }
+
     }
 
     private IEnumerator HitClip()

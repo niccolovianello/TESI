@@ -9,8 +9,8 @@ public class EnemyFactory : Singleton<EnemyFactory>
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private Enemy enemyPrefabScript;
     [SerializeField] private MagicPlayer player;
-    [SerializeField] private float waitTime = 10.0f;
-    [SerializeField] private int startingEnemies = 10;
+    [SerializeField] private float waitTime = 120f;
+    [SerializeField] private int startingEnemies = 1;
     [SerializeField] private float minRange = 5.0f;
     [SerializeField] private float maxRange = 50.0f;
     [SerializeField] private GameObject parentObjectsFactory;
@@ -24,13 +24,12 @@ public class EnemyFactory : Singleton<EnemyFactory>
 
     
 
-    private void Awake()
-    {
-       
-    }
+   
 
     void Start()
     {
+        minRange = 5;
+        maxRange = 15;
         player = FindObjectOfType<MagicPlayer>();
         parentObjectsFactory = GameObject.Find("ParentEnemies");
         for (int i = 0; i < startingEnemies; i++)
@@ -64,6 +63,8 @@ public class EnemyFactory : Singleton<EnemyFactory>
 
     private void InstantiateEnemy()
     {
+        if (aliveEnemies.Count >= 4)
+            aliveEnemies.RemoveAt(0);
         float x = player.transform.position.x + GenerateRange();
         float y = player.transform.position.y;
         float z = player.transform.position.z + GenerateRange();

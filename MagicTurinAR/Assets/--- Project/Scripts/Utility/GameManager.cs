@@ -14,6 +14,7 @@ public class GameManager : Singleton<GameManager>
 {
     [SerializeField] private MagicPlayer currentPlayer;
 
+    private bool isMission = false;
     public GameObject parentObjPlayer;
     public GameObject parentObjItems;
     public GameObject parentObjEnemies;
@@ -203,6 +204,15 @@ public class GameManager : Singleton<GameManager>
         networkPlayer.RenderPlayerBody();
     }
 
+    public bool GetIsMission()
+    {
+        return isMission;
+    }
+
+    public void SetIsMission(bool _isMission)
+    {
+        isMission = _isMission;
+    }
 }
 
 public static class TransformExtensions

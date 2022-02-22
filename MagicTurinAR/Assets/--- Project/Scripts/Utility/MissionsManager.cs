@@ -134,6 +134,7 @@ public class MissionsManager : MonoBehaviour
                     gameManager.DisableMainGame();
                     networkPlayer.NotRenderPlayerBody();
                     gameManager.PlayerCameraObject.SetActive(false);
+                    gameManager.SetIsMission(true);
                 }
                 break;
         }
@@ -168,6 +169,7 @@ public class MissionsManager : MonoBehaviour
                     SceneManager.UnloadSceneAsync(currentMission.sceneName);
                     gameManager.PlayerCameraObject.SetActive(true);
                     gameManager.EnableMainGame();
+                    gameManager.SetIsMission(false);
                 }
                 break;
         }
