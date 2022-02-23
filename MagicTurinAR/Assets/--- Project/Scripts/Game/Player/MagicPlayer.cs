@@ -15,7 +15,7 @@ public class MagicPlayer : Player
     public MagicInventory inventory;
     public UIManager _uiManager;
     public NetworkPlayer networkPlayer;
-    public int maxDistanceFromTHeOthers = 50;
+    public int maxDistanceFromTheOthers = 50;
 
     public Slider manaBar;
     
@@ -100,7 +100,7 @@ public class MagicPlayer : Player
 
         foreach (NetworkPlayer nt in FindObjectsOfType<NetworkPlayer>())
         {
-            if (!nt.isLocalPlayer && Vector3.Distance(this.transform.position, nt.transform.position) < maxDistanceFromTHeOthers)
+            if (!nt.isLocalPlayer && Vector3.Distance(this.transform.position, nt.transform.position) < maxDistanceFromTheOthers)
             {
                 isNear = true;
             }
