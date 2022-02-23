@@ -35,6 +35,7 @@ public class MissionsManager : MonoBehaviour
     private GameObject areaTargetExplorerPrefab;
     private GameObject targetExplorerPrefab;
     private DirectionsFactory directions;
+    public GameObject parentTarget;
 
 
     private void Start()
@@ -147,9 +148,16 @@ public class MissionsManager : MonoBehaviour
             case MissionSO.PlayerType.Explorer:
                 if (magicPlayer is Explorer)
                 {
-                    Destroy(areaTargetExplorerPrefab);
-                    Destroy(targetExplorerPrefab);
-                    
+                    //Destroy(areaTargetExplorerPrefab);
+                    //Destroy(targetExplorerPrefab);
+
+                    _spawnOnMapCustom = FindObjectOfType<AbstractMap>().GetComponent<SpawnOnMap_Custom>();
+                    _spawnOnMapCustom.DestroyTargetLocation();
+                    foreach (Transform t in parentTarget.GetComponentsInChildren<Transform>())
+                    {
+                        Destroy(t.gameObject);
+                    }
+
                 }
                 break;
             case MissionSO.PlayerType.Wiseman:

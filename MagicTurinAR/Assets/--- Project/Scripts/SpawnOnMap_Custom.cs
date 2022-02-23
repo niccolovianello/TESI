@@ -17,6 +17,8 @@
 
 		public GameObject parentObjectAreaTarget;
 
+		private GameObject area, target; 
+
 
 		// CUSTOM METHOD
 		public void SetNewTargetLocation(float areaLat, float areaLon, float targetLat, float targetLon)
@@ -24,16 +26,23 @@
 			Vector2d V2area = new Vector2d(areaLat, areaLon);
 			Vector2d V2target = new Vector2d(targetLat, targetLon);
 
-			var area = Instantiate(areaPrefab);
+			area = Instantiate(areaPrefab);
 			area.transform.localPosition = _map.GeoToWorldPosition(V2area, true);
 			area.transform.localScale = new Vector3(areaRadius, 1, areaRadius);
 			
-			var target = Instantiate(targetPrefab);
+			target = Instantiate(targetPrefab);
 			target.transform.localPosition = _map.GeoToWorldPosition(V2target, true);
 			target.transform.localScale = new Vector3(targetSize , targetSize, targetSize);
 
 			area.transform.parent = parentObjectAreaTarget.transform;
 			target.transform.parent = parentObjectAreaTarget.transform;
+		}
+
+		public void DestroyTargetLocation()
+		{
+			Destroy(area);
+			Destroy(target);
+			Debug.Log("Destroy");
 		}
 	}
 }
