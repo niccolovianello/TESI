@@ -223,9 +223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b97b167a64aeb34b8a865223a7ea0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraSpeedMovement: 10
+  cameraSpeedMovement: 60
   cameraMinDistanace: 10
-  cameraMaxDistance: 70
+  cameraMaxDistance: 300
   target: {fileID: 8246685028011860940}
   cameraTransform: {fileID: 4326250800160727774}
 --- !u!1 &891979759604794750
