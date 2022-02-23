@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PinchDetection : MonoBehaviour
 {
-    [SerializeField] private float cameraSpeedMovement = 10f;
+    [SerializeField] private float cameraSpeedMovement = 50f;
     [SerializeField]  private float cameraMinDistanace = 20f;
-    [SerializeField]  private float cameraMaxDistance = 100f;
+    [SerializeField]  private float cameraMaxDistance = 300f;
     [SerializeField] private Transform target;
     private TouchControls controls;
     private Coroutine zoomCoroutine;
