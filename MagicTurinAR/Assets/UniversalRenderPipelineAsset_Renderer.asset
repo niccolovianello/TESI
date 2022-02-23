@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b17de350ea549a4a4312087f83fb9d, type: 3}
   m_Name: NewDepthMeshRendererFeature
   m_EditorClassIdentifier: 
-  m_Active: 0
+  m_Active: 1
 --- !u!114 &-3773145336056837907
 MonoBehaviour:
   m_ObjectHideFlags: 0
