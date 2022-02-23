@@ -27,6 +27,7 @@
 			Vector2d V2target = new Vector2d(targetLat, targetLon);
 
 			area = Instantiate(areaPrefab);
+			Debug.Log(areaPrefab);
 			area.transform.localPosition = _map.GeoToWorldPosition(V2area, true);
 			area.transform.localScale = new Vector3(areaRadius, 1, areaRadius);
 			

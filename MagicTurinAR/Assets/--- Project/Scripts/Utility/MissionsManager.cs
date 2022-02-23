@@ -110,9 +110,9 @@ public class MissionsManager : MonoBehaviour
                     
                     */
                     
-                    //_spawnOnMapCustom = FindObjectOfType<AbstractMap>().GetComponent<SpawnOnMap_Custom>();
+                    _spawnOnMapCustom = FindObjectOfType<AbstractMap>().GetComponent<SpawnOnMap_Custom>();
 
-                    //_spawnOnMapCustom.SetNewTargetLocation(currentMission.latitudeArea, currentMission.longitudeArea, currentMission.latitudeTarget, currentMission.longitudeTarget);
+                    _spawnOnMapCustom.SetNewTargetLocation(currentMission.latitudeArea, currentMission.longitudeArea, currentMission.latitudeTarget, currentMission.longitudeTarget);
 
                     // Initialization for the target location of navigation power
                     Explorer ex = FindObjectOfType<Explorer>();
