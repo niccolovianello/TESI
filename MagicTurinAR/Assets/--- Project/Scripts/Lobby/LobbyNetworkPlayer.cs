@@ -176,36 +176,7 @@ namespace MirrorBasics
         }
         #endregion
 
-        //public void RenderPlayerBody()
-        //{
-
-        //    //playerCamera.enabled = true;
-
-
-        //    //this.gameObject.AddComponent(Type.GetType("ImmediatePositionWithLocationProvider"));
-        //    //this.gameObject.AddComponent(Type.GetType("Explorer"));
-        //    //this.gameObject.AddComponent(Type.GetType("RotateWhitLocationProvider"));
-        //    //playerCamera.gameObject.AddComponent(Type.GetType("GemFactory"));
-        //    //playerCamera.gameObject.AddComponent(Type.GetType("WhiteFragmentFactory"));
-        //    //playerCamera.gameObject.AddComponent(Type.GetType("EnemyFactory"));
-
-
-        //    //ItemAssets itemAssets = FindObjectOfType<ItemAssets>();
-
-
-
-        //    //playerCamera.GetComponent<GemFactory>().SetItemPrefab(itemAssets.gem);
-
-
-
-        //    //playerCamera.GetComponent<WhiteFragmentFactory>().SetItemPrefab(itemAssets.whiteFragment);
-
-
-        //    //playerCamera.GetComponent<EnemyFactory>().SetEnemyPrefab(itemAssets.enemy);
-
-
-        //}
-
+       
 
     }
 
