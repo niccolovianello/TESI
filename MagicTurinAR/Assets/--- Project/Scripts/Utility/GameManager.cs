@@ -7,6 +7,7 @@ using UnityEngine.Assertions;
 using UnityEngine.Events;
 using MirrorBasics;
 using Mapbox.Examples;
+using Mapbox.Unity.Map;
 using Mirror;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
@@ -51,7 +52,6 @@ public class GameManager : Singleton<GameManager>
     }
     private void Start()
     {
-        currentPlayer = FindObjectOfType<MagicPlayer>();
         LobbyNetworkPlayer[] listOfPlayer = FindObjectsOfType<NetworkPlayer>();
 
         foreach (NetworkPlayer player in listOfPlayer)
@@ -68,6 +68,13 @@ public class GameManager : Singleton<GameManager>
                 break;
             }
         }
+        
+        currentPlayer = FindObjectOfType<MagicPlayer>();
+        
+        RangeAroundTransformTileProviderOptions rangeAroundTransformTileProviderOptions = new RangeAroundTransformTileProviderOptions();
+        rangeAroundTransformTileProviderOptions.SetOptions(currentPlayer.transform);
+        FindObjectOfType<AbstractMap>().SetExtentOptions(rangeAroundTransformTileProviderOptions);
+        
 
         foreach (var camera in FindObjectsOfType<Camera>())
         {
