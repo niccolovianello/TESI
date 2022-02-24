@@ -13,7 +13,7 @@ namespace MirrorBasics
     public class Match {
 
         public string matchID;
-        readonly SyncListGameObject players = new SyncListGameObject(); // errore lo da perch� non riesce a deserielizzare players?
+        readonly SyncListGameObject players = new SyncListGameObject(); 
 
         public Match(string matchID, GameObject player)
         {
@@ -46,9 +46,9 @@ namespace MirrorBasics
     {
         public static MatchMaker istance;
 
-        readonly SyncListMatch matches = new SyncListMatch();
+        [SerializeField] public SyncListMatch matches = new SyncListMatch();
 
-        readonly SyncListString matchIDs = new SyncListString();
+        [SerializeField] public SyncListString matchIDs = new SyncListString();
 
         [SerializeField] GameObject turnManagerPrefab;
 
@@ -136,6 +136,8 @@ namespace MirrorBasics
             GameObject newTurnManager = Instantiate(turnManagerPrefab);
             NetworkServer.Spawn(newTurnManager);
             newTurnManager.GetComponent<NetworkMatch>().matchId = _matchID.toGuid();
+
+            //salvataggio partita e elenco giocatori
 
             TurnManager turnManager = newTurnManager.GetComponent<TurnManager>();
 

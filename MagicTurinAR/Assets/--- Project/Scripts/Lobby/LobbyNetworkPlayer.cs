@@ -165,6 +165,7 @@ namespace MirrorBasics
             if (camera.tag == "External Camera")
                 camera.gameObject.SetActive(false);
             SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
+            // salvataggio Player-GUID-ruolo
 
 
             
