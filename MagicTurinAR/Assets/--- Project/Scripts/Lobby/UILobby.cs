@@ -12,7 +12,13 @@ namespace MirrorBasics
         public static UILobby istance;
         public Canvas totalLobbyUI;
 
+       
+
+        [Header("LoadGameCanvas")]
+        [SerializeField] Canvas loadGameCanvas;
+
         [Header("Host Join")]
+        [SerializeField] Canvas hostJoinCanvas;
         [SerializeField] InputField joinMatchInput;
         [SerializeField] Button joinButton;
         [SerializeField] Button hostButton;
@@ -188,7 +194,17 @@ namespace MirrorBasics
             lobbyCanvas.enabled = false;
             totalLobbyUI.enabled = false;
             NetworkPlayer.localPlayer.BeginGame();
- }
+        }
+
+        public void NewGame()
+        {
+            hostJoinCanvas.enabled = true;
+        }
+
+        public void LoadGame()
+        {
+            loadGameCanvas.enabled = true;
+        }
 
         
     }
