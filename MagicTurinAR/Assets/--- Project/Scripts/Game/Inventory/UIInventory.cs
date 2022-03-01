@@ -182,8 +182,11 @@ public class UIInventory : MonoBehaviour
         gameManager.networkPlayerCamera.enabled = false;
         gameManager.audioListener.enabled = false;
         gameManager.DisableMainGame();
-        gameManager.NotRenderPlayerBody();
-        
+        foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+        {
+            np.NotRenderPlayerBody();
+        }
+
     }
 
     public void IncreaseWhiteMagicToSend()

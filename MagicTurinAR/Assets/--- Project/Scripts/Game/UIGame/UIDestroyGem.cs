@@ -17,7 +17,10 @@ public class UIDestroyGem : MonoBehaviour
         GameManager gameManager = FindObjectOfType<GameManager>();
         NetworkPlayer networkPlayer = gameManager.networkPlayer;
         gameManager.EnableMainGame();
-        networkPlayer.RenderPlayerBody();
+        foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+        {
+            np.RenderPlayerBody();
+        }
         networkPlayer.CmdSendWhiteMagicFromGem(nfragment);
         gameManager.PlayerCameraObject.SetActive(true);
         SceneManager.UnloadSceneAsync("AR_DestroyGem");

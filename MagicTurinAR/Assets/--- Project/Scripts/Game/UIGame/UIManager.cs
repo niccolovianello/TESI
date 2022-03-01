@@ -181,7 +181,10 @@ public class UIManager : MonoBehaviour
         GameManager gm = FindObjectOfType<GameManager>();
         SceneManager.LoadSceneAsync(sceneToDestroyGemName, LoadSceneMode.Additive);
         gm.DisableMainGame();
-        networkplayer.NotRenderPlayerBody();
+        foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+        {
+            np.NotRenderPlayerBody();
+        }
         gm.PlayerCameraObject.SetActive(false);
     }
 }

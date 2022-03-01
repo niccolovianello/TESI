@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using MirrorBasics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
 [RequireComponent(typeof(CapsuleCollider))]
 public class Enemy : MonoBehaviour
@@ -21,7 +23,10 @@ public class Enemy : MonoBehaviour
         SceneManager.LoadScene("AR_EnemyFight", LoadSceneMode.Additive);
         gameManager.PlayerCameraObject.SetActive(false);
         gameManager.DisableMainGame();
-        gameManager.NotRenderPlayerBody();
+        foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+        {
+            np.NotRenderPlayerBody();
+        }
     }
 
 }

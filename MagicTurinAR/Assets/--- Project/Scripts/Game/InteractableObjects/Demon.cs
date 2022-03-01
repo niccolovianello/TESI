@@ -153,9 +153,11 @@ public class Demon : Enemy
             foreach (NetworkPlayer nt in FindObjectsOfType<NetworkPlayer>())
             {
                 if(nt.isLocalPlayer)
-                networkPlayer = nt;
+                    networkPlayer = nt;
+
+                nt.RenderPlayerBody();
             }
-            networkPlayer.RenderPlayerBody();
+            
             
             foreach (Spell spell in FindObjectsOfType<Spell>())
             {

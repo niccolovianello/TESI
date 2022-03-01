@@ -124,7 +124,10 @@ public class MissionsManager : MonoBehaviour
                 {
                     SceneManager.LoadSceneAsync(currentMission.sceneName, LoadSceneMode.Additive);
                     gameManager.DisableMainGame();
-                    networkPlayer.NotRenderPlayerBody();
+                    foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+                    {
+                        np.NotRenderPlayerBody();
+                    }
                     gameManager.PlayerCameraObject.SetActive(false);
                 }
                 break;
@@ -133,7 +136,10 @@ public class MissionsManager : MonoBehaviour
                 {
                     SceneManager.LoadSceneAsync(currentMission.sceneName, LoadSceneMode.Additive);
                     gameManager.DisableMainGame();
-                    networkPlayer.NotRenderPlayerBody();
+                    foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+                    {
+                        np.NotRenderPlayerBody();
+                    }
                     gameManager.PlayerCameraObject.SetActive(false);
                     gameManager.SetIsMission(true);
                 }
@@ -163,7 +169,10 @@ public class MissionsManager : MonoBehaviour
             case MissionSO.PlayerType.Wiseman:
                 if (magicPlayer is Wiseman)
                 {
-                    networkPlayer.RenderPlayerBody();
+                    foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+                    {
+                        np.RenderPlayerBody();
+                    }
                     SceneManager.UnloadSceneAsync(currentMission.sceneName);
                     gameManager.PlayerCameraObject.SetActive(true);
                     gameManager.EnableMainGame();
@@ -173,7 +182,10 @@ public class MissionsManager : MonoBehaviour
             case MissionSO.PlayerType.Hunter:
                 if (magicPlayer is Hunter)
                 {
-                    networkPlayer.RenderPlayerBody();
+                    foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+                    {
+                        np.RenderPlayerBody();
+                    }
                     SceneManager.UnloadSceneAsync(currentMission.sceneName);
                     gameManager.PlayerCameraObject.SetActive(true);
                     gameManager.EnableMainGame();

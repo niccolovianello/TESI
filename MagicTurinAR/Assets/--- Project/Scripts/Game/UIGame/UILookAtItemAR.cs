@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using MirrorBasics;
+using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
 public class UILookAtItemAR : MonoBehaviour
 {
@@ -17,7 +18,10 @@ public class UILookAtItemAR : MonoBehaviour
         gm.networkPlayerCamera.enabled = true;
         gm.audioListener.enabled = true;
         gm.EnableMainGame();
-        gm.RenderPlayerBody();
+        foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+        {
+            np.RenderPlayerBody();
+        }
     }
     
 }
