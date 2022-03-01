@@ -100,10 +100,6 @@ public class GameManager : Singleton<GameManager>
         networkPlayerCamera.enabled = true;
         audioListener.enabled = true;
         
-<<<<<<< Updated upstream
-        
-=======
->>>>>>> Stashed changes
         //networkPlayer.gameObject.AddComponent<ImmediatePositionWithLocationProvider>();
         networkPlayer.gameObject.AddComponent<RotateWithLocationProvider>();
         
