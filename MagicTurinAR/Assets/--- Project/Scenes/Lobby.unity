@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4477108, g: 0.497692, b: 0.5753997, a: 1}
+  m_IndirectSpecularColor: {r: 0.4477104, g: 0.49769127, b: 0.5753986, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2038,8 +2038,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1748520441}
-  - {fileID: 1045815487}
   - {fileID: 1474060853}
+  - {fileID: 1045815487}
   - {fileID: 396430304}
   m_Father: {fileID: 979832509}
   m_RootOrder: 0
@@ -2884,7 +2884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalLobbyUI: {fileID: 518672118}
   loadGameCanvas: {fileID: 1474060856}
-  hostJoinCanvas: {fileID: 1045815490}
+  hostJoinCanvas: {fileID: 1045815486}
   joinMatchInput: {fileID: 2133448922}
   joinButton: {fileID: 57119625}
   hostButton: {fileID: 224769988}
@@ -3156,7 +3156,6 @@ GameObject:
   - component: {fileID: 1045815487}
   - component: {fileID: 1045815489}
   - component: {fileID: 1045815488}
-  - component: {fileID: 1045815490}
   m_Layer: 5
   m_Name: Connect
   m_TagString: Untagged
@@ -3181,7 +3180,7 @@ RectTransform:
   - {fileID: 1606311738}
   - {fileID: 1114546978}
   m_Father: {fileID: 518672119}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3226,27 +3225,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045815486}
   m_CullTransparentMesh: 1
---- !u!223 &1045815490
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1045815486}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1 &1106866792
 GameObject:
   m_ObjectHideFlags: 0
@@ -4579,7 +4557,7 @@ RectTransform:
   - {fileID: 1727142250}
   - {fileID: 326100797}
   m_Father: {fileID: 518672119}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4894,7 +4872,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616018045}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -5677,7 +5655,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -983.55084}
+  m_AnchoredPosition: {x: 0, y: -725.55084}
   m_SizeDelta: {x: 968, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1794430184
