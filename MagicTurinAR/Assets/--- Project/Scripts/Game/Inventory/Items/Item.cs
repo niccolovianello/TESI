@@ -12,7 +12,7 @@ using UnityEngine.UI;
 
 public abstract class Item : MonoBehaviour, ItemInterface
 {
-    private float maxClickDistance = 10;
+    private float maxClickDistance = 50;
 
     private float rotateSpeed = 50.0f;
     private float floatAmplitude = 0.005f;

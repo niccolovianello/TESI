@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using MirrorBasics;
+using TMPro;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
 using UnityEngine.SceneManagement;
 
@@ -18,6 +19,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject GUI_explorer;
     [SerializeField] private GameObject GUI_wiseman;
     [SerializeField] private GameObject GUI_hunter;
+
+    private GameObject distanceWarningScreenSpace;
     
 
     [SerializeField] private MagicPlayer player;
@@ -40,6 +43,9 @@ public class UIManager : MonoBehaviour
         firebaseManager = FindObjectOfType<FirebaseManager>();
         storeData = FindObjectOfType<StoreData>();
         player = FindObjectOfType<MagicPlayer>();
+        
+        distanceWarningScreenSpace = GameObject.Find("DistanceWarning");
+        distanceWarningScreenSpace.SetActive(false);
 
         foreach (NetworkPlayer pl in FindObjectsOfType<NetworkPlayer>())
         {
@@ -87,6 +93,9 @@ public class UIManager : MonoBehaviour
             default:
 
                 break;
+            
+            
+                
 
         }
 
@@ -154,13 +163,8 @@ public class UIManager : MonoBehaviour
 
         }
 
-
-
-
-        
         CloseWindowToDestroyGemWiseman();
-       
-
+        
     }
 
     public void OpenWindowToDestroyGemHunter()
@@ -186,5 +190,13 @@ public class UIManager : MonoBehaviour
             np.NotRenderPlayerBody();
         }
         gm.PlayerCameraObject.SetActive(false);
+    }
+
+    public IEnumerator DistanceWarningScreenSpace(string text)
+    {
+        distanceWarningScreenSpace.GetComponent<TMP_Text>().text = text;
+        distanceWarningScreenSpace.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        distanceWarningScreenSpace.SetActive(false);
     }
 }
