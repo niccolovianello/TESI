@@ -32,6 +32,7 @@ public class HealthManager : MonoBehaviour
 
     public void PlayerDeath()
     {
+        FindObjectOfType<Demon>().Destroy();
         UI_EnemyFight uiFight = FindObjectOfType<UI_EnemyFight>();
         uiFight.PlayerDefeatedByDemon();
     }

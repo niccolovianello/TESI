@@ -150,7 +150,6 @@ public class Demon : Enemy
             MM.OpenFinishMissionWindow();
         else
         {
-            Debug.Log("Nemico sconfitto");
             foreach (NetworkPlayer nt in FindObjectsOfType<NetworkPlayer>())
             {
                 if(nt.isLocalPlayer)

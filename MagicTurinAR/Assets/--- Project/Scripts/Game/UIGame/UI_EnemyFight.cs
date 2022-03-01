@@ -18,22 +18,19 @@ public class UI_EnemyFight : MonoBehaviour
     {
         canvasWindowPlayerDefeat.enabled = false;
         MissionsManager mm = FindObjectOfType<MissionsManager>();
-        string currentSceneName = mm.currentMission.sceneName;
-
-        if (mm.currentMission.playerType == MissionSO.PlayerType.Hunter)
-            StartCoroutine(ReloadScene(currentSceneName));
-        else StartCoroutine("AR_EnemyFight");
-    }
-
-    private IEnumerator ReloadScene(string currentSceneName)
-    {
-        var asyncLoadLevel = SceneManager.UnloadSceneAsync(currentSceneName);
         
-        while (!asyncLoadLevel.isDone){
-            Debug.Log("Loading the Scene"); 
-            yield return null;
+        if (mm.currentMission.playerType == MissionSO.PlayerType.Hunter)
+        {
+            string currentSceneName = mm.currentMission.sceneName;
+            SceneManager.UnloadSceneAsync(currentSceneName);
+            SceneManager.LoadSceneAsync(currentSceneName, LoadSceneMode.Additive);
+        }
+        
+        else
+        {
+            SceneManager.UnloadSceneAsync("AR_EnemyFight");
+            SceneManager.LoadSceneAsync("AR_EnemyFight", LoadSceneMode.Additive);
         }
 
-        SceneManager.LoadSceneAsync(currentSceneName, LoadSceneMode.Additive);
     }
 }
