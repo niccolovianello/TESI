@@ -144,11 +144,13 @@ public class Demon : Enemy
         Destroy(gameObject);
         MissionsManager MM = FindObjectOfType<MissionsManager>();
         GameManager gm = FindObjectOfType<GameManager>();
+        
         NetworkPlayer networkPlayer = null;
         if (gm.GetIsMission())
             MM.OpenFinishMissionWindow();
         else
         {
+            Debug.Log("Nemico sconfitto");
             foreach (NetworkPlayer nt in FindObjectsOfType<NetworkPlayer>())
             {
                 if(nt.isLocalPlayer)
@@ -156,7 +158,7 @@ public class Demon : Enemy
             }
             networkPlayer.RenderPlayerBody();
             SceneManager.UnloadSceneAsync("AR_EnemyFight");
-            gm.PlayerCameraObject.SetActive(true);
+            gm.PlayerCameraObject.GetComponent<Camera>().enabled = true;
             gm.EnableMainGame();
         }
 
