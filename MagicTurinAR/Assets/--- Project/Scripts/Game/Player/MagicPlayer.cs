@@ -96,6 +96,7 @@ public class MagicPlayer : Player
 
     public override bool IsCloseToTeamMembers()
     {
+        /*
         bool isNear = false;
 
         foreach (NetworkPlayer nt in FindObjectsOfType<NetworkPlayer>())
@@ -108,6 +109,8 @@ public class MagicPlayer : Player
         }
 
         return isNear;
-        
+        */
+        return true;
+
     }
 }
