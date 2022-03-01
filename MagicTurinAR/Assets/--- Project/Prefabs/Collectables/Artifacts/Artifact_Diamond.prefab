@@ -67,8 +67,6 @@ MonoBehaviour:
   itemType: 0
   itemTypePlayer: 0
   idObjectCode: 9
-  distanceWarning: {fileID: 0}
-  distanceWarningCanvas: {fileID: 0}
 --- !u!1001 &1313779563992728054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98,7 +96,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e653f2acb119654a8f37033a51f0158, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e653f2acb119654a8f37033a51f0158, type: 3}
       propertyPath: m_LocalPosition.z
