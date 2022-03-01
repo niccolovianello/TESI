@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4180650811236850748}
   - component: {fileID: 4296719265213920558}
+  - component: {fileID: 3408304343951692066}
   m_Layer: 0
   m_Name: AR_BlackBook
   m_TagString: Untagged
@@ -53,6 +54,19 @@ MonoBehaviour:
   itemType: 2
   itemTypePlayer: 1
   idObjectCode: 0
+--- !u!65 &3408304343951692066
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5450339153427731536}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4141948, y: 0.61470246, z: 1.7898595}
+  m_Center: {x: 0.009632468, y: 1.1703411, z: -0.009632468}
 --- !u!1001 &6042147863297650640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82,7 +96,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa0209705c02741f2a8f665d1ea22c70, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa0209705c02741f2a8f665d1ea22c70, type: 3}
       propertyPath: m_LocalPosition.z
@@ -126,26 +140,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa0209705c02741f2a8f665d1ea22c70, type: 3}
---- !u!1 &6853190735176454785 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fa0209705c02741f2a8f665d1ea22c70, type: 3}
-  m_PrefabInstance: {fileID: 6042147863297650640}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6075562628837574715 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fa0209705c02741f2a8f665d1ea22c70, type: 3}
   m_PrefabInstance: {fileID: 6042147863297650640}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &838057431674056664
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6853190735176454785}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0035, y: 0.004, z: 0.0015}
-  m_Center: {x: 0.00006984556, y: 0.0000121052135, z: 0.00034330736}

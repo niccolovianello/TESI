@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7559501917362498206}
   - component: {fileID: 6665136739458745541}
+  - component: {fileID: 3076778404240862224}
   m_Layer: 0
   m_Name: AR_EgyptianHistory
   m_TagString: Untagged
@@ -53,6 +54,19 @@ MonoBehaviour:
   itemType: 1
   itemTypePlayer: 1
   idObjectCode: 2
+--- !u!65 &3076778404240862224
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101065494649350354}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4862239, y: 0.83195734, z: 2.0174696}
+  m_Center: {x: 0.009003878, y: 1.2091783, z: -0.036016583}
 --- !u!1001 &1942217605516902434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82,7 +96,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f8d8a48365ee9444a619652a2ffadd2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f8d8a48365ee9444a619652a2ffadd2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -126,26 +140,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f8d8a48365ee9444a619652a2ffadd2, type: 3}
---- !u!1 &1600270243514908019 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f8d8a48365ee9444a619652a2ffadd2, type: 3}
-  m_PrefabInstance: {fileID: 1942217605516902434}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2125309669426931657 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5f8d8a48365ee9444a619652a2ffadd2, type: 3}
   m_PrefabInstance: {fileID: 1942217605516902434}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &3357955035925492329
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600270243514908019}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0035, y: 0.0015, z: 0.005}
-  m_Center: {x: 0.00006781879, y: 0.0004527556, z: 0.000000056577846}
