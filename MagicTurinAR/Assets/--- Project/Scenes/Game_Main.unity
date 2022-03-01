@@ -3761,7 +3761,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 886300655}
+      - m_Target: {fileID: 2063283164}
         m_TargetAssemblyTypeName: UIInventory, Assembly-CSharp
         m_MethodName: OpenSceneInAR
         m_Mode: 1
@@ -7866,7 +7866,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 886300655}
+      - m_Target: {fileID: 2063283164}
         m_TargetAssemblyTypeName: UIInventory, Assembly-CSharp
         m_MethodName: CloseWindowToAr
         m_Mode: 1
@@ -8135,7 +8135,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 886300655}
+      - m_Target: {fileID: 1450087519}
         m_TargetAssemblyTypeName: UIInventory, Assembly-CSharp
         m_MethodName: OpenSceneInAR
         m_Mode: 1
@@ -8389,7 +8389,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 886300655}
+      - m_Target: {fileID: 1450087519}
         m_TargetAssemblyTypeName: UIInventory, Assembly-CSharp
         m_MethodName: CloseWindowToAr
         m_Mode: 1
