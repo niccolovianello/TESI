@@ -17,8 +17,12 @@ public class UI_EnemyFight : MonoBehaviour
     public void RestartFight()
     {
         canvasWindowPlayerDefeat.enabled = false;
-        string currentSceneName = FindObjectOfType<MissionsManager>().currentMission.sceneName;
-        StartCoroutine(ReloadScene(currentSceneName));
+        MissionsManager mm = FindObjectOfType<MissionsManager>();
+        string currentSceneName = mm.currentMission.sceneName;
+
+        if (mm.currentMission.playerType == MissionSO.PlayerType.Hunter)
+            StartCoroutine(ReloadScene(currentSceneName));
+        else StartCoroutine("AR_EnemyFight");
     }
 
     private IEnumerator ReloadScene(string currentSceneName)
