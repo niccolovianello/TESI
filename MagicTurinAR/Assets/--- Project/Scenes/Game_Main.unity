@@ -11653,7 +11653,7 @@ MonoBehaviour:
   textGems: {fileID: 724399722}
   textWhiteFragment: {fileID: 33977858}
   textWhiteMagicToSend: {fileID: 235861678}
-  windowToAR: {fileID: 0}
+  windowToAR: {fileID: 2035515289}
   wndowToSendWhiteMagic: {fileID: 1132131153}
   confirmSendWhiteMagic: {fileID: 1921078701}
   itemToSeeInAr: {fileID: 0}
