@@ -19,8 +19,7 @@ public class Enemy : MonoBehaviour
     {
         GameManager gameManager = FindObjectOfType<GameManager>();
         SceneManager.LoadScene("AR_EnemyFight", LoadSceneMode.Additive);
-        gameManager.networkPlayerCamera.enabled = false;
-        gameManager.audioListener.enabled = false;
+        gameManager.PlayerCameraObject.SetActive(false);
         gameManager.DisableMainGame();
         gameManager.NotRenderPlayerBody();
     }

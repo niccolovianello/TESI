@@ -158,7 +158,7 @@ public class Demon : Enemy
             }
             networkPlayer.RenderPlayerBody();
             SceneManager.UnloadSceneAsync("AR_EnemyFight");
-            gm.PlayerCameraObject.GetComponent<Camera>().enabled = true;
+            gm.PlayerCameraObject.SetActive(true);
             gm.EnableMainGame();
         }
 
