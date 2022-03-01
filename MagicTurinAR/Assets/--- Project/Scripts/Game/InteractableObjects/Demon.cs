@@ -156,6 +156,12 @@ public class Demon : Enemy
                 networkPlayer = nt;
             }
             networkPlayer.RenderPlayerBody();
+            
+            foreach (Spell spell in FindObjectsOfType<Spell>())
+            {
+                spell.Destroy();
+            }
+            
             SceneManager.UnloadSceneAsync("AR_EnemyFight");
             gm.PlayerCameraObject.SetActive(true);
             gm.EnableMainGame();
