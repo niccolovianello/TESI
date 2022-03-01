@@ -49,7 +49,9 @@ MonoBehaviour:
   itemGO: {fileID: 0}
   amount: 0
   magicPlayer: {fileID: 0}
+  networkPlayer: {fileID: 0}
   itemType: 2
+  itemTypePlayer: 0
   idObjectCode: 0
 --- !u!1001 &6042147863297650640
 PrefabInstance:
@@ -80,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa0209705c02741f2a8f665d1ea22c70, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa0209705c02741f2a8f665d1ea22c70, type: 3}
       propertyPath: m_LocalPosition.z
