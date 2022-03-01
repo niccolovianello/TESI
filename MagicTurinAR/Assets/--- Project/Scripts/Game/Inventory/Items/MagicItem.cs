@@ -16,6 +16,7 @@ public class MagicItem : Item
     public int idObjectCode;
 
     private GameObject distanceWarning;
+    private TMP_Text distanceWarningScreenSpace;
     private Canvas distanceWarningCanvas;
     
     public enum ItemType
@@ -39,6 +40,10 @@ public class MagicItem : Item
         distanceWarning = GameObject.Find("Warning");
         distanceWarningCanvas = distanceWarning.GetComponentInChildren<Canvas>();
         distanceWarningCanvas.enabled = false;
+        
+        distanceWarningScreenSpace = GameObject.Find("DistanceWarning").GetComponent<TMP_Text>();
+        distanceWarningScreenSpace.gameObject.SetActive(false);
+        
         uiInventory = FindObjectOfType<UIInventory>();
     }
 
@@ -120,6 +125,7 @@ public class MagicItem : Item
                                         else if (!magicPlayer.IsCloseToTeamMembers())
                                         {
                                             Debug.Log("You are too far from your team mates!");
+                                            StartCoroutine(DistanceWarningScreenSpace("You are too far from your team mates!"));
                                         }
 
                                         break;
@@ -161,9 +167,17 @@ public class MagicItem : Item
 
             else
             {
-                StartCoroutine(DistanceWarningActivation());
+                StartCoroutine(DistanceWarningScreenSpace("You're too far away from this collectable.\nGet closer to catch it!"));
             }
         }
+    }
+
+    public IEnumerator DistanceWarningScreenSpace(string text)
+    {
+        distanceWarningScreenSpace.text = text;
+        distanceWarningScreenSpace.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        distanceWarningScreenSpace.gameObject.SetActive(false);
     }
 
 
