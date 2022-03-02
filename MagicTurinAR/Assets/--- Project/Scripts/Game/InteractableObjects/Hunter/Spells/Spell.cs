@@ -30,6 +30,7 @@ public class Spell : MonoBehaviour
         {
             Demon demon = other.GetComponent<Demon>();
             demon.Damage(SpellToCast.Damage);
+            
         }
 
         if (other.gameObject.CompareTag("MainCamera"))

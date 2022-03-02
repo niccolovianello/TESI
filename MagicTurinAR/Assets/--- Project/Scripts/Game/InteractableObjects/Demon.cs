@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using MirrorBasics;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
-public class Demon : Enemy
+public class Demon : MonoBehaviour
 {
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private Text life;
@@ -18,6 +18,7 @@ public class Demon : Enemy
     [SerializeField] private float attackRadius;
     [SerializeField] private float viewAngle;
 
+    private CapsuleCollider collider;
     [SerializeField] private ParticleSystem soul;
 
     [SerializeField] private LayerMask layers;
@@ -35,6 +36,8 @@ public class Demon : Enemy
 
     private void Awake()
     {
+        collider = GetComponent<CapsuleCollider>();
+        collider.isTrigger = true;
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
     }

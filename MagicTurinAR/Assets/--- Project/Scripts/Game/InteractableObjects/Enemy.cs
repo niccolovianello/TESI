@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
         {
             np.NotRenderPlayerBody();
         }
+        Destroy(gameObject);
     }
 
 }

@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1943218729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1943218730}
+  m_Layer: 0
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1943218730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943218729}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0443, y: 0.0757, z: 0.0828}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4065617981142208756}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &700157019043772483
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,7 +832,7 @@ GameObject:
   - component: {fileID: 6013871590613210509}
   m_Layer: 0
   m_Name: Skeleton
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -822,6 +852,7 @@ Transform:
   - {fileID: 4065617981142208752}
   - {fileID: 4065617981142208758}
   - {fileID: 2015748997078746087}
+  - {fileID: 1943218730}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -872,17 +903,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   life: {fileID: 3316982997576796610}
-  runSpeed: 2
+  runSpeed: 0.05
   AR_Player: {fileID: 0}
-  dangerDistance: 0
-  attackDistance: 0
-  attackPoint: {fileID: 0}
-  attackRadius: 0
-  viewAngle: 0
+  dangerDistance: 25
+  attackDistance: 5
+  attackPoint: {fileID: 1943218730}
+  attackRadius: 0.6
+  viewAngle: 45
   soul: {fileID: 0}
   layers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &4065617981142174934
 GameObject:
   m_ObjectHideFlags: 0
