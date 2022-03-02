@@ -100,7 +100,7 @@ public class GameManager : Singleton<GameManager>
         networkPlayerCamera.enabled = true;
         audioListener.enabled = true;
         
-        //networkPlayer.gameObject.AddComponent<ImmediatePositionWithLocationProvider>();
+        networkPlayer.gameObject.AddComponent<ImmediatePositionWithLocationProvider>();
         networkPlayer.gameObject.AddComponent<RotateWithLocationProvider>();
         
 
