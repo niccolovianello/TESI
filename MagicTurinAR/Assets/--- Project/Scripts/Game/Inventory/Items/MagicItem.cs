@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using TMPro;
@@ -46,6 +47,8 @@ public class MagicItem : Item
     private void Start()
     {
 
+        
+
         player = FindObjectOfType<Player>();
         magicPlayer = FindObjectOfType<MagicPlayer>();
         NetworkPlayer[] networkPlayers = FindObjectsOfType<NetworkPlayer>();
@@ -64,13 +67,8 @@ public class MagicItem : Item
                 
         }
 
-        if (uiInventory == null)
-        {
-            Debug.LogWarning("uiInventory null!");
-            Destroy(gameObject);
-        }
-
     }
+    
 
     public override void OnMouseDown()
     {
