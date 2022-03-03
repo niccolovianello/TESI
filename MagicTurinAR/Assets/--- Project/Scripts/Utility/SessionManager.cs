@@ -28,7 +28,7 @@ public class SessionManager : NetworkBehaviour
         if (on_GPS_Initialized == null)
             on_GPS_Initialized = new UnityEvent();
 
-        StartCoroutine(CheckInitializationGeoLocation());
+        
         on_GPS_Initialized.AddListener(StartSendGeoLocation);
     }
 

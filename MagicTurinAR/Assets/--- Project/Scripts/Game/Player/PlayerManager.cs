@@ -13,19 +13,18 @@ public class PlayerManager : NetworkBehaviour
     public void SwitchDeviceSetUpForPlayerLocalization()
     {
 
-        #if UNITY_EDITOR
+        if (SystemInfo.deviceType == DeviceType.Desktop)
+        {
+            Debug.Log("PlayMode");
 
-        gameObject.AddComponent<NetworkTransform>();
-        Debug.Log("PlayMode");
+        }
 
+        //Check if the device running this is a handheld
+        if (SystemInfo.deviceType == DeviceType.Handheld)
+        {
+            Debug.Log("Android");
+            Destroy(gameObject.GetComponent<NetworkTransform>());
+        }
 
-#endif
-
-#if UNITY_EDITOR
-
-        Debug.Log("Android");
-
-
-        #endif
     }
 }

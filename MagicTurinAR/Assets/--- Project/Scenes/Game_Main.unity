@@ -7447,7 +7447,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171843429}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa3f7cee28af959488ab6438cfdd2a06, type: 3}
   m_Name: 
@@ -7455,8 +7455,6 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   timeToUpdateGeoLocation: 1.37
-  flagInitialization: 1
-  networkPlayer: {fileID: 0}
 --- !u!114 &1171843431
 MonoBehaviour:
   m_ObjectHideFlags: 0
