@@ -23,7 +23,7 @@ public class PlayerManager : NetworkBehaviour
         if (SystemInfo.deviceType == DeviceType.Handheld)
         {
             Debug.Log("Android");
-            Destroy(gameObject.GetComponent<NetworkTransform>());
+            //Destroy(gameObject.GetComponent<NetworkTransform>());
         }
 
     }
