@@ -241,6 +241,28 @@ namespace MirrorBasics
             }
         }
 
+        [Command]
+        public void CmdSendGeoPositionToServer(float latitude, float longitude,uint netId)
+        {
+
+            RpcReceiveGeoPositionFromServer(latitude, longitude, netId);
+        
+        }
+
+        [ClientRpc]
+        public void RpcReceiveGeoPositionFromServer(float latitude, float longitude, uint netId)
+        {
+            foreach(NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+            {
+                if (np.netId == netId)
+                {
+                    
+                }
+
+
+            }
+        }
+
     }
 
 
