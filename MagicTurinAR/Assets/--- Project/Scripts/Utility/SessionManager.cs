@@ -11,8 +11,8 @@ public class SessionManager : NetworkBehaviour
     [Range(0.5f, 3.0f)]
     [SerializeField] float timeToUpdateGeoLocation;
 
-    [SerializeField] bool flagInitialization = true;
-    public NetworkPlayer networkPlayer;
+    private bool flagInitialization = true;
+    private NetworkPlayer networkPlayer;
 
     UnityEvent on_GPS_Initialized;
 
