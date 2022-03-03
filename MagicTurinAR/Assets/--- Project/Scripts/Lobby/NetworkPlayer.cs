@@ -4,7 +4,9 @@ using UnityEngine;
 using MirrorBasics;
 using Mirror;
 using UnityEngine.SceneManagement;
-    
+using Mapbox.Unity.Utilities;
+using Mapbox.Unity.Map;
+using Mapbox.Utils;
 
 namespace MirrorBasics
 {
@@ -245,18 +247,20 @@ namespace MirrorBasics
         public void CmdSendGeoPositionToServer(float latitude, float longitude,uint netId)
         {
 
-            RpcReceiveGeoPositionFromServer(latitude, longitude, netId);
+            RpcReceiveGeoPositionFromServer((double)latitude, (double)longitude, netId);
         
         }
 
         [ClientRpc]
-        public void RpcReceiveGeoPositionFromServer(float latitude, float longitude, uint netId)
+        public void RpcReceiveGeoPositionFromServer(double latitude, double longitude, uint netId)
         {
             foreach(NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
             {
                 if (np.netId == netId)
                 {
-                    
+                    AbstractMap am = FindObjectOfType<AbstractMap>();
+                    Vector2d worldPosition2d= Conversions.GeoToWorldPosition(latitude, longitude, am.CenterMercator);
+                    np.gameObject.transform.Translate(new Vector3((float)worldPosition2d.x,transform.position.y, (float)worldPosition2d.y), Space.World);
                 }
 
 

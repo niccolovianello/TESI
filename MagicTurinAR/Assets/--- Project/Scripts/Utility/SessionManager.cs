@@ -6,10 +6,11 @@ using MirrorBasics;
 using UnityEngine.Events;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
-public class SessionManager : NetworkBehaviour
+public class SessionManager : MonoBehaviour
 {
+
     [Range(0.5f, 3.0f)]
-    [SerializeField] float timeToUpdateGeoLocation;
+    [SerializeField] float timeToUpdateGeoLocation = 1.5f;
 
     private bool flagInitialization = true;
     private NetworkPlayer networkPlayer;

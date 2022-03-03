@@ -99,8 +99,14 @@ public class GameManager : Singleton<GameManager>
         Item[] items;
         networkPlayerCamera.enabled = true;
         audioListener.enabled = true;
-        if(!networkPlayer.GetComponent<NetworkTransform>())
-            StartCoroutine(FindObjectOfType<SessionManager>().CheckInitializationGeoLocation());
+        if (!networkPlayer.GetComponent<NetworkTransform>())
+        {
+            SessionManager sm = networkPlayer.gameObject.AddComponent<SessionManager>();
+            StartCoroutine(sm.CheckInitializationGeoLocation());
+        }
+
+
+            
 
         networkPlayer.gameObject.AddComponent<ImmediatePositionWithLocationProvider>();
         networkPlayer.gameObject.AddComponent<RotateWithLocationProvider>();
