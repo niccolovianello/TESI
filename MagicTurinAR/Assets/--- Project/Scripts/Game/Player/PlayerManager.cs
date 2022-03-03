@@ -5,6 +5,10 @@ using Mirror;
 
 public class PlayerManager : NetworkBehaviour
 {
+    private void Start()
+    {
+        SwitchDeviceSetUpForPlayerLocalization();
+    }
 
     public void SwitchDeviceSetUpForPlayerLocalization()
     {
