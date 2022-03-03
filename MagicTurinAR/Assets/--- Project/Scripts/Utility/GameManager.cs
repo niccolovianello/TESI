@@ -102,7 +102,7 @@ public class GameManager : Singleton<GameManager>
         if (!networkPlayer.GetComponent<NetworkTransform>())
         {
             SessionManager sm = networkPlayer.gameObject.AddComponent<SessionManager>();
-            StartCoroutine(sm.CheckInitializationGeoLocation());
+          
         }
 
 

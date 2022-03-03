@@ -36,10 +36,10 @@ public class SessionManager : MonoBehaviour
 
     void Update()
     {
-        if (flagInitialization == false)
+        if (Input.location.isEnabledByUser && flagInitialization)
         {
             on_GPS_Initialized.Invoke();
-            flagInitialization = true;
+            flagInitialization = false;
         }
     }
 
@@ -60,18 +60,18 @@ public class SessionManager : MonoBehaviour
 
    
 
-    public IEnumerator CheckInitializationGeoLocation()
-    {
-        while (flagInitialization)
-        {
-            if (Input.location.status != LocationServiceStatus.Initializing && Input.location.status != LocationServiceStatus.Failed)
-            {
-                flagInitialization = false;
-            }
-            yield return new WaitForSeconds(0.5f);
+    //public IEnumerator CheckInitializationGeoLocation()
+    //{
+    //    while (flagInitialization)
+    //    {
+    //        if (Input.location.status != LocationServiceStatus.Initializing && Input.location.status != LocationServiceStatus.Failed)
+    //        {
+    //            flagInitialization = false;
+    //        }
+    //        yield return new WaitForSeconds(0.5f);
 
 
-        }
+    //    }
          
-    }
+    //}
 }
