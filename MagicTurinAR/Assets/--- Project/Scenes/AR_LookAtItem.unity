@@ -452,6 +452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera: {fileID: 909465771}
   PlaceMultipleObjects: 0
+  offsetSpawnObject: {x: 0, y: -0.8, z: 0}
   HitTestType: -1
   PlacementObjectPf: {fileID: 0}
 --- !u!114 &909465773
@@ -466,6 +467,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb59a310ceab547a8ba00f11b76b2e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &909465774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909465768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4762429022e4cc0b1b99fd1d2ecf137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 909465771}
+  CursorObject: {fileID: 4724406701335978488, guid: 6e67bec7e60fd894bb8b4508426f91cb, type: 3}
 --- !u!1 &1788762768
 GameObject:
   m_ObjectHideFlags: 0
