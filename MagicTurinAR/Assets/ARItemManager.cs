@@ -17,9 +17,4 @@ public class ARItemManager : MonoBehaviour
         arHitTester.PlacementObjectPf = gm.PrefabToShowInAr;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
