@@ -52,27 +52,31 @@ public class SessionManager : MonoBehaviour
 
         while (true)
         {
-            Debug.Log("Location latitude: " + Input.location.lastData.latitude + "\n Location longitude: " + Input.location.lastData.longitude);
+            Debug.Log("Location latitude: " + Input.location.lastData.latitude + "\n Location longitude: " + Input.location.lastData.longitude + "\n Accuracy: "+ Input.location.lastData.horizontalAccuracy);
             networkPlayer.CmdSendGeoPositionToServer(Input.location.lastData.latitude, Input.location.lastData.latitude, networkPlayer.netId);
+            
+            
             yield return new WaitForSeconds(timeToUpdate);
         }
 
     }
 
-   
-
-    //public IEnumerator CheckInitializationGeoLocation()
-    //{
-    //    while (flagInitialization)
-    //    {
-    //        if (Input.location.status != LocationServiceStatus.Initializing && Input.location.status != LocationServiceStatus.Failed)
-    //        {
-    //            flagInitialization = false;
-    //        }
-    //        yield return new WaitForSeconds(0.5f);
 
 
-    //    }
-         
-    //}
+    public IEnumerator CheckInitializationGeoLocation()
+    {
+        while (flagInitialization)
+        {
+            Input.location.Start(0.5f, 3);
+            if (Input.location.status != LocationServiceStatus.Initializing && Input.location.status != LocationServiceStatus.Failed)
+            {
+                flagInitialization = false;
+                yield break;
+            }
+            yield return new WaitForSeconds(2.5f);
+
+
+        }
+
+    }
 }
