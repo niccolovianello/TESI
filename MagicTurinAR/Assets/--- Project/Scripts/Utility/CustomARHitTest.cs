@@ -27,6 +27,8 @@ namespace Niantic.ARDKExamples.Helpers
 
         public bool PlaceMultipleObjects = false;
 
+        public Vector3 offsetSpawnObject = Vector3.zero;
+
         /// The types of hit test results to filter against when performing a hit test.
         [EnumFlagAttribute]
         public ARHitTestResultType HitTestType = ARHitTestResultType.ExistingPlane;
@@ -127,7 +129,7 @@ namespace Niantic.ARDKExamples.Helpers
             // more elegant about how/if to handle instantiation of the cube
             hitPosition.y += PlacementObjectPf.transform.localScale.y / 2.0f;
 
-            GameObject GO = Instantiate(PlacementObjectPf, hitPosition, Quaternion.identity);
+            GameObject GO = Instantiate(PlacementObjectPf, hitPosition + offsetSpawnObject, Quaternion.identity);
             if (GO.GetComponent<MagicItem>())
             {
                 GO.GetComponent<MagicItem>().Destroy();
