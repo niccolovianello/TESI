@@ -125,6 +125,7 @@ namespace Niantic.ARDKExamples.Helpers
       // more elegant about how/if to handle instantiation of the cube
       hitPosition.y += PlacementObjectPf.transform.localScale.y / 2.0f;
 
+
       _placedObjects.Add(Instantiate(PlacementObjectPf, hitPosition, Quaternion.identity));
 
       var anchor = result.Anchor;

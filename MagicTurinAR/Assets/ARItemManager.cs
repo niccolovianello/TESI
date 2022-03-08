@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ARItemManager : MonoBehaviour
 {
-    private ARHitTester arHitTester;
+    private CustomARHitTest arHitTester;
     
     // Start is called before the first frame update
     void Start()
@@ -13,7 +13,7 @@ public class ARItemManager : MonoBehaviour
         GameObject gameManager = GameObject.Find("Loader");
         GameManager gm = gameManager.GetComponent<GameManager>();
 
-        arHitTester = GetComponent<ARHitTester>();
+        arHitTester = GetComponent<CustomARHitTest>();
         arHitTester.PlacementObjectPf = gm.PrefabToShowInAr;
     }
 

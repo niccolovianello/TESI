@@ -141,6 +141,8 @@ public class MagicItem : Item
                             {
                                 int amountToPass = magicPlayer.inventory.AddItemToInventory(miSO, this);
                                 Debug.Log("Aggiunto a inventario " + this.gameObject.name);
+                                
+                                
                                 Destroy(gameObject);
                                 break;
                             }
