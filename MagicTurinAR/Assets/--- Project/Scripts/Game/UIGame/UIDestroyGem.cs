@@ -4,10 +4,13 @@ using UnityEngine;
 using MirrorBasics;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
 using UnityEngine.SceneManagement;
+using Niantic.ARDKExamples.Helpers;
+using UnityEngine.UI;
 
 public class UIDestroyGem : MonoBehaviour
 {
     public Canvas windowToBackToTheGame;
+    public Image  restartWindow;
     public int nfragment;
 
     public void BackToMainGame()
@@ -36,5 +39,17 @@ public class UIDestroyGem : MonoBehaviour
     public void CloseBackToGameWindow()
     {
         windowToBackToTheGame.enabled = false;
+    }
+
+    public void CloseRestartWindow()
+    {
+        FindObjectOfType<LocateARGemScript>().SetCounterTouchToZero();
+        restartWindow.gameObject.SetActive(false);
+    }
+
+    public void OpenRestartWindow()
+    {
+        restartWindow.gameObject.SetActive(true);
+        Debug.Log("open");
     }
 }

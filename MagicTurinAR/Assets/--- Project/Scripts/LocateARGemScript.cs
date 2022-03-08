@@ -20,15 +20,11 @@ namespace Niantic.ARDKExamples.Helpers
     ///   A hit test is run from that location. If a plane is found, spawn a game object at the
     ///   hit location.
     /// </summary>
-    public class CustomARHitTest : MonoBehaviour
+    public class LocateARGemScript : MonoBehaviour
     {
         /// The camera used to render the scene. Used to get the center of the screen.
         public Camera Camera;
-
-        public bool PlaceMultipleObjects = false;
-
-        public Vector3 offsetSpawnObject = Vector3.zero;
-
+        private int counterTouch = 0;
         /// The types of hit test results to filter against when performing a hit test.
         [EnumFlagAttribute]
         public ARHitTestResultType HitTestType = ARHitTestResultType.ExistingPlane;
@@ -37,11 +33,21 @@ namespace Niantic.ARDKExamples.Helpers
         public GameObject PlacementObjectPf;
 
         /// A list of placed game objects to be destroyed in the OnDestroy method.
-        private List<GameObject> _placedObjects = new List<GameObject>();
+        private GameObject _placedObject = null;
 
         /// Internal reference to the session, used to get the current frame to hit test against.
         private IARSession _session;
 
+
+        public int GetCounterTouch()
+        {
+            return counterTouch;
+        }
+
+        public void SetCounterTouchToZero()
+        {
+            counterTouch = 0;
+        }
         private void Start()
         {
             ARSessionFactory.SessionInitialized += OnAnyARSessionDidInitialize;
@@ -69,12 +75,8 @@ namespace Niantic.ARDKExamples.Helpers
 
         private void ClearObjects()
         {
-            foreach (var placedObject in _placedObjects)
-            {
-                Destroy(placedObject);
-            }
-
-            _placedObjects.Clear();
+            Destroy(_placedObject);
+            _placedObject = null;
         }
 
         private void Update()
@@ -90,9 +92,11 @@ namespace Niantic.ARDKExamples.Helpers
             }
 
             var touch = PlatformAgnosticInput.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
+            if (touch.phase == TouchPhase.Began && GetCounterTouch() < 1)
             {
+                ClearObjects();
                 TouchBegan(touch);
+               
             }
         }
 
@@ -129,27 +133,12 @@ namespace Niantic.ARDKExamples.Helpers
             // more elegant about how/if to handle instantiation of the cube
             hitPosition.y += PlacementObjectPf.transform.localScale.y / 2.0f;
 
-            GameObject GO = Instantiate(PlacementObjectPf, hitPosition + offsetSpawnObject, Quaternion.identity);
-            if (GO.GetComponent<MagicItem>())
-            {
-                GO.GetComponent<MagicItem>().Destroy();
-            }
-            if (!PlaceMultipleObjects)
-            {
-                ClearObjects();
-            }
-            
-            _placedObjects.Add(GO);
+
+            _placedObject = Instantiate(PlacementObjectPf, hitPosition, Quaternion.identity);
+            counterTouch++;
 
             var anchor = result.Anchor;
-            Debug.LogFormat
-            (
-              "Spawning cube at {0} (anchor: {1})",
-              hitPosition.ToString("F4"),
-              anchor == null
-                ? "none"
-                : anchor.AnchorType + " " + anchor.Identifier
-            );
+           
         }
     }
 }
