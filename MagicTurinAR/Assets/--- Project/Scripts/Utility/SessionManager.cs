@@ -52,6 +52,7 @@ public class SessionManager : MonoBehaviour
 
         while (true)
         {
+            Debug.Log("Location latitude: " + Input.location.lastData.latitude + "\n Location longitude: " + Input.location.lastData.longitude);
             networkPlayer.CmdSendGeoPositionToServer(Input.location.lastData.latitude, Input.location.lastData.latitude, networkPlayer.netId);
             yield return new WaitForSeconds(timeToUpdate);
         }
