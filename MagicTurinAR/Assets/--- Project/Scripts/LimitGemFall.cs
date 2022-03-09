@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class LimitGemFallScript : MonoBehaviour
+public class LimitGemFall : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {

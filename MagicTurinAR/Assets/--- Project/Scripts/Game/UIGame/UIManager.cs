@@ -7,6 +7,7 @@ using MirrorBasics;
 using TMPro;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -21,7 +22,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject GUI_hunter;
 
     private GameObject distanceWarningScreenSpace;
-    
+
+    public Image gpsAccuracy;
+
 
     [SerializeField] private MagicPlayer player;
     private NetworkPlayer networkplayer;

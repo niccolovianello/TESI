@@ -20,7 +20,7 @@ namespace Niantic.ARDKExamples.Helpers
     ///   A hit test is run from that location. If a plane is found, spawn a game object at the
     ///   hit location.
     /// </summary>
-    public class LocateARGemScript : MonoBehaviour
+    public class LocateARGem : MonoBehaviour
     {
         /// The camera used to render the scene. Used to get the center of the screen.
         public Camera Camera;

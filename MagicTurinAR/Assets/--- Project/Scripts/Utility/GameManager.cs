@@ -17,9 +17,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private MagicPlayer currentPlayer;
 
     private bool isMission = false;
-    public GameObject parentObjPlayer;
-    public GameObject parentObjItems;
-    public GameObject parentObjEnemies;
+    
     public NetworkPlayer networkPlayer;
     public Camera networkPlayerCamera;
     public AudioListener audioListener;
@@ -98,13 +96,11 @@ public class GameManager : Singleton<GameManager>
         Item[] items;
         networkPlayerCamera.enabled = true;
         audioListener.enabled = true;
+        
         if (!networkPlayer.GetComponent<NetworkTransform>())
         {
             SessionManager sm = networkPlayer.gameObject.AddComponent<SessionManager>();
-          
         }
-
-
 
         networkPlayer.gameObject.AddComponent<DeviceLocationProvider>();
         networkPlayer.gameObject.AddComponent<ImmediatePositionWithLocationProvider>();
@@ -112,8 +108,7 @@ public class GameManager : Singleton<GameManager>
         
 
         ItemAssets itemAssets = FindObjectOfType<ItemAssets>();
-
-        //networkPlayer.gameObject.AddComponent<ControllerMovement>();
+        
         switch (networkPlayer.TypePlayerEnum)
         {
             case NetworkPlayer.TypePlayer.Explorer:
@@ -161,8 +156,6 @@ public class GameManager : Singleton<GameManager>
                 networkPlayer.gameObject.AddComponent<Wiseman>();
                 Wiseman wiseman = networkPlayer.GetComponent<Wiseman>();
                 currentPlayer = wiseman;
-               
-
 
                 items = FindObjectsOfType<MagicItem>();
 
@@ -197,10 +190,7 @@ public class GameManager : Singleton<GameManager>
                 }
                 break;
         }
-
         
-
-
     }
 
 

@@ -5,17 +5,25 @@ using Mirror;
 using MirrorBasics;
 using UnityEngine.Events;
 using Mapbox.Unity.Location;
+using UnityEngine.UI;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
 public class SessionManager : MonoBehaviour
 {
 
     [Range(0.5f, 3.0f)]
-    [SerializeField] float timeToUpdateGeoLocation = 1.5f;
+    [SerializeField] float updateTime = 1.5f;
 
-    private bool flagInitialization = true;
+    private float bestAccuracy = 10;
+    private float worstAccuracy = 50;
+
+    private bool isInitializing = true;
     private NetworkPlayer networkPlayer;
     private DeviceLocationProvider deviceLocationProvider = null;
+
+    private UIManager _uiManager;
+
+    private float fill;
 
     UnityEvent on_GPS_Initialized;
 
@@ -31,6 +39,8 @@ public class SessionManager : MonoBehaviour
         if (on_GPS_Initialized == null)
             on_GPS_Initialized = new UnityEvent();
 
+        _uiManager = FindObjectOfType<UIManager>();
+
         
         on_GPS_Initialized.AddListener(StartSendGeoLocation);
         StartCoroutine(FindDeviceLocationProvider());
@@ -45,18 +55,19 @@ public class SessionManager : MonoBehaviour
         //    flagInitialization = false;
         //}
 
-        if (!flagInitialization && deviceLocationProvider != null)
+        if (!isInitializing && deviceLocationProvider != null)
         {
             on_GPS_Initialized.Invoke();
-            flagInitialization = true;
+            isInitializing = true;
         }
         
     }
 
-    public void StartSendGeoLocation()
+    private void StartSendGeoLocation()
     {
-        StartCoroutine(SendGeoLocationToServer(timeToUpdateGeoLocation));
+        StartCoroutine(SendGeoLocationToServer(updateTime));
     }
+    
     //public IEnumerator SendGeoLocationToServer(float timeToUpdate)
     //{
 
@@ -91,35 +102,44 @@ public class SessionManager : MonoBehaviour
 
     //}
 
-    public IEnumerator SendGeoLocationToServer(float timeToUpdate)
+    private IEnumerator SendGeoLocationToServer(float updateTime)
     {
         while (true)      
         {
-
             Debug.Log("Location latitude: " + deviceLocationProvider.CurrentLocation.LatitudeLongitude.x + "\n Location longitude: " + deviceLocationProvider.CurrentLocation.LatitudeLongitude.y + "\n Accuracy: " + deviceLocationProvider.CurrentLocation.Accuracy);
             networkPlayer.CmdSendGeoPositionToServer((float)deviceLocationProvider.CurrentLocation.LatitudeLongitude.x, (float)deviceLocationProvider.CurrentLocation.LatitudeLongitude.y, networkPlayer.netId);
-            yield return new WaitForSeconds(timeToUpdate);
-        
-        
-        }
 
+            fill = CalculateFill(worstAccuracy, bestAccuracy, 0, 1, deviceLocationProvider.CurrentLocation.Accuracy);
+            _uiManager.gpsAccuracy.fillAmount = fill;
+            
+            yield return new WaitForSeconds(updateTime);
+        }
+        
     }
 
-    public IEnumerator FindDeviceLocationProvider()
+    private IEnumerator FindDeviceLocationProvider()
     {
-        while (flagInitialization)
+        while (isInitializing)
         {
             deviceLocationProvider = FindObjectOfType<DeviceLocationProvider>();
             if (deviceLocationProvider != null)
             {
-                flagInitialization = false;
+                isInitializing = false;
                 yield break;
             }
 
             yield return new WaitForSeconds(1);
-                
-
+            
         }
+    }
+
+    public float CalculateFill(float oldMin, float oldMax, float newMin, float newMax, float oldValue){
+ 
+        float oldRange = oldMax - oldMin;
+        float newRange = newMax - newMin;
+        float newValue = 1 - ((oldValue - oldMin) * newRange / oldRange + newMin);
+ 
+        return newValue;
     }
 
    

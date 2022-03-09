@@ -43,7 +43,7 @@ public class UIDestroyGem : MonoBehaviour
 
     public void CloseRestartWindow()
     {
-        FindObjectOfType<LocateARGemScript>().SetCounterTouchToZero();
+        FindObjectOfType<LocateARGem>().SetCounterTouchToZero();
         restartWindow.gameObject.SetActive(false);
     }
 
