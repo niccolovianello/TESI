@@ -15,7 +15,7 @@ public class SessionManager : MonoBehaviour
 
     private bool flagInitialization = true;
     private NetworkPlayer networkPlayer;
-    private AbstractLocationProvider abstractLocationProvider;
+    private DeviceLocationProvider deviceLocationProvider = null;
 
     UnityEvent on_GPS_Initialized;
 
@@ -33,7 +33,7 @@ public class SessionManager : MonoBehaviour
 
         
         on_GPS_Initialized.AddListener(StartSendGeoLocation);
-        StartCoroutine(FindAbstractLocationProvider());
+        StartCoroutine(FindDeviceLocationProvider());
     }
 
 
@@ -45,10 +45,10 @@ public class SessionManager : MonoBehaviour
         //    flagInitialization = false;
         //}
 
-        if (flagInitialization && abstractLocationProvider != null)
+        if (!flagInitialization && deviceLocationProvider != null)
         {
             on_GPS_Initialized.Invoke();
-            flagInitialization = false;
+            flagInitialization = true;
         }
         
     }
@@ -96,8 +96,8 @@ public class SessionManager : MonoBehaviour
         while (true)      
         {
 
-            Debug.Log("Location latitude: " + abstractLocationProvider.CurrentLocation.LatitudeLongitude.x + "\n Location longitude: " + abstractLocationProvider.CurrentLocation.LatitudeLongitude.y + "\n Accuracy: " + abstractLocationProvider.CurrentLocation.Accuracy);
-            networkPlayer.CmdSendGeoPositionToServer((float)abstractLocationProvider.CurrentLocation.LatitudeLongitude.x, (float)abstractLocationProvider.CurrentLocation.LatitudeLongitude.y, networkPlayer.netId);
+            Debug.Log("Location latitude: " + deviceLocationProvider.CurrentLocation.LatitudeLongitude.x + "\n Location longitude: " + deviceLocationProvider.CurrentLocation.LatitudeLongitude.y + "\n Accuracy: " + deviceLocationProvider.CurrentLocation.Accuracy);
+            networkPlayer.CmdSendGeoPositionToServer((float)deviceLocationProvider.CurrentLocation.LatitudeLongitude.x, (float)deviceLocationProvider.CurrentLocation.LatitudeLongitude.y, networkPlayer.netId);
             yield return new WaitForSeconds(timeToUpdate);
         
         
@@ -105,14 +105,14 @@ public class SessionManager : MonoBehaviour
 
     }
 
-    public IEnumerator FindAbstractLocationProvider()
+    public IEnumerator FindDeviceLocationProvider()
     {
-        while (!flagInitialization)
+        while (flagInitialization)
         {
-            abstractLocationProvider = FindObjectOfType<AbstractEditorLocationProvider>();
-            if (abstractLocationProvider != null)
+            deviceLocationProvider = FindObjectOfType<DeviceLocationProvider>();
+            if (deviceLocationProvider != null)
             {
-                flagInitialization = true;
+                flagInitialization = false;
                 yield break;
             }
 

@@ -108,7 +108,7 @@ public class GameManager : Singleton<GameManager>
 
 
 
-        networkPlayer.gameObject.AddComponent<AbstractLocationProvider>();
+        networkPlayer.gameObject.AddComponent<DeviceLocationProvider>();
         networkPlayer.gameObject.AddComponent<ImmediatePositionWithLocationProvider>();
         networkPlayer.gameObject.AddComponent<RotateWithLocationProvider>();
         
