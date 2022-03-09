@@ -4,6 +4,7 @@ using UnityEngine;
 using Mirror;
 using MirrorBasics;
 using UnityEngine.Events;
+using Mapbox.Unity.Location;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
 public class SessionManager : MonoBehaviour
@@ -14,6 +15,7 @@ public class SessionManager : MonoBehaviour
 
     private bool flagInitialization = true;
     private NetworkPlayer networkPlayer;
+    private AbstractLocationProvider abstractLocationProvider;
 
     UnityEvent on_GPS_Initialized;
 
@@ -31,52 +33,94 @@ public class SessionManager : MonoBehaviour
 
         
         on_GPS_Initialized.AddListener(StartSendGeoLocation);
+        StartCoroutine(FindAbstractLocationProvider());
     }
 
 
     void Update()
     {
-        if (Input.location.isEnabledByUser && flagInitialization)
+        //if (Input.location.isEnabledByUser && flagInitialization)
+        //{
+        //    on_GPS_Initialized.Invoke();
+        //    flagInitialization = false;
+        //}
+
+        if (flagInitialization && abstractLocationProvider != null)
         {
             on_GPS_Initialized.Invoke();
             flagInitialization = false;
         }
+        
     }
 
     public void StartSendGeoLocation()
     {
         StartCoroutine(SendGeoLocationToServer(timeToUpdateGeoLocation));
     }
+    //public IEnumerator SendGeoLocationToServer(float timeToUpdate)
+    //{
+
+    //    while (true)
+    //    {
+
+    //        Debug.Log("Location latitude: " + Input.location.lastData.latitude + "\n Location longitude: " + Input.location.lastData.longitude + "\n Accuracy: "+ Input.location.lastData.horizontalAccuracy);
+    //        networkPlayer.CmdSendGeoPositionToServer(Input.location.lastData.latitude, Input.location.lastData.latitude, networkPlayer.netId);
+
+
+    //        yield return new WaitForSeconds(timeToUpdate);
+    //    }
+
+    //}
+
+
+
+    //public IEnumerator CheckInitializationGeoLocation()
+    //{
+    //    while (flagInitialization)
+    //    {
+    //        Input.location.Start(0.5f, 3);
+    //        if (Input.location.status != LocationServiceStatus.Initializing && Input.location.status != LocationServiceStatus.Failed)
+    //        {
+    //            flagInitialization = false;
+    //            yield break;
+    //        }
+    //        yield return new WaitForSeconds(2.5f);
+
+
+    //    }
+
+    //}
+
     public IEnumerator SendGeoLocationToServer(float timeToUpdate)
     {
-
-        while (true)
+        while (true)      
         {
-            Debug.Log("Location latitude: " + Input.location.lastData.latitude + "\n Location longitude: " + Input.location.lastData.longitude + "\n Accuracy: "+ Input.location.lastData.horizontalAccuracy);
-            networkPlayer.CmdSendGeoPositionToServer(Input.location.lastData.latitude, Input.location.lastData.latitude, networkPlayer.netId);
-            
-            
+
+            Debug.Log("Location latitude: " + abstractLocationProvider.CurrentLocation.LatitudeLongitude.x + "\n Location longitude: " + abstractLocationProvider.CurrentLocation.LatitudeLongitude.y + "\n Accuracy: " + abstractLocationProvider.CurrentLocation.Accuracy);
+            networkPlayer.CmdSendGeoPositionToServer((float)abstractLocationProvider.CurrentLocation.LatitudeLongitude.x, (float)abstractLocationProvider.CurrentLocation.LatitudeLongitude.y, networkPlayer.netId);
             yield return new WaitForSeconds(timeToUpdate);
+        
+        
         }
 
     }
 
-
-
-    public IEnumerator CheckInitializationGeoLocation()
+    public IEnumerator FindAbstractLocationProvider()
     {
-        while (flagInitialization)
+        while (!flagInitialization)
         {
-            Input.location.Start(0.5f, 3);
-            if (Input.location.status != LocationServiceStatus.Initializing && Input.location.status != LocationServiceStatus.Failed)
+            abstractLocationProvider = FindObjectOfType<AbstractEditorLocationProvider>();
+            if (abstractLocationProvider != null)
             {
-                flagInitialization = false;
+                flagInitialization = true;
                 yield break;
             }
-            yield return new WaitForSeconds(2.5f);
 
+            yield return new WaitForSeconds(1);
+                
 
         }
-
     }
+
+   
 }

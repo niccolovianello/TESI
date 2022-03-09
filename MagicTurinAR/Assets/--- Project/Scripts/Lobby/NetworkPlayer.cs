@@ -247,12 +247,12 @@ namespace MirrorBasics
         public void CmdSendGeoPositionToServer(float latitude, float longitude,uint netId)
         {
 
-            RpcReceiveGeoPositionFromServer((double)latitude, (double)longitude, netId);
+            RpcReceiveGeoPositionFromServer(latitude, longitude, netId);
         
         }
 
         [ClientRpc]
-        public void RpcReceiveGeoPositionFromServer(double latitude, double longitude, uint netId)
+        public void RpcReceiveGeoPositionFromServer(float latitude, float longitude, uint netId)
         {
             foreach(NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
             {

@@ -8,6 +8,7 @@ using UnityEngine.Events;
 using MirrorBasics;
 using Mapbox.Examples;
 using Mapbox.Unity.Map;
+using Mapbox.Unity.Location;
 using Mirror;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
@@ -106,8 +107,8 @@ public class GameManager : Singleton<GameManager>
         }
 
 
-            
 
+        networkPlayer.gameObject.AddComponent<AbstractLocationProvider>();
         networkPlayer.gameObject.AddComponent<ImmediatePositionWithLocationProvider>();
         networkPlayer.gameObject.AddComponent<RotateWithLocationProvider>();
         
