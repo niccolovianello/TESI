@@ -16,18 +16,18 @@ public class Vibrations : MonoBehaviour
     }
     public void Vibrate100()
     {
-        Vibration.Vibrate(100);
+        Vibration.VibrateNope();
     }
     public void Vibrate200()
     {
-        Vibration.Vibrate(200);
+        Vibration.VibratePeek();
     }
     public void Vibrate400()
     {
-        Vibration.Vibrate(400);
+        Vibration.Vibrate();
     }
     public void Vibrate800()
     {
-        Vibration.Vibrate(800);
+        Vibration.VibratePop();
     }
 }

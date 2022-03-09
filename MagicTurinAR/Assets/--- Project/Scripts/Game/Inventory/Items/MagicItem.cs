@@ -95,12 +95,14 @@ public class MagicItem : Item
                                         if (magicPlayer.IsCloseToTeamMembers())
                                         {
                                             networkPlayer.CmdSendGem();
+                                            Vibration.VibratePop();
                                             Destroy(gameObject);
                                             
                                         }
                                         else if (!magicPlayer.IsCloseToTeamMembers())
                                         {
                                             Debug.Log("You are too far from your team mates!");
+                                            Vibration.VibrateNope();
                                             StartCoroutine(FindObjectOfType<UIManager>().DistanceWarningScreenSpace("You are too far from your team mates!"));
                                         }
 
@@ -115,11 +117,13 @@ public class MagicItem : Item
                                             int amountToPass = magicPlayer.inventory.AddItemToInventory(miSO, this);
                                             Debug.Log(amountToPass);
                                             uiInventory.UpdateWhiteFragmentCount(amountToPass);
+                                            Vibration.VibratePop();
                                             Destroy(gameObject);
                                         }
                                         else if (!magicPlayer.IsCloseToTeamMembers())
                                         {
                                             Debug.Log("You are too far from your team mates!");
+                                            Vibration.VibrateNope();
                                             StartCoroutine(FindObjectOfType<UIManager>().DistanceWarningScreenSpace("You are too far from your team mates!"));
                                         }
 
@@ -129,6 +133,7 @@ public class MagicItem : Item
                                 default:
                                     {
                                         Debug.LogWarning("Are you sure that this object should be stackable?");
+                                        
                                         break;
                                     }
                             }
@@ -141,7 +146,7 @@ public class MagicItem : Item
                             {
                                 int amountToPass = magicPlayer.inventory.AddItemToInventory(miSO, this);
                                 Debug.Log("Aggiunto a inventario " + this.gameObject.name);
-                                
+                                Vibration.VibratePop();
                                 
                                 Destroy(gameObject);
                                 break;
@@ -149,6 +154,7 @@ public class MagicItem : Item
                             else if (!magicPlayer.IsCloseToTeamMembers())
                             {
                                 Debug.Log("You are too far from your team mates!");
+                                Vibration.VibrateNope();
                                 StartCoroutine(FindObjectOfType<UIManager>().DistanceWarningScreenSpace("You are too far from your team mates!"));
                             }
 
@@ -165,6 +171,7 @@ public class MagicItem : Item
 
             else
             {
+                Vibration.VibrateNope();
                 StartCoroutine(FindObjectOfType<UIManager>().DistanceWarningScreenSpace("You're too far away from this collectable.\nGet closer to catch it!"));
             }
         }

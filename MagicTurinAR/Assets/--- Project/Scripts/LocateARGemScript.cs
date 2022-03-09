@@ -136,6 +136,7 @@ namespace Niantic.ARDKExamples.Helpers
 
             _placedObject = Instantiate(PlacementObjectPf, hitPosition, Quaternion.identity);
             counterTouch++;
+            Vibration.VibratePop();
 
             var anchor = result.Anchor;
            

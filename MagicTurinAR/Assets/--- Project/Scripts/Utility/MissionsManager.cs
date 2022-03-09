@@ -68,6 +68,7 @@ public class MissionsManager : MonoBehaviour
                 {
                     Debug.Log("StartMission!");
                     OpenStartMissionWindow();
+                    Vibration.Vibrate();
                     textWndowStartLevel.text = currentMission.textBeginMission;
                     
                 }
@@ -77,6 +78,7 @@ public class MissionsManager : MonoBehaviour
                 {
                     Debug.Log("StartMission!");
                     OpenStartMissionWindow();
+                    Vibration.Vibrate();
                     textWndowStartLevel.text = currentMission.textBeginMission;
                 }
                 break;
@@ -85,6 +87,7 @@ public class MissionsManager : MonoBehaviour
                 {
                     Debug.Log("StartMission!");
                     OpenStartMissionWindow();
+                    Vibration.Vibrate();
                     textWndowStartLevel.text = currentMission.textBeginMission;
                 }
                 break;

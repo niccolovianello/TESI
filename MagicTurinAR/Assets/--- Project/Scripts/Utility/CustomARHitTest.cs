@@ -140,6 +140,7 @@ namespace Niantic.ARDKExamples.Helpers
             }
             
             _placedObjects.Add(GO);
+            Vibration.VibratePop();
 
             var anchor = result.Anchor;
             Debug.LogFormat
