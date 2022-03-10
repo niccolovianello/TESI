@@ -143,6 +143,8 @@ public class Demon : MonoBehaviour
             yield return new WaitForSeconds(.025f);
             
         } while (alpha > 0f);
+
+        yield return new WaitForSeconds(1f);
         
         Destroy(gameObject);
         MissionsManager MM = FindObjectOfType<MissionsManager>();

@@ -16,7 +16,8 @@ public class MagicItem : Item
     public ItemTypePlayer itemTypePlayer;
     public int idObjectCode;
 
-    private GameObject distanceWarning;
+    private Renderer _renderer;
+    private float distanceAlpha = 0.2f;
 
     
     public enum ItemType
@@ -37,18 +38,12 @@ public class MagicItem : Item
 
     private void Awake()
     {
-        //distanceWarning = GameObject.Find("Warning");
-        //distanceWarningCanvas = distanceWarning.GetComponentInChildren<Canvas>();
-        //distanceWarningCanvas.enabled = false;
-
         uiInventory = FindObjectOfType<UIInventory>();
     }
 
     private void Start()
     {
-
         
-
         player = FindObjectOfType<Player>();
         magicPlayer = FindObjectOfType<MagicPlayer>();
         NetworkPlayer[] networkPlayers = FindObjectsOfType<NetworkPlayer>();
@@ -67,8 +62,19 @@ public class MagicItem : Item
                 
         }
 
+        _renderer = GetComponentInChildren<Renderer>();
+
+        _renderer.material.shader = Shader.Find("Shader Graphs/Alpha");
+
     }
-    
+
+    private void Update()
+    {
+        if(IsClickable()) _renderer.material.SetFloat("Alpha", 1);
+        
+        else _renderer.material.SetFloat("Alpha", distanceAlpha);
+    }
+
 
     public override void OnMouseDown()
     {
