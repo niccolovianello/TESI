@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 2000
   itemType: 4
   isStackable: 1
-  description: fish and chips
+  description: Super tiny bright particle. Try to pick one if you feel out of energy.
   Sprite: {fileID: 21300000, guid: 222d62d87db5931498bb85845842b0d3, type: 3}
   prefab: {fileID: 313028691031775437, guid: d150ee8002f5a4cb29ca924395a4051a, type: 3}

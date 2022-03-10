@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 10
   itemType: 2
   isStackable: 0
-  description: 
+  description: This rune represents the sun and new life.
   Sprite: {fileID: 21300000, guid: ba41e99afe425cf4f98a1d1526625b7c, type: 3}
   prefab: {fileID: 3240895839042406441, guid: eb228ac187dfaa7448b8230712882707, type: 3}

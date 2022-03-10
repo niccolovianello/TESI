@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 13
   itemType: 2
   isStackable: 0
-  description: 
+  description: A symbol of creativity and ambition.
   Sprite: {fileID: 21300000, guid: 3588f43b47c22514aa3cb3ab31fdd2a3, type: 3}
   prefab: {fileID: 2103257287480154113, guid: 7b717891b430be94b9a22296643997bc, type: 3}

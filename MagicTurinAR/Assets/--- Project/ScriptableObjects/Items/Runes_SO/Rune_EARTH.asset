@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 11
   itemType: 2
   isStackable: 0
-  description: 
+  description: A symbol of the power of nature.
   Sprite: {fileID: 21300000, guid: 752a740714bb92348b8a7bde9761e291, type: 3}
   prefab: {fileID: 7052887938567239426, guid: 0671c4b0bba496b41bf17eee3fe3e950, type: 3}
