@@ -137,7 +137,7 @@ public class SessionManager : MonoBehaviour
  
         float oldRange = oldMax - oldMin;
         float newRange = newMax - newMin;
-        float newValue = 1 - ((oldValue - oldMin) * newRange / oldRange + newMin);
+        float newValue = /* 1 - */ ((oldValue - oldMin) * newRange / oldRange + newMin);
  
         return newValue;
     }
