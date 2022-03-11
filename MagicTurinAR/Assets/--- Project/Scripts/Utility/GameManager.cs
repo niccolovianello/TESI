@@ -17,13 +17,15 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private MagicPlayer currentPlayer;
 
     private bool isMission = false;
-    
+
+    public GameObject touchControlManager;
     public NetworkPlayer networkPlayer;
     public Camera networkPlayerCamera;
     public AudioListener audioListener;
     public MagicPlayer CurrentPlayer => currentPlayer;
     public GameObject mainGame;
-    public GameObject prefabToShowInAR;   
+    public GameObject prefabToShowInAR;
+    private UIButtonsForTouchControl uiButtonsForTouchControl;
     UnityEvent playerEnterInGameEvent;
 
 
@@ -46,8 +48,8 @@ public class GameManager : Singleton<GameManager>
     {
         if (playerEnterInGameEvent == null)
             playerEnterInGameEvent = new UnityEvent();
-
         playerEnterInGameEvent.AddListener(SetUpPlayer);
+
     }
     private void Start()
     {
@@ -63,6 +65,28 @@ public class GameManager : Singleton<GameManager>
                 audioListener = player.GetComponentInChildren<AudioListener>();
                 PlayerCameraObject = player.GetComponentInChildren<Camera>().gameObject;
                 playerEnterInGameEvent.Invoke();
+
+
+                
+                uiButtonsForTouchControl = FindObjectOfType<UIButtonsForTouchControl>();
+                //Setting buttons for Touch Control
+                if (touchControlManager.GetComponent<CameraMovements>())
+                {
+                    CameraMovements cm = touchControlManager.GetComponent<CameraMovements>();
+                    cm.Camera = networkPlayerCamera;
+                    cm.CameraFocus = networkPlayer.gameObject;
+                    
+                    Instantiate(touchControlManager, Vector3.zero, Quaternion.identity);
+
+                  
+                    uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => cm.ButtonCenterCameraOnPlayer());
+                    uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => cm.FreeOrAutomaticRotation());
+                }
+                else
+                {
+                    Debug.LogError("Something goes wrong durin the initialization of touchControlManager");
+                }
+                    
                 
                 break;
             }
@@ -104,7 +128,7 @@ public class GameManager : Singleton<GameManager>
 
         networkPlayer.gameObject.AddComponent<DeviceLocationProvider>();
         networkPlayer.gameObject.AddComponent<ImmediatePositionWithLocationProvider>();
-        networkPlayer.gameObject.AddComponent<RotateWithLocationProvider>();
+        FindObjectOfType<UIButtonsForTouchControl>().SetRotationProvider(networkPlayer.gameObject.AddComponent<RotateWithLocationProvider>());
         
 
         ItemAssets itemAssets = FindObjectOfType<ItemAssets>();

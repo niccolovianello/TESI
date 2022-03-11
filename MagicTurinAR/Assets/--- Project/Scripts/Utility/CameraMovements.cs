@@ -18,6 +18,7 @@ public class CameraMovements : MonoBehaviour
     public GameObject CameraFocus;
 
     [Header("Flag")]
+    public bool flagActive = true;
     public bool activateRotation;
     public bool centerCameraOnPlayer = false;
     public bool flagCameraInDefualtPosition = false;
@@ -51,7 +52,8 @@ public class CameraMovements : MonoBehaviour
     private void Update()
     {
 
-
+        if (!flagActive)
+            return;
 
         if (flagCameraInDefualtPosition)
         {
@@ -219,6 +221,34 @@ public class CameraMovements : MonoBehaviour
     {
         Gizmos.DrawLine(transform.position, transform.position + transform.up);
     }
+
+    #region UIFunctions
+    public void ButtonCenterCameraOnPlayer()
+    {
+        if (!centerCameraOnPlayer)
+        {
+            flagCameraInDefualtPosition = true;
+            centerCameraOnPlayer = true;
+        }
+            
+        else
+            centerCameraOnPlayer = false;
+    }
+
+    public void FreeOrAutomaticRotation()
+    {
+        if (activateRotation)
+        {
+            activateRotation = false;
+        }
+        else {
+            activateRotation = true;
+        }
+    
+    }
+
+    #endregion
+
 #endif
 }
 
