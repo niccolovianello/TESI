@@ -8988,8 +8988,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6705705224081499195, guid: 16d92c7d08bd60445b4ea068f97f14c8, type: 3}
+      propertyPath: yLimit
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705705224081499195, guid: 16d92c7d08bd60445b4ea068f97f14c8, type: 3}
       propertyPath: flagActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705705224081499195, guid: 16d92c7d08bd60445b4ea068f97f14c8, type: 3}
+      propertyPath: maxCameraDistance
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705705224081499195, guid: 16d92c7d08bd60445b4ea068f97f14c8, type: 3}
+      propertyPath: minCameraDistance
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705705224081499195, guid: 16d92c7d08bd60445b4ea068f97f14c8, type: 3}
+      propertyPath: offsetDefaultCameraPosition.x
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705705224081499195, guid: 16d92c7d08bd60445b4ea068f97f14c8, type: 3}
+      propertyPath: offsetDefaultCameraPosition.y
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705705224081499195, guid: 16d92c7d08bd60445b4ea068f97f14c8, type: 3}
+      propertyPath: offsetDefaultCameraPosition.z
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16d92c7d08bd60445b4ea068f97f14c8, type: 3}
