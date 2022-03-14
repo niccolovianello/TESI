@@ -14,16 +14,14 @@ namespace MirrorBasics
 
     public class NetworkPlayer : LobbyNetworkPlayer
     {
-        [SyncVar(hook = nameof(SetUsername))]
-        public string username = "default";
         [SyncVar(hook = nameof(SetTypeRole))]
         public int TypePlayerIndex;
 
         public TypePlayer TypePlayerEnum;
 
 
-        public StoreData storeData;
-        FirebaseManager firebaseManager;
+       
+        
         public static NetworkPlayer localPlayer;
         private UILobby UILobby;
         public GameObject playerBody;
@@ -47,17 +45,12 @@ namespace MirrorBasics
 
             Debug.Log("START PLAYER BEHAVIOUR");
 
-            storeData = GetComponent<StoreData>();
+           
 
 
             // loading da overridta from Firebase realtime database
 
-            if ((!isServer || (isServer && isClient)) && isLocalPlayer)
-            {
-                firebaseManager = FindObjectOfType<FirebaseManager>();
-                firebaseManager.StartCoroutine(firebaseManager.LoadUserData(storeData));
-                
-            }
+           
                 
 
 
@@ -65,7 +58,7 @@ namespace MirrorBasics
             {
                 Debug.Log("Is local player");
                 localPlayer = this;
-                username = firebaseManager.username;
+                
 
             }
             else
@@ -106,17 +99,7 @@ namespace MirrorBasics
             }
         }
 
-        void SetUsername(string oldUserName, string newUserName)
-        {
-            username = newUserName;
-
-            UIPlayer[] playersUiPrefabs = FindObjectsOfType<UIPlayer>();
-            foreach (UIPlayer uiPlayer in playersUiPrefabs)
-            {
-                uiPlayer.SetPlayer(uiPlayer.GetNetworkPlayer());
-            }
-
-        }
+      
 
         [Command]
         public void CmdSendWhiteMagic(GameObject target, float whiteMagicToSend)

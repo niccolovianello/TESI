@@ -12,9 +12,12 @@ namespace MirrorBasics
 
 
     {
+        public StoreData storeData;
         public bool peerIsTheHost = false;
 
-        
+
+        [SyncVar(hook = nameof(SetUsername))]
+        public string username = "default";
 
         [SyncVar] public string matchID;
         [SyncVar] public int playerIndex;
@@ -27,6 +30,7 @@ namespace MirrorBasics
         public GameObject uiPlayer;
         public Camera playerCamera;
         public AudioListener audioListener;
+        FirebaseManager firebaseManager;
 
 
         internal virtual void Start()
@@ -39,11 +43,33 @@ namespace MirrorBasics
             audioListener = GetComponentInChildren<AudioListener>();
             audioListener.enabled = false;
             playerCamera.enabled = false;
-            
+
+            storeData = GetComponent<StoreData>();
+
+            if ((!isServer || (isServer && isClient)) && isLocalPlayer)
+            {
+                firebaseManager = FindObjectOfType<FirebaseManager>();
+                firebaseManager.StartCoroutine(firebaseManager.LoadUserData(storeData));
+
+            }
+
+            if(isLocalPlayer)
+                username = firebaseManager.username;
 
             Debug.Log(networkMatch);
         }
 
+        void SetUsername(string oldUserName, string newUserName)
+        {
+            username = newUserName;
+
+            UIPlayer[] playersUiPrefabs = FindObjectsOfType<UIPlayer>();
+            foreach (UIPlayer uiPlayer in playersUiPrefabs)
+            {
+                uiPlayer.SetPlayer(uiPlayer.GetNetworkPlayer());
+            }
+
+        }
         public void SetUiPlayerOfNetworkPlayer(GameObject uiPlayer)
         {
             this.uiPlayer = uiPlayer;
@@ -117,6 +143,7 @@ namespace MirrorBasics
         {
             playerIndex = _playerIndex;
             matchID = _matchID;
+            username = firebaseManager.username;
             Debug.Log($"MatchId: {matchID} == {_matchID}");
             UILobby.istance.JoinSucces(success, _matchID, playerIndex);
         }
