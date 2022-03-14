@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MirrorBasics;
+using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
 public class CameraMovements : MonoBehaviour
 {
@@ -40,8 +42,17 @@ public class CameraMovements : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("CameraMovementsStart");
         if (Camera == null)
-            Camera = Camera.main;
+            foreach (NetworkPlayer nt in FindObjectsOfType<NetworkPlayer>())
+            {
+                if (nt.isLocalPlayer)
+                {
+                    Camera = nt.playerCamera;
+                    CameraFocus = nt.gameObject;
+                
+                }
+            }
         previousCameraTransform = Camera.gameObject.transform;
         defaultCameraPosition = CameraFocus.transform.position + offsetDefaultCameraPosition;
         StartCoroutine(SetCameraInDefaultPosition());
@@ -50,7 +61,7 @@ public class CameraMovements : MonoBehaviour
     }
     private void Update()
     {
-
+        
         if (!flagActive)
             return;
 

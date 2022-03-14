@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera: {fileID: 0}
   CameraFocus: {fileID: 0}
-  flagActive: 0
+  flagActive: 1
   activateRotation: 0
   centerCameraOnPlayer: 1
   flagCameraInDefualtPosition: 0
