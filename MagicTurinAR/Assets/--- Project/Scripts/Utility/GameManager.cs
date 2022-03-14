@@ -50,9 +50,6 @@ public class GameManager : Singleton<GameManager>
             playerEnterInGameEvent = new UnityEvent();
         playerEnterInGameEvent.AddListener(SetUpPlayer);
 
-    }
-    private void Start()
-    {
         LobbyNetworkPlayer[] listOfPlayer = FindObjectsOfType<NetworkPlayer>();
 
         foreach (NetworkPlayer player in listOfPlayer)
@@ -60,37 +57,28 @@ public class GameManager : Singleton<GameManager>
             if (player.isLocalPlayer)
             {
                 networkPlayer = player;
-               
+
                 networkPlayerCamera = player.GetComponentInChildren<Camera>();
                 audioListener = player.GetComponentInChildren<AudioListener>();
                 PlayerCameraObject = player.GetComponentInChildren<Camera>().gameObject;
                 playerEnterInGameEvent.Invoke();
 
 
-                
-                uiButtonsForTouchControl = FindObjectOfType<UIButtonsForTouchControl>();
-                //Setting buttons for Touch Control
-                if (touchControlManager.GetComponent<CameraMovements>())
-                {
-                    CameraMovements cm = touchControlManager.GetComponent<CameraMovements>();
-                    cm.Camera = networkPlayerCamera;
-                    cm.CameraFocus = networkPlayer.gameObject;
-                    
-                    Instantiate(touchControlManager, Vector3.zero, Quaternion.identity);
 
-                  
-                    uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => cm.ButtonCenterCameraOnPlayer());
-                    uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => cm.FreeOrAutomaticRotation());
-                }
-                else
-                {
-                    Debug.LogError("Something goes wrong durin the initialization of touchControlManager");
-                }
-                    
-                
+                uiButtonsForTouchControl = FindObjectOfType<UIButtonsForTouchControl>();
+                uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => FindObjectOfType<CameraMovements>().ButtonCenterCameraOnPlayer());
+                uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => FindObjectOfType<CameraMovements>().FreeOrAutomaticRotation());
                 break;
             }
         }
+        CameraMovements cm = FindObjectOfType<CameraMovements>();
+        cm.Camera = networkPlayerCamera;
+        cm.CameraFocus = networkPlayer.gameObject;
+
+    }
+    private void Start()
+    {
+        
         
         currentPlayer = FindObjectOfType<MagicPlayer>();
         

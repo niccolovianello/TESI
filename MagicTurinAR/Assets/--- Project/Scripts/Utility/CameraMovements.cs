@@ -38,7 +38,7 @@ public class CameraMovements : MonoBehaviour
 
     }
 
-    private void Awake()
+    private void Start()
     {
         if (Camera == null)
             Camera = Camera.main;
@@ -48,7 +48,6 @@ public class CameraMovements : MonoBehaviour
 
 
     }
-
     private void Update()
     {
 
@@ -112,7 +111,7 @@ public class CameraMovements : MonoBehaviour
             var pos1b = PlanePosition(Input.GetTouch(0).position - Input.GetTouch(0).deltaPosition);
             var pos2b = PlanePosition(Input.GetTouch(1).position - Input.GetTouch(1).deltaPosition);
 
-            if (activateRotation && pos2b != pos2 && Vector3.SignedAngle(pos2 - pos1, pos2b - pos1b, Plane.normal) > sensitivityAngle || Vector3.SignedAngle(pos2 - pos1, pos2b - pos1b, Plane.normal) < -sensitivityAngle)
+            if (activateRotation && pos2b != pos2 && (Vector3.SignedAngle(pos2 - pos1, pos2b - pos1b, Plane.normal) > sensitivityAngle || Vector3.SignedAngle(pos2 - pos1, pos2b - pos1b, Plane.normal) < -sensitivityAngle))
                 Camera.transform.RotateAround(pos1, Plane.normal, Vector3.SignedAngle(pos2 - pos1, pos2b - pos1b, Plane.normal));
 
 
@@ -170,8 +169,13 @@ public class CameraMovements : MonoBehaviour
 
     public IEnumerator SetCameraInDefaultPosition()
     {
+        
         centerCameraOnPlayer = true;
         flagCameraInDefualtPosition = false;
+        if (flagCameraInDefualtPosition)
+            Debug.Log("not set correctly");
+        else
+            Debug.Log("Set correctly");
         defaultCameraPosition = CameraFocus.transform.position + offsetDefaultCameraPosition;
         float elapsedTime = 0;
         float waitTime = 2f;
@@ -250,5 +254,7 @@ public class CameraMovements : MonoBehaviour
     #endregion
 
 #endif
+
+
 }
 
