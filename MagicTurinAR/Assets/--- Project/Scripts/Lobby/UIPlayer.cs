@@ -34,7 +34,7 @@ namespace MirrorBasics
         public void SetPlayer(NetworkPlayer _player)
         {
             this.networkPlayer = _player;
-            text.text = "Player " + networkPlayer.playerIndex.ToString();
+            text.text = networkPlayer.username;
             switch (_player.storeData.role)
             {
                 case StoreData.TextRole.Explorer:

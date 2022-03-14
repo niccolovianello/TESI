@@ -155,6 +155,11 @@ namespace Mapbox.Examples
 			return euler;
 		}
 
+		public void SetDeviceOrientation(bool useDeviceOrientation)
+		{
+			this._useDeviceOrientation = useDeviceOrientation;
+		}
+
 
 		void Update()
 		{

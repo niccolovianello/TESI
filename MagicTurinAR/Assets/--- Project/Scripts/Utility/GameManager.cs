@@ -116,7 +116,9 @@ public class GameManager : Singleton<GameManager>
 
         networkPlayer.gameObject.AddComponent<DeviceLocationProvider>();
         networkPlayer.gameObject.AddComponent<ImmediatePositionWithLocationProvider>();
-        FindObjectOfType<UIButtonsForTouchControl>().SetRotationProvider(networkPlayer.gameObject.AddComponent<RotateWithLocationProvider>());
+        RotateWithLocationProvider rt = networkPlayer.gameObject.AddComponent<RotateWithLocationProvider>();
+        rt.SetDeviceOrientation(true);
+        FindObjectOfType<UIButtonsForTouchControl>(rt).SetRotationProvider(rt);
         
 
         ItemAssets itemAssets = FindObjectOfType<ItemAssets>();
