@@ -67,6 +67,7 @@ namespace MirrorBasics
                 Debug.Log("Is not local player");
                 UILobby.istance.SpawnPlayerUIPrefab(this);
 
+
             }
            
         }

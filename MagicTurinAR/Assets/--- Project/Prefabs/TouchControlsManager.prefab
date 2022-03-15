@@ -58,9 +58,9 @@ MonoBehaviour:
   activateRotation: 0
   centerCameraOnPlayer: 1
   flagCameraInDefualtPosition: 0
-  maxCameraDistance: 100
-  minCameraDistance: 7
-  yLimit: 3
-  sensitivityAngle: 1.2
+  maxCameraDistance: 450
+  minCameraDistance: 75
+  yLimit: 50
+  sensitivityAngle: 0.8
   edgeMaxZoom: 4
-  offsetDefaultCameraPosition: {x: 7, y: 7, z: 7}
+  offsetDefaultCameraPosition: {x: 50, y: 100, z: 50}

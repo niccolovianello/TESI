@@ -266,6 +266,22 @@ public class CameraMovements : MonoBehaviour
 
 #endif
 
+#if UNITY_STANDALONE_WIN
+    public Camera Camera;
+    public GameObject CameraFocus;
+
+    public void ButtonCenterCameraOnPlayer()
+    {
+        Debug.Log("On PC this button doesn't work!");
+    }
+
+    public void FreeOrAutomaticRotation()
+    {
+        Debug.Log("On PC this button doesn't work!");
+
+    }
+
+#endif
 
 }
 

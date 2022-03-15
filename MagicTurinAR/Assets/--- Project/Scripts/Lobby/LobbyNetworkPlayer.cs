@@ -161,8 +161,8 @@ namespace MirrorBasics
         [Command]
         void CmdBeginGame()
         {
-
-            MatchMaker.istance.BeginGame(matchID);
+            
+                MatchMaker.istance.BeginGame(matchID);
             //Debug.Log("<color = red>Game Beginning</color>");
 
 
