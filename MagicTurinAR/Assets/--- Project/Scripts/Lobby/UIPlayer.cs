@@ -55,6 +55,7 @@ namespace MirrorBasics
         public void SetTextRole(NetworkPlayer _player)
         {
             this.networkPlayer = _player;
+            text.text = networkPlayer.username;
             switch (_player.TypePlayerEnum)
             {
                 case NetworkPlayer.TypePlayer.Explorer:
