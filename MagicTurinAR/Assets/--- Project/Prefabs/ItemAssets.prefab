@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1475544013307151705}
   - component: {fileID: 6233196060916031752}
+  - component: {fileID: 8183732931097936506}
   m_Layer: 0
   m_Name: ItemAssets
   m_TagString: Untagged
@@ -45,16 +46,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magicInventorySO: {fileID: 11400000, guid: a289aa7d46d52de4cba34ff0a1711903, type: 2}
   prefabItemCollectable: {fileID: 0}
-  enemy: {fileID: 8559927149924817565, guid: 1ff802344ba404b15a922b11b77ce336, type: 3}
+  enemy: {fileID: 4065617981142174932, guid: 345876c1c26e1c943a39707a4b84ce03, type: 3}
   gem: {fileID: 8134186224298519009, guid: 1d61eb0c3e3034937a0c428a490fc617, type: 3}
   whiteFragment: {fileID: 313028691031775437, guid: d150ee8002f5a4cb29ca924395a4051a, type: 3}
-  artifactSprite1: {fileID: 0}
-  artifactSprite2: {fileID: 0}
-  artifactSprite3: {fileID: 0}
-  artifactSprite4: {fileID: 0}
-  artifactSprite5: {fileID: 0}
-  artifactGO1: {fileID: 0}
-  artifactGO2: {fileID: 0}
-  artifactGO3: {fileID: 0}
-  artifactGO4: {fileID: 0}
-  artifactGO5: {fileID: 0}
+--- !u!114 &8183732931097936506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2532660189962923676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3328f250b1df6ad4a80429e42cd7947f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabWhiteMagicParticleSystem: {fileID: 3082883205762171444, guid: 5e61ff8a28aa7e84aa193d8b96be3d5e, type: 3}
+  prefabGemParticleSystem: {fileID: 7952692855330037605, guid: 2e68aa018b877ab478966bb0ffc107c1, type: 3}
