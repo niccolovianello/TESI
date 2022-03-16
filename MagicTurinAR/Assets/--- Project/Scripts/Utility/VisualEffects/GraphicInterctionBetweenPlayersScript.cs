@@ -14,6 +14,7 @@ public class GraphicInterctionBetweenPlayersScript : MonoBehaviour
     {
         GameObject go = Instantiate(prefabWhiteMagicParticleSystem, netplay1.gameObject.transform.position, Quaternion.identity);
         StartCoroutine(TransitionPrtycleSystemCoroutine(go, netplay1, netplay2));
+        Debug.Log("Visual effetc white magic");
         
 
     }
@@ -22,6 +23,7 @@ public class GraphicInterctionBetweenPlayersScript : MonoBehaviour
     {
         GameObject go = Instantiate(prefabGemParticleSystem, netplay1.gameObject.transform.position, Quaternion.identity);
         StartCoroutine(TransitionPrtycleSystemCoroutine(go, netplay1, netplay2));
+        Debug.Log("Visual effetc gem");
     }
 
     public IEnumerator TransitionPrtycleSystemCoroutine(GameObject go, NetworkPlayer netplay1, NetworkPlayer netplay2)
