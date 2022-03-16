@@ -26,5 +26,10 @@ public class ItemAssets : MonoBehaviour
 
     public GameObject whiteFragment;
 
+    [Header("Character Prefabs")]
+    public GameObject explorerPrefab;
+    public GameObject hunterPrefab;
+    public GameObject wisemanPrefab;
+
 
 }

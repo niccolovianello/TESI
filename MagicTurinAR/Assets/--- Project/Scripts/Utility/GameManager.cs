@@ -54,6 +54,19 @@ public class GameManager : Singleton<GameManager>
 
         foreach (NetworkPlayer player in listOfPlayer)
         {
+            switch (player.TypePlayerEnum)
+            {
+                case NetworkPlayer.TypePlayer.Explorer:
+                    Instantiate(ItemAssets.Instance.explorerPrefab, player.playerBody.transform);
+                    break;
+                case NetworkPlayer.TypePlayer.Wiseman:
+                    Instantiate(ItemAssets.Instance.wisemanPrefab, player.playerBody.transform);
+                    break;
+                case NetworkPlayer.TypePlayer.Hunter:
+                    Instantiate(ItemAssets.Instance.hunterPrefab, player.playerBody.transform);
+                    break;
+            }
+               
             if (player.isLocalPlayer)
             {
                 networkPlayer = player;
@@ -68,7 +81,7 @@ public class GameManager : Singleton<GameManager>
                 uiButtonsForTouchControl = FindObjectOfType<UIButtonsForTouchControl>();
                 uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => FindObjectOfType<CameraMovements>().ButtonCenterCameraOnPlayer());
                 uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => FindObjectOfType<CameraMovements>().FreeOrAutomaticRotation());
-                break;
+                
             }
         }
         CameraMovements cm = FindObjectOfType<CameraMovements>();
