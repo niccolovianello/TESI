@@ -131,6 +131,7 @@ namespace MirrorBasics
         {
             GameObject newUIPlayer = Instantiate(UIPlayerPrefab, UIPlayerParent);
             newUIPlayer.GetComponent<UIPlayer>().SetPlayer(networkPlayer);
+            
             networkPlayer.SetUiPlayerOfNetworkPlayer(newUIPlayer);
            
             newUIPlayer.transform.SetSiblingIndex(networkPlayer.playerIndex - 1);

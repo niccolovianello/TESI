@@ -59,6 +59,24 @@ namespace MirrorBasics
             Debug.Log(networkMatch);
         }
 
+        [Command]
+        public void CmdAskForUsername()
+        {
+            RpcAskForUsername();
+        }
+
+        [ClientRpc]
+        public void RpcAskForUsername()
+        {
+            foreach (LobbyNetworkPlayer lnp in FindObjectsOfType<LobbyNetworkPlayer>())
+            {
+                if (lnp.isLocalPlayer)
+                {
+                    lnp.username = lnp.firebaseManager.username;
+                }
+            }
+        }
+
         void SetUsername(string oldUserName, string newUserName)
         {
             username = newUserName;
@@ -128,6 +146,7 @@ namespace MirrorBasics
             {
                 Debug.Log($"<color = green>Game joined succesfully</color>" + playerIndex);
                 networkMatch.matchId = _matchID.toGuid();
+                CmdAskForUsername();
                 Debug.Log(networkMatch.matchId);
                 TargetJoinGame(true, _matchID, playerIndex);
             }
