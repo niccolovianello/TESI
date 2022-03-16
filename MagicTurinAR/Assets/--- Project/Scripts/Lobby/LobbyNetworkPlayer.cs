@@ -16,7 +16,8 @@ namespace MirrorBasics
         public bool peerIsTheHost = false;
 
 
-        [SyncVar] public string username = "default";
+        [SyncVar(hook = nameof(SetUsername))]
+        public string username = "default";
 
         [SyncVar] public string matchID;
         [SyncVar] public int playerIndex;
@@ -145,7 +146,6 @@ namespace MirrorBasics
             {
                 Debug.Log($"<color = green>Game joined succesfully</color>" + playerIndex);
                 networkMatch.matchId = _matchID.toGuid();
-                username = firebaseManager.username;
                 CmdAskForUsername();
                 Debug.Log(networkMatch.matchId);
                 TargetJoinGame(true, _matchID, playerIndex);
