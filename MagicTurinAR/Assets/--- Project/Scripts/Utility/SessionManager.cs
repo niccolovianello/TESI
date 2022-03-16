@@ -106,7 +106,6 @@ public class SessionManager : MonoBehaviour
     {
         while (true)      
         {
-            Debug.Log("Location latitude: " + deviceLocationProvider.CurrentLocation.LatitudeLongitude.x + "\n Location longitude: " + deviceLocationProvider.CurrentLocation.LatitudeLongitude.y + "\n Accuracy: " + deviceLocationProvider.CurrentLocation.Accuracy);
             networkPlayer.CmdSendGeoPositionToServer((float)deviceLocationProvider.CurrentLocation.LatitudeLongitude.x, (float)deviceLocationProvider.CurrentLocation.LatitudeLongitude.y, networkPlayer.netId);
 
             fill = CalculateFill(worstAccuracy, bestAccuracy, 0, 1, deviceLocationProvider.CurrentLocation.Accuracy);
