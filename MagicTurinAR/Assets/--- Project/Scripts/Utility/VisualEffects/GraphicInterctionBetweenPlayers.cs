@@ -4,7 +4,7 @@ using UnityEngine;
 using MirrorBasics;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
-public class GraphicInterctionBetweenPlayersScript : MonoBehaviour
+public class GraphicInterctionBetweenPlayers : MonoBehaviour
 {
     public GameObject prefabWhiteMagicParticleSystem;
     public GameObject prefabGemParticleSystem;
@@ -33,7 +33,7 @@ public class GraphicInterctionBetweenPlayersScript : MonoBehaviour
         float waitTime = 2f;
         while (elapsedTime < waitTime)
         {
-            go.transform.position = Vector3.Slerp(netplay1.gameObject.transform.position, netplay2.gameObject.transform.position, 2.0f);
+            go.transform.position = Vector3.Slerp(netplay1.gameObject.transform.position, netplay2.gameObject.transform.position, elapsedTime);
             elapsedTime += Time.deltaTime;
 
             // Yield here
