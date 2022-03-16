@@ -62,7 +62,7 @@ namespace MirrorBasics
         [Command]
         public void CmdAskForUsername()
         {
-            RpcAskForUsername();
+            username = firebaseManager.username;
         }
 
         [ClientRpc]
@@ -133,20 +133,19 @@ namespace MirrorBasics
         #region JOIN MATCH
         public void JoinGame(string _inputID)
         {
-
-            CmdJoinGame(_inputID);
+            CmdJoinGame(_inputID, firebaseManager.username);
         }
 
         [Command]
-        void CmdJoinGame(string _matchID)
+        void CmdJoinGame(string _matchID, string _username)
         {
             matchID = _matchID;
+            username = _username;
 
             if (MatchMaker.istance.JoinGame(_matchID, gameObject, out playerIndex))
             {
                 Debug.Log($"<color = green>Game joined succesfully</color>" + playerIndex);
                 networkMatch.matchId = _matchID.toGuid();
-                CmdAskForUsername();
                 Debug.Log(networkMatch.matchId);
                 TargetJoinGame(true, _matchID, playerIndex);
             }
@@ -162,7 +161,6 @@ namespace MirrorBasics
         {
             playerIndex = _playerIndex;
             matchID = _matchID;
-            username = firebaseManager.username;
             Debug.Log($"MatchId: {matchID} == {_matchID}");
             UILobby.istance.JoinSucces(success, _matchID, playerIndex);
         }
