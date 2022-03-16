@@ -111,7 +111,7 @@ public class GameManager : Singleton<GameManager>
         
         if (!networkPlayer.GetComponent<NetworkTransform>())
         {
-            SessionManager sm = networkPlayer.gameObject.AddComponent<SessionManager>();
+            // SessionManager sm = networkPlayer.gameObject.AddComponent<SessionManager>();
         }
 
         networkPlayer.gameObject.AddComponent<DeviceLocationProvider>();

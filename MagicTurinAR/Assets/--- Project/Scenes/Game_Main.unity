@@ -13585,7 +13585,7 @@ MonoBehaviour:
   _autoFireEvent: 1
   _updateInterval: 0.1
   _sendEvent: 0
-  _locationLogFile: {fileID: 0}
+  _locationLogFile: {fileID: 4900000, guid: 5a8e188da803540319812c71e486be7d, type: 3}
 --- !u!114 &7898077366020976462
 MonoBehaviour:
   m_ObjectHideFlags: 0

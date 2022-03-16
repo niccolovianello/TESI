@@ -41,7 +41,6 @@ public class SessionManager : MonoBehaviour
 
         _uiManager = FindObjectOfType<UIManager>();
 
-        
         on_GPS_Initialized.AddListener(StartSendGeoLocation);
         StartCoroutine(FindDeviceLocationProvider());
     }
