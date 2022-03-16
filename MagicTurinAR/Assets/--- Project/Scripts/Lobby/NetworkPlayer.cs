@@ -162,7 +162,7 @@ namespace MirrorBasics
             RpcWhiteMagicVisualEffect(netIdPlay1, netIdPlay2);
         }
 
-        [TargetRpc]
+        [ClientRpc]
         public void RpcWhiteMagicVisualEffect(uint netIdPlay1, uint netIdPlay2)
         {
             NetworkPlayer netplay1 = null;
