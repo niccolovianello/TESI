@@ -112,15 +112,24 @@ namespace MirrorBasics
         {
             Debug.Log("Wiseman manda magia bianca");
             NetworkIdentity opponentIdentity = target.GetComponent<NetworkIdentity>();
-            RpcTargetReceiveWhiteMagic(opponentIdentity.connectionToClient, whiteMagicToSend);
+            RpcTargetReceiveWhiteMagic(opponentIdentity.connectionToClient, whiteMagicToSend, this.netId);
         }
 
 
         [TargetRpc]
-        public void RpcTargetReceiveWhiteMagic(NetworkConnection target, float whiteMagicReceived)
+        public void RpcTargetReceiveWhiteMagic(NetworkConnection target, float whiteMagicReceived, uint netID)
         {
+
             MagicPlayer magicPlayer = FindObjectOfType<MagicPlayer>();
-            
+            NetworkPlayer netplay1 = null;
+            NetworkPlayer netplay2 = magicPlayer.GetComponent<NetworkPlayer>();
+            foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+            {
+                if (np.netId == netID)
+                    netplay1 = np;
+              
+            }
+
             if (magicPlayer is Explorer)
             {
                 Explorer explorer = magicPlayer.GetComponent<Explorer>();
@@ -135,7 +144,44 @@ namespace MirrorBasics
                 hunter.IncreaseMana(whiteMagicReceived);
                 ReceiveMagicOrGemsVibration();
             }
+
+            if (netplay1 != null && netplay2 != null)
+            {
+                BeginVisualEffectWhiteMagicSend(netplay1, netplay2);
+            }
         }
+
+        public void BeginVisualEffectWhiteMagicSend(NetworkPlayer netplay1, NetworkPlayer netplay2)
+        {
+            CmdWhiteMagicVisualEffect(netplay1.netId, netplay2.netId);
+
+        }
+        [Command]
+        public void CmdWhiteMagicVisualEffect(uint netIdPlay1, uint netIdPlay2)
+        {
+            RpcWhiteMagicVisualEffect(netIdPlay1, netIdPlay2);
+        }
+
+        [TargetRpc]
+        public void RpcWhiteMagicVisualEffect(uint netIdPlay1, uint netIdPlay2)
+        {
+            NetworkPlayer netplay1 = null;
+            NetworkPlayer netplay2 = null;
+            foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+            {
+                if (np.netId == netIdPlay1)
+                    netplay1 = np;
+                if (np.netId == netIdPlay2)
+                    netplay2 = np;
+
+            }
+
+            if (netplay1 != null && netplay2 != null)
+                FindObjectOfType<GraphicInterctionBetweenPlayersScript>().WisemanSendWhiteMagic(netplay1, netplay2);
+            else
+                Debug.LogError("There's a problem with the network Ids");
+        }
+
 
 
         [Command]
@@ -143,21 +189,36 @@ namespace MirrorBasics
         {
 
             Debug.Log("Send Gem");
-            RpcReceiveGem();
+            RpcReceiveGem(this.netId);
         }
 
 
         [ClientRpc]
-        public void RpcReceiveGem()
+        public void RpcReceiveGem(uint netID)
         {
             MagicPlayer magicPlayer = FindObjectOfType<MagicPlayer>();
+            NetworkPlayer netplay1 = null;
+            NetworkPlayer netplay2 = null;
+            foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+            {
+                if (np.netId == netID)
+                    netplay1 = np;
+                if (np.TypePlayerEnum == TypePlayer.Wiseman)
+                    netplay2 = np;
+            }
 
             if (magicPlayer is Wiseman)
             {
+                
                 Wiseman wiseman = magicPlayer.GetComponent<Wiseman>();
                 Debug.Log("Wiseman riceve gemma");
                 wiseman.IncrementGems();
                 ReceiveMagicOrGemsVibration();
+            }
+
+            if (netplay1 != null && netplay2 != null)
+            {
+                FindObjectOfType<GraphicInterctionBetweenPlayersScript>().ExplorerSendGem(netplay1, netplay2);
             }
             
             
@@ -242,6 +303,7 @@ namespace MirrorBasics
                     {
                         item.prefab.GetComponent<MagicItem>().amount+=nfragment;
                         FindObjectOfType<UIInventory>().UpdateWhiteFragmentCount(item.prefab.GetComponent<MagicItem>().amount);
+
                         ReceiveMagicOrGemsVibration();
 
                     }
