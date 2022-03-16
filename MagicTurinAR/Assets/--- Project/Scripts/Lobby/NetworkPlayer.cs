@@ -5,6 +5,7 @@ using MirrorBasics;
 using Mirror;
 using UnityEngine.SceneManagement;
 using Mapbox.Unity.Utilities;
+using UnityEngine.EventSystems;
 using Mapbox.Unity.Map;
 using Mapbox.Utils;
 
@@ -71,6 +72,10 @@ namespace MirrorBasics
             }
            
         }
+        private void ReceiveMagicOrGemsVibration()
+        {
+            Vibration.Vibrate();
+        }
 
         private void OnDestroy()
         {
@@ -121,12 +126,14 @@ namespace MirrorBasics
                 Explorer explorer = magicPlayer.GetComponent<Explorer>();
                 Debug.Log(explorer);
                 explorer.IncreaseMana(whiteMagicReceived);
+                ReceiveMagicOrGemsVibration();
             }
             if (magicPlayer is Hunter)
             {
                 Hunter hunter = magicPlayer.GetComponent<Hunter>();
                 Debug.Log(hunter);
                 hunter.IncreaseMana(whiteMagicReceived);
+                ReceiveMagicOrGemsVibration();
             }
         }
 
@@ -150,6 +157,7 @@ namespace MirrorBasics
                 Wiseman wiseman = magicPlayer.GetComponent<Wiseman>();
                 Debug.Log("Wiseman riceve gemma");
                 wiseman.IncrementGems();
+                ReceiveMagicOrGemsVibration();
             }
             
             
@@ -234,7 +242,7 @@ namespace MirrorBasics
                     {
                         item.prefab.GetComponent<MagicItem>().amount+=nfragment;
                         FindObjectOfType<UIInventory>().UpdateWhiteFragmentCount(item.prefab.GetComponent<MagicItem>().amount);
-                        
+                        ReceiveMagicOrGemsVibration();
 
                     }
 

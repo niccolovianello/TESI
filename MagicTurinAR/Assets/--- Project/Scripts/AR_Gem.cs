@@ -17,6 +17,7 @@ public class AR_Gem : MonoBehaviour
         {
             FindObjectOfType<UIDestroyGem>().OpenBackToGameWindow(3);
             Destroy(gameObject);
+            Vibration.Vibrate();
         }
     }
 
@@ -25,6 +26,7 @@ public class AR_Gem : MonoBehaviour
         if (other.gameObject.CompareTag("Spell"))
         {
             Debug.Log("hit");
+            Vibration.VibratePeek();
             attempts--;
         }
     }
