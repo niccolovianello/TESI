@@ -12,6 +12,7 @@ public class MazeGoalScript : MonoBehaviour
             mp = FindObjectOfType<PlayerMazeMovement>();
             Destroy(mp.gameObject);            
             FindObjectOfType<MissionsManager>().OpenFinishMissionWindow();
+            Vibration.Vibrate();
             Destroy(gameObject);
         }
     }
