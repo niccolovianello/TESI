@@ -8,6 +8,9 @@ namespace MirrorBasics
 {
     public class UIPlayer : MonoBehaviour
     {
+
+        [Range(0.5f, 3.0f)]
+        [SerializeField] float controlOnNetworkPlayerTime = 1.5f;
         [SerializeField] Text text;
         [SerializeField] Text role;
         
@@ -25,6 +28,7 @@ namespace MirrorBasics
         private void Start()
         {
             uiLobby = FindObjectOfType<UILobby>();
+            StartCoroutine(ControlOnNetworkPlayer());
         }
 
         public NetworkPlayer GetNetworkPlayer()
@@ -78,6 +82,19 @@ namespace MirrorBasics
             if (!networkPlayer.isLocalPlayer)
                 return;
             uiLobby.OpenPlayerDescription();         
+        }
+        private IEnumerator ControlOnNetworkPlayer()
+        {
+            while (true)
+            {
+                yield return new WaitForSeconds(controlOnNetworkPlayerTime);
+
+                if (networkPlayer == null)
+                {
+                    Destroy(this.gameObject);
+                    break;
+                }
+            }
         }
     }
 }
