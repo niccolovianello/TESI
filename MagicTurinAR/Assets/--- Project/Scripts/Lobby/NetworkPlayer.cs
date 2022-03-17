@@ -177,7 +177,7 @@ namespace MirrorBasics
             }
 
             if (netplay1 != null && netplay2 != null)
-                FindObjectOfType<GraphicInterctionBetweenPlayers>().WisemanSendWhiteMagic(netplay1, netplay2);
+                FindObjectOfType<GraphicInterctionBetweenPlayers>().WisemanSendWhiteMagic(netplay1.gameObject, netplay2.gameObject);
             else
                 Debug.LogError("There's a problem with the network Ids");
         }
@@ -218,7 +218,7 @@ namespace MirrorBasics
 
             if (netplay1 != null && netplay2 != null)
             {
-                FindObjectOfType<GraphicInterctionBetweenPlayers>().ExplorerSendGem(netplay1, netplay2);
+                FindObjectOfType<GraphicInterctionBetweenPlayers>().ExplorerSendGem(netplay1.gameObject, netplay2.gameObject);
             }
             
             

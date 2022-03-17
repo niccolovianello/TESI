@@ -10,7 +10,7 @@ public class GraphicInterctionBetweenPlayers : MonoBehaviour
     public GameObject prefabGemParticleSystem;
 
 
-    public void WisemanSendWhiteMagic( NetworkPlayer netplay1, NetworkPlayer netplay2)
+    public void WisemanSendWhiteMagic( GameObject netplay1, GameObject netplay2)
     {
         GameObject go = Instantiate(prefabWhiteMagicParticleSystem, netplay1.gameObject.transform.position, Quaternion.identity);
         StartCoroutine(TransitionPrtycleSystemCoroutine(go, netplay1, netplay2));
@@ -19,14 +19,14 @@ public class GraphicInterctionBetweenPlayers : MonoBehaviour
 
     }
 
-    public void ExplorerSendGem(NetworkPlayer netplay1, NetworkPlayer netplay2)
+    public void ExplorerSendGem(GameObject netplay1, GameObject netplay2)
     {
         GameObject go = Instantiate(prefabGemParticleSystem, netplay1.gameObject.transform.position, Quaternion.identity);
         StartCoroutine(TransitionPrtycleSystemCoroutine(go, netplay1, netplay2));
         Debug.Log("Visual effetc gem");
     }
 
-    public IEnumerator TransitionPrtycleSystemCoroutine(GameObject go, NetworkPlayer netplay1, NetworkPlayer netplay2)
+    public IEnumerator TransitionPrtycleSystemCoroutine(GameObject go, GameObject netplay1, GameObject netplay2)
     {
 
         float elapsedTime = 0;
