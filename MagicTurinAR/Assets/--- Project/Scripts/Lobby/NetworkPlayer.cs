@@ -113,12 +113,12 @@ namespace MirrorBasics
             Debug.Log("Wiseman manda magia bianca");
             NetworkIdentity opponentIdentity = target.GetComponent<NetworkIdentity>();
             
-            RpcTargetReceiveWhiteMagic(opponentIdentity.connectionToClient, whiteMagicToSend, this.netId,opponentIdentity.netId);
+            RpcReceiveWhiteMagic( whiteMagicToSend, this.netId,opponentIdentity.netId);
         }
 
 
         [ClientRpc]
-        public void RpcTargetReceiveWhiteMagic(NetworkConnection target, float whiteMagicReceived, uint netID1, uint netID2)
+        public void RpcReceiveWhiteMagic( float whiteMagicReceived, uint netID1, uint netID2)
         {
             Debug.Log("rpc");
 
