@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13697,6 +13697,10 @@ PrefabInstance:
       propertyPath: explorerPrefab
       value: 
       objectReference: {fileID: 6848180513406669634, guid: 2038f256224713f4dbda4e876ee9c075, type: 3}
+    - target: {fileID: 8183732931097936506, guid: ebe183f942e538540946718f3a7c635d, type: 3}
+      propertyPath: prefabWhiteMagicParticleSystem
+      value: 
+      objectReference: {fileID: 7952692855330037605, guid: 8581c892096ffb341a6b5e6858afb144, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebe183f942e538540946718f3a7c635d, type: 3}
 --- !u!4 &8183732931097936504 stripped
