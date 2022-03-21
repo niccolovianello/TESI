@@ -36,14 +36,11 @@ public class MagicItem : Item
         Hunter
     }
 
-    private void Awake()
-    {
-        uiInventory = FindObjectOfType<UIInventory>();
-    }
+    
 
     private void Start()
     {
-        
+        uiInventory = FindObjectOfType<UIInventory>();
         player = FindObjectOfType<Player>();
         magicPlayer = FindObjectOfType<MagicPlayer>();
         NetworkPlayer[] networkPlayers = FindObjectsOfType<NetworkPlayer>();
