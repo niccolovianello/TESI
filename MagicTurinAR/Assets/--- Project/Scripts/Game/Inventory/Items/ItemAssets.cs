@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ItemAssets : MonoBehaviour
 {
@@ -31,5 +32,16 @@ public class ItemAssets : MonoBehaviour
     public GameObject hunterPrefab;
     public GameObject wisemanPrefab;
 
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            foreach (EventSystem e in FindObjectsOfType<EventSystem>())
+            {
+                Debug.Log(e.name);
+            }
+        }
+    }
 
 }
