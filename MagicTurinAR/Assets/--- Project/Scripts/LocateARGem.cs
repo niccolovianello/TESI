@@ -38,6 +38,8 @@ namespace Niantic.ARDKExamples.Helpers
         /// Internal reference to the session, used to get the current frame to hit test against.
         private IARSession _session;
 
+        [SerializeField] private float offsetY;
+
 
         public int GetCounterTouch()
         {
@@ -131,7 +133,8 @@ namespace Niantic.ARDKExamples.Helpers
             // Place the object on top of the surface rather than exactly on the hit point
             // Note (Kelly): Now that vertical planes are also supported in-editor, need to be
             // more elegant about how/if to handle instantiation of the cube
-            hitPosition.y += PlacementObjectPf.transform.localScale.y / 2.0f;
+
+            hitPosition.y += offsetY;
 
 
             _placedObject = Instantiate(PlacementObjectPf, hitPosition, Quaternion.identity);

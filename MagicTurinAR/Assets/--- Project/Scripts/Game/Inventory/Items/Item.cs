@@ -15,7 +15,7 @@ public abstract class Item : MonoBehaviour, ItemInterface
     private float maxClickDistance = 50;
 
     private float rotateSpeed = 50.0f;
-    private float floatAmplitude = 0.005f;
+    private float floatAmplitude = 0.1f;
     private float floatFrequency = 0.5f;
 
 
@@ -47,7 +47,6 @@ public abstract class Item : MonoBehaviour, ItemInterface
         return (player.transform.position - transform.position).magnitude < maxClickDistance;
     }
 
-
-    abstract public void DoNotRenderItem();
+    public abstract void DoNotRenderItem();
     
 }

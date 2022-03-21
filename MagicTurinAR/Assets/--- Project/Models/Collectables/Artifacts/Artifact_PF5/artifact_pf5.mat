@@ -61,7 +61,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Emission:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0d57a962a27ef104993f5b688090c70a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -123,7 +123,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DitherSize: 1
     - _DstBlend: 0
-    - _EmissionMultiplier: 0
+    - _EmissionMultiplier: 0.4
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0

@@ -11,7 +11,6 @@ public class Demon : MonoBehaviour
     [SerializeField] private Text life;
     // [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
-    [SerializeField] private Transform AR_Player;
     [SerializeField] private float dangerDistance;
     [SerializeField] private float attackDistance;
     [SerializeField] private Transform attackPoint;
@@ -22,6 +21,8 @@ public class Demon : MonoBehaviour
     [SerializeField] private ParticleSystem soul;
 
     [SerializeField] private LayerMask layers;
+    
+    private Camera AR_Player;
 
     private bool hit;
 
@@ -50,7 +51,9 @@ public class Demon : MonoBehaviour
         {
             renderer.material.shader = Shader.Find("Shader Graphs/Skeleton_Alpha");
         }
-        
+
+        AR_Player = FindObjectOfType<Camera>();
+
     }
 
 
@@ -108,9 +111,11 @@ public class Demon : MonoBehaviour
     private bool isAware()
     {
         Vector3 targetDirection = transform.position - AR_Player.transform.position;
-        bool viewsARPlayer = Mathf.Abs(Vector3.Angle(Vector3.forward, targetDirection)) < viewAngle && Mathf.Abs((transform.position - AR_Player.transform.position).magnitude) < dangerDistance;
+        bool distanceARPlayer = Mathf.Abs((transform.position - AR_Player.transform.position).magnitude) < dangerDistance;
+        bool angleARplayer = Mathf.Abs(Vector3.Angle(Vector3.forward, targetDirection)) < viewAngle;
+        Debug.Log(distanceARPlayer + " " + angleARplayer);
         
-        return viewsARPlayer;
+        return distanceARPlayer && angleARplayer;
     }
 
     private void OnDrawGizmos()
@@ -191,14 +196,18 @@ public class Demon : MonoBehaviour
     private IEnumerator AttackClip()
     {
         animator.SetBool("Attack", true);
+
+        yield return new WaitForSeconds(1f);
         Collider[] colliders = Physics.OverlapSphere(attackPoint.position, attackRadius, layers);
 
         foreach (Collider collider in colliders)
         {
-            collider.GetComponent<HealthManager>().DecreaseHealth(Random.Range(7f, 13f));
+            // collider.GetComponent<HealthManager>().DecreaseHealth(Random.Range(7f, 13f));
+            collider.GetComponent<HealthManager>().DecreaseHealth(1f);
         }
         
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
+        animator.SetBool("Attack", false);
     }
 
 }
