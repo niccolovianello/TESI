@@ -8,6 +8,7 @@ public class GraphicInterctionBetweenPlayers : MonoBehaviour
 {
     public GameObject prefabWhiteMagicParticleSystem;
     public GameObject prefabGemParticleSystem;
+    public Vector3 offset = new Vector3(0, 2, 0);
 
 
     public void WisemanSendWhiteMagic( GameObject netplay1, GameObject netplay2)
@@ -33,7 +34,7 @@ public class GraphicInterctionBetweenPlayers : MonoBehaviour
         float waitTime = 2f;
         while (elapsedTime < waitTime)
         {
-            go.transform.position = Vector3.Slerp(netplay1.gameObject.transform.position, netplay2.gameObject.transform.position, elapsedTime);
+            go.transform.position = Vector3.Slerp(netplay1.gameObject.transform.position + offset, netplay2.gameObject.transform.position + offset, elapsedTime);
             elapsedTime += Time.deltaTime;
 
             // Yield here
