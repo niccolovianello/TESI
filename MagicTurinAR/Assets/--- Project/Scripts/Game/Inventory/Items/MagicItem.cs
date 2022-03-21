@@ -89,7 +89,6 @@ public class MagicItem : Item
                 
                 renderer.material.SetInt("_HasTexture", 0);
                 renderer.material.SetColor("_AlbedoPlain", Color.gray);
-                
             }
         }
     }

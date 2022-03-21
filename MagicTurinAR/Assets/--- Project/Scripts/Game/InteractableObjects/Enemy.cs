@@ -9,12 +9,14 @@ public class Enemy : Item
 
     private bool rendered = false;
     
+    
     [SerializeField] private GameObject body;
     
     private void Awake()
     {
         collider = GetComponent<CapsuleCollider>();
         collider.isTrigger = true;
+        player = FindObjectOfType<Hunter>();
     }
 
     internal override void Update()
@@ -39,10 +41,12 @@ public class Enemy : Item
         SceneManager.LoadScene("AR_EnemyFight", LoadSceneMode.Additive);
         gameManager.PlayerCameraObject.SetActive(false);
         gameManager.DisableMainGame();
+        
         foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
         {
             np.NotRenderPlayerBody();
         }
+        
         Destroy(gameObject);
     }
 
