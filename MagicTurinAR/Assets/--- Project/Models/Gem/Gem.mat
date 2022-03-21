@@ -98,7 +98,7 @@ Material:
     m_Floats:
     - Boolean_867b2330332b45a1a7bc71f4e3a532ba: 0
     - Vector1_6ccd8a90ee10431294ea87df55fe0647: 0
-    - _Alpha: 1
+    - _Alpha: 0.5
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1

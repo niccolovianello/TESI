@@ -75,6 +75,11 @@ public class MagicItem : Item
             foreach (Renderer renderer in _renderers)
             {
                 renderer.material.SetFloat("_Alpha", 1);
+                
+                if (itemType != ItemType.Gem && itemType != ItemType.WhiteMagicFragment)
+                {
+                    renderer.material.SetInt("_HasTexture", 1);
+                }
             }
         }
 
@@ -83,7 +88,13 @@ public class MagicItem : Item
         {
             foreach (Renderer renderer in _renderers)
             {
-                renderer.material.SetFloat("_Alpha", .2f);
+                renderer.material.SetFloat("_Alpha", .5f);
+
+                if (itemType != ItemType.Gem && itemType != ItemType.WhiteMagicFragment)
+                {
+                    renderer.material.SetInt("_HasTexture", 0);
+                    renderer.material.SetColor("_AlbedoPlain", Color.gray);
+                }
             }
         }
     }
