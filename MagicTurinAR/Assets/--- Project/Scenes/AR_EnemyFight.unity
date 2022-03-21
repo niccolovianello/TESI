@@ -2008,6 +2008,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ARMesh
       objectReference: {fileID: 0}
+    - target: {fileID: 4544129020768840140, guid: 9f82ecc5afc3c4c2695d9cf37d46f25c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4544129020768840141, guid: 9f82ecc5afc3c4c2695d9cf37d46f25c, type: 3}
       propertyPath: m_RootOrder
       value: 4

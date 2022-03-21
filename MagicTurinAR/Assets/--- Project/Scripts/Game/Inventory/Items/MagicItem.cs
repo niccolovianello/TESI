@@ -208,5 +208,8 @@ public class MagicItem : Item
         gameObject.SetActive(false);
     }
 
-    
+    public override void RenderItem()
+    {
+        
+    }
 }

@@ -14,9 +14,9 @@ public abstract class Item : MonoBehaviour, ItemInterface
 {
     private float maxClickDistance = 50;
 
-    private float rotateSpeed = 50.0f;
-    private float floatAmplitude = 0.1f;
-    private float floatFrequency = 0.5f;
+    [SerializeField] private float rotateSpeed = 50.0f;
+    [SerializeField] private float floatAmplitude = 0.1f;
+    [SerializeField] private float floatFrequency = 0.5f;
 
 
     
@@ -32,7 +32,7 @@ public abstract class Item : MonoBehaviour, ItemInterface
     public abstract void OnMouseDown();
 
     
-    void Update()
+    internal virtual void Update()
     {
         transform.Rotate(Vector3.up, rotateSpeed * Time.deltaTime);
         Vector3 tempPos = transform.position;
@@ -48,5 +48,7 @@ public abstract class Item : MonoBehaviour, ItemInterface
     }
 
     public abstract void DoNotRenderItem();
+    
+    public abstract void RenderItem();
     
 }

@@ -2947,7 +2947,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00024414062, y: -84.05762}
+  m_AnchoredPosition: {x: -0.00024414062, y: -84.05737}
   m_SizeDelta: {x: 0.00048828125, y: -1196.1707}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &418512697
@@ -3297,7 +3297,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00024414062, y: -84.058105}
+  m_AnchoredPosition: {x: -0.00024414062, y: -84.05786}
   m_SizeDelta: {x: 0.00048828125, y: -1196.1707}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &484531989
@@ -13685,6 +13685,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemAssets
       objectReference: {fileID: 0}
+    - target: {fileID: 6233196060916031752, guid: ebe183f942e538540946718f3a7c635d, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 4065617981142174932, guid: e38c17170e93d434c8e3d6499377fd8c, type: 3}
     - target: {fileID: 6233196060916031752, guid: ebe183f942e538540946718f3a7c635d, type: 3}
       propertyPath: hunterPrefab
       value: 

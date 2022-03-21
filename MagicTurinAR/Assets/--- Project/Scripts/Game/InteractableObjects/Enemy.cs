@@ -1,15 +1,15 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using MirrorBasics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
 [RequireComponent(typeof(CapsuleCollider))]
-public class Enemy : MonoBehaviour
+public class Enemy : Item
 {
     private CapsuleCollider collider;
+
+    private bool rendered = false;
+    
+    [SerializeField] private GameObject body;
     
     private void Awake()
     {
@@ -17,7 +17,23 @@ public class Enemy : MonoBehaviour
         collider.isTrigger = true;
     }
 
-    private void OnMouseDown()
+    internal override void Update()
+    {
+        base.Update();
+        if (!IsClickable() && rendered)
+        {
+            DoNotRenderItem();
+            rendered = false;
+        }
+
+        if (IsClickable() && !rendered)
+        {
+            RenderItem();
+            rendered = true;
+        }
+    }
+    
+    public override void OnMouseDown()
     {
         GameManager gameManager = FindObjectOfType<GameManager>();
         SceneManager.LoadScene("AR_EnemyFight", LoadSceneMode.Additive);
@@ -30,4 +46,15 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public override void DoNotRenderItem()
+    {
+        body.SetActive(false);
+        collider.enabled = false;
+    }
+
+    public override void RenderItem()
+    {
+        body.SetActive(true);
+        collider.enabled = true;
+    }
 }
