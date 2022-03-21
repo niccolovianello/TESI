@@ -74,7 +74,7 @@ public class MagicItem : Item
         {
             foreach (Renderer renderer in _renderers)
             {
-                renderer.material.SetFloat("Alpha", 1);
+                renderer.material.SetFloat("_Alpha", 1);
             }
         }
 
@@ -83,7 +83,7 @@ public class MagicItem : Item
         {
             foreach (Renderer renderer in _renderers)
             {
-                renderer.material.SetFloat("Alpha", .2f);
+                renderer.material.SetFloat("_Alpha", .2f);
             }
         }
     }
