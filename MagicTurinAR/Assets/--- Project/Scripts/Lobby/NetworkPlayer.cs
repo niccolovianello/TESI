@@ -112,26 +112,31 @@ namespace MirrorBasics
         {
             Debug.Log("Wiseman manda magia bianca");
             NetworkIdentity opponentIdentity = target.GetComponent<NetworkIdentity>();
-            RpcTargetReceiveWhiteMagic(opponentIdentity.connectionToClient, whiteMagicToSend, this.netId);
+            
+            RpcTargetReceiveWhiteMagic(opponentIdentity.connectionToClient, whiteMagicToSend, this.netId,opponentIdentity.netId);
         }
 
 
-        [TargetRpc]
-        public void RpcTargetReceiveWhiteMagic(NetworkConnection target, float whiteMagicReceived, uint netID)
+        [ClientRpc]
+        public void RpcTargetReceiveWhiteMagic(NetworkConnection target, float whiteMagicReceived, uint netID1, uint netID2)
         {
             Debug.Log("rpc");
 
-            MagicPlayer magicPlayer = FindObjectOfType<MagicPlayer>();
+           
             NetworkPlayer netplay1 = null;
-            NetworkPlayer netplay2 = magicPlayer.GetComponent<NetworkPlayer>();
+            NetworkPlayer netplay2 = null;
             foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
             {
-                if (np.netId == netID)
+                if (np.netId == netID1)
                     netplay1 = np;
+                if (np.netId == netID2)
+                    netplay2 = np;
               
             }
-
             Debug.Log("RpcTargetReceiveWhiteMagic: player1" + netplay1 + "    player2" + netplay2);
+
+            MagicPlayer magicPlayer = netplay2.GetComponent<MagicPlayer>();
+           
 
             if (magicPlayer is Explorer)
             {
@@ -148,48 +153,15 @@ namespace MirrorBasics
                 ReceiveMagicOrGemsVibration();
             }
 
-
-            if (netplay1 != null && netplay2 != null)
-            {
-                Debug.Log("Send command Begin wihite magic visual effect");
-                BeginVisualEffectWhiteMagicSend(netplay1, netplay2);
-            }
-        }
-
-        public void BeginVisualEffectWhiteMagicSend(NetworkPlayer netplay1, NetworkPlayer netplay2)
-        {
-            CmdWhiteMagicVisualEffect(netplay1.netId, netplay2.netId);
-            Debug.Log("Chiamo la command per l'effetto visual");
-
-        }
-        [Command]
-        public void CmdWhiteMagicVisualEffect(uint netIdPlay1, uint netIdPlay2)
-        {
-            RpcWhiteMagicVisualEffect(netIdPlay1, netIdPlay2);
-            Debug.Log("Cmd white magic visual effetc net ids: netplay1 " + netIdPlay1 + "   netplay2:" + netIdPlay2);
-        }
-
-        [ClientRpc]
-        public void RpcWhiteMagicVisualEffect(uint netIdPlay1, uint netIdPlay2)
-        {
-            NetworkPlayer netplay1 = null;
-            NetworkPlayer netplay2 = null;
-            foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
-            {
-                if (np.netId == netIdPlay1)
-                    netplay1 = np;
-                if (np.netId == netIdPlay2)
-                    netplay2 = np;
-
-            }
-            Debug.Log("RpcWhiteMagicVisualEffect last client rpc: player1" + netplay1 + "    player2" + netplay2);
-
-
             if (netplay1 != null && netplay2 != null)
                 FindObjectOfType<GraphicInterctionBetweenPlayers>().WisemanSendWhiteMagic(netplay1.gameObject, netplay2.gameObject);
             else
                 Debug.LogError("There's a problem with the network Ids");
+
+         
         }
+
+    
 
 
 
