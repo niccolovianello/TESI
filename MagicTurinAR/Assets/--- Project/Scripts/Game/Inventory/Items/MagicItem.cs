@@ -16,7 +16,7 @@ public class MagicItem : Item
     public ItemTypePlayer itemTypePlayer;
     public int idObjectCode;
 
-    private Renderer _renderer;
+    private Renderer[] _renderers;
     private float distanceAlpha = 0.2f;
 
     
@@ -59,17 +59,33 @@ public class MagicItem : Item
                 
         }
 
-        _renderer = GetComponentInChildren<Renderer>();
+        _renderers = GetComponentsInChildren<Renderer>();
 
-        _renderer.material.shader = Shader.Find("Shader Graphs/Alpha");
+        foreach (Renderer renderer in _renderers)
+        {
+            renderer.material.shader = Shader.Find("Shader Graphs/Alpha");
+        }
 
     }
 
     private void Update()
     {
-        if(IsClickable()) _renderer.material.SetFloat("Alpha", 1);
-        
-        else _renderer.material.SetFloat("Alpha", distanceAlpha);
+        if (IsClickable())
+        {
+            foreach (Renderer renderer in _renderers)
+            {
+                renderer.material.SetFloat("Alpha", 1);
+            }
+        }
+
+
+        else
+        {
+            foreach (Renderer renderer in _renderers)
+            {
+                renderer.material.SetFloat("Alpha", .2f);
+            }
+        }
     }
 
 
