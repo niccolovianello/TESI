@@ -39,8 +39,16 @@ public class UIManager : MonoBehaviour
     [Header("WindowDestroyGemHunter")]
     public Canvas windowToDestroyGemHunter;
     public string sceneToDestroyGemName;
-    
-    
+
+
+    [Header("DistanceBetweenPlayersChecker")]
+    [SerializeField] private Image imageIndicatorGroupDisance;
+    [Range(0.5f, 6f)]
+    [SerializeField] float updateTime = 1.5f;
+    [SerializeField] private Sprite onePlayerSprite;
+    [SerializeField] private Sprite twoPlayersSprite;
+    [SerializeField] private Sprite threePlayersSprite;
+
     void Start()
     {
         firebaseManager = FindObjectOfType<FirebaseManager>();
@@ -104,7 +112,7 @@ public class UIManager : MonoBehaviour
 
         player.InitializeInventory();
 
-
+        StartCoroutine(DistanceBetweenPlayerCheckerCoroutine());
 
         //player.SetUIManager(this);
     }
@@ -201,5 +209,44 @@ public class UIManager : MonoBehaviour
         distanceWarningScreenSpace.SetActive(true);
         yield return new WaitForSeconds(2f);
         distanceWarningScreenSpace.SetActive(false);
+    }
+
+    private IEnumerator DistanceBetweenPlayerCheckerCoroutine()
+    {
+        while (true)
+        {
+            int counterPlayersClose = 0;
+            
+            MagicPlayer localplayer = FindObjectOfType<MagicPlayer>();
+            foreach (NetworkPlayer nt in FindObjectsOfType<NetworkPlayer>())
+            {
+                if (!nt.isLocalPlayer)
+                {
+                    if (Vector3.Distance(localplayer.transform.position, nt.transform.position) < localplayer.maxDistanceFromTheOthers)
+                        counterPlayersClose++;
+                }
+            }
+            if (counterPlayersClose == 0)
+            {
+                imageIndicatorGroupDisance.sprite = onePlayerSprite;
+            }
+            else if (counterPlayersClose == 1)
+            {
+                imageIndicatorGroupDisance.sprite = twoPlayersSprite;
+            }
+            else if (counterPlayersClose == 2)
+            {
+                imageIndicatorGroupDisance.sprite = threePlayersSprite;
+            }
+            else if (counterPlayersClose > 2)
+            {
+                Debug.LogError("There are more then 3 players");
+            }
+
+
+            yield return new WaitForSeconds(updateTime);
+
+        }
+    
     }
 }
