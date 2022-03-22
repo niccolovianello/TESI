@@ -101,6 +101,12 @@ public class MagicPlayer : Player
             {
                 isNear = true;
             }
+            else
+            {
+                isNear = false;
+                break;
+            }
+            
         
         }
 
