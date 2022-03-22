@@ -5125,6 +5125,7 @@ RectTransform:
   - {fileID: 1231315741}
   - {fileID: 1006660123}
   - {fileID: 1414397643}
+  - {fileID: 922030225}
   - {fileID: 886300654}
   - {fileID: 1450087518}
   - {fileID: 2063283163}
@@ -5161,6 +5162,11 @@ MonoBehaviour:
   windowToDestroyGemWiseman: {fileID: 40218303}
   windowToDestroyGemHunter: {fileID: 220439280}
   sceneToDestroyGemName: AR_DestroyGem
+  imageIndicatorGroupDisance: {fileID: 922030223}
+  updateTime: 2.26
+  onePlayerSprite: {fileID: 21300000, guid: bb4447a16b85b4345a1f3d76f4521717, type: 3}
+  twoPlayersSprite: {fileID: 21300000, guid: 30cda327c1ceb404e991d092fda95aea, type: 3}
+  threePlayersSprite: {fileID: 21300000, guid: 02e58dab88fdbfd48b335b08d3d7855a, type: 3}
 --- !u!1 &744325837
 GameObject:
   m_ObjectHideFlags: 0
@@ -6364,7 +6370,7 @@ RectTransform:
   - {fileID: 811057472}
   - {fileID: 297619062}
   m_Father: {fileID: 724592911}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6528,6 +6534,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910442372}
   m_CullTransparentMesh: 1
+--- !u!1 &922030222
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 922030225}
+  - component: {fileID: 922030224}
+  - component: {fileID: 922030223}
+  m_Layer: 5
+  m_Name: GroupControlIndicator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &922030223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922030222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 91db8970c28d4a344beff5618f7a0ca3, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &922030224
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922030222}
+  m_CullTransparentMesh: 1
+--- !u!224 &922030225
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922030222}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 724592911}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.08933334, y: 0.89100003}
+  m_AnchorMax: {x: 0.23511112, y: 0.9785}
+  m_AnchoredPosition: {x: 0, y: 3.9022827}
+  m_SizeDelta: {x: 0.000015259, y: -7.8045}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &938632247
 GameObject:
   m_ObjectHideFlags: 0
@@ -9358,7 +9439,7 @@ RectTransform:
   - {fileID: 1898487303}
   - {fileID: 220439277}
   m_Father: {fileID: 724592911}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -12068,7 +12149,7 @@ RectTransform:
   - {fileID: 1217707883}
   - {fileID: 1888885372}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -12109,7 +12190,7 @@ RectTransform:
   - {fileID: 1132131155}
   - {fileID: 40218302}
   m_Father: {fileID: 724592911}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
