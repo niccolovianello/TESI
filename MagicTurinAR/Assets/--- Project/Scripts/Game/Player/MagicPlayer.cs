@@ -21,6 +21,8 @@ public class MagicPlayer : Player
     public float maxMana = 100;
     public float currentMana = 100;
 
+    
+
     public float CurrentMana
     {
         get => currentMana;
@@ -112,5 +114,11 @@ public class MagicPlayer : Player
 
         return isNear;
         
+    }
+
+    public void ActivateRadarEffect(float scaleMultiplier)
+    {
+        GameObject radar = Instantiate(ItemAssets.Instance.prefabRadarVfx, this.gameObject.transform);
+        radar.transform.localScale = radar.transform.localScale * scaleMultiplier;
     }
 }

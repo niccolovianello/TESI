@@ -35,6 +35,9 @@ public class ItemAssets : MonoBehaviour
     [Header("Parents Transform")]
     public GameObject DirectionsParent;
 
+    [Header("RadarVFX")]
+    public GameObject prefabRadarVfx;
+
 
     //private void Update()
     //{
