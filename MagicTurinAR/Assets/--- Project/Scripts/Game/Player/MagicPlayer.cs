@@ -120,5 +120,6 @@ public class MagicPlayer : Player
     {
         GameObject radar = Instantiate(ItemAssets.Instance.prefabRadarVfx, this.gameObject.transform);
         radar.transform.localScale = radar.transform.localScale * scaleMultiplier;
+        radar.transform.localPosition += new Vector3(0, 0.1f, 0);
     }
 }

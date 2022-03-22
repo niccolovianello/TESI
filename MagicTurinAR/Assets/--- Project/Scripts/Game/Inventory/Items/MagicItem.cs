@@ -127,7 +127,7 @@ public class MagicItem : Item
                                         {
                                             Debug.Log("You are too far from your team mates!");
                                             Vibration.VibrateNope();
-                                            StartCoroutine(FindObjectOfType<UIManager>().DistanceWarningScreenSpace("You are too far from your team mates!"));
+                                            //StartCoroutine(FindObjectOfType<UIManager>().DistanceWarningScreenSpace("You are too far from your team mates!"));
                                         }
 
                                         break;
@@ -148,7 +148,7 @@ public class MagicItem : Item
                                         {
                                             Debug.Log("You are too far from your team mates!");
                                             Vibration.VibrateNope();
-                                            StartCoroutine(FindObjectOfType<UIManager>().DistanceWarningScreenSpace("You are too far from your team mates!"));
+                                            //StartCoroutine(FindObjectOfType<UIManager>().DistanceWarningScreenSpace("You are too far from your team mates!"));
                                         }
 
                                         break;
@@ -179,7 +179,7 @@ public class MagicItem : Item
                             {
                                 Debug.Log("You are too far from your team mates!");
                                 Vibration.VibrateNope();
-                                StartCoroutine(FindObjectOfType<UIManager>().DistanceWarningScreenSpace("You are too far from your team mates!"));
+                                //StartCoroutine(FindObjectOfType<UIManager>().DistanceWarningScreenSpace("You are too far from your team mates!"));
                             }
 
 
