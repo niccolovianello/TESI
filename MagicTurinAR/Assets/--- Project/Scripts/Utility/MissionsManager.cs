@@ -166,6 +166,7 @@ public class MissionsManager : MonoBehaviour
                     {
                         Destroy(t.gameObject);
                     }
+                    _spawnOnMapCustom.SetNavigationPower(magicPlayer.gameObject.transform);
 
                 }
                 break;

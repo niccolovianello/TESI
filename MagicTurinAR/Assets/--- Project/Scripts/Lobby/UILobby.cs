@@ -113,14 +113,14 @@ namespace MirrorBasics
             if (success && playerIndex>1)
             {
                 lobbyCanvas.enabled = true;
-                Debug.Log("Spawn Client!");
+                //Debug.Log("Spawn Client!");
                 SpawnPlayerUIPrefab(NetworkPlayer.localPlayer);
                 matchIDText.text = _matchID;
                
             }
             else
             {
-                Debug.Log("Not spwan client");
+                //Debug.Log("Not spwan client");
                 joinButton.interactable = true;
                 joinMatchInput.interactable = true;
                 hostButton.interactable = true;

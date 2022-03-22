@@ -77,7 +77,7 @@ namespace MirrorBasics
                 }
             }
 
-            Debug.Log($"Random match id is: {_ID}");
+            //Debug.Log($"Random match id is: {_ID}");
             return _ID;
         }
 
@@ -89,13 +89,13 @@ namespace MirrorBasics
             {
                 matchIDs.Add(_matchID);
                 matches.Add(new Match(_matchID, _player));
-                Debug.Log(" MatchId generated! ");
+                //Debug.Log(" MatchId generated! ");
                 playerIndex = 1;
                 return true;
             }
             else
             {
-                Debug.Log(" MatchId already exists! ");
+                //Debug.Log(" MatchId already exists! ");
                 return false;
             }
 
@@ -114,18 +114,18 @@ namespace MirrorBasics
                     {
                         matches[i].GetPlayers().Add(_player);
                         playerIndex = matches[i].GetPlayers().Count ;
-                        Debug.Log(playerIndex + " number of players");
+                        //Debug.Log(playerIndex + " number of players");
                         break;
                     }
                 
                 }
                 
-                Debug.Log(" MatchId joined! ");
+                //Debug.Log(" MatchId joined! ");
                 return true;
             }
             else
             {
-                Debug.Log(" MatchId does not exist! ");
+                //Debug.Log(" MatchId does not exist! ");
                 return false;
             }
 

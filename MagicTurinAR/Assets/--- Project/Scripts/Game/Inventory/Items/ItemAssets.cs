@@ -32,6 +32,9 @@ public class ItemAssets : MonoBehaviour
     public GameObject hunterPrefab;
     public GameObject wisemanPrefab;
 
+    [Header("Parents Transform")]
+    public GameObject DirectionsParent;
+
 
     //private void Update()
     //{

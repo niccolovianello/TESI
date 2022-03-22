@@ -154,7 +154,7 @@ public class GameManager : Singleton<GameManager>
                 networkPlayer.gameObject.AddComponent<Explorer>();
                 Explorer explorer = networkPlayer.GetComponent<Explorer>();
                 currentPlayer = explorer;
-                
+                explorer.parentDirections = ItemAssets.Instance.DirectionsParent;
 
 
                 items = FindObjectsOfType<MagicItem>();

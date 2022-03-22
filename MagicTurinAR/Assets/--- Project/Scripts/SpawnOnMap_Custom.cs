@@ -37,6 +37,9 @@
 
 			area.transform.parent = parentObjectAreaTarget.transform;
 			target.transform.parent = parentObjectAreaTarget.transform;
+
+			SetNavigationPower(target.transform);
+
 		}
 
 		public void DestroyTargetLocation()
@@ -45,5 +48,17 @@
 			Destroy(target);
 			Debug.Log("Destroy");
 		}
+
+		public void SetNavigationPower(Transform target)
+		{
+
+			Explorer ex = FindObjectOfType<Explorer>();
+
+			if (ex != null)
+				ex.GetDirections()._waypoints[1] = target.transform;
+		}
+
+		
+
 	}
 }

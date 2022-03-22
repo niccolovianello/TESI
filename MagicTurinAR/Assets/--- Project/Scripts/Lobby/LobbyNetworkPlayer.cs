@@ -144,14 +144,14 @@ namespace MirrorBasics
 
             if (MatchMaker.istance.JoinGame(_matchID, gameObject, out playerIndex))
             {
-                Debug.Log($"<color = green>Game joined succesfully</color>" + playerIndex);
+                //Debug.Log($"<color = green>Game joined succesfully</color>" + playerIndex);
                 networkMatch.matchId = _matchID.toGuid();
                 Debug.Log(networkMatch.matchId);
                 TargetJoinGame(true, _matchID, playerIndex);
             }
             else
             {
-                Debug.Log("<color = red>Game join failed</color>");
+                //Debug.Log("<color = red>Game join failed</color>");
                 TargetJoinGame(false, _matchID, playerIndex);
             }
         }
@@ -161,7 +161,7 @@ namespace MirrorBasics
         {
             playerIndex = _playerIndex;
             matchID = _matchID;
-            Debug.Log($"MatchId: {matchID} == {_matchID}");
+            //Debug.Log($"MatchId: {matchID} == {_matchID}");
             UILobby.istance.JoinSucces(success, _matchID, playerIndex);
         }
 

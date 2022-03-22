@@ -44,7 +44,7 @@ namespace MirrorBasics
             UILobby.ClientOrServerView(this);
             
 
-            Debug.Log("START PLAYER BEHAVIOUR");
+            //Debug.Log("START PLAYER BEHAVIOUR");
 
            
 
@@ -57,7 +57,7 @@ namespace MirrorBasics
 
             if (isLocalPlayer)
             {
-                Debug.Log("Is local player");
+                //Debug.Log("Is local player");
                 localPlayer = this;
                 
 
@@ -65,7 +65,7 @@ namespace MirrorBasics
             else
             {
 
-                Debug.Log("Is not local player");
+                //Debug.Log("Is not local player");
                 UILobby.istance.SpawnPlayerUIPrefab(this);
 
 
@@ -79,7 +79,7 @@ namespace MirrorBasics
 
         private void OnDestroy()
         {
-            Debug.Log("DESTROY PLAYER BEHAVIOUR");
+            //Debug.Log("DESTROY PLAYER BEHAVIOUR");
 
         }
 
@@ -110,7 +110,7 @@ namespace MirrorBasics
         [Command]
         public void CmdSendWhiteMagic(GameObject target, float whiteMagicToSend)
         {
-            Debug.Log("Wiseman manda magia bianca");
+            //Debug.Log("Wiseman manda magia bianca");
             NetworkIdentity opponentIdentity = target.GetComponent<NetworkIdentity>();
             
             RpcReceiveWhiteMagic( whiteMagicToSend, this.netId,opponentIdentity.netId);
@@ -120,7 +120,7 @@ namespace MirrorBasics
         [ClientRpc]
         public void RpcReceiveWhiteMagic( float whiteMagicReceived, uint netID1, uint netID2)
         {
-            Debug.Log("rpc");
+           
 
            
             NetworkPlayer netplay1 = null;
@@ -133,7 +133,7 @@ namespace MirrorBasics
                     netplay2 = np;
               
             }
-            Debug.Log("RpcTargetReceiveWhiteMagic: player1" + netplay1 + "    player2" + netplay2);
+
 
             MagicPlayer magicPlayer = netplay2.GetComponent<MagicPlayer>();
            
@@ -169,7 +169,6 @@ namespace MirrorBasics
         public void CmdSendGem()
         {
 
-            Debug.Log("Send Gem");
             RpcReceiveGem(this.netId);
         }
 
@@ -192,7 +191,6 @@ namespace MirrorBasics
             {
                 
                 Wiseman wiseman = magicPlayer.GetComponent<Wiseman>();
-                Debug.Log("Wiseman riceve gemma");
                 wiseman.IncrementGems();
                 ReceiveMagicOrGemsVibration();
             }
@@ -236,14 +234,13 @@ namespace MirrorBasics
         {
 
             RpcDestroyGem();
-            Debug.Log("CMD mandare gemma");
         }
 
 
         [ClientRpc]
         public void RpcDestroyGem()
         {
-            Debug.Log("Gemma arrivata");
+
             MagicPlayer mp = FindObjectOfType<MagicPlayer>();
 
             if (mp is Hunter)
@@ -266,7 +263,6 @@ namespace MirrorBasics
         {
 
             RpcWhiteMagicFromGem(nfragment);
-            Debug.Log("Gemma distrutta");
         }
 
 

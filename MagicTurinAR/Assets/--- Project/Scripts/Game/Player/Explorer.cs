@@ -13,59 +13,68 @@ public class Explorer : MagicPlayer
     
 
     private float powerCost = .1f;
-    // private DirectionsFactory directions;
+    private DirectionsFactory directions;
+    private GameObject directionMesh;
+    public GameObject parentDirections;
+    private bool wasActive = false;
+    private bool initializationFlag = false;
 
-    private void Awake()
-    {
-
-        /*
-        directions = new GameObject("Directions").AddComponent<DirectionsFactory>();
-
-        MeshModifier mm = (MeshModifier)AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/1_DataExplorer/Traffic/DirectionLoft.asset", typeof(MeshModifier));
-        directions.GetComponent<DirectionsFactory>().SetMeshModifier(mm);
-
-        Material mat = (Material)AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/Resources/DirectionMaterial.mat", typeof(Material));
-        directions.GetComponent<DirectionsFactory>().SetDirectionMaterial(mat);
-
-        directions._waypoints[0] = transform;
-        directions._waypoints[1] = transform;
-
-        
-
-        directions.gameObject.SetActive(false);
-        */
-
-    }
-    
     private void Start()
     {
-       
-       
+
+        parentDirections = ItemAssets.Instance.DirectionsParent;
         manaManager = GetComponent<ManaManager>();
         manaManager.SetMaxMana(maxMana);
         manaManager.SetMana(maxMana);
         
         Debug.Log(maxMana);
+
+        InitializeNavigationPower();
+       
+    }
+
+    public DirectionsFactory GetDirections()
+    {
+        return directions;
     }
 
     private void Update()
     {
-        /*
-        if (directions.gameObject.activeSelf)
+
+        if (parentDirections.gameObject.activeSelf)
         {
+         
+            
             if (HasMana())
             {
                 DecreaseMana(powerCost);
+                Debug.Log("Activate");
             }
 
             else
             {
-                GameObject directionMesh = GameObject.Find("direction waypoint " + " entity");
-                directionMesh.Destroy();
+                    
+                if (directionMesh != null)
+                    parentDirections.SetActive(false);
                 ToggleNavigation();
+                wasActive = false;
+                Debug.Log("Finish Mana");
+                
+
             }
+            if (wasActive == false)
+                wasActive = true;
         }
-        */
+        else if (!parentDirections.gameObject.activeSelf && wasActive == true) 
+        {
+            
+            if (directionMesh != null)
+                parentDirections.SetActive(false);
+            wasActive = false;
+            Debug.Log(" Deactivate");
+        }
+
+
     }
 
 
@@ -101,17 +110,47 @@ public class Explorer : MagicPlayer
     
     public void ToggleNavigation()
     {
+
         //directions.gameObject.SetActive(!directions.gameObject.activeSelf);
+        parentDirections.gameObject.SetActive(!parentDirections.gameObject.activeSelf);
+
+        
+
+        
+           
+
+
     }
 
-    public void InitializeNavigationPower(Transform targetTransform)
+    public void InitializeNavigationPower()
     {
-        /*
-        directions._waypoints[1] = targetTransform;
+
+        directions = new GameObject("Directions").AddComponent<DirectionsFactory>();
+        //directions.transform.parent = parentDirections.transform;
+        directions._waypoints[0] = transform;
+        directions._waypoints[1] = transform ;
+
+        MeshModifier mm = (MeshModifier)AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/1_DataExplorer/Traffic/DirectionLoft.asset", typeof(MeshModifier));
+        directions.GetComponent<DirectionsFactory>().SetMeshModifier(mm);
+
+        Material mat = (Material)AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/Resources/DirectionMaterial.mat", typeof(Material));
+        directions.GetComponent<DirectionsFactory>().SetDirectionMaterial(mat);
+       
+
+        //directions.gameObject.SetActive(false);
+        parentDirections.SetActive(false);
+
+
+    }
+
+    public void SetMissionTarget(Transform missionTargetTransform)
+    {
+
+        directions._waypoints[1] = missionTargetTransform;
         Debug.Log(directions._waypoints[1]);
 
         directions.gameObject.SetActive(false);
-        */
+
     }
 
 
