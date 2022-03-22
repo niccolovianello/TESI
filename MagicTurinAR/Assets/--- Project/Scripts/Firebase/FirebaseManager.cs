@@ -218,7 +218,7 @@ using UnityEngine.SceneManagement;
                         {
                             //Username is now set
                             //Now return to login screen
-                            UILoginManager.instance.LoginScreen();
+                            UILoginManager.instance.LoginUI();
                             warningRegisterText.text = "";
                         }
                     }

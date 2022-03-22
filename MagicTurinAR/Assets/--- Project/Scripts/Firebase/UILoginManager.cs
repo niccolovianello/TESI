@@ -18,6 +18,8 @@ public class UILoginManager : MonoBehaviour
     private Text _subTitle;
     private Image _over;
 
+    private CanvasGroup _loginUICanvasGroup;
+
     private void Awake()
     {
         if (instance == null)
@@ -35,9 +37,9 @@ public class UILoginManager : MonoBehaviour
         
         _logo.color = new Color(_logo.color.r, _logo.color.g, _logo.color.b, 0);
         _subTitle.color = new Color(_subTitle.color.r, _subTitle.color.g, _subTitle.color.b, 0);
-        
-        _over = GameObject.Find("Over").GetComponent<Image>();
-        
+
+        _loginUICanvasGroup = loginUI.GetComponent<CanvasGroup>();
+
     }
 
     private void Start()
@@ -47,12 +49,12 @@ public class UILoginManager : MonoBehaviour
     }
 
     //Functions to change the login screen UI
-    public void LoginScreen() // Back button
+    public void LoginUI() // Back button
     {
         loginUI.SetActive(true);
         registerUI.SetActive(false);
     }
-    public void RegisterScreen() // Register button
+    public void RegisterUI() // Register button
     {
         loginUI.SetActive(false);
         registerUI.SetActive(true);
@@ -94,9 +96,9 @@ public class UILoginManager : MonoBehaviour
     private IEnumerator LoginUIFadeIn(float duration)
     {
         yield return new WaitForSeconds(1f);
-        while (_over.color.a > 0.0f)
+        while (_loginUICanvasGroup.alpha <= 1f)
         {
-            _over.color = new Color(_over.color.r, _over.color.g, _over.color.b, _over.color.a - (Time.deltaTime / duration));
+            _loginUICanvasGroup.alpha += Time.deltaTime / duration;
             yield return null;
         }
         
