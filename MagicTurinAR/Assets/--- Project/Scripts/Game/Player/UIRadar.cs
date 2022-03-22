@@ -31,6 +31,7 @@ public class UIRadar : MonoBehaviour
         
     }
 
+
     private IEnumerator TrailFadeIn()
     {
         float _alpha = 0;
