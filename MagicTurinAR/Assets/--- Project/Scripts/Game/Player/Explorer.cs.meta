@@ -3,7 +3,15 @@ guid: dc53b3540d72c4f1291e5d56ff1dc4a9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - uiInventory: {instanceID: 0}
+  - _uiManager: {instanceID: 0}
+  - networkPlayer: {instanceID: 0}
+  - manaBar: {instanceID: 0}
+  - manaManager: {instanceID: 0}
+  - parentDirections: {instanceID: 0}
+  - directionMaterial: {fileID: 2100000, guid: 49b5d148287c83443bd632e6d5b5bd6f, type: 2}
+  - directionsMeshModifier: {fileID: 11400000, guid: 72a54fd58e79618408c60d91df61d553, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -1,6 +1,3 @@
-using Mapbox.Directions;
-using Mapbox.Examples;
-using Mapbox.Unity.Map;
 using Mapbox.Unity.MeshGeneration.Factories;
 using Mapbox.Unity.MeshGeneration.Modifiers;
 using UnityEditor;
@@ -10,14 +7,15 @@ using UnityEngine;
 public class Explorer : MagicPlayer
 {
     
-    
-
     private float powerCost = .1f;
     private DirectionsFactory directions;
     private GameObject directionMesh;
     public GameObject parentDirections;
     private bool wasActive = false;
     private bool initializationFlag = false;
+
+    [SerializeField] private Material directionMaterial;
+    [SerializeField] private MeshModifier directionsMeshModifier;
 
     private void Start()
     {
@@ -114,12 +112,6 @@ public class Explorer : MagicPlayer
         //directions.gameObject.SetActive(!directions.gameObject.activeSelf);
         parentDirections.gameObject.SetActive(!parentDirections.gameObject.activeSelf);
 
-        
-
-        
-           
-
-
     }
 
     public void InitializeNavigationPower()
@@ -129,12 +121,9 @@ public class Explorer : MagicPlayer
         //directions.transform.parent = parentDirections.transform;
         directions._waypoints[0] = transform;
         directions._waypoints[1] = transform ;
-
-        MeshModifier mm = (MeshModifier)AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/1_DataExplorer/Traffic/DirectionLoft.asset", typeof(MeshModifier));
-        directions.GetComponent<DirectionsFactory>().SetMeshModifier(mm);
-
-        Material mat = (Material)AssetDatabase.LoadAssetAtPath("Assets/Mapbox/Examples/Resources/DirectionMaterial.mat", typeof(Material));
-        directions.GetComponent<DirectionsFactory>().SetDirectionMaterial(mat);
+        
+        directions.GetComponent<DirectionsFactory>().SetMeshModifier(directionsMeshModifier);
+        directions.GetComponent<DirectionsFactory>().SetDirectionMaterial(directionMaterial);
        
 
         //directions.gameObject.SetActive(false);
