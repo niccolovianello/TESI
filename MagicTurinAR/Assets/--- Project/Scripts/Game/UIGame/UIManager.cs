@@ -56,8 +56,8 @@ public class UIManager : MonoBehaviour
         storeData = FindObjectOfType<StoreData>();
         player = FindObjectOfType<MagicPlayer>();
         
-        distanceWarningScreenSpace = GameObject.Find("DistanceWarning");
-        distanceWarningScreenSpace.SetActive(false);
+        //distanceWarningScreenSpace = GameObject.Find("DistanceWarning");
+        //distanceWarningScreenSpace.SetActive(false);
 
         foreach (NetworkPlayer pl in FindObjectsOfType<NetworkPlayer>())
         {
