@@ -723,10 +723,10 @@ RectTransform:
   m_Father: {fileID: 1376238142}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: -200}
-  m_SizeDelta: {x: 256, y: 256}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 150, y: 0}
+  m_SizeDelta: {x: 640, y: 640}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216895227
 MonoBehaviour:
@@ -748,7 +748,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 00b250ca71416a849b1102925ded4726, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1819,7 +1819,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.57129633, y: 0.068}
   m_AnchorMax: {x: 0.9675926, y: 0.202}
-  m_AnchoredPosition: {x: 2.8547363, y: -25}
+  m_AnchoredPosition: {x: 2.8547363, y: -25.000122}
   m_SizeDelta: {x: 14.290588, y: 27.383423}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &468199386
@@ -1898,7 +1898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.4074074, y: 0.014583333}
   m_AnchorMax: {x: 0.9675926, y: 0.15241666}
-  m_AnchoredPosition: {x: 5.430542, y: -3.7001953}
+  m_AnchoredPosition: {x: 5.430542, y: -3.7003174}
   m_SizeDelta: {x: 9.138916, y: 3.2034912}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &500067032
@@ -2157,10 +2157,10 @@ RectTransform:
   m_Father: {fileID: 114989892}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 350, y: 200}
-  m_SizeDelta: {x: 600, y: 300}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 325, y: 0}
+  m_SizeDelta: {x: 600, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &541889655
 MonoBehaviour:
@@ -2195,7 +2195,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Card Hunter
+  m_Text: The most dynamic and tough member pf the group. She is the only one who
+    can defeat the Demons with magic. Without her, the team has no possibilities
+    against the Black Magic.
 --- !u!222 &541889656
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2263,10 +2265,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9525209a56a30c346bd7c9ef982b328e, type: 3}
-    m_FontSize: 43
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 3
     m_MaxSize: 43
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2274,7 +2276,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Apply
+  m_Text: Use
 --- !u!222 &554607789
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2390,10 +2392,10 @@ RectTransform:
   m_Father: {fileID: 114989892}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: -200}
-  m_SizeDelta: {x: 256, y: 256}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -150, y: 0}
+  m_SizeDelta: {x: 640, y: 640}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &707626652
 MonoBehaviour:
@@ -2415,7 +2417,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: d44590e27d6249c44b436ad389cc2bf8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3159,11 +3161,11 @@ RectTransform:
   m_Father: {fileID: 114989892}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -125, y: 85}
-  m_SizeDelta: {x: 180, y: 100}
-  m_Pivot: {x: 0.50000024, y: 0.49999887}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 64}
+  m_SizeDelta: {x: 128, y: 64}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &999686876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3408,10 +3410,10 @@ RectTransform:
   m_Father: {fileID: 1711662499}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 350, y: 200}
-  m_SizeDelta: {x: 600, y: 300}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 325, y: 0}
+  m_SizeDelta: {x: 600, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1106866794
 MonoBehaviour:
@@ -3446,7 +3448,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Card Explorer
+  m_Text: Great sense of direction. You should follow him if you don't want to get
+    lost. He can see and collect the Gems, but he is  probably also in search of
+    some ancient forgotten artifacts.
 --- !u!222 &1106866795
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3914,10 +3918,10 @@ RectTransform:
   m_Father: {fileID: 1376238142}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -125, y: 85}
-  m_SizeDelta: {x: 180, y: 100}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 64}
+  m_SizeDelta: {x: 128, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1298022026
 MonoBehaviour:
@@ -4090,7 +4094,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.049000002, y: 0.39178425}
   m_AnchorMax: {x: 0.9522629, y: 0.63088626}
-  m_AnchoredPosition: {x: -0.5, y: -1}
+  m_AnchoredPosition: {x: -0.50006104, y: -1}
   m_SizeDelta: {x: -3, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1376238143
@@ -4342,10 +4346,10 @@ RectTransform:
   m_Father: {fileID: 1711662499}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -125, y: 85}
-  m_SizeDelta: {x: 180, y: 100}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 64}
+  m_SizeDelta: {x: 128, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1416851064
 MonoBehaviour:
@@ -4538,10 +4542,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9525209a56a30c346bd7c9ef982b328e, type: 3}
-    m_FontSize: 43
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 3
     m_MaxSize: 43
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -4549,7 +4553,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Apply
+  m_Text: Use
 --- !u!222 &1463269374
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4836,10 +4840,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9525209a56a30c346bd7c9ef982b328e, type: 3}
-    m_FontSize: 43
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 3
     m_MaxSize: 43
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -4847,7 +4851,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Apply
+  m_Text: Use
 --- !u!222 &1479531947
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5647,10 +5651,10 @@ RectTransform:
   m_Father: {fileID: 1376238142}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 350, y: 200}
-  m_SizeDelta: {x: 600, y: 300}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -325, y: 0}
+  m_SizeDelta: {x: 600, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1764897926
 MonoBehaviour:
@@ -5679,13 +5683,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Card WiseMan
+  m_Text: The sage part of the team. Everyone should ask him before making any decision.
+    He is the only responsible for the Inventory. Someone thinks he is looking for
+    some old books. Who knows?
 --- !u!222 &1764897927
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6486,10 +6492,10 @@ RectTransform:
   m_Father: {fileID: 1711662499}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: -200}
-  m_SizeDelta: {x: 256, y: 256}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -150, y: 0}
+  m_SizeDelta: {x: 512, y: 512}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2021624808
 MonoBehaviour:
@@ -6511,7 +6517,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9a1cf58ecd6318c44b32f2f8076de70a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
