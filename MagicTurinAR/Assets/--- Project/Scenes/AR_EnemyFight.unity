@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1144,7 +1144,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1143879296
 GameObject:
@@ -1618,7 +1618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4042764071439902, guid: a87e4c0a995ae4977ac2a1256b837e0f, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4042764071439902, guid: a87e4c0a995ae4977ac2a1256b837e0f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2233,73 +2233,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136037833}
   m_CullTransparentMesh: 1
---- !u!1001 &2281107709666614653
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2281107709180455589, guid: 2ad7d7d296589b0429a9b9cce2f9750c, type: 3}
-      propertyPath: NoiseModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2281107709180455592, guid: 2ad7d7d296589b0429a9b9cce2f9750c, type: 3}
-      propertyPath: m_Name
-      value: SoulParticleSystem
-      objectReference: {fileID: 0}
-    - target: {fileID: 2281107709180455592, guid: 2ad7d7d296589b0429a9b9cce2f9750c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2281107709180455595, guid: 2ad7d7d296589b0429a9b9cce2f9750c, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2281107709180455595, guid: 2ad7d7d296589b0429a9b9cce2f9750c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2281107709180455595, guid: 2ad7d7d296589b0429a9b9cce2f9750c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.65900004
-      objectReference: {fileID: 0}
-    - target: {fileID: 2281107709180455595, guid: 2ad7d7d296589b0429a9b9cce2f9750c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 2281107709180455595, guid: 2ad7d7d296589b0429a9b9cce2f9750c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2281107709180455595, guid: 2ad7d7d296589b0429a9b9cce2f9750c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2281107709180455595, guid: 2ad7d7d296589b0429a9b9cce2f9750c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2281107709180455595, guid: 2ad7d7d296589b0429a9b9cce2f9750c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2281107709180455595, guid: 2ad7d7d296589b0429a9b9cce2f9750c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2281107709180455595, guid: 2ad7d7d296589b0429a9b9cce2f9750c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2281107709180455595, guid: 2ad7d7d296589b0429a9b9cce2f9750c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9111144678980255896, guid: 2ad7d7d296589b0429a9b9cce2f9750c, type: 3}
-      propertyPath: m_Animation
-      value: 
-      objectReference: {fileID: 7400000, guid: c81cac1dcb7a4824781e3c6575ebaa48, type: 2}
-    m_RemovedComponents:
-    - {fileID: 9111144678980255896, guid: 2ad7d7d296589b0429a9b9cce2f9750c, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 2ad7d7d296589b0429a9b9cce2f9750c, type: 3}
