@@ -131,11 +131,16 @@ public class SessionManager : MonoBehaviour
         }
     }
 
-    public float CalculateFill(float oldMin, float oldMax, float newMin, float newMax, float oldValue){
+    private float CalculateFill(float oldMin, float oldMax, float newMin, float newMax, float oldValue){
  
         float oldRange = oldMax - oldMin;
         float newRange = newMax - newMin;
         float newValue = /* 1 - */ ((oldValue - oldMin) * newRange / oldRange + newMin);
+
+        if (newValue <= .25f) newValue = .25f;
+        else if (newValue > .25f && newValue <= .5f) newValue = .5f;
+        else if (newValue > .5f && newValue <= .75f) newValue = .75f;
+        else if (newValue > .75f) newValue = 1f;
  
         return newValue;
     }

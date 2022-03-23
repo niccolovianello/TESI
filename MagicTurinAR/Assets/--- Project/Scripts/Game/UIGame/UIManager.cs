@@ -48,6 +48,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Sprite onePlayerSprite;
     [SerializeField] private Sprite twoPlayersSprite;
     [SerializeField] private Sprite threePlayersSprite;
+    
 
     void Start()
     {
