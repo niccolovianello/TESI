@@ -25,7 +25,7 @@ public class MazeLoader : MonoBehaviour
         ma.CreateMaze();
 
         Instantiate(Player, new Vector3(0.5f, -0.9f, 0.5f), Quaternion.identity);
-        Instantiate(MazeGoal, new Vector3(66, -0.5f, 101), Quaternion.identity);
+        Instantiate(MazeGoal, new Vector3(66, -0.5f, 113.5f), Quaternion.identity);
 
 
     }
