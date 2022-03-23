@@ -131,9 +131,8 @@ public class Demon : MonoBehaviour
     {
         animator.SetTrigger("Death");
         yield return new WaitForSeconds(3f);
-
-        soul.transform.position = transform.position;
-        soul.gameObject.SetActive(true);
+        
+        Instantiate(soul, transform);
 
         float alpha = 0.95f;
 
