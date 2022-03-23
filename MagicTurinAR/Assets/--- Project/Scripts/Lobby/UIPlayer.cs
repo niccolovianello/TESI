@@ -12,8 +12,12 @@ namespace MirrorBasics
         [Range(0.5f, 3.0f)]
         [SerializeField] float controlOnNetworkPlayerTime = 1.5f;
         [SerializeField] Text text;
-        [SerializeField] Text role;
-        
+        [SerializeField] Text roleText;
+        [SerializeField] Image roleImage;
+        [SerializeField] Sprite explorerSprite;
+        [SerializeField] Sprite hunterSprite;
+        [SerializeField] Sprite wisemanSprite;
+
         public enum TextRole
         {
             Explorer,
@@ -42,16 +46,19 @@ namespace MirrorBasics
             switch (_player.storeData.role)
             {
                 case StoreData.TextRole.Explorer:
-                    role.text = "E";
+                    roleText.text = "Explorer";
+                    roleImage.sprite = explorerSprite;
                     break;
                 case StoreData.TextRole.Wiseman:
-                    role.text = "W";
+                    roleText.text = "Wiseman";
+                    roleImage.sprite = wisemanSprite;
                     break;
                 case StoreData.TextRole.Hunter:
-                    role.text = "H";
+                    roleText.text = "Hunter";
+                    roleImage.sprite = hunterSprite;
                     break;
                 default:
-                    role.text = "N";
+                    roleText.text = "N";
                     break;
             }
         }
@@ -63,16 +70,19 @@ namespace MirrorBasics
             switch (_player.TypePlayerEnum)
             {
                 case NetworkPlayer.TypePlayer.Explorer:
-                    role.text = "E";
+                    roleText.text = "Explorer";
+                    roleImage.sprite = explorerSprite;
                     break;
                 case NetworkPlayer.TypePlayer.Wiseman:
-                    role.text = "W";
+                    roleText.text = "Wiseman";
+                    roleImage.sprite = wisemanSprite;
                     break;
                 case NetworkPlayer.TypePlayer.Hunter:
-                    role.text = "H";
+                    roleText.text = "Hunter";
+                    roleImage.sprite = hunterSprite;
                     break;
                 default:
-                    role.text = "N";
+                    roleText.text = "N";
                     break;
             }
         }
