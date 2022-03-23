@@ -103,7 +103,7 @@ public class MagicPlayer : Player
             {
                 isNear = true;
             }
-            else
+            else if(!nt.isLocalPlayer && Vector3.Distance(this.transform.position, nt.transform.position) > maxDistanceFromTheOthers)
             {
                 isNear = false;
                 break;
@@ -119,7 +119,7 @@ public class MagicPlayer : Player
     public void ActivateRadarEffect(float scaleMultiplier)
     {
         GameObject radar = Instantiate(ItemAssets.Instance.prefabRadarVfx, this.gameObject.transform);
-        radar.transform.localScale = radar.transform.localScale * scaleMultiplier;
+        radar.transform.localScale = (radar.transform.localScale * scaleMultiplier)/ transform.localScale.x;
         radar.transform.localPosition += new Vector3(0, 0.1f, 0);
     }
 }
