@@ -1559,7 +1559,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396430299}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 0}
@@ -3043,7 +3043,7 @@ MonoBehaviour:
   hostButton: {fileID: 224769988}
   lobbyCanvas: {fileID: 396430300}
   UIPlayerParent: {fileID: 1797462255}
-  UIPlayerPrefab: {fileID: 7025044203337444720, guid: a7f63739b9566cb42bce56240f3e4a88, type: 3}
+  UIPlayerPrefab: {fileID: 1777403168927679030, guid: 7342037f595275c48aa567dfcd24bfad, type: 3}
   matchIDText: {fileID: 500067032}
   beginGameButton: {fileID: 456102821}
   boxDescription: {fileID: 1470318730}
@@ -5915,7 +5915,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 300, y: 300}
+  m_CellSize: {x: 500, y: 500}
   m_Spacing: {x: 50, y: 50}
   m_Constraint: 0
   m_ConstraintCount: 2
