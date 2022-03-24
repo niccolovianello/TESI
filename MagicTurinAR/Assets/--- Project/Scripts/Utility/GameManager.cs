@@ -113,6 +113,19 @@ public class GameManager : Singleton<GameManager>
         }
 
     }
+<<<<<<< HEAD
+=======
+    
+    /*
+    private void Start()
+    {
+        
+        
+        
+
+    }
+    */
+>>>>>>> parent of 25cf500 (start gM)
 
   
     void SetUpPlayer()
