@@ -11,6 +11,9 @@ public class MagicItem : Item
     
     [SerializeField] public MagicPlayer magicPlayer;
     
+    [Range(0.5f, 3.0f)]
+    [SerializeField] float updateShaderTime = 1f;
+    
     public NetworkPlayer networkPlayer;
     public ItemType itemType;
     public ItemTypePlayer itemTypePlayer;
@@ -19,7 +22,7 @@ public class MagicItem : Item
     private Renderer[] _renderers;
     private float distanceAlpha = 0.2f;
 
-    
+
     public enum ItemType
     {
         Artifact,
@@ -66,31 +69,8 @@ public class MagicItem : Item
             renderer.material.shader = Shader.Find("Shader Graphs/Alpha");
         }
 
-    }
+        StartCoroutine(UpdateShading());
 
-    private void Update()
-    {
-        if (IsClickable())
-        {
-            foreach (Renderer renderer in _renderers)
-            {
-                renderer.material.SetFloat("_Alpha", 1);
-                
-                renderer.material.SetInt("_HasTexture", 1);
-            }
-        }
-
-
-        else
-        {
-            foreach (Renderer renderer in _renderers)
-            {
-                renderer.material.SetFloat("_Alpha", .5f);
-                
-                renderer.material.SetInt("_HasTexture", 0);
-                renderer.material.SetColor("_AlbedoPlain", Color.gray);
-            }
-        }
     }
 
 
@@ -212,5 +192,30 @@ public class MagicItem : Item
     public override void RenderItem()
     {
         
+    }
+
+    private IEnumerator UpdateShading()
+    {
+        if (IsClickable())
+        {
+            foreach (Renderer renderer in _renderers)
+            {
+                renderer.material.SetFloat("_Alpha", 1);
+                renderer.material.SetInt("_HasTexture", 1);
+            }
+        }
+
+
+        else
+        {
+            foreach (Renderer renderer in _renderers)
+            {
+                renderer.material.SetFloat("_Alpha", .5f);
+                renderer.material.SetInt("_HasTexture", 0);
+                renderer.material.SetColor("_AlbedoPlain", Color.gray);
+            }
+        }
+
+        yield return new WaitForSeconds(updateShaderTime);
     }
 }
