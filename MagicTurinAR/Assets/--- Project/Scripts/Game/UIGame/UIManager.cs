@@ -55,6 +55,8 @@ public class UIManager : MonoBehaviour
         firebaseManager = FindObjectOfType<FirebaseManager>();
         storeData = FindObjectOfType<StoreData>();
         player = FindObjectOfType<MagicPlayer>();
+        
+        Debug.Log(player.name);
 
 
         foreach (NetworkPlayer pl in FindObjectsOfType<NetworkPlayer>())

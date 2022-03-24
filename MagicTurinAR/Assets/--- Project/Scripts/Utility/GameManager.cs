@@ -87,21 +87,18 @@ public class GameManager : Singleton<GameManager>
         CameraMovements cm = FindObjectOfType<CameraMovements>();
         cm.Camera = networkPlayerCamera;
         cm.CameraFocus = networkPlayer.gameObject;
-
-    }
-    private void Start()
-    {
         
+        //START
         
         currentPlayer = FindObjectOfType<MagicPlayer>();
         
-        Debug.Log("CRISTODDIO" + currentPlayer);
+        Debug.Log("CRISTODDIO " + currentPlayer.name);
         
         RangeAroundTransformTileProviderOptions rangeAroundTransformTileProviderOptions = new RangeAroundTransformTileProviderOptions();
         rangeAroundTransformTileProviderOptions.SetOptions(currentPlayer.transform);
         FindObjectOfType<AbstractMap>().SetExtentOptions(rangeAroundTransformTileProviderOptions);
         
-        Debug.Log("TILEPROVIDER" + rangeAroundTransformTileProviderOptions);
+        Debug.Log("TILEPROVIDER " + rangeAroundTransformTileProviderOptions.targetTransform.name);
         
 
         foreach (var camera in FindObjectsOfType<Camera>())
@@ -116,6 +113,16 @@ public class GameManager : Singleton<GameManager>
         }
 
     }
+    
+    /*
+    private void Start()
+    {
+        
+        
+        
+
+    }
+    */
 
   
     void SetUpPlayer()
