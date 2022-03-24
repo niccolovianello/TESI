@@ -43,10 +43,21 @@ public class GameManager : Singleton<GameManager>
     {
         mainGame.SetActive(true);
     }
+    
+    /*
     private void Awake()
 
     {
-        if (playerEnterInGameEvent == null)
+        
+
+    }
+    */
+    
+    
+    private void Start()
+    {
+        
+      if (playerEnterInGameEvent == null)
             playerEnterInGameEvent = new UnityEvent();
         playerEnterInGameEvent.AddListener(SetUpPlayer);
 
@@ -110,19 +121,11 @@ public class GameManager : Singleton<GameManager>
                 camera.GetComponent<AudioListener>().enabled = false;
             }
 
-        }
+        }  
+        
 
     }
     
-    /*
-    private void Start()
-    {
-        
-        
-        
-
-    }
-    */
 
   
     void SetUpPlayer()
