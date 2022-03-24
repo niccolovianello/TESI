@@ -125,6 +125,9 @@ public class GameManager : Singleton<GameManager>
 
     }
     */
+<<<<<<< HEAD
+>>>>>>> parent of 25cf500 (start gM)
+=======
 >>>>>>> parent of 25cf500 (start gM)
 
   
