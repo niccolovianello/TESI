@@ -95,9 +95,13 @@ public class GameManager : Singleton<GameManager>
         
         currentPlayer = FindObjectOfType<MagicPlayer>();
         
+        Debug.Log("CRISTODDIO" + currentPlayer);
+        
         RangeAroundTransformTileProviderOptions rangeAroundTransformTileProviderOptions = new RangeAroundTransformTileProviderOptions();
         rangeAroundTransformTileProviderOptions.SetOptions(currentPlayer.transform);
         FindObjectOfType<AbstractMap>().SetExtentOptions(rangeAroundTransformTileProviderOptions);
+        
+        Debug.Log("TILEPROVIDER" + rangeAroundTransformTileProviderOptions);
         
 
         foreach (var camera in FindObjectsOfType<Camera>())
@@ -107,9 +111,7 @@ public class GameManager : Singleton<GameManager>
             {
                 camera.enabled = false;
                 camera.GetComponent<AudioListener>().enabled = false;
-
             }
-            
 
         }
 
@@ -131,7 +133,9 @@ public class GameManager : Singleton<GameManager>
         networkPlayer.gameObject.AddComponent<ImmediatePositionWithLocationProvider>();
         RotateWithLocationProvider rt = networkPlayer.gameObject.AddComponent<RotateWithLocationProvider>();
         rt.SetDeviceOrientation(true);
-        FindObjectOfType<UIButtonsForTouchControl>(rt).SetRotationProvider(rt);
+        FindObjectOfType<UIButtonsForTouchControl>().SetRotationProvider(rt);
+        
+        Debug.Log("ROTATION_PROVIDER" + rt);
         
 
         ItemAssets itemAssets = FindObjectOfType<ItemAssets>();

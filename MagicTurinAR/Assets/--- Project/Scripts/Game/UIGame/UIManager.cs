@@ -55,9 +55,7 @@ public class UIManager : MonoBehaviour
         firebaseManager = FindObjectOfType<FirebaseManager>();
         storeData = FindObjectOfType<StoreData>();
         player = FindObjectOfType<MagicPlayer>();
-        
-        //distanceWarningScreenSpace = GameObject.Find("DistanceWarning");
-        //distanceWarningScreenSpace.SetActive(false);
+
 
         foreach (NetworkPlayer pl in FindObjectsOfType<NetworkPlayer>())
         {
