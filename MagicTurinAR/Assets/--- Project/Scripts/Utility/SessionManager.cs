@@ -105,12 +105,12 @@ public class SessionManager : MonoBehaviour
     {
         while (true)      
         {
+    
+            yield return new WaitForSeconds(updateTime);
             networkPlayer.CmdSendGeoPositionToServer((float)deviceLocationProvider.CurrentLocation.LatitudeLongitude.x, (float)deviceLocationProvider.CurrentLocation.LatitudeLongitude.y, networkPlayer.netId);
 
             fill = CalculateFill(worstAccuracy, bestAccuracy, 0, 1, deviceLocationProvider.CurrentLocation.Accuracy);
             _uiManager.gpsAccuracy.fillAmount = fill;
-            
-            yield return new WaitForSeconds(updateTime);
         }
         
     }

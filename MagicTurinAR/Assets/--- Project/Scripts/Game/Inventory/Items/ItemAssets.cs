@@ -1,3 +1,4 @@
+using Mapbox.Unity.MeshGeneration.Modifiers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,6 +38,10 @@ public class ItemAssets : MonoBehaviour
 
     [Header("RadarVFX")]
     public GameObject prefabRadarVfx;
+
+    [Header("DirectionPowerUtilities")]
+    public MeshModifier meshModifier;
+    public Material directionMaterial;
 
 
     //private void Update()

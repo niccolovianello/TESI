@@ -12,14 +12,14 @@ public class Explorer : MagicPlayer
     private GameObject directionMesh;
     public GameObject parentDirections;
     private bool wasActive = false;
-    private bool initializationFlag = false;
 
-    [SerializeField] private Material directionMaterial;
-    [SerializeField] private MeshModifier directionsMeshModifier;
+    private Material directionMaterial;
+    private MeshModifier directionsMeshModifier;
 
     private void Start()
     {
-
+        directionMaterial = ItemAssets.Instance.directionMaterial;
+        directionsMeshModifier = ItemAssets.Instance.meshModifier;
         parentDirections = ItemAssets.Instance.DirectionsParent;
         manaManager = GetComponent<ManaManager>();
         manaManager.SetMaxMana(maxMana);
