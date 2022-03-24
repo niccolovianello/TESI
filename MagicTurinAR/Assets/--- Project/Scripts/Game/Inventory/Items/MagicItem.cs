@@ -57,19 +57,24 @@ public class MagicItem : Item
                 {
                     DoNotRenderItem();
                 }
+                else
+                {
+                    _renderers = GetComponentsInChildren<Renderer>();
+
+                    foreach (Renderer renderer in _renderers)
+                    {
+                        renderer.material.shader = Shader.Find("Shader Graphs/Alpha");
+                    }
+                    StartCoroutine(UpdateShading());
+                }
                 break;
             }
                 
         }
 
-        _renderers = GetComponentsInChildren<Renderer>();
+       
 
-        foreach (Renderer renderer in _renderers)
-        {
-            renderer.material.shader = Shader.Find("Shader Graphs/Alpha");
-        }
-
-        StartCoroutine(UpdateShading());
+        
 
     }
 
