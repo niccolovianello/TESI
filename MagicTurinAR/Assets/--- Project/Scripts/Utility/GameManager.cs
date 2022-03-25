@@ -160,9 +160,9 @@ public class GameManager : Singleton<GameManager>
 
                 gemFactory.SetItemPrefab(itemAssets.gem);
                 gemFactory.waitTime = 3;
-                gemFactory.startingItems = 3;
+                gemFactory.startingItems = 0;
                 gemFactory.minRange = 0;
-                gemFactory.maxRange = 10;
+                gemFactory.maxRange = 15;
 
 
                 networkPlayer.gameObject.AddComponent<Explorer>();
@@ -190,7 +190,7 @@ public class GameManager : Singleton<GameManager>
 
                 whiteFragmentFactory.SetItemPrefab(itemAssets.whiteFragment);
                 whiteFragmentFactory.waitTime = 6;
-                whiteFragmentFactory.startingItems = 1;
+                whiteFragmentFactory.startingItems = 0;
                 whiteFragmentFactory.minRange = 0;
                 whiteFragmentFactory.maxRange = 15;
 

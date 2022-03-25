@@ -98,9 +98,6 @@ public class MagicItem : Item
                             {
                                 case ItemType.Gem:
                                     {
-                                        //int amountToPass = magicPlayer.inventory.AddItemToInventory(miSO, this);
-                                        //Debug.Log(amountToPass);
-                                        //uiInventory.UpdateGemsCount(amountToPass);
                                         if (magicPlayer.IsCloseToTeamMembers())
                                         {
                                             networkPlayer.CmdSendGem();
@@ -110,9 +107,8 @@ public class MagicItem : Item
                                         }
                                         else if (!magicPlayer.IsCloseToTeamMembers())
                                         {
-                                            Debug.Log("You are too far from your team mates!");
+                                            FindObjectOfType<UIManager>().ScaleSprite();
                                             Vibration.VibrateNope();
-                                            //StartCoroutine(FindObjectOfType<UIManager>().DistanceWarningScreenSpace("You are too far from your team mates!"));
                                         }
 
                                         break;
@@ -131,9 +127,8 @@ public class MagicItem : Item
                                         }
                                         else if (!magicPlayer.IsCloseToTeamMembers())
                                         {
-                                            Debug.Log("You are too far from your team mates!");
+                                            FindObjectOfType<UIManager>().ScaleSprite();
                                             Vibration.VibrateNope();
-                                            //StartCoroutine(FindObjectOfType<UIManager>().DistanceWarningScreenSpace("You are too far from your team mates!"));
                                         }
 
                                         break;
@@ -162,9 +157,8 @@ public class MagicItem : Item
                             }
                             else if (!magicPlayer.IsCloseToTeamMembers())
                             {
-                                Debug.Log("You are too far from your team mates!");
+                                FindObjectOfType<UIManager>().ScaleSprite();
                                 Vibration.VibrateNope();
-                                //StartCoroutine(FindObjectOfType<UIManager>().DistanceWarningScreenSpace("You are too far from your team mates!"));
                             }
 
 

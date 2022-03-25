@@ -49,10 +49,7 @@ public abstract class ItemFactory : Singleton<ItemFactory>
     {
         if (aliveItems.Count >= 10)
             aliveItems.RemoveAt(0);
-        //float x = player.transform.position.x + GenerateRange();
-        //float y = player.transform.position.y;
-        //float z = player.transform.position.z + GenerateRange();
-        
+
         float x = player.transform.position.x + GenerateRange();
         float y = player.transform.position.y + 2f;
         float z = player.transform.position.z + GenerateRange();

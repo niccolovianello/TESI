@@ -21,6 +21,7 @@ public class Explorer : MagicPlayer
         directionMaterial = ItemAssets.Instance.directionMaterial;
         directionsMeshModifier = ItemAssets.Instance.meshModifier;
         parentDirections = ItemAssets.Instance.DirectionsParent;
+        
         manaManager = GetComponent<ManaManager>();
         manaManager.SetMaxMana(maxMana);
         manaManager.SetMana(maxMana);
@@ -46,7 +47,6 @@ public class Explorer : MagicPlayer
             if (HasMana())
             {
                 DecreaseMana(powerCost);
-                Debug.Log("Activate");
             }
 
             else
@@ -56,7 +56,6 @@ public class Explorer : MagicPlayer
                     parentDirections.SetActive(false);
                 ToggleNavigation();
                 wasActive = false;
-                Debug.Log("Finish Mana");
                 
 
             }
@@ -69,7 +68,6 @@ public class Explorer : MagicPlayer
             if (directionMesh != null)
                 parentDirections.SetActive(false);
             wasActive = false;
-            Debug.Log(" Deactivate");
         }
 
 
@@ -109,7 +107,6 @@ public class Explorer : MagicPlayer
     public void ToggleNavigation()
     {
 
-        //directions.gameObject.SetActive(!directions.gameObject.activeSelf);
         parentDirections.gameObject.SetActive(!parentDirections.gameObject.activeSelf);
 
     }
@@ -118,7 +115,6 @@ public class Explorer : MagicPlayer
     {
 
         directions = new GameObject("Directions").AddComponent<DirectionsFactory>();
-        //directions.transform.parent = parentDirections.transform;
         directions._waypoints[0] = transform;
         directions._waypoints[1] = transform ;
         

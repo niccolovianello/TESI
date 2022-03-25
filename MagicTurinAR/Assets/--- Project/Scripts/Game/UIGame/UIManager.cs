@@ -41,8 +41,11 @@ public class UIManager : MonoBehaviour
     public string sceneToDestroyGemName;
 
 
-    [Header("DistanceBetweenPlayersChecker")]
-    [SerializeField] private Image imageIndicatorGroupDisance;
+    [Header("DistanceBetweenPlayersChecker")] 
+    
+    [SerializeField] private GameObject ClosePlayersSprite;
+    private Image imageIndicatorGroupDisance;
+    
     [Range(0.5f, 6f)]
     [SerializeField] float updateTime = 1.5f;
     [SerializeField] private Sprite onePlayerSprite;
@@ -55,8 +58,8 @@ public class UIManager : MonoBehaviour
         firebaseManager = FindObjectOfType<FirebaseManager>();
         storeData = FindObjectOfType<StoreData>();
         player = FindObjectOfType<MagicPlayer>();
-        
-        Debug.Log(player.name);
+
+        imageIndicatorGroupDisance = ClosePlayersSprite.GetComponentInChildren<Image>();
 
 
         foreach (NetworkPlayer pl in FindObjectsOfType<NetworkPlayer>())
@@ -115,25 +118,14 @@ public class UIManager : MonoBehaviour
 
         StartCoroutine(DistanceBetweenPlayerCheckerCoroutine());
 
-        //player.SetUIManager(this);
     }
 
-    
-    
 
-    //private void Update()
-    //{
-    //    if (Input.GetKey(KeyCode.O))
-    //    {
-    //        onClickSaveButton();
-    //    }
-    //}
  
 
     public void ToggleBackPack()
     {
         menu.SetActive(!menu.activeSelf);
-        Debug.Log("toggle");
     }
 
     public void ToggleNavigationPower()
@@ -144,7 +136,7 @@ public class UIManager : MonoBehaviour
     
     
 
-    public void onClickSaveButton()
+    public void OnClickSaveButton()
     {
         Debug.Log("Button Save clicked");
         firebaseManager.SaveData(storeData);
@@ -204,14 +196,6 @@ public class UIManager : MonoBehaviour
         gm.PlayerCameraObject.SetActive(false);
     }
 
-    public IEnumerator DistanceWarningScreenSpace(string text)
-    {
-        distanceWarningScreenSpace.GetComponent<TMP_Text>().text = text;
-        distanceWarningScreenSpace.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        distanceWarningScreenSpace.SetActive(false);
-    }
-
     private IEnumerator DistanceBetweenPlayerCheckerCoroutine()
     {
         while (true)
@@ -249,5 +233,10 @@ public class UIManager : MonoBehaviour
 
         }
     
+    }
+
+    public void ScaleSprite()
+    {
+        ClosePlayersSprite.GetComponent<Animation>().Play();
     }
 }
