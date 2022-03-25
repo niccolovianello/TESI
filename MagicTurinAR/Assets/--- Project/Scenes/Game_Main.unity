@@ -4989,7 +4989,7 @@ MonoBehaviour:
   windowToDestroyGemWiseman: {fileID: 40218303}
   windowToDestroyGemHunter: {fileID: 220439280}
   sceneToDestroyGemName: AR_DestroyGem
-  imageIndicatorGroupDisance: {fileID: 922030223}
+  imageIndicatorGroupDistanceParent: {fileID: 1191489774}
   updateTime: 2.26
   onePlayerSprite: {fileID: 21300000, guid: bb4447a16b85b4345a1f3d76f4521717, type: 3}
   twoPlayersSprite: {fileID: 21300000, guid: 30cda327c1ceb404e991d092fda95aea, type: 3}
