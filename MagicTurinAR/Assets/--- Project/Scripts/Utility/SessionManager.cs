@@ -41,8 +41,8 @@ public class SessionManager : MonoBehaviour
 
         _uiManager = FindObjectOfType<UIManager>();
 
-        //on_GPS_Initialized.AddListener(StartSendGeoLocation);
-        StartCoroutine(SendGeoLocationToServer(updateTime));
+        on_GPS_Initialized.AddListener(StartSendGeoLocation);
+        StartCoroutine(FindDeviceLocationProvider());
     }
 
 
@@ -54,11 +54,11 @@ public class SessionManager : MonoBehaviour
         //    flagInitialization = false;
         //}
 
-        //if (!isInitializing && deviceLocationProvider != null)
-        //{
-        //    on_GPS_Initialized.Invoke();
-        //    isInitializing = true;
-        //}
+        if (!isInitializing && deviceLocationProvider != null)
+        {
+            on_GPS_Initialized.Invoke();
+            isInitializing = true;
+        }
         
     }
 
@@ -67,39 +67,7 @@ public class SessionManager : MonoBehaviour
         StartCoroutine(SendGeoLocationToServer(updateTime));
     }
     
-    //public IEnumerator SendGeoLocationToServer(float timeToUpdate)
-    //{
-
-    //    while (true)
-    //    {
-
-    //        Debug.Log("Location latitude: " + Input.location.lastData.latitude + "\n Location longitude: " + Input.location.lastData.longitude + "\n Accuracy: "+ Input.location.lastData.horizontalAccuracy);
-    //        networkPlayer.CmdSendGeoPositionToServer(Input.location.lastData.latitude, Input.location.lastData.latitude, networkPlayer.netId);
-
-
-    //        yield return new WaitForSeconds(timeToUpdate);
-    //    }
-
-    //}
-
-
-
-    //public IEnumerator CheckInitializationGeoLocation()
-    //{
-    //    while (flagInitialization)
-    //    {
-    //        Input.location.Start(0.5f, 3);
-    //        if (Input.location.status != LocationServiceStatus.Initializing && Input.location.status != LocationServiceStatus.Failed)
-    //        {
-    //            flagInitialization = false;
-    //            yield break;
-    //        }
-    //        yield return new WaitForSeconds(2.5f);
-
-
-    //    }
-
-    //}
+ 
 
     private IEnumerator SendGeoLocationToServer(float updateTime)
     {
@@ -115,21 +83,21 @@ public class SessionManager : MonoBehaviour
         
     }
 
-    //private IEnumerator FindDeviceLocationProvider()
-    //{
-    //    while (isInitializing)
-    //    {
-    //        deviceLocationProvider = FindObjectOfType<DeviceLocationProvider>();
-    //        if (deviceLocationProvider != null)
-    //        {
-    //            isInitializing = false;
-    //            yield break;
-    //        }
+    private IEnumerator FindDeviceLocationProvider()
+    {
+        while (isInitializing)
+        {
+            deviceLocationProvider = FindObjectOfType<DeviceLocationProvider>();
+            if (deviceLocationProvider != null)
+            {
+                isInitializing = false;
+                yield break;
+            }
 
-    //        yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1);
             
-    //    }
-    //}
+        }
+    }
 
     private float CalculateFill(float oldMin, float oldMax, float newMin, float newMax, float oldValue){
  

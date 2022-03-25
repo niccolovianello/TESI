@@ -304,10 +304,10 @@ namespace MirrorBasics
             foreach(NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
             {
                 if (np.netId == netId)
-                {
-                    AbstractMap am = FindObjectOfType<AbstractMap>();
-                    Vector2d worldPosition2d= Conversions.GeoToWorldPosition(latitude, longitude, am.CenterMercator);
-                    np.gameObject.transform.Translate(new Vector3((float)worldPosition2d.x,transform.position.y, (float)worldPosition2d.y), Space.World);
+                { }
+                    
+                    
+                    np.gameObject.transform.MoveToGeocoordinate(new Vector2d(latitude,longitude),new Vector2d(0,0));
                 }
 
 
