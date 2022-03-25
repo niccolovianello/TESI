@@ -261,7 +261,6 @@ namespace MirrorBasics
         [Command]
         public void CmdSendWhiteMagicFromGem(int nfragment)
         {
-
             RpcWhiteMagicFromGem(nfragment);
         }
 
@@ -291,21 +290,20 @@ namespace MirrorBasics
         }
 
         [Command]
-        public void CmdSendGeoPositionToServer(float latitude, float longitude,uint netId)
+        public void CmdSendGeoPositionToServer(float latitude, float longitude, uint netId)
         {
-
             RpcReceiveGeoPositionFromServer(latitude, longitude, netId);
-        
         }
 
         [ClientRpc]
-        public void RpcReceiveGeoPositionFromServer(float latitude, float longitude, uint netId)
+        private void RpcReceiveGeoPositionFromServer(float latitude, float longitude, uint netId)
         {
             foreach(NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
             {
                 if (np.netId == netId)
-                { 
-                     np.gameObject.transform.MoveToGeocoordinate(latitude,longitude,new Vector2d(0,0));
+                {
+                    AbstractMap _map = FindObjectOfType<AbstractMap>();
+                    np.gameObject.transform.MoveToGeocoordinate(latitude,longitude, _map.CenterMercator, _map.WorldRelativeScale);
                 }
 
 

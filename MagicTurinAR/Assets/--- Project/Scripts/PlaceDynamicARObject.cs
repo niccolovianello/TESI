@@ -129,14 +129,7 @@ namespace Niantic.ARDKExamples.Helpers
 
             var hitPosition = result.WorldTransform.ToPosition();
 
-            // Assumes that the prefab is one unit tall and getting scene height from local scale
-            // Place the object on top of the surface rather than exactly on the hit point
-            // Note (Kelly): Now that vertical planes are also supported in-editor, need to be
-            // more elegant about how/if to handle instantiation of the cube
-
             hitPosition.y += offsetY;
-            
-            hitPosition.y += PlacementObjectPf.transform.localScale.y / 2.0f;
 
 
             _placedObject = Instantiate(PlacementObjectPf, hitPosition, Quaternion.identity);

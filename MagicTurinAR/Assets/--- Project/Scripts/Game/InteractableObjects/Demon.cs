@@ -115,7 +115,7 @@ public class Demon : MonoBehaviour
         bool angleARplayer = Mathf.Abs(Vector3.Angle(Vector3.forward, targetDirection)) < viewAngle;
         // Debug.Log(distanceARPlayer + " " + angleARplayer);
         
-        return distanceARPlayer && angleARplayer;
+        return distanceARPlayer /* && angleARplayer */;
     }
 
     private void OnDrawGizmos()

@@ -73,7 +73,6 @@ public class SessionManager : MonoBehaviour
     {
         while (true)      
         {
-    
             yield return new WaitForSeconds(updateTime);
             networkPlayer.CmdSendGeoPositionToServer((float)deviceLocationProvider.CurrentLocation.LatitudeLongitude.x, (float)deviceLocationProvider.CurrentLocation.LatitudeLongitude.y, networkPlayer.netId);
 
@@ -103,7 +102,7 @@ public class SessionManager : MonoBehaviour
  
         float oldRange = oldMax - oldMin;
         float newRange = newMax - newMin;
-        float newValue = /* 1 - */ ((oldValue - oldMin) * newRange / oldRange + newMin);
+        float newValue = (oldValue - oldMin) * newRange / oldRange + newMin;
 
         if (newValue <= .25f) newValue = .25f;
         else if (newValue > .25f && newValue <= .5f) newValue = .5f;
