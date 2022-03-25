@@ -41,25 +41,20 @@ public class Explorer : MagicPlayer
 
         if (parentDirections.gameObject.activeSelf)
         {
-         
             
             if (HasMana())
             {
                 DecreaseMana(powerCost);
-                Debug.Log("Activate");
             }
 
             else
             {
-                    
                 if (directionMesh != null)
                     parentDirections.SetActive(false);
                 ToggleNavigation();
                 wasActive = false;
-                Debug.Log("Finish Mana");
-                
-
             }
+            
             if (wasActive == false)
                 wasActive = true;
         }
@@ -69,7 +64,6 @@ public class Explorer : MagicPlayer
             if (directionMesh != null)
                 parentDirections.SetActive(false);
             wasActive = false;
-            Debug.Log(" Deactivate");
         }
 
 

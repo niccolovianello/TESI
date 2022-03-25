@@ -113,8 +113,7 @@ public class Demon : MonoBehaviour
         Vector3 targetDirection = transform.position - AR_Player.transform.position;
         bool distanceARPlayer = Mathf.Abs((transform.position - AR_Player.transform.position).magnitude) < dangerDistance;
         bool angleARplayer = Mathf.Abs(Vector3.Angle(Vector3.forward, targetDirection)) < viewAngle;
-        Debug.Log(distanceARPlayer + " " + angleARplayer);
-        
+
         return distanceARPlayer && angleARplayer;
     }
 

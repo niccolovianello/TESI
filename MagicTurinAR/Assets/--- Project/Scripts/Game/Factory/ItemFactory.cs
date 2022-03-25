@@ -28,10 +28,13 @@ public abstract class ItemFactory : Singleton<ItemFactory>
         waitTime = 30f;
         player = FindObjectOfType<MagicPlayer>();
         parentObjectsFactory = GameObject.Find("ParentItems");
+        
+        /*
         for (int i = 0; i < startingItems; i++)
         {
             InstantiateItem();
         }
+        */
         
         StartCoroutine(GenerateItem());
     }
@@ -49,10 +52,7 @@ public abstract class ItemFactory : Singleton<ItemFactory>
     {
         if (aliveItems.Count >= 10)
             aliveItems.RemoveAt(0);
-        //float x = player.transform.position.x + GenerateRange();
-        //float y = player.transform.position.y;
-        //float z = player.transform.position.z + GenerateRange();
-        
+
         float x = player.transform.position.x + GenerateRange();
         float y = player.transform.position.y + 2f;
         float z = player.transform.position.z + GenerateRange();
