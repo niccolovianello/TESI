@@ -89,15 +89,15 @@ public class GameManager : Singleton<GameManager>
 
 
 
-                //uiButtonsForTouchControl = FindObjectOfType<UIButtonsForTouchControl>();
-               // uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => FindObjectOfType<CameraMovements>().ButtonCenterCameraOnPlayer());
-                //uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => FindObjectOfType<CameraMovements>().FreeOrAutomaticRotation());
+                uiButtonsForTouchControl = FindObjectOfType<UIButtonsForTouchControl>();
+                uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => FindObjectOfType<CameraMovements>().ButtonCenterCameraOnPlayer());
+                uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => FindObjectOfType<CameraMovements>().FreeOrAutomaticRotation());
                 
             }
         }
-        //CameraMovements cm = FindObjectOfType<CameraMovements>();
-        //cm.Camera = networkPlayerCamera;
-        //cm.CameraFocus = networkPlayer.gameObject;
+        CameraMovements cm = FindObjectOfType<CameraMovements>();
+        cm.Camera = networkPlayerCamera;
+        cm.CameraFocus = networkPlayer.gameObject;
         
         //START
         
