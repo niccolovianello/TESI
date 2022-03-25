@@ -43,10 +43,21 @@ public class GameManager : Singleton<GameManager>
     {
         mainGame.SetActive(true);
     }
+    
+    /*
     private void Awake()
 
     {
-        if (playerEnterInGameEvent == null)
+        
+
+    }
+    */
+    
+    
+    private void Start()
+    {
+        
+      if (playerEnterInGameEvent == null)
             playerEnterInGameEvent = new UnityEvent();
         playerEnterInGameEvent.AddListener(SetUpPlayer);
 
@@ -87,18 +98,18 @@ public class GameManager : Singleton<GameManager>
         CameraMovements cm = FindObjectOfType<CameraMovements>();
         cm.Camera = networkPlayerCamera;
         cm.CameraFocus = networkPlayer.gameObject;
-
-    }
-    private void Start()
-    {
         
+        //START
         
         currentPlayer = FindObjectOfType<MagicPlayer>();
         
+       
         
         RangeAroundTransformTileProviderOptions rangeAroundTransformTileProviderOptions = new RangeAroundTransformTileProviderOptions();
         rangeAroundTransformTileProviderOptions.SetOptions(currentPlayer.transform);
         FindObjectOfType<AbstractMap>().SetExtentOptions(rangeAroundTransformTileProviderOptions);
+        
+     
         
 
         foreach (var camera in FindObjectsOfType<Camera>())
@@ -110,25 +121,11 @@ public class GameManager : Singleton<GameManager>
                 camera.GetComponent<AudioListener>().enabled = false;
             }
 
-        }
+        }  
+        
 
     }
-<<<<<<< HEAD
-=======
     
-    /*
-    private void Start()
-    {
-        
-        
-        
-
-    }
-    */
-<<<<<<< HEAD
->>>>>>> parent of 25cf500 (start gM)
-=======
->>>>>>> parent of 25cf500 (start gM)
 
   
     void SetUpPlayer()
@@ -147,7 +144,9 @@ public class GameManager : Singleton<GameManager>
         RotateWithLocationProvider rt = networkPlayer.gameObject.AddComponent<RotateWithLocationProvider>();
         rt.SetDeviceOrientation(true);
         FindObjectOfType<UIButtonsForTouchControl>().SetRotationProvider(rt);
-                
+        
+        Debug.Log("ROTATION_PROVIDER" + rt);
+        
 
         ItemAssets itemAssets = FindObjectOfType<ItemAssets>();
         

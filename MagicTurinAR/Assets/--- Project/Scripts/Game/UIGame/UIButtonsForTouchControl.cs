@@ -38,7 +38,8 @@ public class UIButtonsForTouchControl : MonoBehaviour
 
     public void ChangeButtonSpriteRotation()
     {
-
+      
+        
         if (automaticOrFreeRotation.image.sprite == freeRotation)
         {
             rotationProvider.enabled = true;
