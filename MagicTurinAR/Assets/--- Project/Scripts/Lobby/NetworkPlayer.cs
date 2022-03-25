@@ -304,7 +304,7 @@ namespace MirrorBasics
             foreach(NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
             {
                 if (np.netId == netId)
-                { }
+                { 
                     
                     
                     np.gameObject.transform.MoveToGeocoordinate(new Vector2d(latitude,longitude),new Vector2d(0,0));
