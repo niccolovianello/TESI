@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
     [Header("DistanceBetweenPlayersChecker")]
     [SerializeField] private GameObject imageIndicatorGroupDistanceParent;
 
-    public Image imageIndicatorGroupDistance;
+    private Image imageIndicatorGroupDistance;
     
     [Range(0.5f, 6f)]
     [SerializeField] float updateTime = 1.5f;
