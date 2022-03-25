@@ -20,7 +20,7 @@ namespace Niantic.ARDKExamples.Helpers
     ///   A hit test is run from that location. If a plane is found, spawn a game object at the
     ///   hit location.
     /// </summary>
-    public class LocateARGem : MonoBehaviour
+    public class PlaceDynamicARObject : MonoBehaviour
     {
         /// The camera used to render the scene. Used to get the center of the screen.
         public Camera Camera;
@@ -135,6 +135,8 @@ namespace Niantic.ARDKExamples.Helpers
             // more elegant about how/if to handle instantiation of the cube
 
             hitPosition.y += offsetY;
+            
+            hitPosition.y += PlacementObjectPf.transform.localScale.y / 2.0f;
 
 
             _placedObject = Instantiate(PlacementObjectPf, hitPosition, Quaternion.identity);
