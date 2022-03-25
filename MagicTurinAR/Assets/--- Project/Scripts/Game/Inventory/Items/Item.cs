@@ -14,14 +14,10 @@ public abstract class Item : MonoBehaviour, ItemInterface
 {
     public float maxClickDistance = 50;
 
-    [SerializeField] private float rotateSpeed = 50.0f;
-    [SerializeField] private float floatAmplitude = 0.1f;
+    [SerializeField] private float rotateSpeed = 30.0f;
+    [SerializeField] private float floatAmplitude = 0.01f;
     [SerializeField] private float floatFrequency = 0.5f;
-
-
     
-    //[SerializeField] public Canvas canvasItem;
-    //[SerializeField] public TMP_Text textWarning;
 
     public UIInventory uiInventory;
 

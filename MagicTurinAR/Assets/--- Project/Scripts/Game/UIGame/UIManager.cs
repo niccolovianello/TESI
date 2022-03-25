@@ -42,7 +42,10 @@ public class UIManager : MonoBehaviour
 
 
     [Header("DistanceBetweenPlayersChecker")]
-    [SerializeField] private Image imageIndicatorGroupDisance;
+    [SerializeField] private GameObject imageIndicatorGroupDistanceParent;
+
+    private Image imageIndicatorGroupDistance;
+    
     [Range(0.5f, 6f)]
     [SerializeField] float updateTime = 1.5f;
     [SerializeField] private Sprite onePlayerSprite;
@@ -57,6 +60,8 @@ public class UIManager : MonoBehaviour
         player = FindObjectOfType<MagicPlayer>();
         
         Debug.Log(player.name);
+
+        imageIndicatorGroupDistance = imageIndicatorGroupDistanceParent.GetComponent<Image>();
 
 
         foreach (NetworkPlayer pl in FindObjectsOfType<NetworkPlayer>())
@@ -229,15 +234,15 @@ public class UIManager : MonoBehaviour
             }
             if (counterPlayersClose == 0)
             {
-                imageIndicatorGroupDisance.sprite = onePlayerSprite;
+                imageIndicatorGroupDistance.sprite = onePlayerSprite;
             }
             else if (counterPlayersClose == 1)
             {
-                imageIndicatorGroupDisance.sprite = twoPlayersSprite;
+                imageIndicatorGroupDistance.sprite = twoPlayersSprite;
             }
             else if (counterPlayersClose == 2)
             {
-                imageIndicatorGroupDisance.sprite = threePlayersSprite;
+                imageIndicatorGroupDistance.sprite = threePlayersSprite;
             }
             else if (counterPlayersClose > 2)
             {
@@ -249,5 +254,10 @@ public class UIManager : MonoBehaviour
 
         }
     
+    }
+
+    public void ScaleGroupSprite()
+    {
+        imageIndicatorGroupDistanceParent.GetComponent<Animation>().Play();
     }
 }

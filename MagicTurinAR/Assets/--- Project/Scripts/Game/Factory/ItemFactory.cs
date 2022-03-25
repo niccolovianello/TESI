@@ -13,10 +13,7 @@ public abstract class ItemFactory : Singleton<ItemFactory>
     [SerializeField] public GameObject itemPrefab;
 
     [SerializeField] public Player player;
-    
-    //TEST
-   // public GameObject rif;
-    
+
     [SerializeField] private GameObject parentObjectsFactory;
 
     private List<Item> aliveItems = new List<Item>();

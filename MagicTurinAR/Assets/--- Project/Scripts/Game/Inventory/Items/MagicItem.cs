@@ -110,9 +110,8 @@ public class MagicItem : Item
                                         }
                                         else if (!magicPlayer.IsCloseToTeamMembers())
                                         {
-                                            Debug.Log("You are too far from your team mates!");
+                                            FindObjectOfType<UIManager>().ScaleGroupSprite();
                                             Vibration.VibrateNope();
-                                            //StartCoroutine(FindObjectOfType<UIManager>().DistanceWarningScreenSpace("You are too far from your team mates!"));
                                         }
 
                                         break;
@@ -131,9 +130,8 @@ public class MagicItem : Item
                                         }
                                         else if (!magicPlayer.IsCloseToTeamMembers())
                                         {
-                                            Debug.Log("You are too far from your team mates!");
+                                            FindObjectOfType<UIManager>().ScaleGroupSprite();
                                             Vibration.VibrateNope();
-                                            //StartCoroutine(FindObjectOfType<UIManager>().DistanceWarningScreenSpace("You are too far from your team mates!"));
                                         }
 
                                         break;
@@ -162,9 +160,8 @@ public class MagicItem : Item
                             }
                             else if (!magicPlayer.IsCloseToTeamMembers())
                             {
-                                Debug.Log("You are too far from your team mates!");
+                                FindObjectOfType<UIManager>().ScaleGroupSprite();
                                 Vibration.VibrateNope();
-                                //StartCoroutine(FindObjectOfType<UIManager>().DistanceWarningScreenSpace("You are too far from your team mates!"));
                             }
 
 
@@ -181,7 +178,6 @@ public class MagicItem : Item
             else
             {
                 Vibration.VibrateNope();
-                //StartCoroutine(FindObjectOfType<UIManager>().DistanceWarningScreenSpace("You're too far away from this collectable.\nGet closer to catch it!"));
                 magicPlayer.ActivateRadarEffect(maxClickDistance);
 
             }
