@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
     [Header("DistanceBetweenPlayersChecker")]
     [SerializeField] private GameObject imageIndicatorGroupDistanceParent;
 
-    private Image imageIndicatorGroupDistance;
+    public Image imageIndicatorGroupDistance;
     
     [Range(0.5f, 6f)]
     [SerializeField] float updateTime = 1.5f;
@@ -61,7 +61,7 @@ public class UIManager : MonoBehaviour
         
         Debug.Log(player.name);
 
-        imageIndicatorGroupDistance = imageIndicatorGroupDistanceParent.GetComponent<Image>();
+        imageIndicatorGroupDistance = imageIndicatorGroupDistanceParent.GetComponentInChildren<Image>();
 
 
         foreach (NetworkPlayer pl in FindObjectsOfType<NetworkPlayer>())

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3709992, g: 0.37852928, b: 0.35740113, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4990,6 +4990,7 @@ MonoBehaviour:
   windowToDestroyGemHunter: {fileID: 220439280}
   sceneToDestroyGemName: AR_DestroyGem
   imageIndicatorGroupDistanceParent: {fileID: 1191489774}
+  imageIndicatorGroupDistance: {fileID: 922030223}
   updateTime: 2.26
   onePlayerSprite: {fileID: 21300000, guid: bb4447a16b85b4345a1f3d76f4521717, type: 3}
   twoPlayersSprite: {fileID: 21300000, guid: 30cda327c1ceb404e991d092fda95aea, type: 3}
