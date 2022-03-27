@@ -15,11 +15,11 @@ public class UIInventory : MonoBehaviour
     private MagicInventory inventory;
     public Transform itemSlotContainer;
     public Transform itemSlotTemplate;
-    public TMP_Text textGems;
-    public TMP_Text textWhiteFragment;
-    public TMP_Text textWhiteMagicToSend;
+    public Text textGems;
+    public Text textWhiteFragment;
+    public Text textWhiteMagicToSend;
     public Image windowToAR;
-    public Image wndowToSendWhiteMagic;
+    public Image windowToSendWhiteMagic;
     public Button confirmSendWhiteMagic;
 
 
@@ -32,8 +32,8 @@ public class UIInventory : MonoBehaviour
         Explorer,
         Wiseman,
         Hunter
-    
     }
+    
     public TypePlayerUI typePlayerUI;
 
 
@@ -118,7 +118,7 @@ public class UIInventory : MonoBehaviour
     public void OpenWindowToSendWhiteMagic(NetworkPlayer nt, GameObject touchedObject, float whiteMagicToSend)
     {
         Debug.Log("inizia magia");
-        wndowToSendWhiteMagic.gameObject.SetActive(true);
+        windowToSendWhiteMagic.gameObject.SetActive(true);
         confirmSendWhiteMagic.onClick.RemoveAllListeners();
 
         confirmSendWhiteMagic.onClick.AddListener(() => SendWhiteMagic(nt, touchedObject, whiteMagicToSend));
@@ -153,7 +153,7 @@ public class UIInventory : MonoBehaviour
             }
             else if (item.prefab.GetComponent<MagicItem>().amount > 0)
             {
-                Debug.LogError("You have not white magic enough!");
+                Debug.LogError("You have not enough white magic!");
             }
 
 
@@ -166,7 +166,7 @@ public class UIInventory : MonoBehaviour
 
     public void CloseWindowToSendWhiteMagic()
     {
-        wndowToSendWhiteMagic.gameObject.SetActive(false);
+        windowToSendWhiteMagic.gameObject.SetActive(false);
     }
 
 

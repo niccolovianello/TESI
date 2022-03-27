@@ -7,6 +7,8 @@ using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
 public class UILookAtItemAR : MonoBehaviour
 {
+
+    public CanvasRenderer startingPanel;
     public void OnClickBackButton()
     {
         GameObject arSceneManager = GameObject.Find("ARSceneManager");
@@ -22,6 +24,11 @@ public class UILookAtItemAR : MonoBehaviour
         {
             np.RenderPlayerBody();
         }
+    }
+
+    public void CloseStartingPanel()
+    {
+        startingPanel.gameObject.SetActive(false);
     }
     
 }

@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class UI_EnemyFight : MonoBehaviour
 {
     public Canvas canvasWindowPlayerDefeat;
-    public Button buttonPlayerDefeatOK;
 
     public void PlayerDefeatedByDemon()
     {
