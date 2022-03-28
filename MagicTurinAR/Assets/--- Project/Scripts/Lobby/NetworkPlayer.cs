@@ -302,6 +302,7 @@ namespace MirrorBasics
             {
                 if (np.netId == netId)
                 {
+                    Debug.Log(np.name);
                     AbstractMap _map = FindObjectOfType<AbstractMap>();
                     np.gameObject.transform.MoveToGeocoordinate(latitude,longitude, _map.CenterMercator, _map.WorldRelativeScale);
                 }
