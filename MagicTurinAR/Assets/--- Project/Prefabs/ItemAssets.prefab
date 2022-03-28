@@ -49,6 +49,13 @@ MonoBehaviour:
   enemy: {fileID: 4065617981142174932, guid: 345876c1c26e1c943a39707a4b84ce03, type: 3}
   gem: {fileID: 8134186224298519009, guid: 1d61eb0c3e3034937a0c428a490fc617, type: 3}
   whiteFragment: {fileID: 313028691031775437, guid: d150ee8002f5a4cb29ca924395a4051a, type: 3}
+  explorerPrefab: {fileID: 0}
+  hunterPrefab: {fileID: 0}
+  wisemanPrefab: {fileID: 0}
+  DirectionsParent: {fileID: 0}
+  prefabRadarVfx: {fileID: 0}
+  meshModifier: {fileID: 0}
+  directionMaterial: {fileID: 0}
 --- !u!114 &8183732931097936506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,5 +68,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3328f250b1df6ad4a80429e42cd7947f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabWhiteMagicParticleSystem: {fileID: 3082883205762171444, guid: 5e61ff8a28aa7e84aa193d8b96be3d5e, type: 3}
+  prefabWhiteMagicParticleSystem: {fileID: 7952692855330037605, guid: 8581c892096ffb341a6b5e6858afb144, type: 3}
   prefabGemParticleSystem: {fileID: 7952692855330037605, guid: 2e68aa018b877ab478966bb0ffc107c1, type: 3}
+  offset: {x: 0, y: 2, z: 0}

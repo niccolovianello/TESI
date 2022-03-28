@@ -24,12 +24,15 @@ public class SessionManager : MonoBehaviour
     private UIManager _uiManager;
 
     private float fill;
+    private GameObject gameEnvironment;
 
     UnityEvent on_GPS_Initialized;
 
 
     public void Start()
     {
+        gameEnvironment = GameObject.Find("Game");
+
         foreach(NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
         {
             if(np.isLocalPlayer)
@@ -74,10 +77,16 @@ public class SessionManager : MonoBehaviour
         while (true)      
         {
             yield return new WaitForSeconds(updateTime);
-            networkPlayer.CmdSendGeoPositionToServer((float)deviceLocationProvider.CurrentLocation.LatitudeLongitude.x, (float)deviceLocationProvider.CurrentLocation.LatitudeLongitude.y, networkPlayer.netId);
+            if (gameEnvironment.gameObject.activeSelf)
+            {
+                networkPlayer.CmdSendGeoPositionToServer((float)deviceLocationProvider.CurrentLocation.LatitudeLongitude.x, (float)deviceLocationProvider.CurrentLocation.LatitudeLongitude.y, networkPlayer.netId);
 
-            fill = CalculateFill(worstAccuracy, bestAccuracy, 0, 1, deviceLocationProvider.CurrentLocation.Accuracy);
-            _uiManager.gpsAccuracy.fillAmount = fill;
+                fill = CalculateFill(worstAccuracy, bestAccuracy, 0, 1, deviceLocationProvider.CurrentLocation.Accuracy);
+                _uiManager.gpsAccuracy.fillAmount = fill;
+            }
+            
+                
+            
         }
         
     }
