@@ -31,7 +31,7 @@ public class SessionManager : MonoBehaviour
 
     public void Start()
     {
-        gameEnvironment = GameObject.Find("Game");
+        
 
         foreach(NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
         {
@@ -46,6 +46,7 @@ public class SessionManager : MonoBehaviour
 
         on_GPS_Initialized.AddListener(StartSendGeoLocation);
         StartCoroutine(FindDeviceLocationProvider());
+        gameEnvironment = FindObjectOfType<GameManager>().mainGame;
     }
 
 
