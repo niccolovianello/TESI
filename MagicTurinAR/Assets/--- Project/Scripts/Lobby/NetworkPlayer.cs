@@ -298,6 +298,7 @@ namespace MirrorBasics
         [ClientRpc]
         private void RpcReceiveGeoPositionFromServer(float latitude, float longitude, uint netId)
         {
+            Debug.Log("Rpc Receive");
             foreach(NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
             {
                 if (np.netId == netId)
