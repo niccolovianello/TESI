@@ -24,12 +24,12 @@ public class MissionsManager : MonoBehaviour
 
     [Header("WindowFinishLevel")]
     public Canvas windowFinishLevel;
-    public TMP_Text textFinishLevel;
+    public Text textFinishLevel;
     
 
     [Header("WindowStartLevel")]
     public Canvas windowToStartMission;
-    public TMP_Text textWndowStartLevel;
+    public Text textWndowStartLevel;
 
     [Header("ExplorerPrefabs")]
     private GameObject areaTargetExplorerPrefab;

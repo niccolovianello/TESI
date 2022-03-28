@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.22380279, g: 0.24376711, b: 0.26534963, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3632,7 +3632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0010070801, y: 0}
+  m_AnchoredPosition: {x: 0.0009765625, y: 0}
   m_SizeDelta: {x: -924.5, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &674811519
@@ -8278,7 +8278,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2049333393}
         m_TargetAssemblyTypeName: MissionsManager, Assembly-CSharp
-        m_MethodName: StartMission
+        m_MethodName: ConfirmStartMission
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10331,9 +10331,9 @@ MonoBehaviour:
   currentMission: {fileID: 0}
   currentMissionIndex: 0
   windowFinishLevel: {fileID: 1217707880}
-  textFinishLevel: {fileID: 0}
+  textFinishLevel: {fileID: 828554473}
   windowToStartMission: {fileID: 1888885375}
-  textWndowStartLevel: {fileID: 0}
+  textWndowStartLevel: {fileID: 1671421322}
   parentTarget: {fileID: 1838948239}
 --- !u!4 &2049333394
 Transform:
