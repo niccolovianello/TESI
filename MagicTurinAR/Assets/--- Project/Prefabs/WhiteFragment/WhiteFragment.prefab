@@ -58,17 +58,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9380ce1c04024583b4ad084a350ca011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxClickDistance: 50
+  rotateSpeed: 30
+  floatAmplitude: 0.001
+  floatFrequency: 0.5
   uiInventory: {fileID: 0}
   player: {fileID: 0}
   itemGO: {fileID: 0}
   amount: 0
   magicPlayer: {fileID: 0}
+  updateShaderTime: 1
   networkPlayer: {fileID: 0}
   itemType: 4
   itemTypePlayer: 1
   idObjectCode: 2000
-  distanceWarning: {fileID: 0}
-  distanceWarningCanvas: {fileID: 0}
 --- !u!1 &941741865489411683
 GameObject:
   m_ObjectHideFlags: 0

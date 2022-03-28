@@ -45,11 +45,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9380ce1c04024583b4ad084a350ca011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxClickDistance: 50
+  rotateSpeed: 50
+  floatAmplitude: 0.001
+  floatFrequency: 0.5
   uiInventory: {fileID: 0}
   player: {fileID: 0}
   itemGO: {fileID: 0}
   amount: 0
   magicPlayer: {fileID: 0}
+  updateShaderTime: 1
   networkPlayer: {fileID: 0}
   itemType: 1
   itemTypePlayer: 1

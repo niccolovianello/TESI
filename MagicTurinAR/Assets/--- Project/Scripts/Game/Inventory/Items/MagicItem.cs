@@ -43,7 +43,7 @@ public class MagicItem : Item
 
     private void Start()
     {
-        uiInventory = FindObjectOfType<UIInventory>();
+        
         player = FindObjectOfType<Player>();
         magicPlayer = FindObjectOfType<MagicPlayer>();
         NetworkPlayer[] networkPlayers = FindObjectsOfType<NetworkPlayer>();
@@ -71,10 +71,11 @@ public class MagicItem : Item
             }
                 
         }
+        uiInventory = FindObjectOfType<UIInventory>();
 
-       
 
-        
+
+
 
     }
 
