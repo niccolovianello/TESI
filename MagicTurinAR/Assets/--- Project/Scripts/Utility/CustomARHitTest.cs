@@ -127,9 +127,12 @@ namespace Niantic.ARDKExamples.Helpers
             // Place the object on top of the surface rather than exactly on the hit point
             // Note (Kelly): Now that vertical planes are also supported in-editor, need to be
             // more elegant about how/if to handle instantiation of the cube
+
+            
             hitPosition.y += PlacementObjectPf.transform.localScale.y / 2.0f;
 
-            GameObject GO = Instantiate(PlacementObjectPf, hitPosition + offsetSpawnObject, Quaternion.identity);
+            GameObject GO = Instantiate(PlacementObjectPf, GetComponent<ARCursorRenderer>().CursorObject.transform.position + offsetSpawnObject, Quaternion.identity);
+            GO.transform.localScale *= 0.5f;
             if (GO.GetComponent<MagicItem>())
             {
                 GO.GetComponent<MagicItem>().Destroy();

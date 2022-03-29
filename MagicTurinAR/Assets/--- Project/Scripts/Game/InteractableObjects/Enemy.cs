@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
-[RequireComponent(typeof(CapsuleCollider))]
+
 public class Enemy : Item
 {
     private CapsuleCollider collider;
