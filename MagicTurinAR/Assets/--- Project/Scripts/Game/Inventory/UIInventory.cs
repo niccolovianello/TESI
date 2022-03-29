@@ -175,18 +175,22 @@ public class UIInventory : MonoBehaviour
     {
         //Player magicPlayer = FindObjectOfType
         GameManager gameManager = FindObjectOfType<GameManager>();
-        Debug.Log(itemToSeeInAr);
         gameManager.SetPrefabToShowInAR(itemToSeeInAr);
-        CloseWindowToAr();
-        SceneManager.LoadScene(sceneArtifactAR, LoadSceneMode.Additive);
         gameManager.networkPlayerCamera.enabled = false;
         gameManager.audioListener.enabled = false;
         gameManager.DisableMainGame();
+        Debug.Log(itemToSeeInAr);
+        
+        CloseWindowToAr();
+       
+        
+        
         foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
         {
             np.NotRenderPlayerBody();
         }
 
+        SceneManager.LoadScene(sceneArtifactAR, LoadSceneMode.Additive);
     }
 
     public void IncreaseWhiteMagicToSend()

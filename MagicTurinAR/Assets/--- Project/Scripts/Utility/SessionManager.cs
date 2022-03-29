@@ -78,11 +78,11 @@ public class SessionManager : MonoBehaviour
         while (true)      
         {
             yield return new WaitForSeconds(updateTime);
-            Debug.Log("gioco attivo: "+ gameEnvironment.gameObject.activeSelf);
+            //Debug.Log("gioco attivo: "+ gameEnvironment.gameObject.activeSelf);
             if (gameEnvironment.gameObject.activeSelf)
             {
                 networkPlayer.CmdSendGeoPositionToServer((float)deviceLocationProvider.CurrentLocation.LatitudeLongitude.x, (float)deviceLocationProvider.CurrentLocation.LatitudeLongitude.y, networkPlayer.netId);
-                Debug.Log("controllo posizione");
+                //Debug.Log("controllo posizione" );
                 fill = CalculateFill(worstAccuracy, bestAccuracy, 0, 1, deviceLocationProvider.CurrentLocation.Accuracy);
                 _uiManager.gpsAccuracy.fillAmount = fill;
             }

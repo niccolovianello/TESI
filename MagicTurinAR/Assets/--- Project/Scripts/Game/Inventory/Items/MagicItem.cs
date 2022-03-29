@@ -145,7 +145,7 @@ public class MagicItem : Item
                         }
                         else
                         {
-                            //Debug.Log(uiInventory);                          
+                            Debug.Log(uiInventory);
                             Debug.Log(this.name);
                             if (miSO.id == this.idObjectCode && magicPlayer.IsCloseToTeamMembers())
                             {
@@ -158,12 +158,12 @@ public class MagicItem : Item
                             }
                             else if (!magicPlayer.IsCloseToTeamMembers())
                             {
-                                FindObjectOfType<UIManager>().ScaleSprite();
-                                Vibration.VibrateNope();
+                            FindObjectOfType<UIManager>().ScaleSprite();
+                            Vibration.VibrateNope();
                             }
 
 
-                        }
+                    }
                     }
                 }
 

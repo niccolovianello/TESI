@@ -28,7 +28,6 @@ namespace MirrorBasics
         public GameObject playerBody;
 
 
-
         public enum TypePlayer
         {
             Explorer,
@@ -298,13 +297,15 @@ namespace MirrorBasics
         [ClientRpc]
         private void RpcReceiveGeoPositionFromServer(float latitude, float longitude, uint netId)
         {
-            Debug.Log("Rpc Receive");
+            //Debug.Log("Rpc Receive "+ latitude + "  "+ longitude + "  "+ netId);
             foreach(NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
             {
                 if (np.netId == netId)
                 {
                     Debug.Log(np.name);
                     AbstractMap _map = FindObjectOfType<AbstractMap>();
+                    if (_map == null)
+                        return;
                     np.gameObject.transform.MoveToGeocoordinate(latitude,longitude, _map.CenterMercator, _map.WorldRelativeScale);
                 }
 
