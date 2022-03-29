@@ -46,16 +46,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magicInventorySO: {fileID: 11400000, guid: a289aa7d46d52de4cba34ff0a1711903, type: 2}
   prefabItemCollectable: {fileID: 0}
-  enemy: {fileID: 4065617981142174932, guid: 345876c1c26e1c943a39707a4b84ce03, type: 3}
+  enemy: {fileID: 4065617981142174932, guid: e38c17170e93d434c8e3d6499377fd8c, type: 3}
   gem: {fileID: 8134186224298519009, guid: 1d61eb0c3e3034937a0c428a490fc617, type: 3}
   whiteFragment: {fileID: 313028691031775437, guid: d150ee8002f5a4cb29ca924395a4051a, type: 3}
-  explorerPrefab: {fileID: 0}
-  hunterPrefab: {fileID: 0}
-  wisemanPrefab: {fileID: 0}
+  explorerPrefab: {fileID: 6848180513406669634, guid: 2038f256224713f4dbda4e876ee9c075, type: 3}
+  hunterPrefab: {fileID: 399601605379447512, guid: f66de86da5de86f4abf60d832fc02ebe, type: 3}
+  wisemanPrefab: {fileID: 7818728118513375564, guid: 27165cf4bc88f774ea994546be6a2081, type: 3}
   DirectionsParent: {fileID: 0}
-  prefabRadarVfx: {fileID: 0}
-  meshModifier: {fileID: 0}
-  directionMaterial: {fileID: 0}
+  prefabRadarVfx: {fileID: 4956802155342704388, guid: 539536475b3c4f9418fa689d09bd6f1f, type: 3}
+  meshModifier: {fileID: 11400000, guid: 72a54fd58e79618408c60d91df61d553, type: 2}
+  directionMaterial: {fileID: 2100000, guid: 49b5d148287c83443bd632e6d5b5bd6f, type: 2}
 --- !u!114 &8183732931097936506
 MonoBehaviour:
   m_ObjectHideFlags: 0

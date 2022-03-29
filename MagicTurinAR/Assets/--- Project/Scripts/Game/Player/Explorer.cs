@@ -106,8 +106,12 @@ public class Explorer : MagicPlayer
     
     public void ToggleNavigation()
     {
+        MissionsManager mm = FindObjectOfType<MissionsManager>();
 
-        parentDirections.gameObject.SetActive(!parentDirections.gameObject.activeSelf);
+        if (mm.currentMission.playerType == MissionSO.PlayerType.Explorer)
+        {
+            parentDirections.gameObject.SetActive(!parentDirections.gameObject.activeSelf);
+        }
 
     }
 
