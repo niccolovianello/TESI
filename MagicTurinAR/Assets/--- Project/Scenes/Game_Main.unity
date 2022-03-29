@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22380279, g: 0.24376711, b: 0.26534963, a: 1}
+  m_IndirectSpecularColor: {r: 0.12735139, g: 0.13419019, b: 0.12115468, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3547,7 +3547,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2063283164}
+      - m_Target: {fileID: 1450087519}
         m_TargetAssemblyTypeName: UIInventory, Assembly-CSharp
         m_MethodName: CloseWindowToAr
         m_Mode: 1
@@ -5375,7 +5375,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2063283164}
+      - m_Target: {fileID: 886300655}
         m_TargetAssemblyTypeName: UIInventory, Assembly-CSharp
         m_MethodName: CloseWindowToAr
         m_Mode: 1
@@ -9014,7 +9014,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2063283164}
+      - m_Target: {fileID: 1450087519}
         m_TargetAssemblyTypeName: UIInventory, Assembly-CSharp
         m_MethodName: OpenSceneInAR
         m_Mode: 1
@@ -9948,7 +9948,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2063283164}
+      - m_Target: {fileID: 886300655}
         m_TargetAssemblyTypeName: UIInventory, Assembly-CSharp
         m_MethodName: OpenSceneInAR
         m_Mode: 1
