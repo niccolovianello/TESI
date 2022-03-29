@@ -16,6 +16,7 @@ public class Demon : MonoBehaviour
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackRadius;
     [SerializeField] private float viewAngle;
+    
 
     private CapsuleCollider collider;
     [SerializeField] private ParticleSystem soul;
@@ -33,6 +34,7 @@ public class Demon : MonoBehaviour
     private Animator animator;
 
     private Renderer[] renderers;
+    private bool justHit = false;
 
 
     private void Awake()
@@ -67,7 +69,7 @@ public class Demon : MonoBehaviour
 
         if (currentHealth > 0 && !hit)
         {
-            if (isAware())
+            if (isAware() || justHit)
             {
                 Vector3 targetDirection = AR_Player.transform.position - transform.position;
                 targetDirection.y = 0;
@@ -180,6 +182,14 @@ public class Demon : MonoBehaviour
 
     }
 
+    private IEnumerator AfterHitClip()
+    {
+        justHit = true;
+
+        yield return new WaitForSeconds(3f);
+
+        justHit = false;
+    }
     private IEnumerator HitClip()
     {
         bool lessThan = Random.Range(0, 10) < 5;
@@ -189,6 +199,7 @@ public class Demon : MonoBehaviour
         
         hit = true;
         yield return new WaitForSeconds(1f);
+        StartCoroutine(AfterHitClip());
         hit = false;
     }
 
