@@ -22,19 +22,37 @@ public class UIDestroyGem : MonoBehaviour
         // FindObjectOfType<Camera>().gameObject.GetComponent<PlaceDynamicARObject>().enabled = false;
     }
 
-    public void BackToMainGame()
+    public void BackToMainGame(bool gemDestroyed)
     {
+
         GameManager gameManager = FindObjectOfType<GameManager>();
         NetworkPlayer networkPlayer = gameManager.networkPlayer;
+
+        if (gemDestroyed)
+        {
+           
+            networkPlayer.CmdSendWhiteMagicFromGem(nfragment);
+            
+        }
+        
         gameManager.EnableMainGame();
         foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
         {
             np.RenderPlayerBody();
         }
-        networkPlayer.CmdSendWhiteMagicFromGem(nfragment);
         gameManager.PlayerCameraObject.SetActive(true);
         SceneManager.UnloadSceneAsync("AR_DestroyGem");
-        
+
+    }
+
+    public void ExitFromSceneNoWhiteFragment()
+    {
+        BackToMainGame(false);
+    }
+
+    public void ExitFromSceneYesWhiteFragment()
+    {
+        BackToMainGame(true);
     }
 
     public void OpenBackToGameWindow(int nfrag)

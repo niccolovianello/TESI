@@ -11,6 +11,7 @@ using Mapbox.Unity.Map;
 using Mapbox.Unity.Location;
 using Mirror;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
+using UnityEngine.EventSystems;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -125,9 +126,18 @@ public class GameManager : Singleton<GameManager>
         
 
     }
-    
 
-  
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.T))
+    //    {
+    //        foreach (EventSystem e in FindObjectsOfType<EventSystem>())
+    //        {
+    //            Debug.Log(e.gameObject.name);
+    //        }
+    //    }
+    //}
+
     void SetUpPlayer()
     {
         Item[] items;
