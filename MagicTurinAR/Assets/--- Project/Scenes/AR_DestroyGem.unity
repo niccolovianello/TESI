@@ -1177,14 +1177,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909465769}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b019f0c4dd824101a0a664f35dcb7ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _manageUsingUnityLifecycle: 1
   _planePrefab: {fileID: 1092543363889104, guid: 98e455e2ba6ba413287f8cd497d4b08e, type: 3}
-  _detectedPlaneTypes: 3
+  _detectedPlaneTypes: 1
 --- !u!114 &909465773
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,59 +2,63 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using MirrorBasics;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
 public class Demon : MonoBehaviour
 {
     [SerializeField] private float maxHealth = 100f;
+    
     [SerializeField] private Text life;
-    // [SerializeField] private float walkSpeed;
+    
     [SerializeField] private float runSpeed;
+    
     [SerializeField] private float dangerDistance;
+    
     [SerializeField] private float attackDistance;
+    
     [SerializeField] private Transform attackPoint;
+    
     [SerializeField] private float attackRadius;
+    
     [SerializeField] private float viewAngle;
     
-
-    private CapsuleCollider collider;
     [SerializeField] private ParticleSystem soul;
 
     [SerializeField] private LayerMask layers;
     
-    private Camera AR_Player;
-
-    private bool hit;
-
-    private Vector3 direction;
+    private CapsuleCollider _collider;
     
-    private float currentHealth;
+    private Camera _arPlayer;
 
-    private Animator animator;
+    private bool _hit;
+    
+    private float _currentHealth;
 
-    private Renderer[] renderers;
-    private bool justHit = false;
+    private Animator _animator;
+
+    private Renderer[] _renderers;
+    
+    // private bool justHit = false;
 
 
     private void Awake()
     {
-        collider = GetComponent<CapsuleCollider>();
-        collider.isTrigger = true;
-        animator = GetComponent<Animator>();
-        currentHealth = maxHealth;
+        _collider = GetComponent<CapsuleCollider>();
+        _collider.isTrigger = true;
+        _animator = GetComponent<Animator>();
+        _currentHealth = maxHealth;
     }
 
     private void Start()
     {
-        renderers = GetComponentsInChildren<Renderer>();
+        _renderers = GetComponentsInChildren<Renderer>();
 
-        foreach (Renderer renderer in renderers)
+        foreach (Renderer renderer in _renderers)
         {
             renderer.material.shader = Shader.Find("Shader Graphs/Skeleton_Alpha");
         }
 
-        AR_Player = FindObjectOfType<Camera>();
+        _arPlayer = FindObjectOfType<Camera>();
 
     }
 
@@ -63,31 +67,31 @@ public class Demon : MonoBehaviour
     {
         if (life != null)
         {
-            if (currentHealth <= 0) life.text = "";
-            else life.text = currentHealth.ToString();
+            if (_currentHealth <= 0) life.text = "";
+            else life.text = _currentHealth.ToString();
         }
 
-        if (currentHealth > 0 && !hit)
+        if (_currentHealth > 0 && !_hit)
         {
-            if (isAware())  //|| justHit
+            if (IsAware())  //|| justHit
             {
-                Vector3 targetDirection = AR_Player.transform.position - transform.position;
+                Vector3 targetDirection = _arPlayer.transform.position - transform.position;
                 targetDirection.y = 0;
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetDirection), 0.1f);
                 transform.Translate(0, 0, runSpeed);
-                animator.SetBool("Aware", true);
+                _animator.SetBool("Aware", true);
 
-                if ((transform.position - AR_Player.transform.position).magnitude < attackDistance)
+                if ((transform.position - _arPlayer.transform.position).magnitude < attackDistance)
                 {
                     Attack();
                 }
 
-                else animator.SetBool("Attack", false);
+                else _animator.SetBool("Attack", false);
             }
 
             else
             {
-                animator.SetBool("Aware", false);
+                _animator.SetBool("Aware", false);
             }
         }
         
@@ -100,9 +104,9 @@ public class Demon : MonoBehaviour
 
     public void Damage(float damage)
     {
-        currentHealth -= damage;
+        _currentHealth -= damage;
 
-        if (currentHealth <= 0)
+        if (_currentHealth <= 0)
         {
             GetComponent<Collider>().enabled = false;
             StartCoroutine(DeathClip());
@@ -110,14 +114,19 @@ public class Demon : MonoBehaviour
         else StartCoroutine(HitClip());
     }
 
-    private bool isAware()
+    private bool IsAware()
     {
-        Vector3 targetDirection = transform.position - AR_Player.transform.position;
-        bool distanceARPlayer = Mathf.Abs((transform.position - AR_Player.transform.position).magnitude) < dangerDistance;
+        var playerPosition = _arPlayer.transform.position;
+        var thisPosition = transform.position;
+        
+        Vector3 targetDirection = thisPosition - playerPosition;
+        
+        bool distanceARPlayer = Mathf.Abs((thisPosition - playerPosition).magnitude) < dangerDistance;
         bool angleARplayer = Mathf.Abs(Vector3.Angle(Vector3.forward, targetDirection)) < viewAngle;
+        
         // Debug.Log(distanceARPlayer + " " + angleARplayer);
 
-        return distanceARPlayer /* && angleARplayer */;
+        return distanceARPlayer && angleARplayer ;
     }
 
     private void OnDrawGizmos()
@@ -131,7 +140,7 @@ public class Demon : MonoBehaviour
     // ANIMATOR COROUTINES
     private IEnumerator DeathClip()
     {
-        animator.SetTrigger("Death");
+        _animator.SetTrigger("Death");
         yield return new WaitForSeconds(3f);
         
         Instantiate(soul, transform);
@@ -140,7 +149,7 @@ public class Demon : MonoBehaviour
 
         do
         {
-            foreach (Renderer renderer in renderers)
+            foreach (Renderer renderer in _renderers)
             {
                 renderer.material.SetFloat("_Alpha", alpha);
             }
@@ -199,19 +208,19 @@ public class Demon : MonoBehaviour
         //if(lessThan) animator.SetTrigger("Damage");
         //else animator.SetTrigger("Knockback");
 
-        animator.SetTrigger("Damage");
+        _animator.SetTrigger("Damage");
 
-        hit = true;
+        _hit = true;
         yield return new WaitForSeconds(1f);
 
         // StartCoroutine(AfterHitClip());
 
-        hit = false;
+        _hit = false;
     }
 
     private IEnumerator AttackClip()
     {
-        animator.SetBool("Attack", true);
+        _animator.SetBool("Attack", true);
 
         yield return new WaitForSeconds(1f);
         Collider[] colliders = Physics.OverlapSphere(attackPoint.position, attackRadius, layers);
@@ -223,7 +232,7 @@ public class Demon : MonoBehaviour
         }
         
         yield return new WaitForSeconds(1f);
-        animator.SetBool("Attack", false);
+        _animator.SetBool("Attack", false);
     }
 
 }

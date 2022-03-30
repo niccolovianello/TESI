@@ -8,10 +8,8 @@ public class LimitGemFall : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.name);
-        if (other.GetComponent<MeshRenderer>())
+        if (other.GetComponentInParent<AR_Gem>())
         {
-            
-            
             FindObjectOfType<UIDestroyGem>().OpenRestartWindow();
         }
     }

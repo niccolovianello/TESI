@@ -902,12 +902,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   life: {fileID: 3316982997576796610}
-  runSpeed: 0.05
-  dangerDistance: 25
+  runSpeed: 0.02
+  dangerDistance: 10
   attackDistance: 3
   attackPoint: {fileID: 1943218730}
   attackRadius: 0.2
-  viewAngle: 45
+  viewAngle: 360
   soul: {fileID: 2281107709180455589, guid: 2ad7d7d296589b0429a9b9cce2f9750c, type: 3}
   layers:
     serializedVersion: 2
