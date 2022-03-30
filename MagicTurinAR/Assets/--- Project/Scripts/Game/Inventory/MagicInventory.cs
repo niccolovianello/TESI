@@ -27,7 +27,6 @@ public class MagicInventory : Inventory
             {
                 if ((int)MagicItem.itemType == (int) magicItem.itemType)
                 {
-                    Debug.Log("entrato");
                     MagicItem.prefab.GetComponent<Item>().amount++;                  
                     returnedAmount = MagicItem.prefab.GetComponent<Item>().amount;
                 }
@@ -60,7 +59,6 @@ public class MagicInventory : Inventory
             
             if ((int)MagicItem.itemType == 1000)
             {
-                Debug.Log("entrato");
                 MagicItem.prefab.GetComponent<Item>().amount++;
                 returnedAmount = MagicItem.prefab.GetComponent<Item>().amount;
             }
