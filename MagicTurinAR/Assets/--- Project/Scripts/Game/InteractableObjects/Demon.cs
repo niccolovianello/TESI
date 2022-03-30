@@ -69,7 +69,7 @@ public class Demon : MonoBehaviour
 
         if (currentHealth > 0 && !hit)
         {
-            if (isAware() || justHit)
+            //if (isAware() )  //|| justHit
             {
                 Vector3 targetDirection = AR_Player.transform.position - transform.position;
                 targetDirection.y = 0;
@@ -85,10 +85,10 @@ public class Demon : MonoBehaviour
                 else animator.SetBool("Attack", false);
             }
             
-            else
-            {
-                animator.SetBool("Aware", false);
-            }
+            //else
+            //{
+            //    animator.SetBool("Aware", false);
+            //}
         }
         
     }
@@ -116,7 +116,7 @@ public class Demon : MonoBehaviour
         bool distanceARPlayer = Mathf.Abs((transform.position - AR_Player.transform.position).magnitude) < dangerDistance;
         bool angleARplayer = Mathf.Abs(Vector3.Angle(Vector3.forward, targetDirection)) < viewAngle;
         // Debug.Log(distanceARPlayer + " " + angleARplayer);
-        
+
         return distanceARPlayer /* && angleARplayer */;
     }
 
@@ -182,24 +182,24 @@ public class Demon : MonoBehaviour
 
     }
 
-    private IEnumerator AfterHitClip()
-    {
-        justHit = true;
+    //private IEnumerator AfterHitClip()
+    //{
+    //    justHit = true;
 
-        yield return new WaitForSeconds(3f);
+    //    yield return new WaitForSeconds(3f);
 
-        justHit = false;
-    }
+    //    justHit = false;
+    //}
     private IEnumerator HitClip()
     {
-        bool lessThan = Random.Range(0, 10) < 5;
-        
-        if(lessThan) animator.SetTrigger("Damage");
-        else animator.SetTrigger("Knockback");
-        
+        //bool lessThan = Random.Range(0, 10) < 5;
+
+        //if(lessThan) 
+        //else animator.SetTrigger("Knockback");
+        animator.SetTrigger("Damage");
         hit = true;
         yield return new WaitForSeconds(1f);
-        StartCoroutine(AfterHitClip());
+        //StartCoroutine(AfterHitClip());
         hit = false;
     }
 
