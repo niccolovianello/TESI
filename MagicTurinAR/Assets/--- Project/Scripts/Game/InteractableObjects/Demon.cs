@@ -69,7 +69,7 @@ public class Demon : MonoBehaviour
 
         if (currentHealth > 0 && !hit)
         {
-            //if (isAware() )  //|| justHit
+            if (isAware())  //|| justHit
             {
                 Vector3 targetDirection = AR_Player.transform.position - transform.position;
                 targetDirection.y = 0;
@@ -84,11 +84,11 @@ public class Demon : MonoBehaviour
 
                 else animator.SetBool("Attack", false);
             }
-            
-            //else
-            //{
-            //    animator.SetBool("Aware", false);
-            //}
+
+            else
+            {
+                animator.SetBool("Aware", false);
+            }
         }
         
     }
@@ -190,16 +190,22 @@ public class Demon : MonoBehaviour
 
     //    justHit = false;
     //}
+
+
     private IEnumerator HitClip()
     {
         //bool lessThan = Random.Range(0, 10) < 5;
 
-        //if(lessThan) 
+        //if(lessThan) animator.SetTrigger("Damage");
         //else animator.SetTrigger("Knockback");
+
         animator.SetTrigger("Damage");
+
         hit = true;
         yield return new WaitForSeconds(1f);
-        //StartCoroutine(AfterHitClip());
+
+        // StartCoroutine(AfterHitClip());
+
         hit = false;
     }
 

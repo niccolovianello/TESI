@@ -884,10 +884,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.052421562
+  m_Radius: 0.029493064
   m_Height: 0.16708763
   m_Direction: 1
-  m_Center: {x: 0.0000666976, y: 0.0064037787, z: 0.007529736}
+  m_Center: {x: 0.0000666976, y: 0.006403779, z: 0.0075297365}
 --- !u!114 &6013871590613210509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -903,8 +903,8 @@ MonoBehaviour:
   maxHealth: 100
   life: {fileID: 3316982997576796610}
   runSpeed: 0.05
-  dangerDistance: 25.21
-  attackDistance: 2
+  dangerDistance: 25
+  attackDistance: 3
   attackPoint: {fileID: 1943218730}
   attackRadius: 0.2
   viewAngle: 45

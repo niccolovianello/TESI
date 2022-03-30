@@ -548,6 +548,10 @@ PrefabInstance:
       propertyPath: field of view
       value: 75.509
       objectReference: {fileID: 0}
+    - target: {fileID: 3363422157329644171, guid: e91d6d15f11cc4ad29bb1a41ae9aa381, type: 3}
+      propertyPath: far clip plane
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 3378742778289678343, guid: e91d6d15f11cc4ad29bb1a41ae9aa381, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -720,18 +724,6 @@ CapsuleCollider:
   m_Height: 1.929898
   m_Direction: 1
   m_Center: {x: 0, y: 0.10048163, z: 0.04336655}
---- !u!114 &909465783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909465769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e3c44306fb1e439a9f18b2212b8ab70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &916479432
 GameObject:
   m_ObjectHideFlags: 0
