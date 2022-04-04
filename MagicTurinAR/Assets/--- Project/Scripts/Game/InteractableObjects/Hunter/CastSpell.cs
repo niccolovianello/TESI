@@ -19,13 +19,14 @@ public class CastSpell : MonoBehaviour
     {
         hunter = FindObjectOfType<Hunter>();
 
-        
+        /*
         if (hunter.CurrentMana < SpellSO.Cost)
         {
             StartCoroutine(ManaWarning());
         }
+        */
         
-        else
+        // else
         
         {
             force = CalculateForce(timer);
@@ -36,7 +37,7 @@ public class CastSpell : MonoBehaviour
 
             spell.Cast(force, torque);
         
-            hunter.DecreaseMana(SpellSO.Cost);
+            // hunter.DecreaseMana(SpellSO.Cost);
         }
     }
     

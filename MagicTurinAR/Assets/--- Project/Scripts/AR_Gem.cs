@@ -1,24 +1,31 @@
+using System.Collections;
+using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class AR_Gem : MonoBehaviour
 {
 
-    private int attempts;
+    private VisualEffect _explosion;
+
+    private int _attempts;
 
     private void Start()
     {
-        attempts = Random.Range(2, 5);
+        _attempts = Random.Range(2, 5);
+        _explosion = GetComponentInChildren<VisualEffect>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (attempts == 0)
+        if (_attempts != 0) return;
         {
-            FindObjectOfType<UIDestroyGem>().OpenBackToGameWindow(3);
-            Destroy(gameObject);
             Vibration.Vibrate();
+            Explosion();
+            _attempts = -1;
         }
+        
     }
 
     private void OnCollisionEnter(Collision other)
@@ -27,7 +34,23 @@ public class AR_Gem : MonoBehaviour
         {
             Debug.Log("hit");
             Vibration.VibratePeek();
-            attempts--;
+            _attempts--;
         }
+    }
+
+    private void Explosion()
+    {
+        GetComponentInChildren<MeshRenderer>().enabled = false;
+        _explosion.Play();
+        StartCoroutine(GemDestruction());
+    }
+
+    private IEnumerator GemDestruction()
+    {
+        yield return new WaitForSeconds(.5f);
+        _explosion.Stop();
+        yield return new WaitForSeconds(.5f);
+        FindObjectOfType<UIDestroyGem>().OpenBackToGameWindow(3);
+        Destroy(gameObject);
     }
 }

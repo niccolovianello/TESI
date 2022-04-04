@@ -218,8 +218,12 @@ using UnityEngine.SceneManagement;
                         {
                             //Username is now set
                             //Now return to login screen
+                            
                             UILoginManager.instance.LoginUI();
                             warningRegisterText.text = "";
+                            
+                            // ------ AUTO LOGIN
+                            // Login(_email, _password);
                         }
                     }
                 }

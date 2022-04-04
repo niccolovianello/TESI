@@ -15,7 +15,7 @@ public class UIDestroyGem : MonoBehaviour
     public Image  restartWindow;
     public CanvasRenderer tipPanel;
 
-    private int nfragment;
+    private int _nfragment;
 
     private void Start()
     {
@@ -31,7 +31,7 @@ public class UIDestroyGem : MonoBehaviour
         if (gemDestroyed)
         {
            
-            networkPlayer.CmdSendWhiteMagicFromGem(nfragment);
+            networkPlayer.CmdSendWhiteMagicFromGem(_nfragment);
             
         }
         
@@ -58,7 +58,7 @@ public class UIDestroyGem : MonoBehaviour
     public void OpenBackToGameWindow(int nfrag)
     {
         windowToBackToTheGame.enabled = true;
-        nfragment = nfrag;
+        _nfragment = nfrag;
     }
 
     public void CloseBackToGameWindow()
@@ -77,7 +77,7 @@ public class UIDestroyGem : MonoBehaviour
         FindObjectOfType<PlaceDynamicARObject>().SetCounterTouchToZero();
         restartWindow.gameObject.SetActive(false);
         
-        FindObjectOfType<ARMeshManager>().UseInvisibleMaterial = false;
+        // FindObjectOfType<ARMeshManager>().UseInvisibleMaterial = false;
         tipPanel.gameObject.SetActive(true);
     }
 
@@ -86,6 +86,6 @@ public class UIDestroyGem : MonoBehaviour
         tipPanel.gameObject.SetActive(false);
         // FindObjectOfType<Camera>().gameObject.GetComponent<PlaceDynamicARObject>().enabled = true;
 
-        FindObjectOfType<ARMeshManager>().UseInvisibleMaterial = true;
+        // FindObjectOfType<ARMeshManager>().UseInvisibleMaterial = true;
     }
 }
