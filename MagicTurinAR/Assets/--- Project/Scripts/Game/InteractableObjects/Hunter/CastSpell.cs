@@ -6,38 +6,38 @@ public class CastSpell : MonoBehaviour
 {
     [SerializeField] private Transform spellCastPoint;
     [SerializeField] private Spell spellToCast;
-    [SerializeField] private Spell_ScriptableObject SpellSO;
+    [SerializeField] private Spell_ScriptableObject spellSo;
     [SerializeField] private TMP_Text manaWarning;
     
 
-    private float force;
-    private float torque;
-    private Hunter hunter;
+    private float _force;
+    private float _torque;
+    private Hunter _hunter;
 
 
     public void Cast(float timer)
     {
-        hunter = FindObjectOfType<Hunter>();
+        _hunter = FindObjectOfType<Hunter>();
 
-        /*
-        if (hunter.CurrentMana < SpellSO.Cost)
+        
+        if (_hunter.CurrentMana < spellSo.Cost)
         {
             StartCoroutine(ManaWarning());
         }
-        */
         
-        // else
+        
+        else
         
         {
-            force = CalculateForce(timer);
-            torque = Random.Range(1, 3);
+            _force = CalculateForce(timer);
+            _torque = Random.Range(1, 3);
 
             Spell spell = Instantiate(spellToCast, spellCastPoint.position, spellCastPoint.rotation);
-            spell.SetSpellToCast(SpellSO);
+            spell.SetSpellToCast(spellSo);
 
-            spell.Cast(force, torque);
+            spell.Cast(_force, _torque);
         
-            // hunter.DecreaseMana(SpellSO.Cost);
+            _hunter.DecreaseMana(spellSo.Cost);
         }
     }
     
@@ -46,7 +46,7 @@ public class CastSpell : MonoBehaviour
     {
         float maxForceHoldDownTime = 1f;
         float holdTimeNormalized = Mathf.Clamp01(timer / maxForceHoldDownTime);
-        float forceValue = holdTimeNormalized * SpellSO.GetMaxForce();
+        float forceValue = holdTimeNormalized * spellSo.GetMaxForce();
 
         return forceValue;
     }
