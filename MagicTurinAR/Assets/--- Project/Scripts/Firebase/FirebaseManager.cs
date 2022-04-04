@@ -144,6 +144,8 @@ using UnityEngine.SceneManagement;
                 SceneManager.LoadScene(1, LoadSceneMode.Single);
 
             }
+
+            
         }
 
         private IEnumerator Register(string _email, string _password, string _username)
@@ -190,6 +192,8 @@ using UnityEngine.SceneManagement;
                     }
                     warningRegisterText.text = message;
                 }
+
+
                 else
                 {
                     //User has now been created
@@ -219,12 +223,23 @@ using UnityEngine.SceneManagement;
                             //Username is now set
                             //Now return to login screen
                             
-                            UILoginManager.instance.LoginUI();
+                            //UILoginManager.instance.LoginUI();
                             warningRegisterText.text = "";
-                            
-                            // ------ AUTO LOGIN
-                            // Login(_email, _password);
-                        }
+
+                        // ------ AUTO LOGIN
+                        // Login(_email, _password);
+
+                        var LoginTask = auth.SignInWithEmailAndPasswordAsync(_email, _password);
+                        //Wait until the task completes
+                        yield return new WaitUntil(predicate: () => LoginTask.IsCompleted);
+
+                        username = User.DisplayName;
+
+                        DontDestroyOnLoad(this);
+
+
+                        SceneManager.LoadScene(1, LoadSceneMode.Single);
+                    }
                     }
                 }
             }
