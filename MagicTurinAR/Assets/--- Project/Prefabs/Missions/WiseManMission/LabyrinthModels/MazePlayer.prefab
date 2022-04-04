@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4609262141069669356}
   - component: {fileID: 1624254875811293751}
   - component: {fileID: 3856730543370341617}
-  - component: {fileID: 985343946652420745}
   - component: {fileID: -1932855349698698029}
+  - component: {fileID: 4801991956846233784}
   m_Layer: 0
   m_Name: MazePlayer
   m_TagString: Untagged
@@ -83,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &985343946652420745
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1644508872626221993}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-1932855349698698029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,3 +95,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8386f162b2b38134189de96a8bbfe684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  move: {x: 0, y: 0, z: 0}
+--- !u!143 &4801991956846233784
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644508872626221993}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}

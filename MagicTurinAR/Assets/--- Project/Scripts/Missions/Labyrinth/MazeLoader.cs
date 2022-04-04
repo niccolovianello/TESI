@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Niantic.ARDKExamples.Helpers;
 
 public class MazeLoader : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class MazeLoader : MonoBehaviour
     public float size = 6f;
     public Material floorMaterial;
     public GameObject MazeParent;
-
+    public float MazeScaleFactor = 0.01f;
     public GameObject Player;
     public GameObject MazeGoal;
 
@@ -17,15 +18,21 @@ public class MazeLoader : MonoBehaviour
     public MazeCell[,] mazeCells;
    
 
-    void Start()
+    public void InstantiateMaze()
     {
+        MazeParent = FindObjectOfType<MazeParentScript>().gameObject;
         InitializeMaze();
-
+        MazeParent.transform.localScale *= MazeScaleFactor;
         MazeAlgorithm ma = new HuntAndKillMazeAlgorithm(mazeCells);
         ma.CreateMaze();
 
-        Instantiate(Player, new Vector3(0.5f, -0.9f, 0.5f), Quaternion.identity);
-        Instantiate(MazeGoal, new Vector3(66, -0.5f, 113.5f), Quaternion.identity);
+        GameObject player = Instantiate(Player, MazeParent.transform);
+        player.transform.localPosition = new Vector3(mazeCells[0,0].floor.transform.localPosition.x, 0.1f, mazeCells[0,0].floor.transform.localPosition.z);
+        player.GetComponent<PlayerMazeMovement>().InitializeMazePlayerController();
+
+        GameObject mazeGoal = Instantiate(MazeGoal, MazeParent.transform);
+        mazeGoal.transform.localPosition = new Vector3(mazeCells[mazeRows - 1, mazeColumns - 1].floor.transform.localPosition.x, 0.1f, mazeCells[mazeRows - 1, mazeColumns - 1].floor.transform.localPosition.z);
+
 
 
     }

@@ -10,13 +10,20 @@ public class PlayerMazeMovement : MonoBehaviour
 {
     private CharacterController controller;
 
-    private float playerSpeed = 10.0f;
+    private bool initializedFlag = false;
+    private float playerSpeed = .1f;
     public Button up, down, left, right;
     public Vector3 move = new Vector3(0, 0, 0);
 
-    private void Start()
+    public void InitializeMazePlayerController()
     {
-        controller = gameObject.AddComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();
+
+        //float scaler = FindObjectOfType<MazeLoader>().MazeScaleFactor;
+        //controller.height = 1.6f * scaler;
+        //controller.radius = 0.5f * scaler;
+        //controller.center = new Vector3(0, 0.85f * scaler , 0);
+
         up = GameObject.Find("/Ui_Maze/UpMoveImage/UpMove").GetComponent<Button>();
         down = GameObject.Find("/Ui_Maze/DownMoveImage/DownMove").GetComponent<Button>();
         right = GameObject.Find("/Ui_Maze/RightMoveImage/RightMove").GetComponent<Button>();
@@ -24,42 +31,46 @@ public class PlayerMazeMovement : MonoBehaviour
 
         Debug.Log(up + " " + down + " " + left + " " + right);
 
-
+        initializedFlag = true;
     }
 
  
     private void Update()
     {
-        move = Vector3.zero;
-
-        if (up.GetComponent<MazeMovementHandler>().isPressed == true)
+        if (initializedFlag)
         {
-            move += Vector3.forward;
+            move = Vector3.zero;
 
-        }
+            if (up.GetComponent<MazeMovementHandler>().isPressed == true)
+            {
+                move += Vector3.forward;
 
-        if(down.GetComponent<MazeMovementHandler>().isPressed == true)
-        {
-            move +=  Vector3.back;
+            }
 
-        }
+            if (down.GetComponent<MazeMovementHandler>().isPressed == true)
+            {
+                move += Vector3.back;
 
-        if (left.GetComponent<MazeMovementHandler>().isPressed == true)
-        {
-            move += Vector3.left;            
-        }
+            }
 
-        if (right.GetComponent<MazeMovementHandler>().isPressed == true)
-        {
-            move += Vector3.right;
-            
-        }
+            if (left.GetComponent<MazeMovementHandler>().isPressed == true)
+            {
+                move += Vector3.left;
+            }
 
-        controller.Move(move * Time.deltaTime * playerSpeed);
+            if (right.GetComponent<MazeMovementHandler>().isPressed == true)
+            {
+                move += Vector3.right;
 
-        if (move != Vector3.zero)
-        {
-            gameObject.transform.forward = move;
+            }
+
+            controller.Move(move * Time.deltaTime * playerSpeed);
+
+            if (move != Vector3.zero)
+            {
+                gameObject.transform.forward = move;
+            }
+
         }
 
     }
