@@ -12,7 +12,8 @@ public class StoreData : MonoBehaviour
 
         Explorer,
         Wiseman,
-        Hunter
+        Hunter,
+        Default
 
 
     }

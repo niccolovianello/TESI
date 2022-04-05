@@ -16,9 +16,9 @@ namespace MirrorBasics
     public class NetworkPlayer : LobbyNetworkPlayer
     {
         [SyncVar(hook = nameof(SetTypeRole))]
-        public int TypePlayerIndex;
+        public int TypePlayerIndex = 3;
 
-        public TypePlayer TypePlayerEnum;
+        public TypePlayer TypePlayerEnum = TypePlayer.Default;
 
 
        
@@ -32,7 +32,9 @@ namespace MirrorBasics
         {
             Explorer,
             Wiseman,
-            Hunter
+            Hunter,
+            Default
+            
         }
 
         internal override void Start()
@@ -41,6 +43,7 @@ namespace MirrorBasics
 
             UILobby = FindObjectOfType<UILobby>();
             UILobby.ClientOrServerView(this);
+            SetRole(TypePlayer.Default);
             
 
             //Debug.Log("START PLAYER BEHAVIOUR");
@@ -85,8 +88,7 @@ namespace MirrorBasics
         [Command]
 
         public void SetRole(TypePlayer roleIndex)
-        {
-            
+        {            
             TypePlayerEnum = roleIndex;
             TypePlayerIndex = (int)roleIndex;
             storeData.SetRoleData((int) roleIndex);
@@ -101,6 +103,24 @@ namespace MirrorBasics
             foreach (UIPlayer uiPlayer in playersUiPrefabs)
             {
                 uiPlayer.SetTextRole(uiPlayer.GetNetworkPlayer());
+            }
+        }
+
+        [Command]
+
+        void ClientEnterInLobby()
+        {
+            RpcClientEnteredInLobby();
+        }
+        
+        [ClientRpc]
+
+        void RpcClientEnteredInLobby()
+        {
+            foreach (UIPlayer np in FindObjectsOfType<UIPlayer>())
+            {
+                np.SetPlayer(np.networkPlayer);
+
             }
         }
 

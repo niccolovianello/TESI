@@ -17,6 +17,7 @@ namespace MirrorBasics
         [SerializeField] Sprite explorerSprite;
         [SerializeField] Sprite hunterSprite;
         [SerializeField] Sprite wisemanSprite;
+        [SerializeField] Sprite defaultSprite;
 
         public enum TextRole
         {
@@ -32,6 +33,7 @@ namespace MirrorBasics
         private void Start()
         {
             uiLobby = FindObjectOfType<UILobby>();
+            SetPlayer(networkPlayer);
             StartCoroutine(ControlOnNetworkPlayer());
         }
 
@@ -43,30 +45,12 @@ namespace MirrorBasics
         {
             this.networkPlayer = _player;
             text.text = networkPlayer.username;
-            switch (_player.storeData.role)
-            {
-                case StoreData.TextRole.Explorer:
-                    roleText.text = "Explorer";
-                    roleImage.sprite = explorerSprite;
-                    break;
-                case StoreData.TextRole.Wiseman:
-                    roleText.text = "Wiseman";
-                    roleImage.sprite = wisemanSprite;
-                    break;
-                case StoreData.TextRole.Hunter:
-                    roleText.text = "Hunter";
-                    roleImage.sprite = hunterSprite;
-                    break;
-                default:
-                    roleText.text = "N";
-                    break;
-            }
+           
         }
 
         public void SetTextRole(NetworkPlayer _player)
         {
-            this.networkPlayer = _player;
-            text.text = networkPlayer.username;
+            
             switch (_player.TypePlayerEnum)
             {
                 case NetworkPlayer.TypePlayer.Explorer:
