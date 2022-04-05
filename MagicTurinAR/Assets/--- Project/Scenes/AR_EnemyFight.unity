@@ -428,7 +428,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a8362455736cf4d33906d09ac6f34253, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9be89ddd8e3434f4c93c4ba7b6fafa49, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellCastPoint: {fileID: 2101668818}
   spellToCast: {fileID: 309673158868597593, guid: df4a5d4a97a924f939deccad9ae65f4e, type: 3}
-  SpellSO: {fileID: 11400000, guid: 7e4115a59160140968924b0cdc7d0293, type: 2}
+  spellSo: {fileID: 0}
   manaWarning: {fileID: 1201681431}
 --- !u!1 &879869670
 GameObject:
@@ -1346,7 +1346,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2f5621ced47967649819ed28fc802c35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fabff8394942c2e48b7e9e489f0b0f5a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1726,7 +1726,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f0dab2f35eb9c804e9c46403a4b94e3b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 52401361cb9f800448ff8c3a7c36633c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1758,7 +1758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellCastPoint: {fileID: 2101668818}
   spellToCast: {fileID: 309673158868597593, guid: 7f05bc09e045741a0a0368534ccd3341, type: 3}
-  SpellSO: {fileID: 11400000, guid: 9c0e711b9c8e04900b83b2c2fed4fe3a, type: 2}
+  spellSo: {fileID: 0}
   manaWarning: {fileID: 1201681431}
 --- !u!1 &1926097792
 GameObject:

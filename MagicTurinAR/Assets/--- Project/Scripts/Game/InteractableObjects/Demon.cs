@@ -162,12 +162,12 @@ public class Demon : MonoBehaviour
         yield return new WaitForSeconds(1f);
         
         Destroy(gameObject);
-        MissionsManager MM = FindObjectOfType<MissionsManager>();
+        MissionsManager mm = FindObjectOfType<MissionsManager>();
         GameManager gm = FindObjectOfType<GameManager>();
         
         NetworkPlayer networkPlayer = null;
         if (gm.GetIsMission())
-            MM.OpenFinishMissionWindow();
+            mm.OpenFinishMissionWindow();
         else
         {
             foreach (NetworkPlayer nt in FindObjectsOfType<NetworkPlayer>())

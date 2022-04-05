@@ -102,16 +102,6 @@ public class MissionsManager : MonoBehaviour
             case MissionSO.PlayerType.Explorer:
                 if (magicPlayer is Explorer)
                 {
-                    /*
-                    Vector3 coordinateAreaTarget = new Vector3(currentMission.latitudeArea, 0, currentMission.longitudeArea);
-                    Vector3 coordinateTarget = new Vector3(currentMission.latitudeTarget, 1.5f, currentMission.longitudeTarget);
-                    areaTargetExplorerPrefab = Instantiate(currentMission.goalExplorerMissionAreaPrefab, coordinateAreaTarget, Quaternion.identity);
-                    targetExplorerPrefab = Instantiate(currentMission.goalExplorerMissionPrefab, coordinateTarget, Quaternion.identity)
-                    
-                    
-                    Debug.Log(targetExplorerPrefab.transform.position);
-                    
-                    */
                     
                     _spawnOnMapCustom = FindObjectOfType<AbstractMap>().GetComponent<SpawnOnMap_Custom>();
 
@@ -119,6 +109,7 @@ public class MissionsManager : MonoBehaviour
 
                     // Initialization for the target location of navigation power
                     Explorer ex = FindObjectOfType<Explorer>();
+                    
                     //ex.InitializeNavigationPower(currentMission.goalExplorerMissionPrefab.gameObject.transform);
                 }
                 break;
@@ -207,12 +198,12 @@ public class MissionsManager : MonoBehaviour
     
     }
 
-    public void OpenStartMissionWindow()
+    private void OpenStartMissionWindow()
     {
         windowToStartMission.enabled = true;
     }
 
-    public void CloseStartMissionWindow()
+    private void CloseStartMissionWindow()
     {
         windowToStartMission.enabled = false;
     }
@@ -223,7 +214,7 @@ public class MissionsManager : MonoBehaviour
         textFinishLevel.text = currentMission.textFinishMission;
     }
 
-    public void CloseFinishMissionWindow()
+    private void CloseFinishMissionWindow()
     {
         windowFinishLevel.enabled = false;
     }

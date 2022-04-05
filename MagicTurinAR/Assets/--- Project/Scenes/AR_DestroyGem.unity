@@ -1002,7 +1002,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a8362455736cf4d33906d09ac6f34253, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9be89ddd8e3434f4c93c4ba7b6fafa49, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1034,7 +1034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellCastPoint: {fileID: 2101668818}
   spellToCast: {fileID: 309673158868597593, guid: ec03e0177c2fc5340a0f4b9b2b6544f4, type: 3}
-  SpellSO: {fileID: 11400000, guid: 7e4115a59160140968924b0cdc7d0293, type: 2}
+  spellSo: {fileID: 0}
   manaWarning: {fileID: 0}
 --- !u!1 &673598522
 GameObject:
@@ -2407,7 +2407,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2f5621ced47967649819ed28fc802c35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fabff8394942c2e48b7e9e489f0b0f5a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

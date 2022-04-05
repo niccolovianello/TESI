@@ -12,7 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97dc4df5abf425b45aa8f628ddc4a8c4, type: 3}
   m_Name: Missione4
   m_EditorClassIdentifier: 
-  id: 0
+  id: 3
   playerType: 0
-  scene:
-    m_Handle: 0
+  sceneName: 
+  textBeginMission: 'Here we go! Explorer is your turn! Find where the first demon
+    is hiding in turin! White Magic Ministery thinks that it''s propably cloe to
+    Piazza Castello! '
+  textFinishMission: You have find it! Now click "ok" to let the hunter to fight
+    against it
+  missionCompleted: 0
+  latitudeArea: 45.0644
+  longitudeArea: 7.65983
+  goalExplorerMissionAreaPrefab: {fileID: 3590798186009698721, guid: 0d1a1a82c5f3bfd47bbff6c5d032f1a8, type: 3}
+  latitudeTarget: 45.0644
+  longitudeTarget: 7.65983
+  goalExplorerMissionPrefab: {fileID: 6406397067323488402, guid: 7791fea763aec1e4c9fce77a4e7f6ab8, type: 3}

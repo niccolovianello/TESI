@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97dc4df5abf425b45aa8f628ddc4a8c4, type: 3}
+  m_Name: Missione6
+  m_EditorClassIdentifier: 
+  id: 5
+  playerType: 1
+  sceneName: AR_Wiseman_Memory
+  textBeginMission: There is a fresh enigma for you. Go ahead and try to solve it!
+  textFinishMission: Great job!
+  missionCompleted: 0
+  latitudeArea: 0
+  longitudeArea: 0
+  goalExplorerMissionAreaPrefab: {fileID: 0}
+  latitudeTarget: 0
+  longitudeTarget: 0
+  goalExplorerMissionPrefab: {fileID: 0}

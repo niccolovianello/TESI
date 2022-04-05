@@ -7,9 +7,10 @@ public class MemoryManager : MonoBehaviour
     
     // This flag is 0 when there isn't any uncovered memory card.
     // The value is 1 when there is an uncovered card waiting for a match.
-    private int uncoveredCardFlag;
-    private MemoryCard oldCard = null;
-    private List<MemoryCard> cardInstances;
+    private int _uncoveredCardFlag;
+    private MemoryCard _oldCard = null;
+    private List<MemoryCard> _cardInstances;
+    private int _counter;
 
     [SerializeField] private List<MemoryCard> cards;
 
@@ -17,7 +18,7 @@ public class MemoryManager : MonoBehaviour
     private void Start()
     {
         spawnPoints = GetComponentsInChildren<Transform>();
-        cardInstances = new List<MemoryCard>();
+        _cardInstances = new List<MemoryCard>();
 
         // first card instances
         foreach (MemoryCard card in cards)
@@ -27,7 +28,7 @@ public class MemoryManager : MonoBehaviour
 
             Transform sp = spawnPoints[index];
             Instantiate(card, sp.position, sp.rotation);
-            cardInstances.Add(card);
+            _cardInstances.Add(card);
 
             List<Transform> tempSpawnPointList = new List<Transform>(spawnPoints);
             tempSpawnPointList.RemoveAt(index);
@@ -48,50 +49,37 @@ public class MemoryManager : MonoBehaviour
             spawnPoints = tempSpawnPointList.ToArray();
 
         }
+        
+        _counter = _cardInstances.Count;
        
     }
 
     public void CheckMatch(MemoryCard newCard)
     {
 
-        if (uncoveredCardFlag == 1)
+        if (_uncoveredCardFlag == 1)
         {
-            uncoveredCardFlag = 0;
+            _uncoveredCardFlag = 0;
             
-            if (newCard.CardId == oldCard.CardId)
+            if (newCard.CardId == _oldCard.CardId)
             {
-                // there is a match!
-                // SFX, VFX...
-
-                /*
-                 
-                 not working!!
-                 
-                foreach (MemoryCard card in cardInstances)
-                {
-                    if (card.CardId == newCard.CardId)
-                    {
-                        cardInstances.Remove(card);
-                    }
-                }
-                 */
                 
-                Debug.Log(cardInstances.Count);
-                Destroy(oldCard.gameObject);
+                Destroy(_oldCard.gameObject);
                 Destroy(newCard.gameObject);
 
-                if (cardInstances.Count == 0)
+                _counter--;
+
+                if (_counter == 0)
                 {
-                    // task completed
-                    Debug.Log("Hai Vinto!");
+                    FindObjectOfType<MissionsManager>().OpenFinishMissionWindow();
                 }
             }
 
             else
             {
-                oldCard.Animation.Play("Coprire");
+                _oldCard.Animation.Play("Coprire");
                 newCard.Animation.Play("Coprire");
-                oldCard.Collider.enabled = true;
+                _oldCard.Collider.enabled = true;
                 newCard.Collider.enabled = true;
             }
             
@@ -99,10 +87,10 @@ public class MemoryManager : MonoBehaviour
 
         else
         {
-            oldCard = newCard;
-            oldCard.Collider.enabled = false;
+            _oldCard = newCard;
+            _oldCard.Collider.enabled = false;
         
-            uncoveredCardFlag = 1;
+            _uncoveredCardFlag = 1;
         }
         
     }
