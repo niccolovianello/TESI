@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -407,7 +407,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   fillImage: {fileID: 1091444249}
-  requiredHoldTime: 1
+  requiredHoldTime: 2
 --- !u!114 &619088311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellCastPoint: {fileID: 2101668818}
   spellToCast: {fileID: 309673158868597593, guid: df4a5d4a97a924f939deccad9ae65f4e, type: 3}
-  spellSo: {fileID: 0}
+  spellSo: {fileID: 11400000, guid: 7e4115a59160140968924b0cdc7d0293, type: 2}
   manaWarning: {fileID: 1201681431}
 --- !u!1 &879869670
 GameObject:
@@ -1736,7 +1736,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   fillImage: {fileID: 1091444249}
-  requiredHoldTime: 1
+  requiredHoldTime: 2
 --- !u!114 &1838787216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1789,7 +1789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellCastPoint: {fileID: 2101668818}
   spellToCast: {fileID: 309673158868597593, guid: 7f05bc09e045741a0a0368534ccd3341, type: 3}
-  spellSo: {fileID: 0}
+  spellSo: {fileID: 11400000, guid: 9c0e711b9c8e04900b83b2c2fed4fe3a, type: 2}
   manaWarning: {fileID: 1201681431}
 --- !u!1 &1926097792
 GameObject:
