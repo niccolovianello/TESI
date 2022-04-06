@@ -28,7 +28,7 @@ public class Demon : MonoBehaviour
     
     private CapsuleCollider _collider;
     
-    private Camera _arPlayer;
+    public HealthManager _arPlayerHealthManager;
 
     private bool _hit;
     
@@ -58,7 +58,7 @@ public class Demon : MonoBehaviour
             renderer.material.shader = Shader.Find("Shader Graphs/Skeleton_Alpha");
         }
 
-        _arPlayer = FindObjectOfType<Camera>();
+        _arPlayerHealthManager = FindObjectOfType<HealthManager>();
 
     }
 
@@ -75,13 +75,13 @@ public class Demon : MonoBehaviour
         {
             if (IsAware())  //|| justHit
             {
-                Vector3 targetDirection = _arPlayer.transform.position - transform.position;
+                Vector3 targetDirection = _arPlayerHealthManager.transform.position - transform.position;
                 targetDirection.y = 0;
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetDirection), 0.1f);
                 transform.Translate(0, 0, runSpeed);
                 _animator.SetBool("Aware", true);
 
-                if ((transform.position - _arPlayer.transform.position).magnitude < attackDistance)
+                if ((transform.position - _arPlayerHealthManager.transform.position).magnitude < attackDistance)
                 {
                     Attack();
                 }
@@ -116,7 +116,7 @@ public class Demon : MonoBehaviour
 
     private bool IsAware()
     {
-        var playerPosition = _arPlayer.transform.position;
+        var playerPosition = _arPlayerHealthManager.transform.position;
         var thisPosition = transform.position;
         
         Vector3 targetDirection = thisPosition - playerPosition;
