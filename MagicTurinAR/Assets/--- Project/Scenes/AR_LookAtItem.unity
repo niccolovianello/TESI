@@ -1101,10 +1101,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arHitTester: {fileID: 909465772}
   _currentScale: 0
-  _scaleRate: 0.2
+  _scaleRate: 0.05
   _temp: 0
-  minScale: 0.2
-  maxScale: 2
+  minScale: 0.5
+  maxScale: 1.5
 --- !u!33 &1825239454
 MeshFilter:
   m_ObjectHideFlags: 0
