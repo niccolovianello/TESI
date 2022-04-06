@@ -21,9 +21,9 @@ MonoBehaviour:
   textFinishMission: You have find it! Now click "ok" to let the hunter to fight
     against it
   missionCompleted: 0
-  latitudeArea: 45.0644
-  longitudeArea: 7.65983
+  latitudeArea: 45.072075
+  longitudeArea: 7.6649904
   goalExplorerMissionAreaPrefab: {fileID: 3590798186009698721, guid: 0d1a1a82c5f3bfd47bbff6c5d032f1a8, type: 3}
-  latitudeTarget: 45.0644
-  longitudeTarget: 7.65983
+  latitudeTarget: 45.07207
+  longitudeTarget: 7.66499
   goalExplorerMissionPrefab: {fileID: 6406397067323488402, guid: 7791fea763aec1e4c9fce77a4e7f6ab8, type: 3}
