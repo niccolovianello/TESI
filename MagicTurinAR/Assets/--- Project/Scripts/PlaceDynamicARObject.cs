@@ -24,6 +24,7 @@ namespace Niantic.ARDKExamples.Helpers
     {
         /// The camera used to render the scene. Used to get the center of the screen.
         public Camera Camera;
+        public GameObject spawnedObjectParent;
         private int counterTouch = 0;
         /// The types of hit test results to filter against when performing a hit test.
         [EnumFlagAttribute]
@@ -133,6 +134,8 @@ namespace Niantic.ARDKExamples.Helpers
 
 
             _placedObject = Instantiate(PlacementObjectPf, hitPosition, Quaternion.identity);
+            if(spawnedObjectParent != null)
+                _placedObject.transform.parent = spawnedObjectParent.transform;
             counterTouch++;
             Vibration.VibratePop();
 
