@@ -42,6 +42,8 @@ namespace Niantic.ARDKExamples.Helpers
         /// Internal reference to the session, used to get the current frame to hit test against.
         private IARSession _session;
 
+        public bool flagInteraction = false;
+
         private void Start()
         {
             ARSessionFactory.SessionInitialized += OnAnyARSessionDidInitialize;
@@ -98,60 +100,68 @@ namespace Niantic.ARDKExamples.Helpers
 
         private void TouchBegan(Touch touch)
         {
-            var currentFrame = _session.CurrentFrame;
-            if (currentFrame == null)
+            if (!flagInteraction)
             {
-                return;
-            }
+                var currentFrame = _session.CurrentFrame;
+                if (currentFrame == null)
+                {
+                    return;
+                }
 
-            var results = currentFrame.HitTest
-            (
-              Camera.pixelWidth,
-              Camera.pixelHeight,
-              touch.position,
-              HitTestType
-            );
+                var results = currentFrame.HitTest
+                (
+                  Camera.pixelWidth,
+                  Camera.pixelHeight,
+                  touch.position,
+                  HitTestType
+                );
 
-            int count = results.Count;
-            Debug.Log("Hit test results: " + count);
+                int count = results.Count;
+                Debug.Log("Hit test results: " + count);
 
-            if (count <= 0)
-                return;
+                if (count <= 0)
+                    return;
 
-            // Get the closest result
-            var result = results[0];
+                // Get the closest result
+                var result = results[0];
 
-            var hitPosition = result.WorldTransform.ToPosition();
+                var hitPosition = result.WorldTransform.ToPosition();
 
-            // Assumes that the prefab is one unit tall and getting scene height from local scale
-            // Place the object on top of the surface rather than exactly on the hit point
-            // Note (Kelly): Now that vertical planes are also supported in-editor, need to be
-            // more elegant about how/if to handle instantiation of the cube
-            hitPosition.y += PlacementObjectPf.transform.localScale.y / 2.0f;
+                // Assumes that the prefab is one unit tall and getting scene height from local scale
+                // Place the object on top of the surface rather than exactly on the hit point
+                // Note (Kelly): Now that vertical planes are also supported in-editor, need to be
+                // more elegant about how/if to handle instantiation of the cube
+                hitPosition.y += PlacementObjectPf.transform.localScale.y / 2.0f;
 
-            GameObject GO = Instantiate(PlacementObjectPf, hitPosition + offsetSpawnObject, Quaternion.identity);
-            GO.transform.localScale *= 0.5f;
-            if (GO.GetComponent<MagicItem>())
-            {
-                GO.GetComponent<MagicItem>().Destroy();
-            }
-            if (!PlaceMultipleObjects)
-            {
-                ClearObjects();
+                GameObject GO = Instantiate(PlacementObjectPf, hitPosition + offsetSpawnObject, Quaternion.identity);
+                
+                GO.transform.localScale *= 0.5f;
+                if (GO.GetComponent<MagicItem>())
+                {
+                    GO.GetComponent<MagicItem>().Destroy();
+                }
+                if (!PlaceMultipleObjects)
+                {
+                    ClearObjects();
+                }
+
+                _placedObjects.Add(GO);
+                FindObjectOfType<ARItemManager>().CollectablePrefab = GO;
+                Vibration.VibratePop();
+
+                var anchor = result.Anchor;
+                Debug.LogFormat
+                (
+                  "Spawning cube at {0} (anchor: {1})",
+                  hitPosition.ToString("F4"),
+                  anchor == null
+                    ? "none"
+                    : anchor.AnchorType + " " + anchor.Identifier
+                );
             }
             
-            _placedObjects.Add(GO);
-            Vibration.VibratePop();
-
-            var anchor = result.Anchor;
-            Debug.LogFormat
-            (
-              "Spawning cube at {0} (anchor: {1})",
-              hitPosition.ToString("F4"),
-              anchor == null
-                ? "none"
-                : anchor.AnchorType + " " + anchor.Identifier
-            );
         }
+
+       
     }
 }

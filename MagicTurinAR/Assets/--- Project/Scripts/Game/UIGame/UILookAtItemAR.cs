@@ -4,11 +4,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using MirrorBasics;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
+using Niantic.ARDKExamples.Helpers;
+using UnityEngine.UI;
 
 public class UILookAtItemAR : MonoBehaviour
 {
 
     public CanvasRenderer startingPanel;
+    public Sprite placeObjectSprite, interactObjectSprite;
+    public Button buttonSwitchModeInteraction;
+    private CustomARHitTest customARHitTest;
+
+    private void Start()
+    {
+        customARHitTest = FindObjectOfType<CustomARHitTest>();
+    }
     public void OnClickBackButton()
     {
         GameObject arSceneManager = GameObject.Find("ARSceneManager");
@@ -30,5 +40,17 @@ public class UILookAtItemAR : MonoBehaviour
     {
         startingPanel.gameObject.SetActive(false);
     }
-    
+
+    public void SwitchInteraction()
+    {
+        customARHitTest.flagInteraction = !customARHitTest.flagInteraction;
+        if (customARHitTest.flagInteraction)
+            buttonSwitchModeInteraction.GetComponent<Image>().sprite = placeObjectSprite;
+        else
+            buttonSwitchModeInteraction.GetComponent<Image>().sprite = interactObjectSprite;
+
+    }
+
+ 
+
 }

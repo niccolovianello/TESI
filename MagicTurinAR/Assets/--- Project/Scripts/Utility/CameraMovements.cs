@@ -143,6 +143,7 @@ public class CameraMovements : MonoBehaviour
                 Debug.Log("Maggiore");
                 if (zoom < oldZoom)
                 {
+                    zoom = oldZoom;
                     return;
                 }
 
@@ -155,6 +156,7 @@ public class CameraMovements : MonoBehaviour
                 Debug.Log("Minore");
                 if (zoom > oldZoom)
                 {
+                    zoom = oldZoom;
                     return;
                 }
 
