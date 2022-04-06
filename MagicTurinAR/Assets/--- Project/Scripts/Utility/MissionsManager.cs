@@ -110,7 +110,7 @@ public class MissionsManager : MonoBehaviour
                     // Initialization for the target location of navigation power
                     Explorer ex = FindObjectOfType<Explorer>();
                     
-                    //ex.InitializeNavigationPower(currentMission.goalExplorerMissionPrefab.gameObject.transform);
+                    ex.SetMissionTarget(currentMission.goalExplorerMissionPrefab.gameObject.transform);
                 }
                 break;
             case MissionSO.PlayerType.Wiseman:
