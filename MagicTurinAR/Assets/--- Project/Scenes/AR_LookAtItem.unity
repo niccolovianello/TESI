@@ -722,7 +722,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: beb1828af72046b41a69e6f8cc5b6f99, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59562b90592abba4c864a7bcecb37f3c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1101,7 +1101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arHitTester: {fileID: 909465772}
   _currentScale: 0
-  _scaleRate: 3
+  _scaleRate: 0.2
   _temp: 0
   minScale: 0.2
   maxScale: 2

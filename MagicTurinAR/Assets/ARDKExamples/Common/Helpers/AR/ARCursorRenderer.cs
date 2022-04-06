@@ -15,8 +15,7 @@ namespace Niantic.ARDKExamples.Helpers
   ///   testing usage. On each updated frame, a hit test will be applied from the middle of the
   ///   screen and spawn a cursor if it finds a plane.
   /// </summary>
-  public class ARCursorRenderer:
-    MonoBehaviour
+  public class ARCursorRenderer : MonoBehaviour
   {
     /// The camera used to render the scene. Used to get the center of the screen.
     public Camera Camera;

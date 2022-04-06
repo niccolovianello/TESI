@@ -15,8 +15,11 @@ public class UILookAtItemAR : MonoBehaviour
     public Button buttonSwitchModeInteraction;
     private CustomARHitTest customARHitTest;
 
+    private ARCursorRenderer _cursorRenderer;
+
     private void Start()
     {
+        _cursorRenderer = FindObjectOfType<ARCursorRenderer>();
         customARHitTest = FindObjectOfType<CustomARHitTest>();
     }
     public void OnClickBackButton()
@@ -45,9 +48,16 @@ public class UILookAtItemAR : MonoBehaviour
     {
         customARHitTest.flagInteraction = !customARHitTest.flagInteraction;
         if (customARHitTest.flagInteraction)
+        {
             buttonSwitchModeInteraction.GetComponent<Image>().sprite = placeObjectSprite;
+            _cursorRenderer.enabled = false;
+        }
+
         else
+        {
             buttonSwitchModeInteraction.GetComponent<Image>().sprite = interactObjectSprite;
+            _cursorRenderer.enabled = true;
+        }
 
     }
 

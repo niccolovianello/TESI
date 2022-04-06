@@ -1,24 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Mirror;
-using MirrorBasics;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
 public class UI_EnemyFight : MonoBehaviour
 {
     public Canvas canvasWindowPlayerDefeat;
-    public Text cameraPosition;
-    public Camera camera3;
 
     public void PlayerDefeatedByDemon()
     {
         canvasWindowPlayerDefeat.enabled = true;
-        //camera3 = FindObjectOfType<Camera>();
-    }
-    private void Update()
-    {
-        cameraPosition.text = "x: " + camera3.transform.position.x + "\nz: " + camera3.transform.position.z;
     }
 
     public void RestartFight()
