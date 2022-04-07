@@ -15,11 +15,13 @@ MonoBehaviour:
   id: 2
   playerType: 1
   sceneName: MazeGame
-  textBeginMission: 'Click "ok" to start the mission! You will have to solve a very
-    intricate maze to discover the coordinates of the next demon''s hideout! '
-  textFinishMission: You solve it! It wasn't easy right? Oh it was? Click "ok" to
-    solve more compex ones!
-  missionCopleted: 0
-  coordinateXExplorerMission: 0
-  coordinateYExplorerMission: 0
-  goalExporerMissionPrefab: {fileID: 0}
+  textBeginMission: This is an AR labyrinth! Use the controls on the UI to lead the
+    blue sphere to the target.
+  textFinishMission: You solved it! The Explorer now knows the next location to reach!
+  missionCompleted: 0
+  latitudeArea: 0
+  longitudeArea: 0
+  goalExplorerMissionAreaPrefab: {fileID: 0}
+  latitudeTarget: 0
+  longitudeTarget: 0
+  goalExplorerMissionPrefab: {fileID: 0}

@@ -15,9 +15,8 @@ MonoBehaviour:
   id: 4
   playerType: 2
   sceneName: AR_EnemyFight
-  textBeginMission: Ok let's fight with the Demon! Click "ok" to let the hunt begin!
-  textFinishMission: 'You defeat it! Click "ok" to let the wiseman solve the mystery
-    against the treasure and discover the next demon''s hideout! '
+  textBeginMission: You ready?
+  textFinishMission: You made it see the stars from pain!
   missionCompleted: 0
   latitudeArea: 0
   longitudeArea: 0

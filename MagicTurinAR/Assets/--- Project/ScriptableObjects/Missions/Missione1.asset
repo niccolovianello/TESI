@@ -15,15 +15,15 @@ MonoBehaviour:
   id: 0
   playerType: 0
   sceneName: 
-  textBeginMission: 'Here we go! Explorer is your turn! Find where the first demon
-    is hiding in turin! White Magic Ministery thinks that it''s propably cloe to
-    Piazza Castello! '
-  textFinishMission: You have find it! Now click "ok" to let the hunter to fight
-    against it
+  textBeginMission: Hey man, here comes the first task. Let's see if you can lead
+    the group to the right location. If you get lost, use your Power to enable the
+    navigation system (be careful, it burns your Mana).
+  textFinishMission: Amazing, you have found the place! Hit "Ok" to let the Hunter
+    fight with the hiding Demon.
   missionCompleted: 0
-  latitudeArea: 45.072075
-  longitudeArea: 7.6649904
+  latitudeArea: 45.064754
+  longitudeArea: 7.6594796
   goalExplorerMissionAreaPrefab: {fileID: 3590798186009698721, guid: 0d1a1a82c5f3bfd47bbff6c5d032f1a8, type: 3}
-  latitudeTarget: 45.07207
-  longitudeTarget: 7.66499
+  latitudeTarget: 45.06475
+  longitudeTarget: 7.65948
   goalExplorerMissionPrefab: {fileID: 6406397067323488402, guid: 7791fea763aec1e4c9fce77a4e7f6ab8, type: 3}

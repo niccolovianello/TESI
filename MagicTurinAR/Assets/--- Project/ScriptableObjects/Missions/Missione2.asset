@@ -15,10 +15,16 @@ MonoBehaviour:
   id: 1
   playerType: 2
   sceneName: AR_EnemyFight
-  textBeginMission: Ok let's fight with the Demon! Click "ok" to let the hunt begin!
-  textFinishMission: 'You defeat it! Click "ok" to let the wiseman solve the mystery
-    against the treasure and discover the next demon''s hideout! '
-  missionCopleted: 0
-  coordinateXExplorerMission: 0
-  coordinateYExplorerMission: 0
-  goalExporerMissionPrefab: {fileID: 0}
+  textBeginMission: It's your turn! After spawning the demon on the ground, cast
+    your spells and try to kill it. The basic spell (left button) is less powerful
+    but subtracts 10 mana points. The other spell (right button) is super powerful
+    but it will cost you 50 mana points.
+  textFinishMission: You made it! Now the wiseman will try to solve his enigma and
+    discover the location of the next demon's hideout!
+  missionCompleted: 0
+  latitudeArea: 0
+  longitudeArea: 0
+  goalExplorerMissionAreaPrefab: {fileID: 0}
+  latitudeTarget: 0
+  longitudeTarget: 0
+  goalExplorerMissionPrefab: {fileID: 0}
