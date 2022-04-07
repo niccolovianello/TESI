@@ -6,7 +6,6 @@ using UnityEngine;
 [RequireComponent(typeof(ManaManager))]
 public class Explorer : MagicPlayer
 {
-    
     private float powerCost = .1f;
     private DirectionsFactory directions;
     private GameObject directionMesh;

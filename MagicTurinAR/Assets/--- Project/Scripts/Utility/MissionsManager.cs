@@ -106,11 +106,12 @@ public class MissionsManager : MonoBehaviour
                     _spawnOnMapCustom = FindObjectOfType<AbstractMap>().GetComponent<SpawnOnMap_Custom>();
 
                     _spawnOnMapCustom.SetNewTargetLocation(currentMission.latitudeArea, currentMission.longitudeArea, currentMission.latitudeTarget, currentMission.longitudeTarget);
-
-                    // Initialization for the target location of navigation power
-                    Explorer ex = FindObjectOfType<Explorer>();
                     
-                    ex.SetMissionTarget(currentMission.goalExplorerMissionPrefab.gameObject.transform);
+                    // Initialization for the target location of navigation power
+                    //Explorer ex = FindObjectOfType<Explorer>();
+                    //Debug.Log(ex.name);
+                    
+                    //ex.SetMissionTarget(currentMission.goalExplorerMissionPrefab.gameObject.transform);
                 }
                 break;
             case MissionSO.PlayerType.Wiseman:
@@ -155,7 +156,8 @@ public class MissionsManager : MonoBehaviour
                     _spawnOnMapCustom.DestroyTargetLocation();
                     foreach (Transform t in parentTarget.GetComponentsInChildren<Transform>())
                     {
-                        Destroy(t.gameObject);
+                        if(t.gameObject.name != parentTarget.gameObject.name)
+                            Destroy(t.gameObject);
                     }
                     _spawnOnMapCustom.SetNavigationPower(magicPlayer.gameObject.transform);
 

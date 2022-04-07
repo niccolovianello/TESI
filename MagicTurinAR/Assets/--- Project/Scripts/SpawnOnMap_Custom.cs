@@ -19,7 +19,6 @@
 
 		private GameObject area, target; 
 
-
 		// CUSTOM METHOD
 		public void SetNewTargetLocation(float areaLat, float areaLon, float targetLat, float targetLon)
 		{
