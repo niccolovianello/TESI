@@ -27,7 +27,7 @@ public class MemoryManager : MonoBehaviour
             int index = Random.Range(1, spawnPoints.Length - 1);
 
             Transform sp = spawnPoints[index];
-            Instantiate(card, sp.position, sp.rotation);
+            Instantiate(card, sp);
             _cardInstances.Add(card);
 
             List<Transform> tempSpawnPointList = new List<Transform>(spawnPoints);
@@ -42,7 +42,7 @@ public class MemoryManager : MonoBehaviour
             int index = Random.Range(1, spawnPoints.Length - 1);
 
             Transform sp = spawnPoints[index];
-            Instantiate(card, sp.position, sp.rotation);
+            Instantiate(card, sp);
 
             List<Transform> tempSpawnPointList = new List<Transform>(spawnPoints);
             tempSpawnPointList.RemoveAt(index);

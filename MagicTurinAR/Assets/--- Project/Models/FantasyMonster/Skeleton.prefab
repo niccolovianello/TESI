@@ -902,7 +902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   life: {fileID: 3316982997576796610}
-  runSpeed: 0.015
+  runSpeed: 0
   dangerDistance: 10
   attackDistance: 3
   attackPoint: {fileID: 1943218730}

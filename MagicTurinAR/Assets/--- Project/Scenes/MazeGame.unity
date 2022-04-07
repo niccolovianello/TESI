@@ -1437,9 +1437,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Camera: {fileID: 2062711284}
+  spawnedObjectParent: {fileID: 0}
   HitTestType: 16
   PlacementObjectPf: {fileID: 1208198089074027270, guid: a7debd750bf7ed949b94a2e6599d9081, type: 3}
-  offsetY: 0.5
+  offsetY: 0.3
 --- !u!114 &2062711277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1453,7 +1454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _manageUsingUnityLifecycle: 1
-  _planePrefab: {fileID: 1092543363889104, guid: 98e455e2ba6ba413287f8cd497d4b08e, type: 3}
+  _planePrefab: {fileID: 1092543363889104, guid: 1c9d6565e40dbed49bf63fa610e6cf77, type: 3}
   _detectedPlaneTypes: 1
 --- !u!114 &2062711278
 MonoBehaviour:
