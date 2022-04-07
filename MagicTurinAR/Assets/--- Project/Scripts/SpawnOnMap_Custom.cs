@@ -12,16 +12,19 @@
 		[SerializeField]
 		float areaRadius = 100f, targetSize = 1f;
 
-		[SerializeField]
-		GameObject areaPrefab, targetPrefab;
+		
+		private GameObject areaPrefab, targetPrefab;
 
 		public GameObject parentObjectAreaTarget;
 
 		private GameObject area, target; 
 
 		// CUSTOM METHOD
-		public void SetNewTargetLocation(float areaLat, float areaLon, float targetLat, float targetLon)
+		public void SetNewTargetLocation(float areaLat, float areaLon, float targetLat, float targetLon, Vector3 offset)
 		{
+			MissionsManager MM = FindObjectOfType<MissionsManager>();
+			areaPrefab = MM.currentMission.goalExplorerMissionAreaPrefab;
+			targetPrefab = MM.currentMission.goalExplorerMissionPrefab;
 			Vector2d V2area = new Vector2d(areaLat, areaLon);
 			Vector2d V2target = new Vector2d(targetLat, targetLon);
 
@@ -32,6 +35,7 @@
 			
 			target = Instantiate(targetPrefab);
 			target.transform.localPosition = _map.GeoToWorldPosition(V2target, true);
+			target.transform.localPosition += offset; 
 			target.transform.localScale = new Vector3(targetSize , targetSize, targetSize);
 
 			area.transform.parent = parentObjectAreaTarget.transform;

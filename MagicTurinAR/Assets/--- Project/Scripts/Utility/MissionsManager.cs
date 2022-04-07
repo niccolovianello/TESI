@@ -32,10 +32,8 @@ public class MissionsManager : MonoBehaviour
     public Text textWndowStartLevel;
 
     [Header("ExplorerPrefabs")]
-    private GameObject areaTargetExplorerPrefab;
-    private GameObject targetExplorerPrefab;
-    private DirectionsFactory directions;
     public GameObject parentTarget;
+    public Vector3 offsetTargetExplorer;
 
 
     private void Start()
@@ -105,7 +103,7 @@ public class MissionsManager : MonoBehaviour
                     
                     _spawnOnMapCustom = FindObjectOfType<AbstractMap>().GetComponent<SpawnOnMap_Custom>();
 
-                    _spawnOnMapCustom.SetNewTargetLocation(currentMission.latitudeArea, currentMission.longitudeArea, currentMission.latitudeTarget, currentMission.longitudeTarget);
+                    _spawnOnMapCustom.SetNewTargetLocation(currentMission.latitudeArea, currentMission.longitudeArea, currentMission.latitudeTarget, currentMission.longitudeTarget,offsetTargetExplorer);
                     
                     // Initialization for the target location of navigation power
                     //Explorer ex = FindObjectOfType<Explorer>();
