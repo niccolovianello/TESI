@@ -10,7 +10,8 @@ public class MissionSO : ScriptableObject
     {
         Explorer,
         Wiseman,
-        Hunter
+        Hunter,
+        All
     }
 
     public string sceneName;
@@ -30,6 +31,10 @@ public class MissionSO : ScriptableObject
     public float latitudeTarget;
     public float longitudeTarget;
     public GameObject goalExplorerMissionPrefab;
+
+    [Header("SecretCode For Shared Ar")]
+
+    public int[] finalCode;
 
 }
     

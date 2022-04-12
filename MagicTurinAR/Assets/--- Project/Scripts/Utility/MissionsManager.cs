@@ -54,7 +54,31 @@ public class MissionsManager : MonoBehaviour
     public void ChangeLevel()
     {
         currentMissionIndex++;
+        
+        if (magicTurinLevels.missions.Count < currentMissionIndex + 1)
+        {
+            if (magicPlayer is Wiseman)
+            {
+                foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+                {
+
+                    if (np.isLocalPlayer)
+                        np.CmdStatsMatch(); 
+                }
+
+            }
+            
+        }
+
+
         currentMission = magicTurinLevels.missions[currentMissionIndex];
+    }
+
+    public void GoToStatsOfTheMatch()
+    {
+        SceneManager.UnloadSceneAsync("Game_Main");
+        SceneManager.LoadSceneAsync("Stats", LoadSceneMode.Additive);
+
     }
 
     public void StartMission()
@@ -64,7 +88,7 @@ public class MissionsManager : MonoBehaviour
             case MissionSO.PlayerType.Explorer:
                 if (magicPlayer is Explorer)
                 {
-                    Debug.Log("StartMission!");
+                    //Debug.Log("StartMission!");
                     OpenStartMissionWindow();
                     Vibration.Vibrate();
                     textWndowStartLevel.text = currentMission.textBeginMission;
@@ -74,7 +98,7 @@ public class MissionsManager : MonoBehaviour
             case MissionSO.PlayerType.Wiseman:
                 if (magicPlayer is Wiseman)
                 {
-                    Debug.Log("StartMission!");
+                    //Debug.Log("StartMission!");
                     OpenStartMissionWindow();
                     Vibration.Vibrate();
                     textWndowStartLevel.text = currentMission.textBeginMission;
@@ -83,11 +107,23 @@ public class MissionsManager : MonoBehaviour
             case MissionSO.PlayerType.Hunter:
                 if (magicPlayer is Hunter)
                 {
-                    Debug.Log("StartMission!");
+                    //Debug.Log("StartMission!");
                     OpenStartMissionWindow();
                     Vibration.Vibrate();
                     textWndowStartLevel.text = currentMission.textBeginMission;
                 }
+                break;
+
+            case MissionSO.PlayerType.All:
+                if (magicPlayer is Wiseman)
+                {
+                    //Debug.Log("StartMission!");
+                    OpenStartMissionWindow();
+                    Vibration.Vibrate();
+                    textWndowStartLevel.text = currentMission.textBeginMission;
+
+                }
+
                 break;
         }
     }
@@ -137,9 +173,35 @@ public class MissionsManager : MonoBehaviour
                     gameManager.SetIsMission(true);
                 }
                 break;
+            case MissionSO.PlayerType.All:
+                if (magicPlayer is Wiseman)
+                {
+                    foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+                    {
+
+                        if (np.isLocalPlayer)
+                            np.CmdSharedMission();
+                    }
+
+                }
+                
+
+
+                break;
         }
     }
 
+
+    public void BeginSharedMission()
+    {
+        SceneManager.LoadSceneAsync(currentMission.sceneName, LoadSceneMode.Additive);
+        gameManager.DisableMainGame();
+        foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+        {
+            np.NotRenderPlayerBody();
+        }
+        gameManager.PlayerCameraObject.SetActive(false);
+    }
     public void FinishMission()
     {
         switch (currentMission.playerType)

@@ -332,8 +332,33 @@ namespace MirrorBasics
 
             }
         }
+        [Command]
+        public void CmdSharedMission()
+        {
+            RpcBeginSharedMission();
+        }
 
+        [ClientRpc]
+
+        public void RpcBeginSharedMission()
+        {
+            FindObjectOfType<MissionsManager>().BeginSharedMission();
+        }
+
+        [Command]
+        public void CmdStatsMatch()
+        {
+            RpcStatsMatch();
+        }
+
+        [ClientRpc]
+
+        public void RpcStatsMatch()
+        {
+            FindObjectOfType<MissionsManager>().GoToStatsOfTheMatch();
+        }
     }
+    
 
 
 }
