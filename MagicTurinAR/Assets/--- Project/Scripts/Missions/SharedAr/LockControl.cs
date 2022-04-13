@@ -1,16 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class LockControl : MonoBehaviour
 {
 
+    public static event Action Unlocked = delegate { };
     private int[] result, correctCombination;
+
+    private void OnEnable()
+    {
+        Unlocked += TriggerAnimation;
+    }
 
     private void Start()
     {
-        result = new [] { 5, 5, 5, 5, 5 };
-        correctCombination = new [] {6, 5, 5, 5, 6};
+        result = new [] { 7, 7, 7, 7, 7 };
+        correctCombination = new [] {8, 7, 7, 7, 7};
         
         if (FindObjectOfType<MissionsManager>())
         {
@@ -45,11 +50,18 @@ public class LockControl : MonoBehaviour
 
         if (result[0] == correctCombination[0] && result[1] == correctCombination[1] && result[2] == correctCombination[2] && result[3] == correctCombination[3] && result[4] == correctCombination[4])
         {
-            Debug.Log("Opened!!");
+            Unlocked();
         }
 
     }
 
+    private void TriggerAnimation()
+    {
+        var anim = GetComponent<Animator>();
+        anim.SetTrigger("Unlock");
+        Destroy(gameObject, 2f);
+    }
+    
     private void OnDestroy()
     {
         Rotate.Rotated -= CheckResults;
