@@ -10,28 +10,19 @@ namespace MirrorBasics
     {
         public List<LobbyNetworkPlayer> players = new List<LobbyNetworkPlayer>();
 
-        private List<string> artifacts = new List<string>();
-        private List<string> runes = new List<string>();
-        private List<string> books = new List<string>();
+        private List<MagicItemSO> itemsPicked = new List<MagicItemSO>();
 
         private string matchData = "0/0/0";
 
 
-        public List<string> Artifacts
+        public List<MagicItemSO> ItemsPicked
         {
-            get => artifacts;
+            get => itemsPicked;
         
         }
-        public List<string> Runes
-        {
-            get => runes;
 
-        }
-        public List<string> Books
-        {
-            get => books;
 
-        }
+        
 
         public string MatchData
         {
@@ -43,19 +34,11 @@ namespace MirrorBasics
             players.Add(_networkPlayer);
         }
 
-        public void AddArtifact(string artifactName)
+        public void AddItemPicked(MagicItemSO magicItemSO)
         {
-            artifacts.Add(artifactName);
+            itemsPicked.Add(magicItemSO);
         }
 
-        public void AddRune(string runeName)
-        {
-            runes.Add(runeName);
-        }
-
-        public void AddBook(string bookName)
-        {
-            books.Add(bookName);
-        }
+       
     }
 }

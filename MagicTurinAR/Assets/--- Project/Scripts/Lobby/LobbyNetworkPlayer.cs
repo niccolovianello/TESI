@@ -24,6 +24,7 @@ namespace MirrorBasics
 
         
         public NetworkMatch networkMatch;
+        public TurnManager turnManager;
 
 
         //public NetworkPlayer networkPlayer;        

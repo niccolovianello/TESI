@@ -152,12 +152,14 @@ namespace MirrorBasics
                     foreach (var player in matches[i].GetPlayers())
                     {
                         playersList.Add(player);
+                        
                     }
 
                     foreach (var player in matches[i].GetPlayers())
                     {
                         LobbyNetworkPlayer _player = player.GetComponent<LobbyNetworkPlayer>();
                         turnManager.AddPlayer(_player);
+                        _player.turnManager = turnManager;
 
                         if (matches[i].GetPlayers().Count >= 1)
                             _player.StartGame(playersList);

@@ -357,6 +357,25 @@ namespace MirrorBasics
         {
             FindObjectOfType<MissionsManager>().GoToStatsOfTheMatch();
         }
+
+
+        [Command]
+        public void CmdAddMagicItem(string magicItemName)
+        {
+            RpcAddMagicItem(magicItemName);
+        }
+
+        [ClientRpc]
+
+        public void RpcAddMagicItem(string magicItemName)
+        {
+            foreach (MagicItemSO miSO in ItemAssets.Instance.magicInventorySO.items)
+            {
+                if(miSO.name == magicItemName)
+                    turnManager.AddItemPicked(miSO);
+            }
+                
+        }
     }
     
 
