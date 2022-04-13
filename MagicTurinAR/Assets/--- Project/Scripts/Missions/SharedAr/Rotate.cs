@@ -24,7 +24,6 @@ public class Rotate : MonoBehaviour
         {
             StartCoroutine(RotateWheel());
         }
-
     }
 
     private IEnumerator RotateWheel()
@@ -33,7 +32,7 @@ public class Rotate : MonoBehaviour
 
         for (var i = 0; i <= 11; i++)
         {
-            transform.Rotate(-3f, 0f, 0f);
+            transform.Rotate(3f, 0f, 0f);
             yield return new WaitForSeconds(0.01f);
         }
 
