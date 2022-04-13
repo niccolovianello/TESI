@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 
@@ -8,27 +7,20 @@ public class Rotate : MonoBehaviour
 
     public static event Action<string, int> Rotated = delegate { };
 
-    private bool coroutineAllowed;
+    private bool _coroutineAllowed;
     public int numberShown;
 
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        coroutineAllowed = true;
-        numberShown = 5;
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        _coroutineAllowed = true;
+        numberShown = 7;
     }
 
     private void OnMouseDown()
     {
-        if (coroutineAllowed)
+        if (_coroutineAllowed)
         {
             StartCoroutine(RotateWheel());
         }
@@ -37,16 +29,15 @@ public class Rotate : MonoBehaviour
 
     private IEnumerator RotateWheel()
     {
-        coroutineAllowed = false;
+        _coroutineAllowed = false;
 
-        for (int i = 0; i <= 11; i++)
+        for (var i = 0; i <= 11; i++)
         {
             transform.Rotate(-3f, 0f, 0f);
             yield return new WaitForSeconds(0.01f);
-
         }
 
-        coroutineAllowed = true;
+        _coroutineAllowed = true;
 
         numberShown += 1;
 

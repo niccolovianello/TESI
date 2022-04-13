@@ -7,10 +7,16 @@ public class LockControl : MonoBehaviour
 
     private int[] result, correctCombination;
 
-    void Start()
+    private void Start()
     {
-        result = new int[] { 5, 5, 5, 5, 5 };
-        correctCombination = FindObjectOfType<MissionsManager>().currentMission.finalCode;
+        result = new [] { 5, 5, 5, 5, 5 };
+        correctCombination = new [] {6, 5, 5, 5, 6};
+        
+        if (FindObjectOfType<MissionsManager>())
+        {
+            correctCombination = FindObjectOfType<MissionsManager>().currentMission.finalCode;
+        }
+        
         Rotate.Rotated += CheckResults;
     }
 
@@ -20,19 +26,19 @@ public class LockControl : MonoBehaviour
 
         switch (wheelName)
         {
-            case ("Wheel1"):
+            case ("Round1"):
                 result[0] = number;
                 break;
-            case ("Wheel2"):
+            case ("Round2"):
                 result[1] = number;
                 break;
-            case ("Wheel3"):
+            case ("Round3"):
                 result[2] = number;
                 break;
-            case ("Wheel4"):
+            case ("Round4"):
                 result[3] = number;
                 break;
-            case ("Wheel5"):
+            case ("Round5"):
                 result[4] = number;
                 break;
         }
@@ -47,7 +53,6 @@ public class LockControl : MonoBehaviour
     private void OnDestroy()
     {
         Rotate.Rotated -= CheckResults;
-
     }
 
 }
