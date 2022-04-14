@@ -12,6 +12,11 @@ public class LockControl : MonoBehaviour
         Unlocked += TriggerAnimation;
     }
 
+    private void OnDisable()
+    {
+        Unlocked -= TriggerAnimation;
+    }
+
     private void Start()
     {
         result = new [] { 7, 7, 7, 7, 7 };
@@ -61,6 +66,8 @@ public class LockControl : MonoBehaviour
         anim.SetTrigger("Unlock");
         Destroy(gameObject, 2f);
     }
+
+    
     
     private void OnDestroy()
     {

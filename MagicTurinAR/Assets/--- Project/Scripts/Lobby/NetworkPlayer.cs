@@ -376,6 +376,21 @@ namespace MirrorBasics
             }
                 
         }
+
+
+        [Command]
+        public void CmdRotateLockWheel(string wheelName)
+        {
+            RpcRotateLockWheel(wheelName);
+        }
+
+        [ClientRpc]
+
+        public void RpcRotateLockWheel(string wheelName)
+        {
+
+            GameObject.Find(wheelName).GetComponent<Rotate>().RotateWheel();
+        }
     }
     
 

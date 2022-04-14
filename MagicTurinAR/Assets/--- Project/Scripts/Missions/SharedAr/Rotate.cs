@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using System;
+using MirrorBasics;
+using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
 public class Rotate : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class Rotate : MonoBehaviour
 
     private bool _coroutineAllowed;
     public int numberShown;
+    private NetworkPlayer np;
 
 
     // Start is called before the first frame update
@@ -16,17 +19,29 @@ public class Rotate : MonoBehaviour
     {
         _coroutineAllowed = true;
         numberShown = 7;
+
+        foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+            if (np.isLocalPlayer)
+                this.np = np;
     }
+
 
     private void OnMouseDown()
     {
         if (_coroutineAllowed)
         {
-            StartCoroutine(RotateWheel());
+            //StartCoroutine(RotateWheel());
+            np.CmdRotateLockWheel(name);
         }
     }
 
-    private IEnumerator RotateWheel()
+    public void RotateWheel()
+    {
+        StartCoroutine(RotateWheelCoroutine());
+    }
+
+
+    private IEnumerator RotateWheelCoroutine()
     {
         _coroutineAllowed = false;
 
