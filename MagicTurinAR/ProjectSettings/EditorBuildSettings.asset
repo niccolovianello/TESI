@@ -5,31 +5,31 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/--- Project/Scenes/AuthenticationScene.unity
     guid: 9a30eca555e9bf24b9cfce5d5e6ea68a
-  - enabled: 1
+  - enabled: 0
     path: Assets/--- Project/Scenes/Offline.unity
     guid: d295dd19b8aae4643ae8a6c03e7ae33d
-  - enabled: 1
+  - enabled: 0
     path: Assets/--- Project/Scenes/Lobby.unity
     guid: e1667c41a34ec2f4981b932da4760475
-  - enabled: 1
+  - enabled: 0
     path: Assets/--- Project/Scenes/Game_Main.unity
     guid: bd3642942731bd243b71c119565ac42e
-  - enabled: 1
+  - enabled: 0
     path: Assets/--- Project/Scenes/AR_LookAtItem.unity
     guid: 5f7ffc03fa38f4703b906fcac0d7d4bb
-  - enabled: 1
+  - enabled: 0
     path: Assets/--- Project/Scenes/MazeGame.unity
     guid: 29160ef5e1ae9e94cac751c96b06f5f1
-  - enabled: 1
+  - enabled: 0
     path: Assets/--- Project/Scenes/AR_EnemyFight.unity
     guid: ebdf84c5fc428488fa53bc83c02c3c7f
-  - enabled: 1
+  - enabled: 0
     path: Assets/--- Project/Scenes/AR_DestroyGem.unity
     guid: fa445acfabbcd914c82ae4b3070482f4
-  - enabled: 1
+  - enabled: 0
     path: Assets/--- Project/Scenes/AR_Wiseman_Memory.unity
     guid: 28ad722dd0e1e9f419c119418e0b50cd
   - enabled: 1

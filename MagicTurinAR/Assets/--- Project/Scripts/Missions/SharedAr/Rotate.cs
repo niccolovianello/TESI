@@ -20,9 +20,11 @@ public class Rotate : MonoBehaviour
         _coroutineAllowed = true;
         numberShown = 7;
 
+        /*
         foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
             if (np.isLocalPlayer)
                 this.np = np;
+                */
     }
 
 
@@ -30,8 +32,8 @@ public class Rotate : MonoBehaviour
     {
         if (_coroutineAllowed)
         {
-            //StartCoroutine(RotateWheelCoroutine());
-            np.CmdRotateLockWheel(name);
+            StartCoroutine(RotateWheelCoroutine());
+            //np.CmdRotateLockWheel(name);
         }
     }
 
