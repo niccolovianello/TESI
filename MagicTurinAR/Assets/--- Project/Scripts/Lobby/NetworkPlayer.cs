@@ -235,7 +235,7 @@ namespace MirrorBasics
         {
             MissionsManager MM = FindObjectOfType<MissionsManager>();
             MM.ChangeLevel();
-            MM.StartMission();
+           
         }
 
         public void RenderPlayerBody()
@@ -345,18 +345,6 @@ namespace MirrorBasics
             FindObjectOfType<MissionsManager>().BeginSharedMission();
         }
 
-        [Command]
-        public void CmdStatsMatch()
-        {
-            RpcStatsMatch();
-        }
-
-        [ClientRpc]
-
-        public void RpcStatsMatch()
-        {
-            FindObjectOfType<MissionsManager>().GoToStatsOfTheMatch();
-        }
 
 
         [Command]

@@ -51,27 +51,24 @@ public class MissionsManager : MonoBehaviour
         magicPlayer = networkPlayer.GetComponent<MagicPlayer>();
         StartMission();
     }
+
+
     public void ChangeLevel()
     {
         currentMissionIndex++;
-        
+
         if (magicTurinLevels.missions.Count < currentMissionIndex + 1)
         {
-            if (magicPlayer is Wiseman)
-            {
-                foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
-                {
+            GoToStatsOfTheMatch();
+        }
+        else {
 
-                    if (np.isLocalPlayer)
-                        np.CmdStatsMatch(); 
-                }
+            currentMission = magicTurinLevels.missions[currentMissionIndex];
+            StartMission();
 
-            }
-            
         }
 
-
-        currentMission = magicTurinLevels.missions[currentMissionIndex];
+        
     }
 
     public void GoToStatsOfTheMatch()
@@ -204,28 +201,57 @@ public class MissionsManager : MonoBehaviour
     }
     public void FinishMission()
     {
-        switch (currentMission.playerType)
+        if (magicTurinLevels.missions.Count >= currentMissionIndex + 2)
         {
-            case MissionSO.PlayerType.Explorer:
-                if (magicPlayer is Explorer)
-                {
-                    //Destroy(areaTargetExplorerPrefab);
-                    //Destroy(targetExplorerPrefab);
 
-                    _spawnOnMapCustom = FindObjectOfType<AbstractMap>().GetComponent<SpawnOnMap_Custom>();
-                    _spawnOnMapCustom.DestroyTargetLocation();
-                    foreach (Transform t in parentTarget.GetComponentsInChildren<Transform>())
+            switch (currentMission.playerType)
+            {
+                case MissionSO.PlayerType.Explorer:
+                    if (magicPlayer is Explorer)
                     {
-                        if(t.gameObject.name != parentTarget.gameObject.name)
-                            Destroy(t.gameObject);
-                    }
-                    _spawnOnMapCustom.SetNavigationPower(magicPlayer.gameObject.transform);
+                        //Destroy(areaTargetExplorerPrefab);
+                        //Destroy(targetExplorerPrefab);
 
-                }
-                break;
-            case MissionSO.PlayerType.Wiseman:
-                if (magicPlayer is Wiseman)
-                {
+                        _spawnOnMapCustom = FindObjectOfType<AbstractMap>().GetComponent<SpawnOnMap_Custom>();
+                        _spawnOnMapCustom.DestroyTargetLocation();
+                        foreach (Transform t in parentTarget.GetComponentsInChildren<Transform>())
+                        {
+                            if (t.gameObject.name != parentTarget.gameObject.name)
+                                Destroy(t.gameObject);
+                        }
+                        _spawnOnMapCustom.SetNavigationPower(magicPlayer.gameObject.transform);
+
+                    }
+                    break;
+                case MissionSO.PlayerType.Wiseman:
+                    if (magicPlayer is Wiseman)
+                    {
+                        foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+                        {
+                            np.RenderPlayerBody();
+                        }
+                        SceneManager.UnloadSceneAsync(currentMission.sceneName);
+                        gameManager.PlayerCameraObject.SetActive(true);
+                        gameManager.EnableMainGame();
+
+                    }
+                    break;
+                case MissionSO.PlayerType.Hunter:
+                    if (magicPlayer is Hunter)
+                    {
+                        foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+                        {
+                            np.RenderPlayerBody();
+                        }
+                        SceneManager.UnloadSceneAsync(currentMission.sceneName);
+                        gameManager.PlayerCameraObject.SetActive(true);
+                        gameManager.EnableMainGame();
+                        gameManager.SetIsMission(false);
+                    }
+                    break;
+
+                case MissionSO.PlayerType.All:
+
                     foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
                     {
                         np.RenderPlayerBody();
@@ -234,27 +260,24 @@ public class MissionsManager : MonoBehaviour
                     gameManager.PlayerCameraObject.SetActive(true);
                     gameManager.EnableMainGame();
 
-                }
-                break;
-            case MissionSO.PlayerType.Hunter:
-                if (magicPlayer is Hunter)
-                {
-                    foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
-                    {
-                        np.RenderPlayerBody();
-                    }
-                    SceneManager.UnloadSceneAsync(currentMission.sceneName);
-                    gameManager.PlayerCameraObject.SetActive(true);
-                    gameManager.EnableMainGame();
-                    gameManager.SetIsMission(false);
-                }
-                break;
+                    break;
+            }
+            CloseFinishMissionWindow();
+
+
+
+            networkPlayer.CmdBeginNextMission();
         }
-        CloseFinishMissionWindow();
-        
-        
-        
-        networkPlayer.CmdBeginNextMission();
+
+        else
+        {
+            SceneManager.UnloadSceneAsync(currentMission.sceneName);
+            GoToStatsOfTheMatch();
+        }
+
+
+           
+       
         
         
     

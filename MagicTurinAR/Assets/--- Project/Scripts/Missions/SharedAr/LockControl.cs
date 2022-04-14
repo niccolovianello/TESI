@@ -67,6 +67,8 @@ public class LockControl : MonoBehaviour
         Destroy(gameObject, 2f);
     }
 
+
+
     
     
     private void OnDestroy()
