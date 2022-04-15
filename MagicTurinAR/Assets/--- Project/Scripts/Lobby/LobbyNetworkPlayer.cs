@@ -60,6 +60,11 @@ namespace MirrorBasics
             Debug.Log(networkMatch);
         }
 
+        public FirebaseManager FirebaseManager
+        {
+            get => firebaseManager;
+        }
+
         [Command]
         public void CmdAskForUsername()
         {
