@@ -89,16 +89,22 @@ public class GameManager : Singleton<GameManager>
                 playerEnterInGameEvent.Invoke();
 
 
+                if (player.TypePlayerEnum == NetworkPlayer.TypePlayer.Explorer)
+                {
+                    uiButtonsForTouchControl = FindObjectOfType<UIButtonsForTouchControl>();
+                    uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => FindObjectOfType<CameraMovements>().ButtonCenterCameraOnPlayer());
+                    uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => FindObjectOfType<CameraMovements>().FreeOrAutomaticRotation());
+                }
 
-                uiButtonsForTouchControl = FindObjectOfType<UIButtonsForTouchControl>();
-                uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => FindObjectOfType<CameraMovements>().ButtonCenterCameraOnPlayer());
-                uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => FindObjectOfType<CameraMovements>().FreeOrAutomaticRotation());
-                
+                else uiButtonsForTouchControl.gameObject.SetActive(false);
+
+
+
             }
         }
         CameraMovements cm = FindObjectOfType<CameraMovements>();
         cm.Camera = networkPlayerCamera;
-        cm.CameraFocus = networkPlayer.gameObject;
+        cm.cameraFocus = networkPlayer.gameObject;
         
         //START
         
@@ -106,7 +112,7 @@ public class GameManager : Singleton<GameManager>
         
        
         
-        RangeAroundTransformTileProviderOptions rangeAroundTransformTileProviderOptions = new RangeAroundTransformTileProviderOptions();
+        var rangeAroundTransformTileProviderOptions = new RangeAroundTransformTileProviderOptions();
         rangeAroundTransformTileProviderOptions.SetOptions(currentPlayer.transform);
         FindObjectOfType<AbstractMap>().SetExtentOptions(rangeAroundTransformTileProviderOptions);
         
@@ -138,7 +144,7 @@ public class GameManager : Singleton<GameManager>
     //    }
     //}
 
-    void SetUpPlayer()
+    private void SetUpPlayer()
     {
         Item[] items;
         networkPlayerCamera.enabled = true;

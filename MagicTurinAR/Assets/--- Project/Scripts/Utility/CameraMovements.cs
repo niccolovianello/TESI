@@ -10,20 +10,20 @@ public class CameraMovements : MonoBehaviour
 #if UNITY_IOS || UNITY_ANDROID
 
 
-    protected Plane Plane;
-    private Transform previousCameraTransform = null;
-    private Vector3 defaultCameraPosition = new Vector3(0, 0, 0);
-    private float oldZoom = 0.0f;
+    private Plane _plane;
+    private Transform _previousCameraTransform = null;
+    private Vector3 _defaultCameraPosition = new Vector3(0, 0, 0);
+    private float _oldZoom = 0.0f;
 
     [Header("Objects")]
     public Camera Camera;
-    public GameObject CameraFocus;
+    public GameObject cameraFocus;
 
     [Header("Flag")]
     public bool flagActive = true;
     public bool activateRotation;
     public bool centerCameraOnPlayer = false;
-    public bool flagCameraInDefualtPosition = false;
+    public bool flagCameraInDefaultPosition = false;
 
     [Header("Zoom Settings")]
     public int maxCameraDistance = 100;
@@ -36,7 +36,7 @@ public class CameraMovements : MonoBehaviour
     public CameraMovements(Camera camera, GameObject cameraFocus)
     {
         Camera = camera;
-        CameraFocus = cameraFocus;
+        this.cameraFocus = cameraFocus;
 
     }
 
@@ -49,12 +49,12 @@ public class CameraMovements : MonoBehaviour
                 if (nt.isLocalPlayer)
                 {
                     Camera = nt.playerCamera;
-                    CameraFocus = nt.gameObject;
+                    cameraFocus = nt.gameObject;
                 
                 }
             }
-        previousCameraTransform = Camera.gameObject.transform;
-        defaultCameraPosition = CameraFocus.transform.position + offsetDefaultCameraPosition;
+        _previousCameraTransform = Camera.gameObject.transform;
+        _defaultCameraPosition = cameraFocus.transform.position + offsetDefaultCameraPosition;
         StartCoroutine(SetCameraInDefaultPosition());
 
 
@@ -65,7 +65,7 @@ public class CameraMovements : MonoBehaviour
         if (!flagActive)
             return;
 
-        if (flagCameraInDefualtPosition)
+        if (flagCameraInDefaultPosition)
         {
 
             StartCoroutine(SetCameraInDefaultPosition());
@@ -74,14 +74,14 @@ public class CameraMovements : MonoBehaviour
 
         if (centerCameraOnPlayer)
         {
-            Camera.transform.LookAt(CameraFocus.transform);
+            Camera.transform.LookAt(cameraFocus.transform);
 
         }
 
         if (Camera.transform.position.y < yLimit)
         {
             Debug.Log("Troppo basso");
-            Camera.transform.position = previousCameraTransform.position;
+            Camera.transform.position = _previousCameraTransform.position;
             return;
         }
 
@@ -94,7 +94,7 @@ public class CameraMovements : MonoBehaviour
 
         //Update Plane
         if (Input.touchCount >= 1)
-            Plane.SetNormalAndPosition(transform.up, transform.position);
+            _plane.SetNormalAndPosition(transform.up, transform.position);
 
         var Delta1 = Vector3.zero;
         var Delta2 = Vector3.zero;
@@ -122,8 +122,8 @@ public class CameraMovements : MonoBehaviour
             var pos1b = PlanePosition(Input.GetTouch(0).position - Input.GetTouch(0).deltaPosition);
             var pos2b = PlanePosition(Input.GetTouch(1).position - Input.GetTouch(1).deltaPosition);
 
-            if (activateRotation && pos2b != pos2 && (Vector3.SignedAngle(pos2 - pos1, pos2b - pos1b, Plane.normal) > sensitivityAngle || Vector3.SignedAngle(pos2 - pos1, pos2b - pos1b, Plane.normal) < -sensitivityAngle))
-                Camera.transform.RotateAround(pos1, Plane.normal, Vector3.SignedAngle(pos2 - pos1, pos2b - pos1b, Plane.normal));
+            if (activateRotation && pos2b != pos2 && (Vector3.SignedAngle(pos2 - pos1, pos2b - pos1b, _plane.normal) > sensitivityAngle || Vector3.SignedAngle(pos2 - pos1, pos2b - pos1b, _plane.normal) < -sensitivityAngle))
+                Camera.transform.RotateAround(pos1, _plane.normal, Vector3.SignedAngle(pos2 - pos1, pos2b - pos1b, _plane.normal));
 
 
             //calc zoom
@@ -138,12 +138,12 @@ public class CameraMovements : MonoBehaviour
 
 
             //maxZoom Limit
-            if (Vector3.Distance(Camera.gameObject.transform.position, CameraFocus.transform.position) > maxCameraDistance)
+            if (Vector3.Distance(Camera.gameObject.transform.position, cameraFocus.transform.position) > maxCameraDistance)
             {
                 Debug.Log("Maggiore");
-                if (zoom < oldZoom)
+                if (zoom < _oldZoom)
                 {
-                    zoom = oldZoom;
+                    zoom = _oldZoom;
                     return;
                 }
 
@@ -151,12 +151,12 @@ public class CameraMovements : MonoBehaviour
 
 
             //minimumZoom Limit
-            if (Vector3.Distance(Camera.gameObject.transform.position, CameraFocus.transform.position) < minCameraDistance)
+            if (Vector3.Distance(Camera.gameObject.transform.position, cameraFocus.transform.position) < minCameraDistance)
             {
                 Debug.Log("Minore");
-                if (zoom > oldZoom)
+                if (zoom > _oldZoom)
                 {
-                    zoom = oldZoom;
+                    zoom = _oldZoom;
                     return;
                 }
 
@@ -171,8 +171,8 @@ public class CameraMovements : MonoBehaviour
 
             //Move cam amount the mid ray
             Camera.transform.position = Vector3.LerpUnclamped(pos1, Camera.transform.position, 1 / zoom);
-            previousCameraTransform.position = Camera.gameObject.transform.position;
-            oldZoom = zoom;
+            _previousCameraTransform.position = Camera.gameObject.transform.position;
+            _oldZoom = zoom;
 
 
 
@@ -184,19 +184,19 @@ public class CameraMovements : MonoBehaviour
     {
         
         centerCameraOnPlayer = true;
-        flagCameraInDefualtPosition = false;
-        if (flagCameraInDefualtPosition)
+        flagCameraInDefaultPosition = false;
+        if (flagCameraInDefaultPosition)
             Debug.Log("not set correctly");
         else
             Debug.Log("Set correctly");
-        defaultCameraPosition = CameraFocus.transform.position + offsetDefaultCameraPosition;
+        _defaultCameraPosition = cameraFocus.transform.position + offsetDefaultCameraPosition;
         float elapsedTime = 0;
         float waitTime = 2f;
 
-        Debug.Log(defaultCameraPosition);
+        Debug.Log(_defaultCameraPosition);
         while (elapsedTime < waitTime)
         {
-            Camera.transform.position = Vector3.Lerp(Camera.transform.position, defaultCameraPosition, (elapsedTime / waitTime));
+            Camera.transform.position = Vector3.Lerp(Camera.transform.position, _defaultCameraPosition, (elapsedTime / waitTime));
             elapsedTime += Time.deltaTime;
 
             // Yield here
@@ -217,7 +217,7 @@ public class CameraMovements : MonoBehaviour
         //delta
         var rayBefore = Camera.ScreenPointToRay(touch.position - touch.deltaPosition);
         var rayNow = Camera.ScreenPointToRay(touch.position);
-        if (Plane.Raycast(rayBefore, out var enterBefore) && Plane.Raycast(rayNow, out var enterNow))
+        if (_plane.Raycast(rayBefore, out var enterBefore) && _plane.Raycast(rayNow, out var enterNow))
             return rayBefore.GetPoint(enterBefore) - rayNow.GetPoint(enterNow);
 
         //not on plane
@@ -228,7 +228,7 @@ public class CameraMovements : MonoBehaviour
     {
         //position
         var rayNow = Camera.ScreenPointToRay(screenPos);
-        if (Plane.Raycast(rayNow, out var enterNow))
+        if (_plane.Raycast(rayNow, out var enterNow))
             return rayNow.GetPoint(enterNow);
 
         return Vector3.zero;
@@ -244,7 +244,7 @@ public class CameraMovements : MonoBehaviour
     {
         if (!centerCameraOnPlayer)
         {
-            flagCameraInDefualtPosition = true;
+            flagCameraInDefaultPosition = true;
             centerCameraOnPlayer = true;
         }
             

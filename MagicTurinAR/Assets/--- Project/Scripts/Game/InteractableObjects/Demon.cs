@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -28,7 +29,7 @@ public class Demon : MonoBehaviour
     
     private CapsuleCollider _collider;
     
-    public HealthManager _arPlayerHealthManager;
+    public HealthManager arPlayerHealthManager;
 
     private bool _hit;
     
@@ -53,12 +54,12 @@ public class Demon : MonoBehaviour
     {
         _renderers = GetComponentsInChildren<Renderer>();
 
-        foreach (Renderer renderer in _renderers)
+        foreach (var rend in _renderers)
         {
-            renderer.material.shader = Shader.Find("Shader Graphs/Skeleton_Alpha");
+            rend.material.shader = Shader.Find("Shader Graphs/Skeleton_Alpha");
         }
 
-        _arPlayerHealthManager = FindObjectOfType<HealthManager>();
+        arPlayerHealthManager = FindObjectOfType<HealthManager>();
 
     }
 
@@ -67,21 +68,20 @@ public class Demon : MonoBehaviour
     {
         if (life != null)
         {
-            if (_currentHealth <= 0) life.text = "";
-            else life.text = _currentHealth.ToString();
+            life.text = _currentHealth <= 0 ? "" : _currentHealth.ToString(CultureInfo.InvariantCulture);
         }
 
         if (_currentHealth > 0 && !_hit)
         {
             if (IsAware())  //|| justHit
             {
-                Vector3 targetDirection = _arPlayerHealthManager.transform.position - transform.position;
+                Vector3 targetDirection = arPlayerHealthManager.transform.position - transform.position;
                 targetDirection.y = 0;
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetDirection), 0.1f);
                 transform.Translate(0, 0, runSpeed);
                 _animator.SetBool("Aware", true);
 
-                if ((transform.position - _arPlayerHealthManager.transform.position).magnitude < attackDistance)
+                if ((transform.position - arPlayerHealthManager.transform.position).magnitude < attackDistance)
                 {
                     Attack();
                 }
@@ -116,7 +116,7 @@ public class Demon : MonoBehaviour
 
     private bool IsAware()
     {
-        var playerPosition = _arPlayerHealthManager.transform.position;
+        var playerPosition = arPlayerHealthManager.transform.position;
         var thisPosition = transform.position;
         
         Vector3 targetDirection = thisPosition - playerPosition;
