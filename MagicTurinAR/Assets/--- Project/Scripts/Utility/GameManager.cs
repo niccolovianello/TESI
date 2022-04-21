@@ -58,8 +58,7 @@ public class GameManager : Singleton<GameManager>
     private void Start()
     {
         
-      if (playerEnterInGameEvent == null)
-            playerEnterInGameEvent = new UnityEvent();
+        playerEnterInGameEvent ??= new UnityEvent();
         playerEnterInGameEvent.AddListener(SetUpPlayer);
 
         LobbyNetworkPlayer[] listOfPlayer = FindObjectsOfType<NetworkPlayer>();

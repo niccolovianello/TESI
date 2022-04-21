@@ -12,6 +12,8 @@ public class TutorialManager : MonoBehaviour
 
        private void Start()
        {
+              if(levelGui) levelGui.SetActive(false);
+              
               foreach (var panel in tutorialPanels)
               {
                      panel.SetActive(false);

@@ -59,7 +59,7 @@ public class MagicPlayer : Player
 
     }
 
-    public void ClickOnItemInInventory(MagicItemSO item)
+    private void ClickOnItemInInventory(MagicItemSO item)
     {
        
         switch (item.itemType)

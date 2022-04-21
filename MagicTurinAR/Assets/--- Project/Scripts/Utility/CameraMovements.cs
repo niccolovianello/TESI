@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using MirrorBasics;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
 public class CameraMovements : MonoBehaviour
@@ -180,7 +178,7 @@ public class CameraMovements : MonoBehaviour
 
     }
 
-    public IEnumerator SetCameraInDefaultPosition()
+    private IEnumerator SetCameraInDefaultPosition()
     {
         
         centerCameraOnPlayer = true;
@@ -208,7 +206,7 @@ public class CameraMovements : MonoBehaviour
     }
 
 
-    protected Vector3 PlanePositionDelta(Touch touch)
+    private Vector3 PlanePositionDelta(Touch touch)
     {
         //not moved
         if (touch.phase != TouchPhase.Moved)
@@ -224,7 +222,7 @@ public class CameraMovements : MonoBehaviour
         return Vector3.zero;
     }
 
-    protected Vector3 PlanePosition(Vector2 screenPos)
+    private Vector3 PlanePosition(Vector2 screenPos)
     {
         //position
         var rayNow = Camera.ScreenPointToRay(screenPos);

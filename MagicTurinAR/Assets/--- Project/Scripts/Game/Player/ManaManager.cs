@@ -3,22 +3,22 @@ using UnityEngine.UI;
 
 public class ManaManager : MonoBehaviour
 {
-    private Slider slider;
+    private Slider _slider;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        slider = GameObject.Find("/LevelWindowsGUI/ManaBar").GetComponent<Slider>();
+        _slider = GameObject.Find("/LevelWindowsGUI/ManaBar").GetComponent<Slider>();
     }
 
     public void SetMana(float mana)
     {
-        slider.value = mana;
+        _slider.value = mana;
     }
 
     public void SetMaxMana(float maxMana)
     {
-        slider.maxValue = maxMana;
+        _slider.maxValue = maxMana;
         
         
     }
