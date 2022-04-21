@@ -28,5 +28,10 @@ public class SharedArUIScript : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         OpenFinishShareArScene();
     }
-    
+
+    private void OnDestroy()
+    {
+        LockControl.Unlocked -= FinishSharedAr;
+    }
+
 }

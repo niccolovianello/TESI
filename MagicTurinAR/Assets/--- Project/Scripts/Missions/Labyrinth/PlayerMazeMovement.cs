@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using Niantic.ARDKExamples.Helpers;
+    
 
 
 
@@ -14,10 +16,15 @@ public class PlayerMazeMovement : MonoBehaviour
     private float playerSpeed = .1f;
     public Button up, down, left, right;
     public Vector3 move = new Vector3(0, 0, 0);
+    public Camera cam;
+
+    public Transform initialTransform;
 
     public void InitializeMazePlayerController()
     {
+        initialTransform = transform;
         controller = GetComponent<CharacterController>();
+        cam = FindObjectOfType<ARCursorRenderer>().GetComponent<Camera>();
 
         //float scaler = FindObjectOfType<MazeLoader>().MazeScaleFactor;
         //controller.height = 1.6f * scaler;
@@ -43,24 +50,29 @@ public class PlayerMazeMovement : MonoBehaviour
 
             if (up.GetComponent<MazeMovementHandler>().isPressed == true)
             {
-                move += Vector3.forward;
+                move += cam.transform.forward;
+                //move = new Vector3(transform.position.x, initialTransform.position.y, transform.position.z);
+                Debug.Log("Forward");
 
             }
 
             if (down.GetComponent<MazeMovementHandler>().isPressed == true)
             {
-                move += Vector3.back;
+                move -= cam.transform.forward;
+               //move = new Vector3(transform.position.x, initialTransform.position.y, transform.position.z);
 
             }
 
             if (left.GetComponent<MazeMovementHandler>().isPressed == true)
             {
-                move += Vector3.left;
+                move -= cam.transform.right;
+                
             }
 
             if (right.GetComponent<MazeMovementHandler>().isPressed == true)
             {
-                move += Vector3.right;
+                move += cam.transform.right;
+                
 
             }
 

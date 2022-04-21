@@ -362,8 +362,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61bf4ce2bc345a74abd1be6ed9eb0774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mazeRows: 12
-  mazeColumns: 20
+  mazeRows: 6
+  mazeColumns: 10
   wall: {fileID: 5043742062216685141, guid: ef0483a2c1a9c8743ace3a7d89c34995, type: 3}
   size: 6
   floorMaterial: {fileID: 2100000, guid: 2908915a8d7b8ff40a7f852bcd9577bb, type: 2}
@@ -710,6 +710,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPressed: 0
+--- !u!1 &931569358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 931569359}
+  m_Layer: 0
+  m_Name: GyroManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &931569359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931569358}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 540, y: 960, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1007738933
 GameObject:
   m_ObjectHideFlags: 0
