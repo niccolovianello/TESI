@@ -20,6 +20,7 @@ namespace ____Project.Scripts
 		{
 			
 			var mm = FindObjectOfType<MissionsManager>();
+			
 			_areaPrefab = mm.currentMission.goalExplorerMissionAreaPrefab;
 			_targetPrefab = mm.currentMission.goalExplorerMissionPrefab;
 			var v2Area = new Vector2d(areaLat, areaLon);

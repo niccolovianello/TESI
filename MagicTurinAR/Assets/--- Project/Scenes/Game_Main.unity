@@ -17013,7 +17013,7 @@ MonoBehaviour:
   windowFinishLevel: {fileID: 1217707880}
   textFinishLevel: {fileID: 828554473}
   windowToStartMission: {fileID: 1888885375}
-  textWindowStartLevel: {fileID: 0}
+  textWindowStartLevel: {fileID: 1671421322}
   parentTarget: {fileID: 1838948239}
   offsetTargetExplorer: {x: 0, y: 2.5, z: 0}
 --- !u!4 &2049333394
@@ -18143,7 +18143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf32ea2cc0514b569329f6b6b68f9b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 0}
+  map: {fileID: 114478715806792212}
   areaRadius: 100
   targetSize: 1
   parentObjectAreaTarget: {fileID: 1838948239}

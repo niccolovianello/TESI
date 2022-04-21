@@ -36,11 +36,11 @@ public class MissionsManager : MonoBehaviour
         currentMission = magicTurinLevels.missions[currentMissionIndex];
         var networkPlayers = FindObjectsOfType<NetworkPlayer>();
         _gameManager = FindObjectOfType<GameManager>();
-        foreach (var nt in networkPlayers)
+        foreach (var np in networkPlayers)
         {
-            if (nt.isLocalPlayer)
+            if (np.isLocalPlayer)
             {
-                _networkPlayer = nt;
+                _networkPlayer = np;
             }
         }
         _magicPlayer = _networkPlayer.GetComponent<MagicPlayer>();
@@ -81,8 +81,8 @@ public class MissionsManager : MonoBehaviour
                     //Debug.Log("StartMission!");
                     OpenStartMissionWindow();
                     Vibration.Vibrate();
+                    Debug.Log(textWindowStartLevel + " - " + currentMission.textBeginMission);
                     textWindowStartLevel.text = currentMission.textBeginMission;
-                    
                 }
                 break;
             case MissionSO.PlayerType.Wiseman:
