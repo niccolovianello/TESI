@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15382873, g: 0.15113746, b: 0.18625373, a: 1}
+  m_IndirectSpecularColor: {r: 0.1413455, g: 0.1314584, b: 0.17982036, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1688,8 +1688,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This icon shows if the team members are close to each other. If it turns
-    red, you cannot do almost anything.
+  m_Text: This button enables the Navigation System. Use it when you cannot find
+    the way for the location. Pay attention, it burns your mana out.
 --- !u!222 &197419566
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2666,7 +2666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &297619060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7647,7 +7647,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &886300654
 RectTransform:
   m_ObjectHideFlags: 0
