@@ -281,7 +281,7 @@ MonoBehaviour:
   offlineScene: Assets/--- Project/Scenes/Offline.unity
   onlineScene: Assets/--- Project/Scenes/Lobby.unity
   transport: {fileID: 29762634}
-  networkAddress: localhost
+  networkAddress: arlocationbased.ddns.net
   maxConnections: 10
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 891979759604794750, guid: 858ef017d3ebf4b068e394a8e2c09cc9, type: 3}
