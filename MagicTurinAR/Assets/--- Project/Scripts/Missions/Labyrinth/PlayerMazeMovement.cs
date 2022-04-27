@@ -19,6 +19,7 @@ public class PlayerMazeMovement : MonoBehaviour
     public Camera cam;
 
     public Transform initialTransform;
+    private float previousAngleCamY, difBetweenAngles;
 
     public void InitializeMazePlayerController()
     {
@@ -39,18 +40,26 @@ public class PlayerMazeMovement : MonoBehaviour
         Debug.Log(up + " " + down + " " + left + " " + right);
 
         initializedFlag = true;
+        previousAngleCamY = cam.transform.rotation.y;
     }
 
  
     private void Update()
     {
+        difBetweenAngles = cam.transform.rotation.y - previousAngleCamY;
+        if (Input.GetKey(KeyCode.E))
+        {
+            Debug.Log(move);
+        }
+        //transform.rotation.SetFromToRotation(new Vector3(0, transform.rotation.y, 0), new Vector3(0, cam.transform.rotation.y, 0));
+
         if (initializedFlag)
         {
             move = Vector3.zero;
 
             if (up.GetComponent<MazeMovementHandler>().isPressed == true)
             {
-                move += cam.transform.forward;
+                move += Vector3.forward;
                 //move = new Vector3(transform.position.x, initialTransform.position.y, transform.position.z);
                 Debug.Log("Forward");
 
@@ -58,34 +67,43 @@ public class PlayerMazeMovement : MonoBehaviour
 
             if (down.GetComponent<MazeMovementHandler>().isPressed == true)
             {
-                move -= cam.transform.forward;
+                move += Vector3.back;
                //move = new Vector3(transform.position.x, initialTransform.position.y, transform.position.z);
 
             }
 
             if (left.GetComponent<MazeMovementHandler>().isPressed == true)
             {
-                move -= cam.transform.right;
+                move += Vector3.left;
                 
             }
 
             if (right.GetComponent<MazeMovementHandler>().isPressed == true)
             {
-                move += cam.transform.right;
+                move += Vector3.right;
                 
 
             }
-
-            controller.Move(move * Time.deltaTime * playerSpeed);
-
+            move = Quaternion.AngleAxis(difBetweenAngles, Vector3.up) * move;
+            //gameObject
             if (move != Vector3.zero)
             {
-                gameObject.transform.forward = move;
+                //gameObject.transform.rotation = ;
+                
+                controller.Move(move * Time.deltaTime * playerSpeed);
+                
             }
+
+            //gameObject.transform.rotation = new Vector3(0, cam.transform.rotation.y , 0 );
+
+
+
 
         }
 
     }
+
+    
 
 
 
