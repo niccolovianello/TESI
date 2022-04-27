@@ -19,7 +19,8 @@ public class PlayerMazeMovement : MonoBehaviour
     public Camera cam;
 
     public Transform initialTransform;
-    private float previousAngleCamY, difBetweenAngles;
+    
+    
 
     public void InitializeMazePlayerController()
     {
@@ -40,17 +41,15 @@ public class PlayerMazeMovement : MonoBehaviour
         Debug.Log(up + " " + down + " " + left + " " + right);
 
         initializedFlag = true;
-        previousAngleCamY = cam.transform.rotation.y;
+       
     }
 
  
     private void Update()
     {
-        difBetweenAngles = cam.transform.rotation.y - previousAngleCamY;
-        if (Input.GetKey(KeyCode.E))
-        {
-            Debug.Log(move);
-        }
+        
+        //Debug.Log(difBetweenAngles);
+        
         //transform.rotation.SetFromToRotation(new Vector3(0, transform.rotation.y, 0), new Vector3(0, cam.transform.rotation.y, 0));
 
         if (initializedFlag)
@@ -84,19 +83,20 @@ public class PlayerMazeMovement : MonoBehaviour
                 
 
             }
-            move = Quaternion.AngleAxis(difBetweenAngles, Vector3.up) * move;
+            transform.rotation = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0);
+
             //gameObject
             if (move != Vector3.zero)
             {
                 //gameObject.transform.rotation = ;
                 
-                controller.Move(move * Time.deltaTime * playerSpeed);
+                controller.Move(transform.rotation * move * Time.deltaTime * playerSpeed);
                 
             }
 
             //gameObject.transform.rotation = new Vector3(0, cam.transform.rotation.y , 0 );
 
-
+            
 
 
         }
