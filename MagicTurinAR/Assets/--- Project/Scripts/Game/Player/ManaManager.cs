@@ -13,13 +13,11 @@ public class ManaManager : MonoBehaviour
 
     public void SetMana(float mana)
     {
-        _slider.value = mana;
+        if(_slider) _slider.value = mana;
     }
 
     public void SetMaxMana(float maxMana)
     {
-        _slider.maxValue = maxMana;
-        
-        
+        if(_slider) _slider.maxValue = maxMana;
     }
 }

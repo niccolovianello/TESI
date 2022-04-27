@@ -101,7 +101,7 @@ public class GameManager : Singleton<GameManager>
 
             }
         }
-        CameraMovements cm = FindObjectOfType<CameraMovements>();
+        var cm = FindObjectOfType<CameraMovements>();
         cm.Camera = networkPlayerCamera;
         cm.cameraFocus = networkPlayer.gameObject;
         
@@ -118,14 +118,11 @@ public class GameManager : Singleton<GameManager>
      
         
 
-        foreach (var camera in FindObjectsOfType<Camera>())
+        foreach (var cam in FindObjectsOfType<Camera>())
         {
-
-            if (camera.tag == "External Camera")
-            {
-                camera.enabled = false;
-                camera.GetComponent<AudioListener>().enabled = false;
-            }
+            if (!cam.CompareTag("External Camera")) continue;
+            cam.enabled = false;
+            cam.GetComponent<AudioListener>().enabled = false;
 
         }  
         
@@ -151,7 +148,7 @@ public class GameManager : Singleton<GameManager>
         
         if (!networkPlayer.GetComponent<NetworkTransform>())
         {
-            SessionManager sm = networkPlayer.gameObject.AddComponent<SessionManager>();
+            var sm = networkPlayer.gameObject.AddComponent<SessionManager>();
         }
 
         networkPlayer.gameObject.AddComponent<DeviceLocationProvider>();

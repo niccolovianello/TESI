@@ -81,7 +81,6 @@ public class MissionsManager : MonoBehaviour
                     //Debug.Log("StartMission!");
                     OpenStartMissionWindow();
                     Vibration.Vibrate();
-                    Debug.Log(textWindowStartLevel + " - " + currentMission.textBeginMission);
                     textWindowStartLevel.text = currentMission.textBeginMission;
                 }
                 break;
