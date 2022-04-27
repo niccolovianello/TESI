@@ -137,7 +137,7 @@ namespace MirrorBasics
 
 
         [ClientRpc]
-        public void RpcReceiveWhiteMagic( float whiteMagicReceived, uint netID1, uint netID2)
+        private void RpcReceiveWhiteMagic( float whiteMagicReceived, uint netID1, uint netID2)
         {
            
 
@@ -193,7 +193,7 @@ namespace MirrorBasics
 
 
         [ClientRpc]
-        public void RpcReceiveGem(uint netID)
+        private void RpcReceiveGem(uint netID)
         {
             MagicPlayer magicPlayer = FindObjectOfType<MagicPlayer>();
             NetworkPlayer netplay1 = null;
@@ -231,7 +231,7 @@ namespace MirrorBasics
 
 
         [ClientRpc]
-        public void RcpBeginNextMission()
+        private void RcpBeginNextMission()
         {
             MissionsManager MM = FindObjectOfType<MissionsManager>();
             MM.ChangeLevel();
@@ -257,7 +257,7 @@ namespace MirrorBasics
 
 
         [ClientRpc]
-        public void RpcDestroyGem()
+        private void RpcDestroyGem()
         {
 
             MagicPlayer mp = FindObjectOfType<MagicPlayer>();
@@ -285,7 +285,7 @@ namespace MirrorBasics
 
 
         [ClientRpc]
-        public void RpcWhiteMagicFromGem(int nfragment)
+        private void RpcWhiteMagicFromGem(int nfragment)
         {
 
             MagicPlayer mp = FindObjectOfType<MagicPlayer>();
@@ -322,7 +322,6 @@ namespace MirrorBasics
             {
                 if (np.netId == netId)
                 {
-                    Debug.Log(np.name);
                     AbstractMap _map = FindObjectOfType<AbstractMap>();
                     if (_map == null)
                         return;
@@ -340,7 +339,7 @@ namespace MirrorBasics
 
         [ClientRpc]
 
-        public void RpcBeginSharedMission()
+        private void RpcBeginSharedMission()
         {
             FindObjectOfType<MissionsManager>().BeginSharedMission();
         }
@@ -355,7 +354,7 @@ namespace MirrorBasics
 
         [ClientRpc]
 
-        public void RpcAddMagicItem(string magicItemName)
+        private void RpcAddMagicItem(string magicItemName)
         {
             foreach (MagicItemSO miSO in ItemAssets.Instance.magicInventorySO.items)
             {
@@ -374,7 +373,7 @@ namespace MirrorBasics
 
         [ClientRpc]
 
-        public void RpcRotateLockWheel(string wheelName)
+        private void RpcRotateLockWheel(string wheelName)
         {
 
             GameObject.Find(wheelName).GetComponent<Rotate>().RotateWheel();

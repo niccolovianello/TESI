@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class TargetExplorerScript : MonoBehaviour
 {
+    [SerializeField] private GameObject[] children;
+    
     private MagicPlayer magicPlayer;
     public int distanceToEnableRender = 20;
-    private MeshRenderer meshRenderer;
     private Collider targetCollider;
     private bool rendered = false;
     private MissionsManager missionManager;
@@ -14,11 +15,9 @@ public class TargetExplorerScript : MonoBehaviour
     private void Start()
     {
         magicPlayer = FindObjectOfType<MagicPlayer>();
-        meshRenderer = GetComponent<MeshRenderer>();
         targetCollider = GetComponent<Collider>();
         missionManager = FindObjectOfType<MissionsManager>();
         NotRenderTargetExplorer();
-        
     }
 
     private void Update()
@@ -41,13 +40,19 @@ public class TargetExplorerScript : MonoBehaviour
 
     private void RenderTargetExplorer()
     {
-        meshRenderer.enabled = true;
+        foreach (var child in children)
+        {
+            child.SetActive(true);
+        }
         targetCollider.enabled = true;
     }
 
     private void NotRenderTargetExplorer()
     {
-        meshRenderer.enabled = false;
+        foreach (var child in children)
+        {
+            child.SetActive(false);
+        }
         targetCollider.enabled = false;
     }
 }

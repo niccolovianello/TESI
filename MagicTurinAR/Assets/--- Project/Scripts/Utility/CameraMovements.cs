@@ -35,8 +35,9 @@ public class CameraMovements : MonoBehaviour
     {
         Camera = camera;
         this.cameraFocus = cameraFocus;
-
     }
+
+    public Vector3 GetDefaultPosition => _defaultCameraPosition;
 
     private void Start()
     {
@@ -57,6 +58,8 @@ public class CameraMovements : MonoBehaviour
 
 
     }
+    
+    
     private void Update()
     {
         
@@ -176,6 +179,11 @@ public class CameraMovements : MonoBehaviour
 
         }
 
+    }
+
+    public void ResetCameraPosition()
+    {
+        StartCoroutine(SetCameraInDefaultPosition());
     }
 
     private IEnumerator SetCameraInDefaultPosition()

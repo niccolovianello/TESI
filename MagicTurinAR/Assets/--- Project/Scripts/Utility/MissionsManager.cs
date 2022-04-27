@@ -134,16 +134,13 @@ public class MissionsManager : MonoBehaviour
 
                     var areaPos = map.GeoToWorldPosition(new Vector2d(currentMission.latitudeArea, currentMission.longitudeArea));
                     
-                    var mainCamera = FindObjectOfType<Camera>().gameObject;
+                    var mainCamera = FindObjectOfType<Camera>();
                     var cutSceneManager = FindObjectOfType<CutSceneManager>();
                     
-                    mainCamera.SetActive(false);
+                    mainCamera.gameObject.SetActive(false);
                     cutSceneManager.EnableCutSceneCamera();
                     
-                    cutSceneManager.MoveCamera(areaPos, mainCamera.transform.position);
-                    
-                    cutSceneManager.DisableCutSceneCamera();
-                    mainCamera.SetActive(true);
+                    cutSceneManager.MoveCamera(areaPos, mainCamera);
                 }
                 break;
             case MissionSO.PlayerType.Wiseman:

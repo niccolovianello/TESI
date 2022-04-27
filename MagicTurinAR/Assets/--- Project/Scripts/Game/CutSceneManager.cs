@@ -15,9 +15,9 @@ public class CutSceneManager : MonoBehaviour
         cutSceneCamera.gameObject.SetActive(false);
     }
 
-    public void MoveCamera(Vector3 startPos, Vector3 endPos)
+    public void MoveCamera(Vector3 startPos, Camera cam)
     {
-        cutSceneCamera.MoveCam(startPos, endPos);
+        cutSceneCamera.MoveCam(startPos, cam);
     }
 
 }

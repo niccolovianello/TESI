@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(ManaManager))]
 public class Explorer : MagicPlayer
 {
-    private float powerCost = .1f;
+    private float powerCost = .05f;
     private DirectionsFactory directions;
     private GameObject directionMesh;
     public GameObject parentDirections;
@@ -73,7 +73,7 @@ public class Explorer : MagicPlayer
     }
 
 
-    public bool HasMana()
+    private bool HasMana()
     {
         return currentMana > 0;
     }
@@ -90,7 +90,7 @@ public class Explorer : MagicPlayer
         manaManager.SetMana(currentMana);
     }
     
-    public void DecreaseMana(float cost)
+    private void DecreaseMana(float cost)
     {
         currentMana -= cost;
 
@@ -114,7 +114,7 @@ public class Explorer : MagicPlayer
 
     }
 
-    public void InitializeNavigationPower()
+    private void InitializeNavigationPower()
     {
 
         directions = new GameObject("Directions").AddComponent<DirectionsFactory>();
