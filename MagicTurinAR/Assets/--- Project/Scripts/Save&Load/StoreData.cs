@@ -8,14 +8,10 @@ public class StoreData : MonoBehaviour
 
     public enum TextRole
     {
-
-
         Explorer,
         Wiseman,
         Hunter,
         Default
-
-
     }
 
     public int GetRoleIntData()

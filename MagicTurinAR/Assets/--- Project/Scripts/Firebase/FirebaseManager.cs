@@ -6,8 +6,9 @@ using Firebase.Auth;
 using Firebase.Database;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using MirrorBasics;
 
-    public class FirebaseManager : MonoBehaviour
+public class FirebaseManager : MonoBehaviour
     {
     public string username;
         //Firebase variables
@@ -285,8 +286,9 @@ using UnityEngine.SceneManagement;
 
         private IEnumerator UpdateRole(int _role)
         {
+        TurnManager tn = FindObjectOfType<TurnManager>();
             //Set the currently logged in user xp
-            var DBTask = DBreference.Child("users").Child(User.UserId).Child("role").SetValueAsync(_role);
+            var DBTask = DBreference.Child("users").Child(User.UserId).Child("MatchDataMS").SetValueAsync(tn.MatchDataMS);  //SetValueAsync(_role);
 
             yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
 
@@ -328,5 +330,32 @@ using UnityEngine.SceneManagement;
 
 
         }
+    }
+
+    public IEnumerator LoadMatchData(TurnManager tm)
+    {
+        var DBTask = DBreference.Child("users").Child(User.UserId).GetValueAsync();
+
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+
+        if (DBTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+        else if (DBTask.Result.Value == null)
+        {
+            tm.JsonLoader = null;
+        }
+        else
+        {
+            //Data has been retrieved
+            DataSnapshot snapshot = DBTask.Result;
+
+            tm.JsonLoader = snapshot.Child("role").Value.ToString();
+            
+
+
+        }
+
     }
 }

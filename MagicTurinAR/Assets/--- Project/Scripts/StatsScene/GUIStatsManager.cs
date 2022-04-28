@@ -35,13 +35,13 @@ public class GUIStatsManager : MonoBehaviour
             switch (np.TypePlayerEnum)
             {
                 case NetworkPlayer.TypePlayer.Explorer:
-                    explorerUsername.text = np.FirebaseManager.username;
+                    explorerUsername.text = np.username;
                     break;
                 case NetworkPlayer.TypePlayer.Hunter:
-                    hunterUsername.text = np.FirebaseManager.username;
+                    hunterUsername.text = np.username;
                     break;
                 case NetworkPlayer.TypePlayer.Wiseman:
-                    wisemanUsername.text = np.FirebaseManager.username;
+                    wisemanUsername.text = np.username;
                     break;
             }
                        
