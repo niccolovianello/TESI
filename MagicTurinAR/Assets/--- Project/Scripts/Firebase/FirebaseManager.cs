@@ -85,7 +85,7 @@ public class FirebaseManager : MonoBehaviour
         StartCoroutine(UpdateUsernameAuth(username));
         StartCoroutine(UpdateUsernameDatabase(username));
 
-        StartCoroutine(UpdateRole(data.GetRoleIntData()));
+        //StartCoroutine(FUpdateRole(data.GetRoleIntData()));
 
 
     }
@@ -284,11 +284,12 @@ public class FirebaseManager : MonoBehaviour
             }
         }
 
-        private IEnumerator UpdateRole(int _role)
+        public IEnumerator UpdateMatches(string json)
         {
-        TurnManager tn = FindObjectOfType<TurnManager>();
-            //Set the currently logged in user xp
-            var DBTask = DBreference.Child("users").Child(User.UserId).Child("MatchDataMS").SetValueAsync(tn.MatchDataMS);  //SetValueAsync(_role);
+            TurnManager tn = FindObjectOfType<TurnManager>();
+        //Set the currently logged in user xp
+
+            var DBTask = DBreference.Child("users").Child(User.UserId).Child("username").Child(username).SetRawJsonValueAsync(json);  //SetValueAsync(_role);
 
             yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
 
@@ -298,7 +299,7 @@ public class FirebaseManager : MonoBehaviour
             }
             else
             {
-                //Xp is now updated
+                Debug.LogWarning("Salvataggio completato");
             }
         }
     #endregion
@@ -308,7 +309,7 @@ public class FirebaseManager : MonoBehaviour
         Debug.Log(DBreference);
         Debug.Log("Start coroutine");
         //Get the currently logged in user data
-        var DBTask = DBreference.Child("users").Child(User.UserId).GetValueAsync();
+        var DBTask = DBreference.Child("users").Child(User.UserId).Child("username").Child(username).GetValueAsync();
 
         yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
 
@@ -341,10 +342,12 @@ public class FirebaseManager : MonoBehaviour
         if (DBTask.Exception != null)
         {
             Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+            tm.LoaderFlag = true;
         }
         else if (DBTask.Result.Value == null)
         {
             tm.JsonLoader = null;
+            tm.LoaderFlag = true;
         }
         else
         {
@@ -352,6 +355,7 @@ public class FirebaseManager : MonoBehaviour
             DataSnapshot snapshot = DBTask.Result;
 
             tm.JsonLoader = snapshot.Child("role").Value.ToString();
+            tm.LoaderFlag = true;
             
 
 

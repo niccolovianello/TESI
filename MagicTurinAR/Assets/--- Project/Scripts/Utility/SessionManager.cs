@@ -77,8 +77,11 @@ public class SessionManager : MonoBehaviour
     {
         while (true)      
         {
+            if (gameEnvironment == null)
+                break;
             yield return new WaitForSeconds(updateTime);
             //Debug.Log("gioco attivo: "+ gameEnvironment.gameObject.activeSelf);
+            
             if (gameEnvironment.gameObject.activeSelf)
             {
                 networkPlayer.CmdSendGeoPositionToServer((float)deviceLocationProvider.CurrentLocation.LatitudeLongitude.x, (float)deviceLocationProvider.CurrentLocation.LatitudeLongitude.y, networkPlayer.netId);

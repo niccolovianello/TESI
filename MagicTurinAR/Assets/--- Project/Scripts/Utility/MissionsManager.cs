@@ -67,7 +67,14 @@ public class MissionsManager : MonoBehaviour
 
     private static void GoToStatsOfTheMatch()
     {
+
         SceneManager.UnloadSceneAsync("Game_Main");
+
+        FindObjectOfType<MagicPlayer>().Destroy();
+        FindObjectOfType<SessionManager>().Destroy();
+        FindObjectOfType<Mapbox.Examples.ImmediatePositionWithLocationProvider>().Destroy();
+        FindObjectOfType<Mapbox.Examples.RotateWithLocationProvider>().Destroy();
+        FindObjectOfType<Mapbox.Unity.MeshGeneration.Factories.DirectionsFactory>().Destroy();
         SceneManager.LoadSceneAsync("Stats", LoadSceneMode.Additive);
     }
 

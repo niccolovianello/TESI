@@ -7,11 +7,6 @@ using NetworkPlayer = MirrorBasics.NetworkPlayer;
 
 public class GUIStatsManager : MonoBehaviour
 {
-    [Header("HorizontalNavigation")]
-    public Image sxPoint;
-    public Image dxPoint;
-    public Image cxPoint;
-
     [Header("Collectables Container")]
     public GridLayoutGroup explorerArtifactContainer;
     public GridLayoutGroup hunterRuneContainer;
@@ -70,10 +65,11 @@ public class GUIStatsManager : MonoBehaviour
         }
 
     }
-
-    public void Log()
+    public void LoadMatchOnFirebase()
     {
-        Debug.Log("cambia");
+        Debug.Log("LoadMatchOnfire");
+        StartCoroutine(FindObjectOfType<TurnManager>().LoadMatchOnFirebaseCoroutine());
     }
+
 
 }

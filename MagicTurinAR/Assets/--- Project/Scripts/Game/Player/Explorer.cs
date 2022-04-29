@@ -39,7 +39,7 @@ public class Explorer : MagicPlayer
     private void Update()
     {
 
-        if (parentDirections.gameObject.activeSelf)
+        if (parentDirections.gameObject.activeSelf && parentDirections != null)
         {
          
             

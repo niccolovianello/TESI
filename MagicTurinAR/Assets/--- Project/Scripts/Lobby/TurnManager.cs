@@ -21,8 +21,14 @@ namespace MirrorBasics
 
         private string jsonLoader;
 
+        private FirebaseManager FBM;
+
+        private bool loaderFlag = false;
+
+        
         void Start()
         {
+            FBM = FindObjectOfType<FirebaseManager>();
             matchGUID = GetComponent<NetworkMatch>().matchId;
         }
         public List<MagicItemSO> ItemsPicked
@@ -31,6 +37,11 @@ namespace MirrorBasics
         
         }
 
+        public bool LoaderFlag
+        {
+            get => loaderFlag;
+            set => loaderFlag = value;
+        }
 
         public Guid MatchGUID
         {
@@ -68,64 +79,85 @@ namespace MirrorBasics
 
         public JsonHelper.MyMatch CreateMatchJson()
         {
+
+            //Debug.Log("CreateMatch");
             JsonHelper.MyMatch match = new JsonHelper.MyMatch();
 
             match.dataMS = DateTime.UtcNow.Millisecond;
             match.dataString = DateTime.UtcNow.ToString();
 
-            List<JsonHelper.MatchPlayers> playerInstance = new List<JsonHelper.MatchPlayers>();
+            List<JsonHelper.MatchPlayers> playerInstances = new List<JsonHelper.MatchPlayers>();
            
 
             foreach(NetworkPlayer np in players)
             {
                 JsonHelper.MatchPlayers player = new JsonHelper.MatchPlayers();
                 player.username = np.username;
-                JsonHelper.MatchPlayerCollectable collectables = new JsonHelper.MatchPlayerCollectable();
+                List<JsonHelper.MatchPlayerCollectable> collectables = new List<JsonHelper.MatchPlayerCollectable>();
 
                 foreach (MagicItemSO miSO in itemsPicked)
                 {
+                    JsonHelper.MatchPlayerCollectable coll = new JsonHelper.MatchPlayerCollectable();
                     switch (np.TypePlayerEnum)
                     {
                         case NetworkPlayer.TypePlayer.Explorer:
                             if (miSO.itemType == MagicItemSO.ItemType.Artifact)
                             {                                
-                                collectables.collectableName.Add(miSO.name);                                
+                                coll.collectableName = miSO.name;                                
                             }
                                 
                             break;
                         case NetworkPlayer.TypePlayer.Wiseman:
                             if (miSO.itemType == MagicItemSO.ItemType.Book)
                             {
-                                collectables.collectableName.Add(miSO.name);
+                                coll.collectableName = miSO.name;
                             }
 
                             break;
                         case NetworkPlayer.TypePlayer.Hunter:
                             if (miSO.itemType == MagicItemSO.ItemType.Rune)
                             {
-                                collectables.collectableName.Add(miSO.name);
+                                coll.collectableName = miSO.name;
                             }
                             break;
                     }
+                    collectables.Add(coll);
                 }
 
-                player.collectables.Add(collectables);
-                playerInstance.Add(player);
+                player.collectables = collectables;
+                playerInstances.Add(player);
             }
-            match.players = playerInstance;
+            match.players = playerInstances;
 
             
 
             return match;
         }
 
-        public string GetPreviousMatch()
+        
+
+       
+
+        public IEnumerator LoadMatchOnFirebaseCoroutine()
         {
-            FindObjectOfType<FirebaseManager>().LoadMatchData(this);
-            if (jsonLoader == null)
-                return null;
-            else
-                return JsonLoader;
+            //Debug.Log("LoadCoroutine");
+            loaderFlag = false;
+            jsonLoader = null;
+            List<JsonHelper.MyMatch> matches = new List<JsonHelper.MyMatch>();
+
+            StartCoroutine(FBM.LoadMatchData(this));
+
+            yield return new WaitUntil(predicate: () => this.LoaderFlag);
+
+            if (jsonLoader != null)
+            {
+                matches = JsonHelper.ParseJsonToObject<JsonHelper.MyMatch>(jsonLoader);
+            }
+
+            //Debug.Log("Wait until passato");
+            matches.Add(CreateMatchJson());
+            string result = JsonHelper.ParseObjectToJson<JsonHelper.MyMatch>(matches, true);
+            StartCoroutine(FBM.UpdateMatches(result));
         }
 
 
@@ -160,17 +192,18 @@ namespace MirrorBasics
             public T[] Matches;
         }
 
-        public static JsonHelper.MyMatch[] ParseJsonToObject<MyMatch>(string json)
+        public static List<JsonHelper.MyMatch> ParseJsonToObject<MyMatch>(string json)
         {
+           
             var wrappedjsonArray = JsonUtility.FromJson<MyWrapper>(json);
             return wrappedjsonArray.matches;
         }
 
-        public static string ParseObjectToJson<MyMatch>(JsonHelper.MyMatch[] array,string json)
+        public static string ParseObjectToJson<MyMatch>(List<JsonHelper.MyMatch> list,bool prettyPrint)
         {
             MyWrapper wrapper = new MyWrapper();
-            wrapper.matches = array;
-            return JsonUtility.ToJson(wrapper, true);
+            wrapper.matches = list;
+            return JsonUtility.ToJson(wrapper, prettyPrint);
             
         }
 
@@ -179,7 +212,7 @@ namespace MirrorBasics
         [Serializable]
         public class MyWrapper
         {
-            public MyMatch[] matches;
+            public List<MyMatch> matches;
         }
 
         [Serializable]
@@ -199,7 +232,7 @@ namespace MirrorBasics
         [Serializable]
         public class MatchPlayerCollectable
         {
-            public List<string> collectableName;
+            public string collectableName;
         }
     }
 
