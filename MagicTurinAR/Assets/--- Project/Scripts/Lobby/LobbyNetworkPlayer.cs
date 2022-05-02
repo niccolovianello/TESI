@@ -186,7 +186,7 @@ namespace MirrorBasics
         void TargetBeginStoryTelling(List<GameObject> players)
         {
             UILobby uiLobby = FindObjectOfType<UILobby>();
-            uiLobby.ClientUI.gameObject.SetActive(false);
+            uiLobby.ClientUI.GetComponent<Canvas>().enabled = false;
             uiLobby.storyTelling.gameObject.SetActive(true);
 
 
@@ -231,8 +231,13 @@ namespace MirrorBasics
             {
                 DontDestroyOnLoad(player);                
             }
-            if(isClient)
+            if (isClient)
+            {
+                Debug.Log(FindObjectOfType<UILobby>());
                 FindObjectOfType<UILobby>().gameObject.SetActive(false);
+                
+            }
+               
             Camera camera = FindObjectOfType<Camera>();
             if (camera.tag == "External Camera")
                 camera.gameObject.SetActive(false);

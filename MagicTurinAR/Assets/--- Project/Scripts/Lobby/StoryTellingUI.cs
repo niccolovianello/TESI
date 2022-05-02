@@ -54,7 +54,7 @@ public class StoryTellingUI : MonoBehaviour
     {
         
         NetworkPlayer.localPlayer.BeginGame();
-        FindObjectOfType<UILobby>().gameObject.SetActive(false);
+       
     }
 
     private void SetFragment()
