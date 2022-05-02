@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bcb90f2614b24b429fd00848088034f, type: 3}
+  m_Name: F4
+  m_EditorClassIdentifier: 
+  index: 3
+  narratorText: Gesu
+  fragmentTitle: dtry
+  fragmentText: trrehyhr
+  fragmentImage: {fileID: 21300032, guid: addd2af175d074643a3b1f29f6c23041, type: 3}

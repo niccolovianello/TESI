@@ -47,7 +47,7 @@ namespace MirrorBasics
             if ((!isServer || (isServer && isClient)) && isLocalPlayer)
             {
                 firebaseManager = FindObjectOfType<FirebaseManager>();
-                firebaseManager.StartCoroutine(firebaseManager.LoadUserData(storeData));
+               //firebaseManager.StartCoroutine(firebaseManager.LoadUserData(storeData));
 
             }
 
@@ -172,6 +172,31 @@ namespace MirrorBasics
 
         #region BEGIN GAME
 
+        public void BeginStoryTelling()
+        {
+            CmdBeginStoryTelling();
+        }
+        [Command]
+        public void CmdBeginStoryTelling()
+        {
+            MatchMaker.istance.BeginStoryTelling(matchID);
+        }
+
+        [TargetRpc]
+        void TargetBeginStoryTelling(List<GameObject> players)
+        {
+            UILobby uiLobby = FindObjectOfType<UILobby>();
+            uiLobby.ClientUI.gameObject.SetActive(false);
+            uiLobby.storyTelling.gameObject.SetActive(true);
+
+
+
+        }
+
+        public void StartStoryTelling(List<GameObject> players)
+        {
+            TargetBeginStoryTelling(players);
+        }
         public void BeginGame()
         {
 

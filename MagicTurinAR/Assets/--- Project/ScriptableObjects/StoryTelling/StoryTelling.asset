@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c98383887be57e45837962dc92a5810, type: 3}
+  m_Name: StoryTelling
+  m_EditorClassIdentifier: 
+  fragments:
+  - {fileID: 11400000, guid: 82ab1457d16bf08458f6b2da71509e23, type: 2}
+  - {fileID: 11400000, guid: 11701c24fd9da54428b453aa080eae35, type: 2}
+  - {fileID: 11400000, guid: 65888662f4988254185b84a26aa72dd8, type: 2}
+  - {fileID: 11400000, guid: 4344d0e9f2b61fe4f9a44039ba015435, type: 2}
+  - {fileID: 11400000, guid: 7e4ec3e1bb0420e45b83503a0895c2d5, type: 2}
+  - {fileID: 11400000, guid: 33ba0ca0138f897408381781cea0fa32, type: 2}

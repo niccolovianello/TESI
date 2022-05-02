@@ -11,6 +11,7 @@ namespace MirrorBasics
 
         public static UILobby istance;
         public Canvas totalLobbyUI;
+        public StoryTellingUI storyTelling;
 
 
         [Header("LoadGameCanvas")]
@@ -39,7 +40,7 @@ namespace MirrorBasics
 
         [Header("ClientUI")]
 
-        [SerializeField] Canvas ClientUI;
+        [SerializeField] public Canvas ClientUI;
 
         public int GetNumberClients()
         {
@@ -186,6 +187,13 @@ namespace MirrorBasics
 
 
 
+        }
+
+        public void BeginStoryTelling()
+        {
+            lobbyCanvas.enabled = false;
+            totalLobbyUI.enabled = false;
+            NetworkPlayer.localPlayer.BeginStoryTelling();
         }
 
 

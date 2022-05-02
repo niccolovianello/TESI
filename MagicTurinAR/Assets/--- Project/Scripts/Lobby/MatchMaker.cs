@@ -131,6 +131,29 @@ namespace MirrorBasics
 
 
         }
+
+        public void BeginStoryTelling(string _matchID)
+        {
+            for (int i = 0; i < matches.Count; i++)
+            {
+                if (matches[i].matchID == _matchID)
+                {
+                    List<GameObject> playersList = new List<GameObject>();
+                    foreach (var player in matches[i].GetPlayers())
+                    {
+                        playersList.Add(player);
+
+                    }
+                    foreach (var player in matches[i].GetPlayers())
+                    {
+                        LobbyNetworkPlayer _player = player.GetComponent<LobbyNetworkPlayer>();
+                        _player.StartStoryTelling(playersList);
+                    }
+                }
+
+                }
+        }
+
         public void BeginGame(string _matchID)
         {
             GameObject newTurnManager = Instantiate(turnManagerPrefab);
