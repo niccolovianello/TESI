@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: F2
   m_EditorClassIdentifier: 
   index: 1
-  narratorText: Astronauta
-  fragmentTitle: dkf
+  narratorText: White Magic's Ministry
+  fragmentTitle: 
   fragmentText: ',DJFQKJ'
   fragmentImage: {fileID: 21300016, guid: a0e7f1167efba544bb8d6e3198ae44f9, type: 3}

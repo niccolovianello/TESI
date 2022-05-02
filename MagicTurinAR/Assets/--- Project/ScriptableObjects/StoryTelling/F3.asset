@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: F3
   m_EditorClassIdentifier: 
   index: 2
-  narratorText: Antenna
-  fragmentTitle: sgd
+  narratorText: White Magic's Ministry
+  fragmentTitle: 
   fragmentText: gnhteyfj
   fragmentImage: {fileID: 21300000, guid: b79bd0860e006de4683a4f94f133bcb9, type: 3}
