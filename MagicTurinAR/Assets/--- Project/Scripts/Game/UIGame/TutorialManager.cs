@@ -26,10 +26,7 @@ public class TutorialManager : MonoBehaviour
        public void SwitchTutorialPanel()
        {
               _activePanel++;
-              
-              Debug.Log(_activePanel);
 
-              
               tutorialPanels[_activePanel - 1].SetActive(false);
               
               if (!(_activePanel > tutorialPanels.Count - 1))
