@@ -88,9 +88,10 @@ public class GameManager : Singleton<GameManager>
                 playerEnterInGameEvent.Invoke();
 
 
+                uiButtonsForTouchControl = FindObjectOfType<UIButtonsForTouchControl>();
+
                 if (player.TypePlayerEnum == NetworkPlayer.TypePlayer.Explorer)
                 {
-                    uiButtonsForTouchControl = FindObjectOfType<UIButtonsForTouchControl>();
                     uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => FindObjectOfType<CameraMovements>().ButtonCenterCameraOnPlayer());
                     uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => FindObjectOfType<CameraMovements>().FreeOrAutomaticRotation());
                 }
