@@ -1,20 +1,25 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class LockControl : MonoBehaviour
 {
 
     public static event Action Unlocked = delegate { };
+    [SerializeField] private float timeToOpenFinishMissionWindow = 2f;
+
     private int[] result, correctCombination;
 
     private void OnEnable()
     {
         Unlocked += TriggerAnimation;
+
     }
 
     private void OnDisable()
     {
         Unlocked -= TriggerAnimation;
+
     }
 
     private void Start()
@@ -64,7 +69,14 @@ public class LockControl : MonoBehaviour
     {
         var anim = GetComponent<Animator>();
         anim.SetTrigger("Unlock");
-        Destroy(gameObject, 2f);
+        StartCoroutine(FinishLevel());
+        Destroy(gameObject, timeToOpenFinishMissionWindow + 0.5f);
+    }
+
+    private IEnumerator FinishLevel()
+    {
+        yield return new WaitForSeconds(timeToOpenFinishMissionWindow);
+        FindObjectOfType<MissionsManager>().OpenFinishMissionWindow();
     }
 
 

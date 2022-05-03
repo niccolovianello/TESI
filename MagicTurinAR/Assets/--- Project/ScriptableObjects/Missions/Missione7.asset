@@ -20,10 +20,11 @@ MonoBehaviour:
   textFinishMission: Well done! You have finished the demo, continue to see the statistics
     achieved!
   missionCompleted: 0
+  demonVelocity: 0
   latitudeArea: 0
   longitudeArea: 0
   goalExplorerMissionAreaPrefab: {fileID: 0}
   latitudeTarget: 0
   longitudeTarget: 0
   goalExplorerMissionPrefab: {fileID: 0}
-  finalCode: 0200000006000000030000000800000000000000
+  finalCode: 0700000001000000060000000400000009000000
