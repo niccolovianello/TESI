@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: F2
   m_EditorClassIdentifier: 
   index: 1
-  narratorText: White Magic's Ministry
+  narratorText: Great Master of White Magic
   fragmentTitle: 
-  fragmentText: ',DJFQKJ'
+  fragmentText: Therefore, the White Order sent the three of you to prevent this
+    from happening. You have to explore the city to discover the Great Darkness,
+    which is the place where the members of the Dark Order will perform the obscure
+    ritual. Solve enigmas and collect handmade artifacts, runes, books and everything
+    that could potentially be helpful. Every clue can be crucial.
   fragmentImage: {fileID: 21300016, guid: a0e7f1167efba544bb8d6e3198ae44f9, type: 3}
