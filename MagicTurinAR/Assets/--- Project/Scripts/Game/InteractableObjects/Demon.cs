@@ -48,6 +48,7 @@ public class Demon : MonoBehaviour
         _collider.isTrigger = true;
         _animator = GetComponent<Animator>();
         _currentHealth = maxHealth;
+        runSpeed = FindObjectOfType<MissionsManager>().currentMission.demonVelocity;
     }
 
     private void Start()
@@ -79,7 +80,8 @@ public class Demon : MonoBehaviour
                 targetDirection.y = 0;
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetDirection), 0.1f);
                 transform.Translate(0, 0, runSpeed);
-                _animator.SetBool("Aware", true);
+                if(runSpeed > 0)
+                    _animator.SetBool("Aware", true);
 
                 if ((transform.position - arPlayerHealthManager.transform.position).magnitude < attackDistance)
                 {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 [CreateAssetMenu(fileName = "NewMission", menuName = "MagicItems/Mission")]
 public class MissionSO : ScriptableObject
@@ -19,6 +20,9 @@ public class MissionSO : ScriptableObject
     public string textFinishMission;
     public bool missionCompleted;
 
+
+    [Header("HunterMission")]
+    public float demonVelocity;
 
     [Header("TargetAreaInfo")]
     public float latitudeArea;
