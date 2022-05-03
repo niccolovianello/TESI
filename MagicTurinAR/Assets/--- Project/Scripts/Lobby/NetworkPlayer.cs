@@ -356,6 +356,7 @@ namespace MirrorBasics
 
         private void RpcAddMagicItem(string magicItemName)
         {
+            TurnManager turnManager = FindObjectOfType<TurnManager>();
             foreach (MagicItemSO miSO in ItemAssets.Instance.magicInventorySO.items)
             {
                 if(miSO.name == magicItemName)
