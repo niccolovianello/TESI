@@ -20,4 +20,4 @@ MonoBehaviour:
     which is the place where the members of the Dark Order will perform the obscure
     ritual. Solve enigmas and collect handmade artifacts, runes, books and everything
     that could potentially be helpful. Every clue can be crucial.
-  fragmentImage: {fileID: 21300016, guid: a0e7f1167efba544bb8d6e3198ae44f9, type: 3}
+  fragmentImage: {fileID: 21300000, guid: 33ce223f7233f4c08b106d52eff7c0d0, type: 3}

@@ -65,9 +65,9 @@ public class MissionsManager : MonoBehaviour
         
     }
 
-    private static void GoToStatsOfTheMatch()
+    public  void GoToStatsOfTheMatch()
     {
-
+        SceneManager.UnloadSceneAsync(currentMission.sceneName);
         SceneManager.UnloadSceneAsync("Game_Main");
 
         FindObjectOfType<MagicPlayer>().Destroy();
@@ -277,8 +277,8 @@ public class MissionsManager : MonoBehaviour
 
         else
         {
-            SceneManager.UnloadSceneAsync(currentMission.sceneName);
-            GoToStatsOfTheMatch();
+
+            NetworkPlayer.localPlayer.CmdGoToStats();
         }
         
     }

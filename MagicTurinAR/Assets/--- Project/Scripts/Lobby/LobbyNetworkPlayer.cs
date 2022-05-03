@@ -186,7 +186,7 @@ namespace MirrorBasics
         void TargetBeginStoryTelling(List<GameObject> players)
         {
             UILobby uiLobby = FindObjectOfType<UILobby>();
-            uiLobby.ClientUI.GetComponent<Canvas>().enabled = false;
+            uiLobby.ClientUI.gameObject.SetActive(false);
             uiLobby.storyTelling.gameObject.SetActive(true);
 
 

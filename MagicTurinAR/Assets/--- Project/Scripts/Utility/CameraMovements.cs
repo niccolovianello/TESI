@@ -147,6 +147,7 @@ public class CameraMovements : MonoBehaviour
                     zoom = _oldZoom;
                     return;
                 }
+                SetCameraInDefaultPosition();
 
             }
 
@@ -160,6 +161,7 @@ public class CameraMovements : MonoBehaviour
                     zoom = _oldZoom;
                     return;
                 }
+                SetCameraInDefaultPosition();
 
             }
 

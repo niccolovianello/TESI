@@ -42,7 +42,7 @@ public class GraphicInterctionBetweenPlayers : MonoBehaviour
             elapsedTime += Time.deltaTime;
 
             // Yield here
-            yield return null;
+            
         }
         while (elapsedTime < waitTime)
         {

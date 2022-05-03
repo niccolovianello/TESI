@@ -379,8 +379,23 @@ namespace MirrorBasics
 
             GameObject.Find(wheelName).GetComponent<Rotate>().RotateWheel();
         }
+
+        [Command]
+        public void CmdGoToStats()
+        {
+            RpcGoToStats();
+        }
+
+        [ClientRpc]
+
+        private void RpcGoToStats()
+        {
+
+            FindObjectOfType<MissionsManager>().GoToStatsOfTheMatch();
+        }
+
     }
-    
+
 
 
 }
