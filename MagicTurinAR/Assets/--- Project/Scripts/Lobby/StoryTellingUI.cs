@@ -78,14 +78,14 @@ public class StoryTellingUI : MonoBehaviour
 
             case (FragmentStoryTellingSO.PlayerType.Hunter):
                 foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
-                    if (np.TypePlayerEnum == NetworkPlayer.TypePlayer.Explorer)
+                    if (np.TypePlayerEnum == NetworkPlayer.TypePlayer.Hunter)
                         playerName = np.username;
 
                 textFragment.text = SetBetween(currentFragment.fragmentText, "[user]", playerName);
                 break;
             case (FragmentStoryTellingSO.PlayerType.Wiseman):
                 foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
-                    if (np.TypePlayerEnum == NetworkPlayer.TypePlayer.Explorer)
+                    if (np.TypePlayerEnum == NetworkPlayer.TypePlayer.Wiseman)
                         playerName = np.username;
 
                 textFragment.text = SetBetween(currentFragment.fragmentText, "[user]", playerName);
