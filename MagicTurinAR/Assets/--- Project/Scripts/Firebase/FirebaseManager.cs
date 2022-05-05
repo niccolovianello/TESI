@@ -354,7 +354,7 @@ public class FirebaseManager : MonoBehaviour
             //Data has been retrieved
             DataSnapshot snapshot = DBTask.Result;
 
-            tm.JsonLoader = snapshot.Child("role").Value.ToString();
+            tm.JsonLoader = snapshot.Child("users").Child(User.UserId).Value.ToString();
             tm.LoaderFlag = true;
             
 

@@ -147,7 +147,7 @@ public class MagicItem : Item
                         {
                             Debug.Log(uiInventory);
                             Debug.Log(this.name);
-                            if (miSO.id == this.idObjectCode && magicPlayer.IsCloseToTeamMembers())
+                            if (miSO.id == this.idObjectCode) // && magicPlayer.IsCloseToTeamMembers()
                             {
                                 int amountToPass = magicPlayer.inventory.AddItemToInventory(miSO, this);
                                 Debug.Log("Aggiunto a inventario " + this.gameObject.name);
