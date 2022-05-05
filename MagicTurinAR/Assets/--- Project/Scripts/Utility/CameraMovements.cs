@@ -142,12 +142,8 @@ public class CameraMovements : MonoBehaviour
             if (Vector3.Distance(Camera.gameObject.transform.position, cameraFocus.transform.position) > maxCameraDistance)
             {
                 Debug.Log("Maggiore");
-                if (zoom < _oldZoom)
-                {
-                    zoom = _oldZoom;
-                    return;
-                }
                 SetCameraInDefaultPosition();
+                return;
 
             }
 
@@ -156,12 +152,9 @@ public class CameraMovements : MonoBehaviour
             if (Vector3.Distance(Camera.gameObject.transform.position, cameraFocus.transform.position) < minCameraDistance)
             {
                 Debug.Log("Minore");
-                if (zoom > _oldZoom)
-                {
-                    zoom = _oldZoom;
-                    return;
-                }
+                
                 SetCameraInDefaultPosition();
+                return;
 
             }
 
