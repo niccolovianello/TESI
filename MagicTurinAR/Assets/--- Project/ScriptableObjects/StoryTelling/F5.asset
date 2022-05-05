@@ -23,3 +23,4 @@ MonoBehaviour:
     to avoid running out of energy for the team. On the map, you can find and collect
     Wite Magic Fragments themselves and ancient Magic Books.'
   fragmentImage: {fileID: 21300000, guid: 33ce223f7233f4c08b106d52eff7c0d0, type: 3}
+  fragmentDestinataryType: 2

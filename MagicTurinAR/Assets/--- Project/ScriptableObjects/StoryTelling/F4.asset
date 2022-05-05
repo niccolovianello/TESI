@@ -15,11 +15,12 @@ MonoBehaviour:
   index: 3
   narratorText: Great Master of White Magic
   fragmentTitle: 
-  fragmentText: ', you are the Hunter, the most dynamic member of this magic team.
-    Your most important goal is to defeat the Demons you will find around you using
-    your magic powers. Pay attention to your energy because every spell you cast
-    reduces your Mana: you have to try to maintain a pretty high accuracy level to
-    complete every mission. You can be asked to destroy a Gem by the Wiseman, to
-    generate some fresh White Magic Fragments. On the map, you can see some monsters
+  fragmentText: '[user], you are the Hunter, the most dynamic member of this magic
+    team. Your most important goal is to defeat the Demons you will find around you
+    using your magic powers. Pay attention to your energy because every spell you
+    cast reduces your Mana: you have to try to maintain a pretty high accuracy level
+    to complete every mission. You can be asked to destroy a Gem by the Wiseman,
+    to generate some fresh White Magic Fragments. On the map, you can see some monsters
     to fight and collect Runes.'
   fragmentImage: {fileID: 21300000, guid: 33ce223f7233f4c08b106d52eff7c0d0, type: 3}
+  fragmentDestinataryType: 1

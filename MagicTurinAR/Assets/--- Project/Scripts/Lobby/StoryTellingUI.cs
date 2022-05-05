@@ -59,10 +59,62 @@ public class StoryTellingUI : MonoBehaviour
 
     private void SetFragment()
     {
+        string playerName = "";
         indexFragment.text = (currentFragmentIndex + 1) + " / " + storyTellingSO.fragments.Count;
         imageFragment.sprite = currentFragment.fragmentImage;
         narratorFragment.text = currentFragment.narratorText;
         titleFragment.text = currentFragment.fragmentTitle;
-        textFragment.text = currentFragment.fragmentText;
+
+        switch (currentFragment.fragmentDestinataryType)
+        {
+            case (FragmentStoryTellingSO.PlayerType.Explorer):
+                
+                foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+                    if (np.TypePlayerEnum == NetworkPlayer.TypePlayer.Explorer)
+                        playerName = np.username;
+
+                textFragment.text = SetBetween(currentFragment.fragmentText, "[user]", playerName);
+                break;
+
+            case (FragmentStoryTellingSO.PlayerType.Hunter):
+                foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+                    if (np.TypePlayerEnum == NetworkPlayer.TypePlayer.Explorer)
+                        playerName = np.username;
+
+                textFragment.text = SetBetween(currentFragment.fragmentText, "[user]", playerName);
+                break;
+            case (FragmentStoryTellingSO.PlayerType.Wiseman):
+                foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+                    if (np.TypePlayerEnum == NetworkPlayer.TypePlayer.Explorer)
+                        playerName = np.username;
+
+                textFragment.text = SetBetween(currentFragment.fragmentText, "[user]", playerName);
+                break;
+            case (FragmentStoryTellingSO.PlayerType.All):
+                
+                textFragment.text = currentFragment.fragmentText;
+                break;
+
+        }
+    }
+    public static string SetBetween(string strSource, string searchStr, string replaceStr)
+    {
+        if (strSource.Contains(searchStr))
+        {
+            int Start, End;
+            int lenght = searchStr.Length;
+          
+            Start = strSource.IndexOf(searchStr.Substring(0));
+            
+            End = strSource.IndexOf(searchStr.Substring(lenght-1));
+
+            Debug.Log(Start + "  " + End + " " + lenght);
+
+            int totLenght = strSource.Length - End;
+            string result = strSource.Substring(0,Start) + replaceStr + strSource.Substring(End+1 ,totLenght-1);
+            return result;
+        }
+
+        return "string not found";
     }
 }

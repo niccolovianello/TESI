@@ -20,3 +20,4 @@ MonoBehaviour:
     anything alone. And if you run out of Mana, try to ask the Wiseman for some White
     Magic Fragments. I think that''s all! Try not to die and make the difference!'
   fragmentImage: {fileID: 21300000, guid: 33ce223f7233f4c08b106d52eff7c0d0, type: 3}
+  fragmentDestinataryType: 3
