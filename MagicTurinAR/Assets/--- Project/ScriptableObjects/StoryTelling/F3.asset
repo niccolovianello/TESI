@@ -15,5 +15,13 @@ MonoBehaviour:
   index: 2
   narratorText: Great Master of White Magic
   fragmentTitle: 
-  fragmentText: gnhteyfj
+  fragmentText: ', you are the Explorer. Your main task is to lead the group toward
+    every meaningful location: you can move around freely on the map and find the
+    best path to follow. Remember, if you ever get stuck, you can always turn your
+    powerful Navigation System on. Just keep in mind that this feature burns your
+    Mana out, so take it easy and don''t waste too much energy.  You can see (and
+    collect) two types of collectables: Gems and Artifacts. Gems are precious and
+    powerful magic pieces, which can be destroyed by the Hunter to produce White
+    Magic Fragments. Artifacts are fine handmade pieces of art, that you can keep
+    as a souvenir from this marvelous experience.'
   fragmentImage: {fileID: 21300000, guid: 33ce223f7233f4c08b106d52eff7c0d0, type: 3}
