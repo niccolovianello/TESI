@@ -67,7 +67,42 @@ public class MissionsManager : MonoBehaviour
 
     public  void GoToStatsOfTheMatch()
     {
-        SceneManager.UnloadSceneAsync(currentMission.sceneName);
+        switch (currentMission.playerType)
+        {
+            case (MissionSO.PlayerType.Explorer):
+                
+
+                break;
+            case (MissionSO.PlayerType.Hunter):
+                foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+                {
+                    if (np.isLocalPlayer)
+                    {
+                        if (np.TypePlayerEnum == NetworkPlayer.TypePlayer.Hunter)
+                            SceneManager.UnloadSceneAsync(currentMission.sceneName);
+                    }
+                }
+
+                break;
+            case (MissionSO.PlayerType.Wiseman):
+                foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+                {
+                    if (np.isLocalPlayer)
+                    {
+                        if (np.TypePlayerEnum == NetworkPlayer.TypePlayer.Wiseman)
+                            SceneManager.UnloadSceneAsync(currentMission.sceneName);
+                    }
+                }
+
+                break;
+            case (MissionSO.PlayerType.All):
+
+                SceneManager.UnloadSceneAsync(currentMission.sceneName);
+
+                break;
+
+        }
+        
         SceneManager.UnloadSceneAsync("Game_Main");
 
         FindObjectOfType<MagicPlayer>().Destroy();

@@ -40,9 +40,9 @@ public class GraphicInterctionBetweenPlayers : MonoBehaviour
         {
             go.transform.position = Vector3.Slerp(netplay1.gameObject.transform.position + offset, FindMidPoint(netplay1.transform.position, netplay2.transform.position) + offsetMid, elapsedTime);
             elapsedTime += Time.deltaTime;
-
+            yield return null;
             // Yield here
-            
+
         }
         while (elapsedTime < waitTime)
         {

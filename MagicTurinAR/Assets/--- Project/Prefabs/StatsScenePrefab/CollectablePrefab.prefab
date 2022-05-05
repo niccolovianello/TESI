@@ -201,8 +201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffbb0a50ef03b6e4f943a85b21d83e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableSprite: {fileID: 0}
-  collectableName: {fileID: 0}
+  collectableSprite: {fileID: 4444690061126447457}
+  collectableName: {fileID: 8745212456141677067}
 --- !u!1 &8679980056403820571
 GameObject:
   m_ObjectHideFlags: 0
