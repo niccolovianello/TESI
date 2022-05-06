@@ -9,7 +9,6 @@ public class CameraMovements : MonoBehaviour
 
 
     private Plane _plane;
-    private Transform _previousCameraTransform = null;
     private Vector3 _defaultCameraPosition = new Vector3(0, 0, 0);
     private float _oldZoom = 0.0f;
 
@@ -19,6 +18,7 @@ public class CameraMovements : MonoBehaviour
 
     [Header("Flag")]
     public bool flagActive = true;
+    private bool flagActiveTouch = true;
     public bool activateRotation;
     public bool centerCameraOnPlayer = false;
     public bool flagCameraInDefaultPosition = false;
@@ -41,6 +41,7 @@ public class CameraMovements : MonoBehaviour
 
     private void Start()
     {
+        flagActiveTouch = true;
         Debug.Log("CameraMovementsStart");
         if (Camera == null)
             foreach (NetworkPlayer nt in FindObjectsOfType<NetworkPlayer>())
@@ -52,11 +53,9 @@ public class CameraMovements : MonoBehaviour
                 
                 }
             }
-        _previousCameraTransform = Camera.gameObject.transform;
+
         _defaultCameraPosition = cameraFocus.transform.position + offsetDefaultCameraPosition;
-        StartCoroutine(SetCameraInDefaultPosition());
-
-
+        ResetCameraPosition();
     }
     
     
@@ -79,29 +78,15 @@ public class CameraMovements : MonoBehaviour
 
         }
 
-        if (Camera.transform.position.y < yLimit)
-        {
-            Debug.Log("Troppo basso");
-            Camera.transform.position = _previousCameraTransform.position;
-            return;
-        }
-
-        //if (Vector3.Distance(CameraFocus.transform.position, Camera.transform.position) > maxCameraDistance)
-        //{
-        //    Camera.transform.position = previousCameraTransform.position;
-        //    return;
-        //}
-
-
         //Update Plane
-        if (Input.touchCount >= 1)
+        if (Input.touchCount >= 1 && flagActiveTouch)
             _plane.SetNormalAndPosition(transform.up, transform.position);
 
         var Delta1 = Vector3.zero;
         var Delta2 = Vector3.zero;
 
         //Scroll
-        if (Input.touchCount == 1 && !centerCameraOnPlayer)
+        if (Input.touchCount == 1 && !centerCameraOnPlayer && flagActiveTouch)
         {
 
             Delta1 = PlanePositionDelta(Input.GetTouch(0));
@@ -116,7 +101,7 @@ public class CameraMovements : MonoBehaviour
 
 
         //Pinch
-        if (Input.touchCount >= 2)
+        if (Input.touchCount >= 2 && flagActiveTouch)
         {
             var pos1 = PlanePosition(Input.GetTouch(0).position);
             var pos2 = PlanePosition(Input.GetTouch(1).position);
@@ -142,7 +127,7 @@ public class CameraMovements : MonoBehaviour
             if (Vector3.Distance(Camera.gameObject.transform.position, cameraFocus.transform.position) > maxCameraDistance)
             {
                 Debug.Log("Maggiore");
-                SetCameraInDefaultPosition();
+                ResetCameraPosition();
                 return;
 
             }
@@ -152,25 +137,17 @@ public class CameraMovements : MonoBehaviour
             if (Vector3.Distance(Camera.gameObject.transform.position, cameraFocus.transform.position) < minCameraDistance)
             {
                 Debug.Log("Minore");
-                
-                SetCameraInDefaultPosition();
+
+                ResetCameraPosition();
                 return;
 
             }
 
 
-            // z limit
 
-
-
-
-
-            //Move cam amount the mid ray
+        
             Camera.transform.position = Vector3.LerpUnclamped(pos1, Camera.transform.position, 1 / zoom);
-            _previousCameraTransform.position = Camera.gameObject.transform.position;
             _oldZoom = zoom;
-
-
 
         }
 
@@ -183,7 +160,8 @@ public class CameraMovements : MonoBehaviour
 
     private IEnumerator SetCameraInDefaultPosition()
     {
-        
+
+        flagActiveTouch = false;
         centerCameraOnPlayer = true;
         flagCameraInDefaultPosition = false;
         if (flagCameraInDefaultPosition)
@@ -203,8 +181,7 @@ public class CameraMovements : MonoBehaviour
             // Yield here
             yield return null;
         }
-
-
+        flagActiveTouch = true;
 
     }
 
