@@ -223,64 +223,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1001 &176433458
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1917084503044084, guid: 924a7268bfe9947e095cce9a99ed0458, type: 3}
-      propertyPath: m_Name
-      value: ARSceneCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 4121737292843690, guid: 924a7268bfe9947e095cce9a99ed0458, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4121737292843690, guid: 924a7268bfe9947e095cce9a99ed0458, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4121737292843690, guid: 924a7268bfe9947e095cce9a99ed0458, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4121737292843690, guid: 924a7268bfe9947e095cce9a99ed0458, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4121737292843690, guid: 924a7268bfe9947e095cce9a99ed0458, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4121737292843690, guid: 924a7268bfe9947e095cce9a99ed0458, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4121737292843690, guid: 924a7268bfe9947e095cce9a99ed0458, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4121737292843690, guid: 924a7268bfe9947e095cce9a99ed0458, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4121737292843690, guid: 924a7268bfe9947e095cce9a99ed0458, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4121737292843690, guid: 924a7268bfe9947e095cce9a99ed0458, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4121737292843690, guid: 924a7268bfe9947e095cce9a99ed0458, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5440240464683167522, guid: 924a7268bfe9947e095cce9a99ed0458, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 924a7268bfe9947e095cce9a99ed0458, type: 3}
 --- !u!1 &253635431
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,6 +235,7 @@ GameObject:
   - component: {fileID: 253635434}
   - component: {fileID: 253635433}
   - component: {fileID: 253635432}
+  - component: {fileID: 253635436}
   m_Layer: 0
   m_Name: SharedARManager
   m_TagString: Untagged
@@ -312,7 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931f8d10f8f009b4b988a899f756c12f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PoseIndicator: {fileID: 0}
+  PoseIndicator: {fileID: 8782936031143310191, guid: 18575a7bb1bf79e43a97049695e06f0e, type: 3}
+  offsetPoseIndicator: {x: 0, y: 0, z: -0.2}
 --- !u!114 &253635433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,6 +304,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &253635436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253635431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61225b9e18604b82b4ba8d216a58e42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manifest: {fileID: 11400000, guid: cb8b9dfd32a2da9498a822c3a05c86e2, type: 2}
 --- !u!1 &525112560
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +410,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &738242673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 738242674}
+  m_Layer: 0
+  m_Name: SharedARGameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &738242674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738242673}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.0777557, y: 0.0652939, z: -0.11656655}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &778174082
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,6 +563,82 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a87e4c0a995ae4977ac2a1256b837e0f, type: 3}
+--- !u!114 &1007877255 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5150496722276672610, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+  m_PrefabInstance: {fileID: 1297370588}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfedfd6646c94b53b5ae944005ee7e76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &1297370588
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2658963035307697238, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+      propertyPath: _sessionIdentifier
+      value: ABC
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150496722276672610, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+      propertyPath: _manageUsingUnityLifecycle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650170115564024859, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650170115564024859, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 402
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650170115564024859, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 288
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650170115564024859, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650170115564024859, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650170115564024859, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650170115564024859, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650170115564024859, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650170115564024859, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650170115564024859, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650170115564024859, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997646801401058201, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+      propertyPath: m_Name
+      value: ARNetworkingSceneManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
 --- !u!1 &1677704022
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,9 +722,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 253635432}
-        m_TargetAssemblyTypeName: SharedARManagerScript, Assembly-CSharp
-        m_MethodName: CreateAndRunSharedAR
+      - m_Target: {fileID: 1007877255}
+        m_TargetAssemblyTypeName: Niantic.ARDK.Extensions.UnityLifecycleDriver, ARDK
+        m_MethodName: EnableFeatures
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

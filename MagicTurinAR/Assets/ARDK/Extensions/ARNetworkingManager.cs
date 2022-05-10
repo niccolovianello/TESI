@@ -43,7 +43,7 @@ namespace Niantic.ARDK.Extensions
   ///   events (i.e. initialization of ARNetworking) may not happen on the exact frame as
   ///   the method (OnAwake or Initialize) is invoked.
   [RequireComponent(typeof(ARSessionManager))]
-  [RequireComponent(typeof(NetworkSessionManager))]
+  //[RequireComponent(typeof(NetworkSessionManager))]
   [DisallowMultipleComponent]
   public class ARNetworkingManager: ARConfigChanger
   {

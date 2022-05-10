@@ -10,7 +10,9 @@ public class Rotate : MonoBehaviour
 
     private bool _coroutineAllowed;
     public int numberShown;
+    public int indexRound;
     private NetworkPlayer np;
+    private Chest chestBehaviour;
 
 
     // Start is called before the first frame update
@@ -18,6 +20,7 @@ public class Rotate : MonoBehaviour
     {
         _coroutineAllowed = true;
         numberShown = 7;
+        chestBehaviour = FindObjectOfType<Chest>();
 
         
         foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
@@ -31,7 +34,9 @@ public class Rotate : MonoBehaviour
         if (_coroutineAllowed)
         {
             //StartCoroutine(RotateWheelCoroutine());
-            np.CmdRotateLockWheel(name);
+            //np.CmdRotateLockWheel(name);
+
+            chestBehaviour.RotateRound(indexRound);
         }
     }
 

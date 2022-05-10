@@ -10,6 +10,23 @@ public class LockControl : MonoBehaviour
 
     private int[] result, correctCombination;
 
+
+
+    private void Start()
+    {
+      
+        result = new[] { 7, 7, 7, 7, 7 };
+        correctCombination = new[] { 8, 7, 7, 7, 7 };
+
+        if (FindObjectOfType<MissionsManager>())
+        {
+            correctCombination = FindObjectOfType<MissionsManager>().currentMission.finalCode;
+        }
+
+        Rotate.Rotated += CheckResults;
+    }
+
+
     private void OnEnable()
     {
         Unlocked += TriggerAnimation;
@@ -21,20 +38,6 @@ public class LockControl : MonoBehaviour
         Unlocked -= TriggerAnimation;
 
     }
-
-    private void Start()
-    {
-        result = new [] { 7, 7, 7, 7, 7 };
-        correctCombination = new [] {8, 7, 7, 7, 7};
-        
-        if (FindObjectOfType<MissionsManager>())
-        {
-            correctCombination = FindObjectOfType<MissionsManager>().currentMission.finalCode;
-        }
-        
-        Rotate.Rotated += CheckResults;
-    }
-
 
     private void CheckResults(string wheelName, int number)
     {
