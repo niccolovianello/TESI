@@ -43,7 +43,7 @@ public class SharedARManagerScript : MonoBehaviour
     private bool _isHost;
 
     private bool _isGameStarted = false;
-    private bool _isSynced;
+    public bool _isSynced;
     private bool _objectsSpawned = false;
 
 
@@ -186,10 +186,13 @@ public class SharedARManagerScript : MonoBehaviour
         _self = args.Self;
         _host = args.Host;
         _isHost = args.IsHost;
+
+        Debug.LogFormat("Peer connected: {0}, isHost: {1}", args.Self.Identifier.ToString(), args.IsHost);
     }
 
     public void OnPeerStateReceived(PeerStateReceivedArgs args)
     {
+        Debug.LogFormat("State:  {0} Peer: {1}", args.State, args.Peer);
         if (_self.Identifier == args.Peer.Identifier)
             UpdateOwnState(args);
         else
