@@ -79,7 +79,10 @@ public class LockControl : MonoBehaviour
     private IEnumerator FinishLevel()
     {
         yield return new WaitForSeconds(timeToOpenFinishMissionWindow);
-        FindObjectOfType<MissionsManager>().OpenFinishMissionWindow();
+        if (FindObjectOfType<MissionsManager>())
+        {
+            FindObjectOfType<MissionsManager>().OpenFinishMissionWindow();
+        }
     }
 
 

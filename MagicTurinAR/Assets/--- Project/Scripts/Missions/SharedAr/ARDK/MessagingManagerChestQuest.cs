@@ -53,6 +53,7 @@ public class MessagingManagerChestQuest
         }
     internal void SpawnGameObjects(Vector3 position)
     {
+        Debug.Log("SpawnChest");
         _networking.BroadcastData
         (
           (uint)_MessageType.SpawnGameObjectsMessage,
@@ -63,6 +64,7 @@ public class MessagingManagerChestQuest
 
     internal void BroadCastRoundRotation(int roundIndex)
     {
+        Debug.Log("Rotation of round: " + roundIndex);
         _networking.BroadcastData
         (
           (uint)_MessageType.WheelRotatedMessage,

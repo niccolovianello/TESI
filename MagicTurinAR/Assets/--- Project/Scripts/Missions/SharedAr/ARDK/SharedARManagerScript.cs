@@ -20,11 +20,13 @@ using Niantic.ARDK.Utilities.BinarySerialization;
 public class SharedARManagerScript : MonoBehaviour
 {
     public GameObject PoseIndicator;
-    public Vector3 offsetPoseIndicator = new Vector3(-.5f, 0, 0);
+    public Vector3 offsetPoseIndicator = new Vector3(0f, 1.0f, 0);
     private IARNetworking _arNetworking;
     private IMultipeerNetworking _networking;
     private IARSession _session;
-    private FeaturePreloadManager preloadManager;
+
+    [SerializeField]
+    private FeaturePreloadManager preloadManager = null;
 
     [Header("Gameplay Prefabs")]
     [SerializeField]
@@ -48,7 +50,7 @@ public class SharedARManagerScript : MonoBehaviour
     private Dictionary<IPeer, GameObject> _playerIndcator = new Dictionary<IPeer, GameObject>();
 
 
-    private void Start()
+    private void Awake()
     {
         ARNetworkingFactory.ARNetworkingInitialized += OnInitialized;
         preloadManager.ProgressUpdated += PreloadProgressUpdated;
@@ -68,10 +70,16 @@ public class SharedARManagerScript : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        FindObjectOfType<ARNetworkingManager>().EnableFeatures();
+    }
     private void Update()
     {
+        //if(Input.GetKeyDown(KeyCode.A))
+       
         // start game conditions
-        if (_playerIndcator.Values.Count == 3 && _isGameStarted == false)
+        if (_playerIndcator.Values.Count == 2 && _isGameStarted == false)
         {
             StartGame();
            
@@ -111,6 +119,7 @@ public class SharedARManagerScript : MonoBehaviour
         }
 
         _chest = Instantiate(chest, position, Quaternion.identity);
+        _chest.transform.Rotate(new Vector3(0, 180, 0), Space.World);
 
         _chestBehviour = _chest.GetComponent<Chest>();
         _messagingManager.SetChestReference(_chestBehviour);

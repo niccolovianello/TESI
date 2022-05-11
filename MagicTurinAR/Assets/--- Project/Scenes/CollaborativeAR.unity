@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &87168427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,7 +256,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseIndicator: {fileID: 8782936031143310191, guid: 18575a7bb1bf79e43a97049695e06f0e, type: 3}
-  offsetPoseIndicator: {x: 0, y: 0, z: -0.2}
+  offsetPoseIndicator: {x: 0, y: 1, z: 0}
+  preloadManager: {fileID: 253635436}
+  chest: {fileID: 6539795342943687653, guid: bce19212227bb8d4183c41a4e10d6acf, type: 3}
 --- !u!114 &253635433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,10 +315,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 253635431}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61225b9e18604b82b4ba8d216a58e42e, type: 3}
+  m_Script: {fileID: 11500000, guid: dbd4c2c932f814cb991e2c486ec09b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _manifest: {fileID: 11400000, guid: cb8b9dfd32a2da9498a822c3a05c86e2, type: 2}
+  _manageUsingUnityLifecycle: 1
+  _features: 01000000
 --- !u!1 &525112560
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,6 +48,6 @@ public class Chest : MonoBehaviour
     
     private void TriggerAnimation()
     {
-        GetComponent<Animator>().SetTrigger("Unlock");
+        GetComponentInChildren<Animator>().SetTrigger("Unlock");
     }
 }
