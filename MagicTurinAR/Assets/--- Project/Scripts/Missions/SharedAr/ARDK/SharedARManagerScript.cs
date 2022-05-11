@@ -79,7 +79,7 @@ public class SharedARManagerScript : MonoBehaviour
         //if(Input.GetKeyDown(KeyCode.A))
        
         // start game conditions
-        if (_playerIndcator.Values.Count == 2 && _isGameStarted == false)
+        if (_playerIndcator.Values.Count == 1 && _isGameStarted == false)
         {
             StartGame();
            
