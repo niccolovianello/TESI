@@ -1,0 +1,30 @@
+[11:32:43.660387 +02:00] [---I---] [udp_socket.cpp] [thread 36399] Bound to [::]:58195
+[11:32:43.686097 +02:00] [---I---] [tcp_actor.cpp] [thread 36400] Fetching ARBE public certificate
+[11:32:43.686973 +02:00] [---I---] [curl.cpp] [thread 36400] Fetch cert from https://storage.googleapis.com/ardk_production_resources/ardkcert2.1.pem to ./data/ardkcert2.1.pem
+[11:32:43.693510 +02:00] [---I---] [arm_client.cpp] [thread 17880] ARM Client with clientID 0x00000000000000000000000000000000
+[11:32:43.693569 +02:00] [---I---] [multipeer_networking.cpp] [thread 17880] Initializing MultipeerNetwork with endpoint: https://ardk.eng.nianticlabs.com:8084/publickey
+[11:32:43.693737 +02:00] [---I---] [multipeer_networking.cpp] [thread 17880] Check reliable ordered messaging state
+[11:32:43.693801 +02:00] [---I---] [multipeer_networking_persistent_blob_actor.cpp] [thread 36401] PersistentBlobActor waiting for session join / ready
+[11:32:44.605857 +02:00] [---I---] [tcp_actor.cpp] [thread 36400] Got server info
+ cert: [z03Tn28kGx!{EFHDC-VVF^bG0V%R+@nh28?v}F4q]
+ address: [35.203.141.131:6005]
+[11:32:44.606055 +02:00] [---I---] [curl.cpp] [thread 36400] Set cert path. ./data/ardkcert2.1.pem
+[11:32:44.879414 +02:00] [---I---] [tcp_actor.cpp] [thread 36400] Received auth token: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL2lkZW50aXR5dG9vbGtpdC5nb29nbGVhcGlzLmNvbS9nb29nbGUuaWRlbnRpdHkuaWRlbnRpdHl0b29sa2l0LnYxLklkZW50aXR5VG9vbGtpdCIsImlhdCI6MTY1MjI2MTU2NCwiZXhwIjoxNjUyMjY1MTY0LCJpc3MiOiJhci1kZXYtcG9ydGFsLXByb2RAYXBwc3BvdC5nc2VydmljZWFjY291bnQuY29tIiwic3ViIjoiYXItZGV2LXBvcnRhbC1wcm9kQGFwcHNwb3QuZ3NlcnZpY2VhY2NvdW50LmNvbSIsInVpZCI6InVwRDR0bTd4TTBUZ3E1MDk1U1dhM2hwR2RHSTMiLCJjbGFpbXMiOnsidWlkIjoidXBENHRtN3hNMFRncTUwOTVTV2EzaHBHZEdJMyIsImFwcElkIjoidkkxbnZjcFo3TGJrZWpRSHBPRWkifX0.N0gb-CNoYE5G-KlZtwlaRd40vgQ2WGVERq1Pzu7gMsFYFDc_e10vrgorXMwdyT4Gb-jc97akq5YKZyXTcLXgtpQqyjzETCrK7eBJKb4O51R5vohGONgAJbHLsLh_ASM9CtlOiKYpR4ho8pBoMrlAKVooPxIWfDIPz2ME4IyzRlNhUH6JTMrffXpD1vSh62obfdS5i99KagNM0vQ9EI2umPvFMtjHfA2YJVm_TYdUvNp6eaNf5roZiGLWE0PBtoBXTW4Kx-UlrwUov0IIO65JDZhngdex4wipjdZwjx0-E_ucYD4gZRWh6XujRYo-P_mdawZz597QRe31n4i5vB9Bvw
+[11:32:44.880964 +02:00] [---I---] [zmq_client_socket.cpp] [thread 36400] Generating client key pair, clientPublicKey=NdOE}P#D}-xST/9pC*T@g>$}UB{q$T@0V#^s*]nJ
+[11:32:44.882672 +02:00] [---I---] [tcp_actor.cpp] [thread 36400] UnHealthy: 0
+[11:32:45.884397 +02:00] [---I---] [tcp_actor.cpp] [thread 36400] 34.82.78.215:7003 has ip 34.82.78.215 and port 7003
+[11:32:45.884531 +02:00] [---I---] [udp_connection.cpp] [thread 36398] Got an encryptor to the server and 0xA407F57F5CB45CD5D808B47D600A5428
+[11:32:45.884614 +02:00] [---I---] [tcp_actor.cpp] [thread 36400] 34.82.78.215:7003 has ip 34.82.78.215 and port 7003
+[11:32:45.884714 +02:00] [---I---] [udp_connection.cpp] [thread 36398] Received previously received server udp key again. Ignoring.
+[11:32:45.885967 +02:00] [---I---] [multipeer_networking.cpp] [thread 36396] Connection is ON, but not yet joined
+[11:32:52.389348 +02:00] [---I---] [multipeer_networking_persistent_blob_actor.cpp] [thread 36401] PersistentBlobActor waiting for session join / ready
+[11:32:52.389683 +02:00] [---I---] [multipeer_networking.cpp] [thread 36396] Sending join session to server
+[11:32:52.553033 +02:00] [---I---] [multipeer_networking.cpp] [thread 36396] 0xA407F57F5CB45CD5D808B47D600A5428 got successful session joined message
+[11:32:52.553153 +02:00] [---W---] [multipeer_networking.cpp] [thread 36396]  There's no encryptor for pair 0xA407F57F5CB45CD5D808B47D600A5428 and 0xA407F57F5CB45CD5D808B47D600A5428
+[11:32:52.553210 +02:00] [---I---] [multipeer_networking.cpp] [thread 36396] 0xA407F57F5CB45CD5D808B47D600A5428 got new peer 0xA407F57F5CB45CD5D808B47D600A5428
+[11:32:52.553313 +02:00] [---I---] [multipeer_networking_persistent_blob_actor.cpp] [thread 36401] PersistentBlobActor waiting for session join / ready
+[11:32:52.713427 +02:00] [---I---] [multipeer_networking.cpp] [thread 36396] 0xA407F57F5CB45CD5D808B47D600A5428 raising _didConnectCallback with host 0xA407F57F5CB45CD5D808B47D600A5428
+[11:32:52.714951 +02:00] [---I---] [multipeer_networking_persistent_blob_actor.cpp] [thread 36401] PersistentBlobActor setup complete
+[11:33:08.313077 +02:00] [---I---] [multipeer_networking.cpp] [thread 17880] 0xA407F57F5CB45CD5D808B47D600A5428 sending leave session to server
+[11:33:08.339593 +02:00] [---I---] [actor.cpp] [thread 17880] Actor already shutdown.
+[11:33:08.355918 +02:00] [---I---] [curl_executor.cpp] [thread 17880] 0
