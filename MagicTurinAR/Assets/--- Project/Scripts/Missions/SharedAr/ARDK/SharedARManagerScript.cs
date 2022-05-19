@@ -57,6 +57,10 @@ public class SharedARManagerScript : MonoBehaviour
         preloadManager.ProgressUpdated += PreloadProgressUpdated;
     }
 
+    public bool IsHost
+    {
+        get => _isHost;
+    }
     private void PreloadProgressUpdated(FeaturePreloadManager.PreloadProgressUpdatedArgs args)
     {
         if (args.PreloadAttemptFinished)

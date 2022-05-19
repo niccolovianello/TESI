@@ -28,18 +28,24 @@ public class Chest : MonoBehaviour
         _isGameStarted = true;
         _initialPosition = transform.position;
 
-        if (!_isHost)
-            return;
+        //if (!_isHost)
+        //    return;
 
         _messagingManager = messagingManager;
         
     }
 
 
-        public void RotateRound(int roundIndex)
+    public void RotateRound(int roundIndex)
     {
-        rounds[roundIndex].RotateWheel();
+        
+         rounds[roundIndex].RotateWheel();
+        //   Debug.Log("Rotate round methos");
+        //Debug.Log(_messagingManager);
+
         _messagingManager.BroadCastRoundRotation(roundIndex);
+        
+            
     }
 
     public void Rotate(int roundIndex)

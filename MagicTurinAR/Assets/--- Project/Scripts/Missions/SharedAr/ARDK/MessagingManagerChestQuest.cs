@@ -17,35 +17,41 @@ using UnityEngine;
 public class MessagingManagerChestQuest
     
 {
-        // Reference to the networking object
-        private IMultipeerNetworking _networking;
+    // Reference to the networking object
+    private IMultipeerNetworking _networking;
 
-        // References to the local game controller and ball
-        private SharedARManagerScript _controller;
-        private Chest _chest;
+    // References to the local game controller and ball
+    private SharedARManagerScript _controller;
+    private Chest _chest;
 
-        // Enums for the various message types
-        private enum _MessageType :
-          uint
-        {
-            WheelRotatedMessage = 1,
-            SpawnGameObjectsMessage
-        }
+    // Enums for the various message types
+    private enum _MessageType :
+        uint
+    {
+        WheelRotatedMessage = 1,
+        SpawnGameObjectsMessage
+    }
 
-        // Initialize manager with relevant data and references
-        internal void InitializeMessagingManager
-        (
-          IMultipeerNetworking networking,
-          SharedARManagerScript controller
-        )
-        {
-            _networking = networking;
-            _controller = controller;
+    public SharedARManagerScript Controller
+    {
+        get => _controller;
+    
+    }
 
-            _networking.PeerDataReceived += OnPeerDataReceived;
-        }
+    // Initialize manager with relevant data and references
+    internal void InitializeMessagingManager
+    (
+        IMultipeerNetworking networking,
+        SharedARManagerScript controller
+    )
+    {
+        _networking = networking;
+        _controller = controller;
 
-        // After the game is created, give a reference to the ball
+        _networking.PeerDataReceived += OnPeerDataReceived;
+    }
+
+    // After the game is created, give a reference to the ball
         
     internal void SetChestReference(Chest chest)
         {
