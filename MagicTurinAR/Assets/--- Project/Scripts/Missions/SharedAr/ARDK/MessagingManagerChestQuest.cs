@@ -69,7 +69,7 @@ public class MessagingManagerChestQuest
         (
           (uint)_MessageType.WheelRotatedMessage,
           SerializationHelper.SerializeInt(roundIndex),
-          TransportType.ReliableOrdered,sendToSelf: false
+          TransportType.ReliableOrdered
         );
     }
 
@@ -89,7 +89,7 @@ public class MessagingManagerChestQuest
 
             case _MessageType.WheelRotatedMessage:
 
-                _chest.RotateRound(SerializationHelper.DeserializeInt(data));               
+                _chest.Rotate(SerializationHelper.DeserializeInt(data));               
                 break;
 
 

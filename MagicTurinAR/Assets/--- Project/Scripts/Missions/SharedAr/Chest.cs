@@ -38,8 +38,14 @@ public class Chest : MonoBehaviour
 
         public void RotateRound(int roundIndex)
     {
-        rounds[roundIndex].RotateWheel();
+        //rounds[roundIndex].RotateWheel();
         _messagingManager.BroadCastRoundRotation(roundIndex);
+    }
+
+    public void Rotate(int roundIndex)
+    {
+        rounds[roundIndex].RotateWheel();
+      
     }
     private void OnEnable()
     {
