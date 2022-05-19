@@ -11,11 +11,8 @@ using Niantic.ARDK.Networking;
 using Niantic.ARDK.Networking.MultipeerNetworkingEventArgs;
 using Niantic.ARDK.Utilities;
 using Niantic.ARDK.Extensions;
-using Niantic.ARDK.Networking.HLAPI;
-using Niantic.ARDK.Networking.HLAPI.Authority;
-using Niantic.ARDK.Networking.HLAPI.Object;
-using System.IO;
-using Niantic.ARDK.Utilities.BinarySerialization;
+using Niantic.ARDKExamples.Helpers;
+
 
 public class SharedARManagerScript : MonoBehaviour
 {
@@ -199,6 +196,15 @@ public class SharedARManagerScript : MonoBehaviour
         _self = args.Self;
         _host = args.Host;
         _isHost = args.IsHost;
+
+        if (!_isHost)
+        {
+            Camera camera = FindObjectOfType<Camera>();
+            camera.GetComponent<CustomARHitTest>().Destroy();
+            camera.GetComponent<ARPlaneManager>().Destroy();
+            camera.GetComponent<ARDepthManager>().Destroy();
+            camera.GetComponent<ARCursorRenderer>().Destroy();
+        }
 
         FindObjectOfType<UIManagerSharedAR>().SetDebugInterfaceHost(_isHost.ToString());
         Debug.LogFormat("Peer connected: {0}, isHost: {1}", args.Self.Identifier.ToString(), args.IsHost);
