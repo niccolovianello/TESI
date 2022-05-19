@@ -83,6 +83,8 @@ public class MessagingManagerChestQuest
             case _MessageType.SpawnGameObjectsMessage:
 
                 _controller.InstantiateObjects(SerializationHelper.DeserializeVector3(data));
+                
+                Debug.LogFormat("DataReceivedBy: {0}", args.Peer);
                 break;
 
             case _MessageType.WheelRotatedMessage:

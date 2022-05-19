@@ -127,13 +127,13 @@ public class SharedARManagerScript : MonoBehaviour
 
         _objectsSpawned = true;
 
-
+        Debug.Log("BeforeCmdSpawn");
         if (!_isHost)
             return;
 
         _messagingManager.SpawnGameObjects(position);
 
-
+        Debug.Log("AfterCmdSpawn");
     }
 
         //public void CreateAndRunSharedAR()
