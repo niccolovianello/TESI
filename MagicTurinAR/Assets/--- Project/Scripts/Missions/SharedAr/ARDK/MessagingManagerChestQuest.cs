@@ -89,7 +89,9 @@ public class MessagingManagerChestQuest
 
             case _MessageType.WheelRotatedMessage:
 
-                _chest.Rotate(SerializationHelper.DeserializeInt(data));               
+                Debug.Log("blblbblblbl");
+                _chest.Rotate(SerializationHelper.DeserializeInt(data));
+                Debug.Log(SerializationHelper.DeserializeInt(data));
                 break;
 
 
