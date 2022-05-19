@@ -192,6 +192,7 @@ public class SharedARManagerScript : MonoBehaviour
         _host = args.Host;
         _isHost = args.IsHost;
 
+        FindObjectOfType<UIManagerSharedAR>().SetDebugInterfaceHost(_isHost.ToString());
         Debug.LogFormat("Peer connected: {0}, isHost: {1}", args.Self.Identifier.ToString(), args.IsHost);
         Debug.Log("is host: " + _isHost);
     }
@@ -209,6 +210,7 @@ public class SharedARManagerScript : MonoBehaviour
 
     private void UpdatePeerState(PeerStateReceivedArgs args)
     {
+       
         if (args.State == PeerState.Stable)
         {
             _isSynced = true;
@@ -221,7 +223,8 @@ public class SharedARManagerScript : MonoBehaviour
     {
         string message = args.State.ToString();
         Debug.Log("We reached state " + message);
-       
+        FindObjectOfType<UIManagerSharedAR>().SetDebugInterfaceState(args.State.ToString());
+
 
     }
 
