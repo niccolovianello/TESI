@@ -58,7 +58,7 @@ public class MessagingManagerChestQuest
         (
           (uint)_MessageType.SpawnGameObjectsMessage,
           SerializationHelper.SerializeVector3(position),
-          TransportType.ReliableUnordered
+          TransportType.ReliableUnordered, sendToSelf: false
         );
     }
 

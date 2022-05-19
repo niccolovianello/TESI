@@ -96,6 +96,7 @@ public class SharedARManagerScript : MonoBehaviour
 
     public void StartGame()
     {
+        Debug.Log("Start Game");
         if (!_objectsSpawned)
         {
             InstantiateObjects(_location);
@@ -119,7 +120,10 @@ public class SharedARManagerScript : MonoBehaviour
         }
 
         _chest = Instantiate(chest, position, Quaternion.identity);
+        
         _chest.transform.Rotate(new Vector3(0, 180, 0), Space.World);
+        if(_isHost)
+            Debug.Log(_chest.transform.position);
 
         _chestBehviour = _chest.GetComponent<Chest>();
         _messagingManager.SetChestReference(_chestBehviour);
