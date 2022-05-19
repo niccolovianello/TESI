@@ -48,6 +48,8 @@ public class SharedARManagerScript : MonoBehaviour
 
     private Dictionary<IPeer, GameObject> _playerIndcator = new Dictionary<IPeer, GameObject>();
 
+    public int stablePeerCount = 0;
+
 
     private void Awake()
     {
@@ -78,7 +80,7 @@ public class SharedARManagerScript : MonoBehaviour
         //if(Input.GetKeyDown(KeyCode.A))
        
         // start game conditions
-        if ( _isGameStarted == false)
+        if ( _isGameStarted == false && stablePeerCount == 2)
         {
             StartGame();
            
@@ -196,6 +198,8 @@ public class SharedARManagerScript : MonoBehaviour
 
     public void OnPeerStateReceived(PeerStateReceivedArgs args)
     {
+        if (args.State == PeerState.Stable)
+            stablePeerCount++;
         Debug.LogFormat("State:  {0} Peer: {1}", args.State, args.Peer);
         if (_self.Identifier == args.Peer.Identifier)
             UpdateOwnState(args);
@@ -217,10 +221,13 @@ public class SharedARManagerScript : MonoBehaviour
     {
         string message = args.State.ToString();
         Debug.Log("We reached state " + message);
+       
+
     }
 
     public void OnPeerPoseReceived(PeerPoseReceivedArgs args)
     {
+
         if (!_playerIndcator.ContainsKey(args.Peer))
         {
             _playerIndcator.Add(args.Peer, Instantiate(PoseIndicator));
