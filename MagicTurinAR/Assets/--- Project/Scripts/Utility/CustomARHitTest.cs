@@ -132,6 +132,8 @@ namespace Niantic.ARDKExamples.Helpers
                 // Note (Kelly): Now that vertical planes are also supported in-editor, need to be
                 // more elegant about how/if to handle instantiation of the cube
                 hitPosition.y += PlacementObjectPf.transform.localScale.y / 2.0f;
+               
+               
 
                 GameObject GO = Instantiate(PlacementObjectPf, hitPosition + offsetSpawnObject, Quaternion.identity);
                 

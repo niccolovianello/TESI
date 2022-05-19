@@ -50,6 +50,8 @@ public class SharedARManagerScript : MonoBehaviour
 
     public int stablePeerCount = 0;
 
+    private bool chestLocationSet;
+
 
     private void Awake()
     {
@@ -84,7 +86,7 @@ public class SharedARManagerScript : MonoBehaviour
         //if(Input.GetKeyDown(KeyCode.A))
        
         // start game conditions
-        if ( _isGameStarted == false && stablePeerCount == 2)
+        if ( _isGameStarted == false && stablePeerCount == 2 && chestLocationSet)
         {
             StartGame();
            
@@ -97,10 +99,12 @@ public class SharedARManagerScript : MonoBehaviour
             _isGameStarted = true;
 
         _chest.transform.position = position;
+        chestLocationSet = true;
     }
 
     public void StartGame()
     {
+        FindObjectOfType<ChestSpawnPrefabScript>().gameObject.Destroy();
         Debug.Log("Start Game");
         if (!_objectsSpawned)
         {

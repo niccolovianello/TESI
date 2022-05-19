@@ -706,6 +706,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+--- !u!1 &1714427100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3061143500043066512, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+  m_PrefabInstance: {fileID: 1297370588}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1714427101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714427100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d241965d41aeea34d91ae5405cc6a1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 1714427107}
+  PlaceMultipleObjects: 0
+  offsetSpawnObject: {x: 0, y: 0, z: 0}
+  HitTestType: 4
+  PlacementObjectPf: {fileID: 8464579915162550168, guid: 07289745c5bcb31488d8117ab1880fa4, type: 3}
+  flagInteraction: 0
+--- !u!114 &1714427102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714427100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80198c6deee0a4c5c9096accbcac4119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manageUsingUnityLifecycle: 1
+  _arCamera: {fileID: 1714427107}
+  _keyFrameFrequency: 20
+  _interpolation: 2
+  _interpolationPreference: 0.9
+  _occlusionMode: 0
+  _textureFilterMode: 0
+--- !u!114 &1714427103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714427100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4762429022e4cc0b1b99fd1d2ecf137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 1714427107}
+  CursorObject: {fileID: 4724406701335978488, guid: 6e67bec7e60fd894bb8b4508426f91cb, type: 3}
+--- !u!20 &1714427107 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3041530420047957532, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+  m_PrefabInstance: {fileID: 1297370588}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1784395298
 GameObject:
   m_ObjectHideFlags: 0
