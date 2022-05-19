@@ -46,7 +46,6 @@ public class SharedARManagerScript : MonoBehaviour
     public bool _isSynced;
     private bool _objectsSpawned = false;
 
-
     private Dictionary<IPeer, GameObject> _playerIndcator = new Dictionary<IPeer, GameObject>();
 
 
@@ -79,7 +78,7 @@ public class SharedARManagerScript : MonoBehaviour
         //if(Input.GetKeyDown(KeyCode.A))
        
         // start game conditions
-        if (_playerIndcator.Values.Count == 1 && _isGameStarted == false)
+        if ( _isGameStarted == false)
         {
             StartGame();
            
@@ -192,6 +191,7 @@ public class SharedARManagerScript : MonoBehaviour
         _isHost = args.IsHost;
 
         Debug.LogFormat("Peer connected: {0}, isHost: {1}", args.Self.Identifier.ToString(), args.IsHost);
+        Debug.Log("is host: " + _isHost);
     }
 
     public void OnPeerStateReceived(PeerStateReceivedArgs args)
@@ -224,6 +224,7 @@ public class SharedARManagerScript : MonoBehaviour
         if (!_playerIndcator.ContainsKey(args.Peer))
         {
             _playerIndcator.Add(args.Peer, Instantiate(PoseIndicator));
+            //Debug.Log("Add Indicator");
         }
 
         if (_playerIndcator.TryGetValue(args.Peer, out PoseIndicator))
