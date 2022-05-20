@@ -227,11 +227,6 @@ public class MissionsManager : MonoBehaviour
                     
 
                 }
-                else
-                    CloseStartMissionWindow();
-
-                btnStartWindow.gameObject.SetActive(true);
-
 
 
                 break;
@@ -333,7 +328,7 @@ public class MissionsManager : MonoBehaviour
         windowToStartMission.enabled = true;
     }
 
-    private void CloseStartMissionWindow()
+    public void CloseStartMissionWindow()
     {
         windowToStartMission.enabled = false;
     }

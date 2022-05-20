@@ -341,7 +341,10 @@ namespace MirrorBasics
 
         private void RpcBeginSharedMission()
         {
-            FindObjectOfType<MissionsManager>().BeginSharedMission();
+            MissionsManager misman = FindObjectOfType<MissionsManager>();
+            misman.BeginSharedMission();
+            misman.CloseStartMissionWindow();
+            misman.btnStartWindow.gameObject.SetActive(true);
         }
 
 
