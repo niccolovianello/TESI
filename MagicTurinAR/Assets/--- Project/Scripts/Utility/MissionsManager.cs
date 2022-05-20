@@ -227,6 +227,9 @@ public class MissionsManager : MonoBehaviour
                     
 
                 }
+                else
+                    CloseStartMissionWindow();
+
                 btnStartWindow.gameObject.SetActive(true);
 
 

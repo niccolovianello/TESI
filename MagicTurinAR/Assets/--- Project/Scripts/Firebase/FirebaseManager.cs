@@ -123,6 +123,7 @@ public class FirebaseManager : MonoBehaviour
                     case AuthError.UserNotFound:
                         message = "Account does not exist";
                         break;
+                    
                 }
                 warningLoginText.text = message;
             }
