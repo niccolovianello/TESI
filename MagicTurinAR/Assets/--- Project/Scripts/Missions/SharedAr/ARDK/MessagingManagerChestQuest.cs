@@ -29,7 +29,8 @@ public class MessagingManagerChestQuest
         uint
     {
         WheelRotatedMessage = 1,
-        SpawnGameObjectsMessage
+        SpawnGameObjectsMessage,
+        chestLocationSetMessage
     }
 
     public SharedARManagerScript Controller
@@ -79,6 +80,17 @@ public class MessagingManagerChestQuest
         );
     }
 
+    internal void BroadCastChestLocationSet(bool locationChestSetBoolean)
+    {
+        
+        _networking.BroadcastData
+        (
+          (uint)_MessageType.chestLocationSetMessage,
+          SerializationHelper.SerializeBool(locationChestSetBoolean),
+          TransportType.ReliableOrdered
+        );
+    }
+
 
     void OnPeerDataReceived(PeerDataReceivedArgs args)
     {
@@ -100,6 +112,11 @@ public class MessagingManagerChestQuest
                 Debug.Log(SerializationHelper.DeserializeInt(data));
                 break;
 
+            case _MessageType.chestLocationSetMessage:
+
+                Debug.Log("Location Chest Set");
+                _controller.ChestLocationSet = true;
+                    break;
 
             default:
                 throw new ArgumentException("Received unknown tag from message");
@@ -145,6 +162,20 @@ public static class SerializationHelper
         using (var stream = new MemoryStream(data))
             return (int)GlobalSerializer.Deserialize(stream);
     }
+
+    //public static byte[] SerializeBool(bool boolean)
+    //{
+    //    using (var stream = new MemoryStream())
+    //    {
+    //        GlobalSerializer.Serialize(stream, boolean);
+    //        return stream.ToArray();
+    //    }
+    //}
+    //public static bool DeserializeBool(byte[] data)
+    //{
+    //    using (var stream = new MemoryStream(data))
+    //        return (bool) GlobalSerializer.Deserialize(stream);
+    //}
 
     public static byte[] SerializeBool(bool boolean)
     {

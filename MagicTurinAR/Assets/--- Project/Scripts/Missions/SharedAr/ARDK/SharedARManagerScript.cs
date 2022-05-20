@@ -62,6 +62,12 @@ public class SharedARManagerScript : MonoBehaviour
     {
         get => _isHost;
     }
+
+    public bool ChestLocationSet
+    {
+        get => chestLocationSet;
+        set => chestLocationSet = value;
+    }
     private void PreloadProgressUpdated(FeaturePreloadManager.PreloadProgressUpdatedArgs args)
     {
         if (args.PreloadAttemptFinished)
@@ -88,6 +94,8 @@ public class SharedARManagerScript : MonoBehaviour
         if ( _isGameStarted == false && stablePeerCount == 2 && chestLocationSet)
         {
             StartGame();
+            if (IsHost)
+                FindObjectOfType<CameraManagerSharedAR>().DestroyNotHostComponents();
            
         }
     }
@@ -101,10 +109,14 @@ public class SharedARManagerScript : MonoBehaviour
 
             _chest.transform.position = position;
         }
-            
+
         else
+        {
             _location = position;
+        }
+            
         chestLocationSet = true;
+        _messagingManager.BroadCastChestLocationSet(true);
         Debug.Log("Position of spawn prefab set: " + _location);
     }
 
