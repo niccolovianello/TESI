@@ -50,6 +50,8 @@ public class SharedARManagerScript : MonoBehaviour
     private bool chestLocationSet;
 
 
+
+
     private void Awake()
     {
         ARNetworkingFactory.ARNetworkingInitialized += OnInitialized;
@@ -199,11 +201,7 @@ public class SharedARManagerScript : MonoBehaviour
 
         if (!_isHost)
         {
-            Camera camera = FindObjectOfType<Camera>();
-            camera.GetComponent<CustomARHitTest>().Destroy();
-            camera.GetComponent<ARPlaneManager>().Destroy();
-            camera.GetComponent<ARDepthManager>().Destroy();
-            camera.GetComponent<ARCursorRenderer>().Destroy();
+            FindObjectOfType<CameraManagerSharedAR>().DestroyNotHostComponents();
         }
 
         FindObjectOfType<UIManagerSharedAR>().SetDebugInterfaceHost(_isHost.ToString());

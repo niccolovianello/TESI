@@ -782,6 +782,23 @@ MonoBehaviour:
   _manageUsingUnityLifecycle: 1
   _planePrefab: {fileID: 1092543363889104, guid: 1c9d6565e40dbed49bf63fa610e6cf77, type: 3}
   _detectedPlaneTypes: 1
+--- !u!114 &1714427112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714427100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef90c33d4a6ae714daa6b5a94944c39d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  componentsToDisable:
+  - {fileID: 1714427108}
+  - {fileID: 1714427111}
+  - {fileID: 1714427103}
+  - {fileID: 1714427102}
 --- !u!1 &1784395298
 GameObject:
   m_ObjectHideFlags: 0
