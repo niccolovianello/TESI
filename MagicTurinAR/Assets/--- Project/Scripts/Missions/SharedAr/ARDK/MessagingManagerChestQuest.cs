@@ -87,7 +87,7 @@ public class MessagingManagerChestQuest
         (
           (uint)_MessageType.chestLocationSetMessage,
           SerializationHelper.SerializeBool(locationChestSetBoolean),
-          TransportType.ReliableOrdered
+          TransportType.ReliableOrdered, sendToSelf: true
         );
     }
 

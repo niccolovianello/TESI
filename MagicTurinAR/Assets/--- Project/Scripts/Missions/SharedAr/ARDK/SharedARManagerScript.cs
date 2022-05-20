@@ -94,7 +94,7 @@ public class SharedARManagerScript : MonoBehaviour
         if ( _isGameStarted == false && stablePeerCount == 2 && chestLocationSet)
         {
             StartGame();
-            if (IsHost)
+            if (_isHost)
                 FindObjectOfType<CameraManagerSharedAR>().DestroyNotHostComponents();
            
         }
@@ -116,13 +116,14 @@ public class SharedARManagerScript : MonoBehaviour
         }
             
         chestLocationSet = true;
-        _messagingManager.BroadCastChestLocationSet(true);
+        
         Debug.Log("Position of spawn prefab set: " + _location);
     }
 
     public void StartGame()
     {
-        FindObjectOfType<ChestSpawnPrefabScript>().gameObject.Destroy();
+        if(_isHost)
+            FindObjectOfType<ChestSpawnPrefabScript>().gameObject.Destroy();
         Debug.Log("Start Game");
         if (!_objectsSpawned)
         {
@@ -156,6 +157,7 @@ public class SharedARManagerScript : MonoBehaviour
         _messagingManager.SetChestReference(_chestBehviour);
         _chestBehviour.Controller = this;
 
+        _messagingManager.BroadCastChestLocationSet(true);
         _objectsSpawned = true;
 
         Debug.Log("BeforeCmdSpawn");
