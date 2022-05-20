@@ -97,8 +97,10 @@ public class SharedARManagerScript : MonoBehaviour
         if (!_isGameStarted)
             _isGameStarted = true;
 
+        _location = position;
         _chest.transform.position = position;
         chestLocationSet = true;
+        Debug.Log("Position of spawn prefab set: " + _location);
     }
 
     public void StartGame()

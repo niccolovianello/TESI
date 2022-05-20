@@ -7,6 +7,7 @@ public class ChestSpawnPrefabScript : MonoBehaviour
     private void Start()
     {
         FindObjectOfType<SharedARManagerScript>().SetChestLocation(this.transform.position);
+        
     }
 
    
