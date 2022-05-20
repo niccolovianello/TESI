@@ -17008,13 +17008,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a6834a8dbf5604296c6453ff0c7f67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magicTurinLevels: {fileID: 11400000, guid: 407df8b0c62768a4da91008a66bac56c, type: 2}
+  magicTurinLevels: {fileID: 11400000, guid: 97ab33a00edf62d48a513fcdc0e7a18b, type: 2}
   currentMission: {fileID: 0}
   currentMissionIndex: 0
   windowFinishLevel: {fileID: 1217707880}
   textFinishLevel: {fileID: 828554473}
   windowToStartMission: {fileID: 1888885375}
   textWindowStartLevel: {fileID: 1671421322}
+  btnStartWindow: {fileID: 1651995944}
   parentTarget: {fileID: 1838948239}
   offsetTargetExplorer: {x: 0, y: 2.5, z: 0}
 --- !u!4 &2049333394

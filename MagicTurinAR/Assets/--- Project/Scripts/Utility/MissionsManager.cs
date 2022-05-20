@@ -25,6 +25,7 @@ public class MissionsManager : MonoBehaviour
     [Header("WindowStartLevel")]
     public Canvas windowToStartMission;
     public Text textWindowStartLevel;
+    public Button btnStartWindow;
 
     [Header("ExplorerPrefabs")]
     public GameObject parentTarget;
@@ -146,13 +147,16 @@ public class MissionsManager : MonoBehaviour
                 break;
 
             case MissionSO.PlayerType.All:
+                OpenStartMissionWindow();
+                Vibration.Vibrate();
+                textWindowStartLevel.text = currentMission.textBeginMission;
+                btnStartWindow.gameObject.SetActive(false);
+                
                 if (_magicPlayer is Wiseman)
                 {
                     //Debug.Log("StartMission!");
-                    OpenStartMissionWindow();
-                    Vibration.Vibrate();
-                    textWindowStartLevel.text = currentMission.textBeginMission;
 
+                    btnStartWindow.gameObject.SetActive(true);
                 }
 
                 break;
@@ -211,6 +215,7 @@ public class MissionsManager : MonoBehaviour
                 }
                 break;
             case MissionSO.PlayerType.All:
+               
                 if (_magicPlayer is Wiseman)
                 {
                     foreach (var np in FindObjectsOfType<NetworkPlayer>())
@@ -219,9 +224,11 @@ public class MissionsManager : MonoBehaviour
                         if (np.isLocalPlayer)
                             np.CmdSharedMission();
                     }
+                    
 
                 }
-                
+                btnStartWindow.gameObject.SetActive(true);
+
 
 
                 break;

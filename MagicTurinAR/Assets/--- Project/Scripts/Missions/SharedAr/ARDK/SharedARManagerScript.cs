@@ -91,7 +91,7 @@ public class SharedARManagerScript : MonoBehaviour
         //if(Input.GetKeyDown(KeyCode.A))
        
         // start game conditions
-        if ( _isGameStarted == false && stablePeerCount == 2 && chestLocationSet)
+        if ( _isGameStarted == false && stablePeerCount == 3 && chestLocationSet)
         {
             StartGame();
             if (_isHost)
