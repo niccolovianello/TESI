@@ -16,7 +16,7 @@ public class LockControl : MonoBehaviour
     {
       
         result = new[] { 7, 7, 7, 7, 7 };
-        correctCombination = new[] { 8, 7, 7, 7, 7 };
+        correctCombination = new[] { 8, 3, 8, 4, 2};
 
         if (FindObjectOfType<MissionsManager>())
         {

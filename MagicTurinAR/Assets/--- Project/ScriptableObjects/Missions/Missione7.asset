@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 6
   playerType: 3
-  sceneName: AR_Shared
-  textBeginMission: ' You have found a chest that can hide important information!
-    Collaborate with your team to find out what''s in it!'
+  sceneName: CollaborativeAR
+  textBeginMission: 
   textFinishMission: Well done! You have finished the demo, continue to see the statistics
     achieved!
   missionCompleted: 0

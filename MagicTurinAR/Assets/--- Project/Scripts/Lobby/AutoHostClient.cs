@@ -34,7 +34,7 @@ namespace MirrorBasics
 
         public void JoinLocal()
         {
-            networkManager.networkAddress = "arlocationbased.ddns.net";
+            networkManager.networkAddress = "magicturinar.ddns.net";
             networkManager.StartClient();
 
             //arlocationbased.ddns.net

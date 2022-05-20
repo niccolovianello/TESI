@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -281,7 +281,7 @@ MonoBehaviour:
   offlineScene: Assets/--- Project/Scenes/Offline.unity
   onlineScene: Assets/--- Project/Scenes/Lobby.unity
   transport: {fileID: 29762634}
-  networkAddress: arlocationbased.ddns.net
+  networkAddress: magicturinar.ddns.net
   maxConnections: 10
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 891979759604794750, guid: 858ef017d3ebf4b068e394a8e2c09cc9, type: 3}
