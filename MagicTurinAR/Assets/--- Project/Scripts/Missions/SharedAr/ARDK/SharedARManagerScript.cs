@@ -94,12 +94,14 @@ public class SharedARManagerScript : MonoBehaviour
 
     public void SetChestLocation(Vector3 position)
     {
-        if (!_isGameStarted)
-            _isGameStarted = true;
+        if (_chest != null)
+        {
+            if (!_isGameStarted)
+                _isGameStarted = true;
 
-        
-        if(_chest!= null)
             _chest.transform.position = position;
+        }
+            
         else
             _location = position;
         chestLocationSet = true;
