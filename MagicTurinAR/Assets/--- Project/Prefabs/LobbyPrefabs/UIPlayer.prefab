@@ -169,7 +169,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controlOnNetworkPlayerTime: 1.5
   text: {fileID: 4874246704334465182}
-  role: {fileID: 8630705639565685417}
+  roleText: {fileID: 0}
+  roleImage: {fileID: 0}
+  explorerSprite: {fileID: 0}
+  hunterSprite: {fileID: 0}
+  wisemanSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   uiLobby: {fileID: 0}
   networkPlayer: {fileID: 0}
 --- !u!114 &5397700984559144723
@@ -385,4 +390,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: N
+  m_Text: Choose Role

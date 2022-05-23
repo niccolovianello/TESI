@@ -33,8 +33,13 @@ namespace MirrorBasics
         private void Start()
         {
             uiLobby = FindObjectOfType<UILobby>();
-            SetPlayer(networkPlayer);
+            //SetPlayer(networkPlayer);
             StartCoroutine(ControlOnNetworkPlayer());
+
+            foreach (UIPlayer uiPlayer in FindObjectsOfType<UIPlayer>())
+            {
+                uiPlayer.SetPlayer(uiPlayer.networkPlayer);
+            }
         }
 
         public NetworkPlayer GetNetworkPlayer()
@@ -66,7 +71,7 @@ namespace MirrorBasics
                     roleImage.sprite = hunterSprite;
                     break;
                 default:
-                    roleText.text = "N";
+                    roleText.text = "Choose Role";
                     break;
             }
         }
