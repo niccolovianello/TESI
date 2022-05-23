@@ -120,7 +120,7 @@ public class SharedARManagerScript : MonoBehaviour
         Debug.Log("Position of spawn prefab set: " + _location);
     }
 
-    public void StartGame()
+    private void StartGame()
     {
         if(_isHost)
             FindObjectOfType<ChestSpawnPrefabScript>().gameObject.Destroy();
@@ -209,12 +209,12 @@ public class SharedARManagerScript : MonoBehaviour
 
         //}
 
-        private void OnSessionRan(ARSessionRanArgs args)
+    private void OnSessionRan(ARSessionRanArgs args)
     {
         Debug.Log("session ran");
     }
 
-    public void OnNetworkConnected(ConnectedArgs args)
+    private void OnNetworkConnected(ConnectedArgs args)
     {
         _self = args.Self;
         _host = args.Host;
@@ -230,7 +230,7 @@ public class SharedARManagerScript : MonoBehaviour
         Debug.Log("is host: " + _isHost);
     }
 
-    public void OnPeerStateReceived(PeerStateReceivedArgs args)
+    private void OnPeerStateReceived(PeerStateReceivedArgs args)
     {
         if (args.State == PeerState.Stable)
             stablePeerCount++;
@@ -247,21 +247,15 @@ public class SharedARManagerScript : MonoBehaviour
         if (args.State == PeerState.Stable)
         {
             _isSynced = true;
-
-           
         }
     }
 
     private void UpdateOwnState(PeerStateReceivedArgs args)
     {
-        string message = args.State.ToString();
-        Debug.Log("We reached state " + message);
-        FindObjectOfType<UIManagerSharedAR>().SetDebugInterfaceState(args.State.ToString());
-
-
+        FindObjectOfType<UIManagerSharedAR>().SetDebugInterfaceState(args, _isHost);
     }
 
-    public void OnPeerPoseReceived(PeerPoseReceivedArgs args)
+    private void OnPeerPoseReceived(PeerPoseReceivedArgs args)
     {
 
         if (!_playerIndcator.ContainsKey(args.Peer))
@@ -282,13 +276,11 @@ public class SharedARManagerScript : MonoBehaviour
         _session = _arNetworking.ARSession;
         _networking = _arNetworking.Networking;
 
-
-        //subscrition events
+        //subscription events
         _session.Ran += OnSessionRan;
         _networking.Connected += OnNetworkConnected;
         _arNetworking.PeerStateReceived += OnPeerStateReceived;
         _arNetworking.PeerPoseReceived += OnPeerPoseReceived;
-
 
         _messagingManager = new MessagingManagerChestQuest();
         _messagingManager.InitializeMessagingManager(args.ARNetworking.Networking, this);

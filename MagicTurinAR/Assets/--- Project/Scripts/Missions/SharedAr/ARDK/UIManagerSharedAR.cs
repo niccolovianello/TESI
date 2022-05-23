@@ -1,5 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using Niantic.ARDK.AR.Networking;
+using Niantic.ARDK.AR.Networking.ARNetworkingEventArgs;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,11 +11,44 @@ public class UIManagerSharedAR : MonoBehaviour
 
     public void SetDebugInterfaceHost(string hostString)
     {
-        textHost.text = "isHost: " + hostString;
+        textHost.text = hostString == "true" ? "Leader" : "Fellow";
     }
 
-    public void SetDebugInterfaceState(string peerStateString)
+    public void SetDebugInterfaceState(PeerStateReceivedArgs args, bool isHost)
     {
-        textState.text = "State: " + peerStateString;
+        switch (args.State)
+        {
+            case PeerState.WaitingForLocalizationData:
+                textState.text = isHost ? "Scan an object." : "Wait for the leader to complete the scanning process.";
+                break;
+            
+            case PeerState.Unknown:
+                break;
+            
+            case PeerState.Initializing:
+                break;
+            
+            case PeerState.Localizing:
+                textState.text = isHost ? "Scan an object." : "Keep scanning.";
+                break;
+            
+            case PeerState.Stabilizing:
+                break;
+            
+            case PeerState.Stable:
+                textState.text = isHost ? "Wait for the others to complete the scanning process." : "Scan completed.";
+                break;
+            
+            case PeerState.Limited:
+                break;
+            
+            case PeerState.Failed:
+                break;
+            
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
+
+    
 }
