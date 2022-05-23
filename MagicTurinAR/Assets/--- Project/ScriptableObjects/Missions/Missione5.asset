@@ -18,7 +18,7 @@ MonoBehaviour:
   textBeginMission: You ready?
   textFinishMission: You made it see the stars from pain!
   missionCompleted: 0
-  demonVelocity: 0.002
+  demonVelocity: 0.02
   latitudeArea: 0
   longitudeArea: 0
   goalExplorerMissionAreaPrefab: {fileID: 0}

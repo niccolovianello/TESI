@@ -84,7 +84,7 @@ public class SharedARManagerScript : MonoBehaviour
 
     private void Start()
     {
-        FindObjectOfType<ARNetworkingManager>().EnableFeatures();
+        //FindObjectOfType<ARNetworkingManager>().EnableFeatures();
     }
     private void Update()
     {
@@ -131,6 +131,7 @@ public class SharedARManagerScript : MonoBehaviour
         }
             
         _isGameStarted = true;
+       
         _chestBehviour.GameStart(_isHost, _messagingManager);
     }
 
@@ -147,6 +148,7 @@ public class SharedARManagerScript : MonoBehaviour
             return;
         }
 
+        FindObjectOfType<UIManagerSharedAR>().OpenPanelChest();
         _chest = Instantiate(chest, position, Quaternion.identity);
         
         _chest.transform.Rotate(new Vector3(0, 180, 0), Space.World);

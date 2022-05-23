@@ -1,13 +1,22 @@
 using System;
 using Niantic.ARDK.AR.Networking;
 using Niantic.ARDK.AR.Networking.ARNetworkingEventArgs;
+using Niantic.ARDK.Extensions;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class UIManagerSharedAR : MonoBehaviour
 {
     public Text textHost;
     public Text textState;
+    public Text hintText;
+    public Image panelScan;
+    public Image panelChest;
+
+    public List<String> hints = new List<String>();
+    
 
     public void SetDebugInterfaceHost(string hostString)
     {
@@ -50,5 +59,33 @@ public class UIManagerSharedAR : MonoBehaviour
         }
     }
 
-    
+    public void EnableSharedExperience()
+    {
+        FindObjectOfType<ARNetworkingManager>().EnableFeatures();
+        panelScan.gameObject.SetActive(false);
+    }
+
+    public void ClosePanelChest()
+    {
+        textState.text = "";
+        textHost.text = "";
+        panelChest.gameObject.SetActive(false);
+        StartCoroutine(HintToUse());
+    }
+
+    public void OpenPanelChest()
+    {
+        panelChest.gameObject.SetActive(true);
+        
+    }
+
+    public IEnumerator HintToUse()
+    {
+        foreach (String s in hints)
+        {
+            textState.text = s;
+            yield return new WaitForSeconds(30f);
+        }
+    }
+
 }
