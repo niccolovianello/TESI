@@ -84,8 +84,15 @@ public class UIManagerSharedAR : MonoBehaviour
         foreach (String s in hints)
         {
             textState.text = s;
+            
             yield return new WaitForSeconds(30f);
         }
     }
+
+    //private IEnumerator HintSizeFX()
+    //{ 
+    //    textState.fontSize.Lerp()
+    
+    //}
 
 }
