@@ -11,7 +11,6 @@ public class UIManagerSharedAR : MonoBehaviour
 {
     public Text textHost;
     public Text textState;
-    public Text hintText;
     public Image panelScan;
     public Image panelChest;
 
@@ -84,6 +83,7 @@ public class UIManagerSharedAR : MonoBehaviour
         foreach (String s in hints)
         {
             textState.text = s;
+            Vibration.VibratePeek();
             
             yield return new WaitForSeconds(30f);
         }

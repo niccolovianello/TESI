@@ -71,6 +71,7 @@ public class LockControl : MonoBehaviour
     private void TriggerAnimation()
     {
         var anim = GetComponent<Animator>();
+        Vibration.VibratePeek();
         anim.SetTrigger("Unlock");
         StartCoroutine(FinishLevel());
         Destroy(gameObject, timeToOpenFinishMissionWindow + 0.5f);
