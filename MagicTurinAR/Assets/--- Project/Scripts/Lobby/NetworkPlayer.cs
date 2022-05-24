@@ -43,7 +43,7 @@ namespace MirrorBasics
 
             UILobby = FindObjectOfType<UILobby>();
             UILobby.ClientOrServerView(this);
-            SetRole(TypePlayer.Default);
+            //SetRole(TypePlayer.Default);
             
 
             //Debug.Log("START PLAYER BEHAVIOUR");

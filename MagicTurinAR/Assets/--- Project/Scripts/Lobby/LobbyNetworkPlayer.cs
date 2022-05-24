@@ -51,9 +51,13 @@ namespace MirrorBasics
                //firebaseManager.StartCoroutine(firebaseManager.LoadUserData(storeData));
 
             }
-            
+
             if (isLocalPlayer)
+            {
                 username = firebaseManager.username;
+                CmdAskForUsername();
+            }
+                
 
 
             
