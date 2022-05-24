@@ -103,6 +103,8 @@ namespace MirrorBasics
             foreach (UIPlayer uiPlayer in playersUiPrefabs)
             {
                 uiPlayer.SetTextRole(uiPlayer.GetNetworkPlayer());
+                if (uiPlayer.networkPlayer.isLocalPlayer)
+                    uiPlayer.SetUsername(username);
             }
         }
 

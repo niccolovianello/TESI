@@ -52,6 +52,12 @@ namespace MirrorBasics
 
         }
 
+        public void SetUsername(string username)
+        {
+            text.text = username;
+        
+        }
+
         public void CheckOthersUiPlayerPrefabs()
         {
             

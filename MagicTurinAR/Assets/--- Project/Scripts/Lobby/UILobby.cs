@@ -134,7 +134,7 @@ namespace MirrorBasics
             newUIPlayer.GetComponent<UIPlayer>().SetPlayer(networkPlayer);
             
             networkPlayer.SetUiPlayerOfNetworkPlayer(newUIPlayer);
-           
+            networkPlayer.CmdAskForUsername();
             newUIPlayer.transform.SetSiblingIndex(networkPlayer.playerIndex - 1);
         }
 

@@ -151,7 +151,7 @@ namespace MirrorBasics
                 networkMatch.matchId = _matchID.toGuid();
                 Debug.Log(networkMatch.matchId);
                 TargetJoinGame(true, _matchID, playerIndex);
-                CmdAskForUsername();
+                
             }
             else
             {
