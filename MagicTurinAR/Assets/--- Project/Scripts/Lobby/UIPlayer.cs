@@ -36,10 +36,7 @@ namespace MirrorBasics
             //SetPlayer(networkPlayer);
             StartCoroutine(ControlOnNetworkPlayer());
 
-            foreach (UIPlayer uiPlayer in FindObjectsOfType<UIPlayer>())
-            {
-                uiPlayer.SetPlayer(uiPlayer.networkPlayer);
-            }
+            
         }
 
         public NetworkPlayer GetNetworkPlayer()
@@ -50,7 +47,20 @@ namespace MirrorBasics
         {
             this.networkPlayer = _player;
             text.text = networkPlayer.username;
+            CheckOthersUiPlayerPrefabs();
            
+
+        }
+
+        public void CheckOthersUiPlayerPrefabs()
+        {
+            int i = 0;
+            foreach (UIPlayer uiPlayer in FindObjectsOfType<UIPlayer>())
+            {
+                i++;
+                uiPlayer.text.text = uiPlayer.networkPlayer.username.ToString();
+            }
+            Debug.Log(i);
         }
 
         public void SetTextRole(NetworkPlayer _player)

@@ -51,9 +51,7 @@ namespace MirrorBasics
 
             }
 
-            if(isLocalPlayer)
-                username = firebaseManager.username;
-
+            //CmdAskForUsername();
             Debug.Log(networkMatch);
         }
 
@@ -65,7 +63,7 @@ namespace MirrorBasics
         [Command]
         public void CmdAskForUsername()
         {
-            username = firebaseManager.username;
+            RpcAskForUsername();
         }
 
         [ClientRpc]
@@ -151,6 +149,7 @@ namespace MirrorBasics
                 networkMatch.matchId = _matchID.toGuid();
                 Debug.Log(networkMatch.matchId);
                 TargetJoinGame(true, _matchID, playerIndex);
+                CmdAskForUsername();
             }
             else
             {
