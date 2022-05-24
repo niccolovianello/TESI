@@ -51,7 +51,9 @@ namespace MirrorBasics
 
             }
 
-            //CmdAskForUsername();
+            if(isLocalPlayer)
+                username = firebaseManager.username;
+
             Debug.Log(networkMatch);
         }
 

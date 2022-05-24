@@ -54,13 +54,12 @@ namespace MirrorBasics
 
         public void CheckOthersUiPlayerPrefabs()
         {
-            int i = 0;
+            
             foreach (UIPlayer uiPlayer in FindObjectsOfType<UIPlayer>())
             {
-                i++;
                 uiPlayer.text.text = uiPlayer.networkPlayer.username.ToString();
             }
-            Debug.Log(i);
+            
         }
 
         public void SetTextRole(NetworkPlayer _player)
