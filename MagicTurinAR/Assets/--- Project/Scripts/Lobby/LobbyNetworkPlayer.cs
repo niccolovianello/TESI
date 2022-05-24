@@ -51,10 +51,15 @@ namespace MirrorBasics
 
             }
 
-            if(isLocalPlayer)
+            if (isLocalPlayer)
                 username = firebaseManager.username;
 
-            Debug.Log(networkMatch);
+
+            foreach (NetworkPlayer n in FindObjectsOfType<NetworkPlayer>())
+            {
+                if (n.isLocalPlayer)
+                    n.CmdAskForUsername();
+            }
         }
 
         public FirebaseManager FirebaseManager
@@ -65,16 +70,19 @@ namespace MirrorBasics
         [Command]
         public void CmdAskForUsername()
         {
+            Debug.Log("CmdUsername");
             RpcAskForUsername();
         }
 
         [ClientRpc]
         public void RpcAskForUsername()
         {
+            Debug.Log("RpcUsername");
             foreach (LobbyNetworkPlayer lnp in FindObjectsOfType<LobbyNetworkPlayer>())
             {
                 if (lnp.isLocalPlayer)
                 {
+                    lnp.username = "";
                     lnp.username = lnp.firebaseManager.username;
                 }
             }
@@ -83,6 +91,7 @@ namespace MirrorBasics
         void SetUsername(string oldUserName, string newUserName)
         {
             username = newUserName;
+            Debug.Log("CAMBIOOOOO");
 
             UIPlayer[] playersUiPrefabs = FindObjectsOfType<UIPlayer>();
             foreach (UIPlayer uiPlayer in playersUiPrefabs)
