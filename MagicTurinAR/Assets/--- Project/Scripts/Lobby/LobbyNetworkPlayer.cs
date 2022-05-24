@@ -47,19 +47,16 @@ namespace MirrorBasics
             if ((!isServer || (isServer && isClient)) && isLocalPlayer)
             {
                 firebaseManager = FindObjectOfType<FirebaseManager>();
+                
                //firebaseManager.StartCoroutine(firebaseManager.LoadUserData(storeData));
 
             }
-
+            
             if (isLocalPlayer)
                 username = firebaseManager.username;
 
 
-            foreach (NetworkPlayer n in FindObjectsOfType<NetworkPlayer>())
-            {
-                if (n.isLocalPlayer)
-                    n.CmdAskForUsername();
-            }
+            
         }
 
         public FirebaseManager FirebaseManager
@@ -83,7 +80,9 @@ namespace MirrorBasics
                 if (lnp.isLocalPlayer)
                 {
                     lnp.username = "";
-                    lnp.username = lnp.firebaseManager.username;
+                    Debug.Log(firebaseManager);
+                    Debug.Log(FindObjectOfType<FirebaseManager>());
+                    lnp.username = FindObjectOfType<FirebaseManager>().username;
                 }
             }
         }
@@ -93,11 +92,7 @@ namespace MirrorBasics
             username = newUserName;
             Debug.Log("CAMBIOOOOO");
 
-            UIPlayer[] playersUiPrefabs = FindObjectsOfType<UIPlayer>();
-            foreach (UIPlayer uiPlayer in playersUiPrefabs)
-            {
-                uiPlayer.SetPlayer(uiPlayer.GetNetworkPlayer());
-            }
+            
 
         }
         public void SetUiPlayerOfNetworkPlayer(GameObject uiPlayer)

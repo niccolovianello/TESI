@@ -108,6 +108,10 @@ namespace MirrorBasics
                     Destroy(this.gameObject);
                     break;
                 }
+                else {
+                    text.text = networkPlayer.username;
+                    
+                }
             }
         }
     }
