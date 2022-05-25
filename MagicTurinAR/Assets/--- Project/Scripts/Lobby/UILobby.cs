@@ -85,7 +85,7 @@ namespace MirrorBasics
                 lobbyCanvas.enabled = true;
 
                 matchIDText.text = _matchID;
-                Debug.Log("Spawn Host!");
+                //Debug.Log("Spawn Host!");
                 if(playerIndex != -1 )
                     SpawnPlayerUIPrefab(NetworkPlayer.localPlayer);               
                 beginGameButton.SetActive(true);

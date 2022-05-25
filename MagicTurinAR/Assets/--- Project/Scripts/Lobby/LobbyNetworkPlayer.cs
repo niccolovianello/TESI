@@ -71,14 +71,14 @@ namespace MirrorBasics
         [Command]
         public void CmdAskForUsername()
         {
-            Debug.Log("CmdUsername");
+           // Debug.Log("CmdUsername");
             RpcAskForUsername();
         }
 
         [ClientRpc]
         public void RpcAskForUsername()
         {
-            Debug.Log("RpcUsername");
+            //Debug.Log("RpcUsername");
             foreach (LobbyNetworkPlayer lnp in FindObjectsOfType<LobbyNetworkPlayer>())
             {
                 if (lnp.isLocalPlayer)
@@ -94,7 +94,7 @@ namespace MirrorBasics
         void SetUsername(string oldUserName, string newUserName)
         {
             username = newUserName;
-            Debug.Log("CAMBIOOOOO");
+            //Debug.Log("CAMBIOOOOO");
 
             
 

@@ -108,7 +108,7 @@ public class StoryTellingUI : MonoBehaviour
             
             End = strSource.IndexOf(searchStr.Substring(lenght-1));
 
-            Debug.Log(Start + "  " + End + " " + lenght);
+            //Debug.Log(Start + "  " + End + " " + lenght);
 
             int totLenght = strSource.Length - End;
             string result = strSource.Substring(0,Start) + replaceStr + strSource.Substring(End+1 ,totLenght-1);

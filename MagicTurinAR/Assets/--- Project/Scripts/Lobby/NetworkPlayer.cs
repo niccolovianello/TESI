@@ -162,14 +162,14 @@ namespace MirrorBasics
             if (magicPlayer is Explorer)
             {
                 Explorer explorer = magicPlayer.GetComponent<Explorer>();
-                Debug.Log(explorer);
+                //Debug.Log(explorer);
                 explorer.IncreaseMana(whiteMagicReceived);
                 ReceiveMagicOrGemsVibration();
             }
             if (magicPlayer is Hunter)
             {
                 Hunter hunter = magicPlayer.GetComponent<Hunter>();
-                Debug.Log(hunter);
+                //Debug.Log(hunter);
                 hunter.IncreaseMana(whiteMagicReceived);
                 ReceiveMagicOrGemsVibration();
             }

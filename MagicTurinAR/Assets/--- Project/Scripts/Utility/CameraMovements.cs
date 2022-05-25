@@ -248,7 +248,7 @@ public class CameraMovements : MonoBehaviour
 
 #if UNITY_STANDALONE_WIN
     public Camera Camera;
-    public GameObject CameraFocus;
+    public GameObject cameraFocus;
 
     public void ButtonCenterCameraOnPlayer()
     {
