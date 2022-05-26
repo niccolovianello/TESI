@@ -40,7 +40,13 @@ namespace Niantic.ARDKExamples.Helpers
         private IARSession _session;
 
         [SerializeField] private float offsetY;
+        private bool letTouch = false;
 
+        public bool LetTouch
+        {
+            get => letTouch;
+            set => letTouch = value;
+        }
 
         public int GetCounterTouch()
         {
@@ -95,7 +101,7 @@ namespace Niantic.ARDKExamples.Helpers
             }
 
             var touch = PlatformAgnosticInput.GetTouch(0);
-            if (touch.phase == TouchPhase.Began && GetCounterTouch() < 1)
+            if (touch.phase == TouchPhase.Began && GetCounterTouch() < 1 && letTouch)
             {
                 ClearObjects();
                 TouchBegan(touch);
@@ -105,6 +111,7 @@ namespace Niantic.ARDKExamples.Helpers
 
         private void TouchBegan(Touch touch)
         {
+          
             var currentFrame = _session.CurrentFrame;
             if (currentFrame == null)
             {

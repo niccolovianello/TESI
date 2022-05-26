@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseIndicator: {fileID: 8782936031143310191, guid: 18575a7bb1bf79e43a97049695e06f0e, type: 3}
-  offsetPoseIndicator: {x: 0, y: 0, z: -0.1}
+  offsetPoseIndicator: {x: 0, y: 1.5, z: 0}
   preloadManager: {fileID: 253635436}
   chest: {fileID: 6539795342943687653, guid: bce19212227bb8d4183c41a4e10d6acf, type: 3}
   _isSynced: 0

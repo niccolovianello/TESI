@@ -1,3 +1,4 @@
+using Niantic.ARDKExamples.Helpers;
 using UnityEngine;
 
 
@@ -9,6 +10,7 @@ public class LimitGemFall : MonoBehaviour
         if (other.GetComponentInParent<AR_Gem>())
         {
             FindObjectOfType<UIDestroyGem>().OpenRestartWindow();
+            FindObjectOfType<PlaceDynamicARObject>().LetTouch = false;
         }
     }
 }

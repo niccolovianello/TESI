@@ -84,6 +84,7 @@ public class UIDestroyGem : MonoBehaviour
     public void CloseStartingPanel()
     {
         tipPanel.gameObject.SetActive(false);
+        FindObjectOfType<PlaceDynamicARObject>().LetTouch = true;
         // FindObjectOfType<Camera>().gameObject.GetComponent<PlaceDynamicARObject>().enabled = true;
 
         // FindObjectOfType<ARMeshManager>().UseInvisibleMaterial = true;
