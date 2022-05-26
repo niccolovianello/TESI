@@ -17,9 +17,9 @@ public class UIManagerSharedAR : MonoBehaviour
     public List<String> hints = new List<String>();
     
 
-    public void SetDebugInterfaceHost(string hostString)
+    public void SetDebugInterfaceHost(bool isHost)
     {
-        textHost.text = hostString == "true" ? "Leader" : "Fellow";
+        textHost.text = isHost == true ? "Leader" : "Fellow";
     }
 
     public void SetDebugInterfaceState(PeerStateReceivedArgs args, bool isHost)

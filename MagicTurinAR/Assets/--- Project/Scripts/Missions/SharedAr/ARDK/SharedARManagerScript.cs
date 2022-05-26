@@ -74,7 +74,7 @@ public class SharedARManagerScript : MonoBehaviour
         {
             if (args.FailedPreloads.Count > 0)
             {
-                Debug.LogError("Failed to download resources needed to run AR Multiplayer");
+                //Debug.LogError("Failed to download resources needed to run AR Multiplayer");
                 return;
             }
 
@@ -117,14 +117,14 @@ public class SharedARManagerScript : MonoBehaviour
             
         chestLocationSet = true;
         
-        Debug.Log("Position of spawn prefab set: " + _location);
+        //Debug.Log("Position of spawn prefab set: " + _location);
     }
 
     private void StartGame()
     {
         if(_isHost)
             FindObjectOfType<ChestSpawnPrefabScript>().gameObject.Destroy();
-        Debug.Log("Start Game");
+        //Debug.Log("Start Game");
         if (!_objectsSpawned)
         {
             InstantiateObjects(_location);
@@ -139,7 +139,7 @@ public class SharedARManagerScript : MonoBehaviour
     {
         if (_chest != null)
         {
-            Debug.Log("Relocating the playing field!");
+            //Debug.Log("Relocating the playing field!");
             chest.transform.position = position;
 
             if (_isHost)
@@ -153,7 +153,7 @@ public class SharedARManagerScript : MonoBehaviour
         
         _chest.transform.Rotate(new Vector3(0, 180, 0), Space.World);
         if(_isHost)
-            Debug.Log(_chest.transform.position);
+            //Debug.Log(_chest.transform.position);
 
         _chestBehviour = _chest.GetComponent<Chest>();
         _messagingManager.SetChestReference(_chestBehviour);
@@ -162,13 +162,13 @@ public class SharedARManagerScript : MonoBehaviour
         _messagingManager.BroadCastChestLocationSet(true);
         _objectsSpawned = true;
 
-        Debug.Log("BeforeCmdSpawn");
+       // Debug.Log("BeforeCmdSpawn");
         if (!_isHost)
             return;
 
         _messagingManager.SpawnGameObjects(position);
 
-        Debug.Log("AfterCmdSpawn");
+        //Debug.Log("AfterCmdSpawn");
     }
 
         //public void CreateAndRunSharedAR()
@@ -227,16 +227,16 @@ public class SharedARManagerScript : MonoBehaviour
             FindObjectOfType<CameraManagerSharedAR>().DestroyNotHostComponents();
         }
 
-        FindObjectOfType<UIManagerSharedAR>().SetDebugInterfaceHost(_isHost.ToString());
-        Debug.LogFormat("Peer connected: {0}, isHost: {1}", args.Self.Identifier.ToString(), args.IsHost);
-        Debug.Log("is host: " + _isHost);
+        FindObjectOfType<UIManagerSharedAR>().SetDebugInterfaceHost(_isHost);
+        //Debug.LogFormat("Peer connected: {0}, isHost: {1}", args.Self.Identifier.ToString(), args.IsHost);
+        //Debug.Log("is host: " + _isHost);
     }
 
     private void OnPeerStateReceived(PeerStateReceivedArgs args)
     {
         if (args.State == PeerState.Stable)
             stablePeerCount++;
-        Debug.LogFormat("State:  {0} Peer: {1}", args.State, args.Peer);
+        //Debug.LogFormat("State:  {0} Peer: {1}", args.State, args.Peer);
         if (_self.Identifier == args.Peer.Identifier)
             UpdateOwnState(args);
         else
