@@ -297,10 +297,12 @@ public class FirebaseManager : MonoBehaviour
             if (DBTask.Exception != null)
             {
                 Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+                FindObjectOfType<GUIStatsManager>().SetTextSaveCorrectly(false);
             }
             else
             {
                 Debug.LogWarning("Salvataggio completato");
+                FindObjectOfType<GUIStatsManager>().SetTextSaveCorrectly(true);
             }
         }
     #endregion

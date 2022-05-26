@@ -20,6 +20,12 @@ public class GUIStatsManager : MonoBehaviour
     [Header("Collectable Prefab")]
     public GameObject collectablePrefab;
 
+    [Header("Button Save")]
+    [SerializeField] private Button btnSave;
+
+    [Header("Text Save")]
+    [SerializeField] private Text saveCorrectlyText;
+
     private TurnManager turnManager;
     private void Start()
     {
@@ -68,7 +74,23 @@ public class GUIStatsManager : MonoBehaviour
     public void LoadMatchOnFirebase()
     {
         Debug.Log("LoadMatchOnfire");
+        btnSave.interactable = false;
+        Vibration.VibratePeek();
+       
         StartCoroutine(FindObjectOfType<TurnManager>().LoadMatchOnFirebaseCoroutine());
+    }
+
+    public void SetTextSaveCorrectly(bool isSaved)
+    {
+        if (isSaved)
+        {
+            saveCorrectlyText.text = "Data saved succesfully!";
+        }
+        else
+        {
+            saveCorrectlyText.text = "Something went wrong, no data saved!";
+        }
+            
     }
 
 
