@@ -25,13 +25,17 @@ Material:
   m_ShaderKeywords: _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP _PARALLAXMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_d6bee21dca184afc8a47afa15e187bcd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_d7d09c7b70044498bb21abb884d5f27b:
         m_Texture: {fileID: 2800000, guid: c1e920a3f300b44599b41916b1ef4493, type: 3}
         m_Scale: {x: 1, y: 1}
