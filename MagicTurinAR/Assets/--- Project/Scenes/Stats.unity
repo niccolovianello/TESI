@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -205,8 +205,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 669298784}
   m_HandleRect: {fileID: 669298783}
   m_Direction: 2
-  m_Value: 0.4999999
-  m_Size: 0.38998353
+  m_Value: 0.5
+  m_Size: 0.3899836
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -410,8 +410,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 158928010}
   m_HandleRect: {fileID: 158928009}
   m_Direction: 0
-  m_Value: -0.000000049814446
-  m_Size: 0.31454542
+  m_Value: 0
+  m_Size: 0.31454545
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1426,8 +1426,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 543254371}
   m_HandleRect: {fileID: 543254370}
   m_Direction: 2
-  m_Value: 0.4999999
-  m_Size: 0.38998353
+  m_Value: 0.5
+  m_Size: 0.3899836
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2184,7 +2184,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 9525209a56a30c346bd7c9ef982b328e, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
@@ -4295,8 +4295,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 677175616}
   m_HandleRect: {fileID: 677175615}
   m_Direction: 2
-  m_Value: 0.4999999
-  m_Size: 0.38998353
+  m_Value: 0.5
+  m_Size: 0.3899836
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
