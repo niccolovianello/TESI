@@ -99,7 +99,7 @@ public class GameManager : Singleton<GameManager>
                 else
                 {
                     uiButtonsForTouchControl.lockOrFreeNavigationButton.gameObject.SetActive(false);
-                    uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => FindObjectOfType<CameraMovements>().FreeOrAutomaticRotation());
+                    uiButtonsForTouchControl.automaticOrFreeRotation.onClick.AddListener(() => FindObjectOfType<CameraMovements>().FreeOrAutomaticRotation());
                 } 
 
 
