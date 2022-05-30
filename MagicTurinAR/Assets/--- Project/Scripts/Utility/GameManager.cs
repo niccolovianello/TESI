@@ -93,7 +93,7 @@ public class GameManager : Singleton<GameManager>
                 if (player.TypePlayerEnum == NetworkPlayer.TypePlayer.Explorer)
                 {
                     uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => FindObjectOfType<CameraMovements>().ButtonCenterCameraOnPlayer());
-                    uiButtonsForTouchControl.lockOrFreeNavigationButton.onClick.AddListener(() => FindObjectOfType<CameraMovements>().FreeOrAutomaticRotation());
+                    uiButtonsForTouchControl.automaticOrFreeRotation.onClick.AddListener(() => FindObjectOfType<CameraMovements>().FreeOrAutomaticRotation());
                 }
 
                 else
