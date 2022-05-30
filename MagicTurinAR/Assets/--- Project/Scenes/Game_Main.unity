@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15478736, g: 0.15250534, b: 0.18415473, a: 1}
+  m_IndirectSpecularColor: {r: 0.14589626, g: 0.13158078, b: 0.18047415, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5476,7 +5476,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1765700870}
+      - m_Target: {fileID: 1298973540}
         m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
         m_MethodName: SwitchTutorialPanel
         m_Mode: 1
@@ -18999,7 +18999,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1765700870}
+      - m_Target: {fileID: 1550004671}
         m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
         m_MethodName: SwitchTutorialPanel
         m_Mode: 1
