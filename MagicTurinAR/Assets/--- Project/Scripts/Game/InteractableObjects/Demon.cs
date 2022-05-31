@@ -46,10 +46,20 @@ public class Demon : MonoBehaviour
         _animator = GetComponent<Animator>();
         _currentHealth = maxHealth;
 
-        if (FindObjectOfType<MissionsManager>())
+        MissionsManager mm = FindObjectOfType<MissionsManager>();
+        if (mm)
         {
-            runSpeed = FindObjectOfType<MissionsManager>().currentMission.demonVelocity;
+            if (mm.currentMission.playerType == MissionSO.PlayerType.Hunter)
+                runSpeed = mm.currentMission.demonVelocity;
+            else
+            {
+                if (mm.currentMissionIndex < 2)
+                    runSpeed = 0;
+                else
+                    runSpeed = mm.currentMissionIndex * 0.002f;
+            }
         }
+        
     }
 
     private void Start()

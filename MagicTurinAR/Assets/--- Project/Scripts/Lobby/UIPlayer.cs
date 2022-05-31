@@ -109,6 +109,7 @@ namespace MirrorBasics
                     break;
                 }
                 else {
+                    NetworkPlayer.localPlayer.CmdAskForUsername();
                     text.text = networkPlayer.username;
                     
                 }
