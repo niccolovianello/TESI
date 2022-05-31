@@ -31,16 +31,13 @@ public class Demon : MonoBehaviour
     
     public HealthManager arPlayerHealthManager;
 
-    private bool _hit;
+    private bool _hit, _isAttacking;
     
     private float _currentHealth;
 
     private Animator _animator;
 
     private Renderer[] _renderers;
-    
-    // private bool justHit = false;
-
 
     private void Awake()
     {
@@ -48,11 +45,16 @@ public class Demon : MonoBehaviour
         _collider.isTrigger = true;
         _animator = GetComponent<Animator>();
         _currentHealth = maxHealth;
-        runSpeed = FindObjectOfType<MissionsManager>().currentMission.demonVelocity;
+
+        if (FindObjectOfType<MissionsManager>())
+        {
+            runSpeed = FindObjectOfType<MissionsManager>().currentMission.demonVelocity;
+        }
     }
 
     private void Start()
     {
+        _isAttacking = false;
         _renderers = GetComponentsInChildren<Renderer>();
 
         foreach (var rend in _renderers)
@@ -74,21 +76,29 @@ public class Demon : MonoBehaviour
 
         if (_currentHealth > 0 && !_hit)
         {
-            if (IsAware())  //|| justHit
+            if (IsAware())
             {
-                Vector3 targetDirection = arPlayerHealthManager.transform.position - transform.position;
-                targetDirection.y = 0;
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetDirection), 0.1f);
-                transform.Translate(0, 0, runSpeed);
-                if(runSpeed > 0)
-                    _animator.SetBool("Aware", true);
-
-                if ((transform.position - arPlayerHealthManager.transform.position).magnitude < attackDistance)
+                _animator.SetBool("Aware", true);
+                _animator.SetBool("Run", runSpeed > 0);
+                
+                if ((transform.position - arPlayerHealthManager.transform.position).magnitude > attackDistance)
                 {
-                    Attack();
+                    var targetDirection = arPlayerHealthManager.transform.position - transform.position;
+                    targetDirection.y = 0;
+                    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetDirection), 0.1f);
+                    transform.Translate(0, 0, runSpeed);
                 }
 
-                else _animator.SetBool("Attack", false);
+                else
+                {
+                    _animator.SetBool("Run", false);
+                }
+
+
+                if (!((transform.position - arPlayerHealthManager.transform.position).magnitude < attackDistance) ||
+                    _isAttacking) return;
+                Attack();
+                _isAttacking = true;
             }
 
             else
@@ -192,30 +202,13 @@ public class Demon : MonoBehaviour
         }
 
     }
-
-    //private IEnumerator AfterHitClip()
-    //{
-    //    justHit = true;
-
-    //    yield return new WaitForSeconds(3f);
-
-    //    justHit = false;
-    //}
-
-
+    
     private IEnumerator HitClip()
     {
-        //bool lessThan = Random.Range(0, 10) < 5;
-
-        //if(lessThan) animator.SetTrigger("Damage");
-        //else animator.SetTrigger("Knockback");
-
         _animator.SetTrigger("Damage");
 
         _hit = true;
         yield return new WaitForSeconds(1f);
-
-        // StartCoroutine(AfterHitClip());
 
         _hit = false;
     }
@@ -229,12 +222,12 @@ public class Demon : MonoBehaviour
 
         foreach (Collider collider in colliders)
         {
-            // collider.GetComponent<HealthManager>().DecreaseHealth(Random.Range(7f, 13f));
-            collider.GetComponent<HealthManager>().DecreaseHealth(1f);
+            collider.GetComponent<HealthManager>().DecreaseHealth(5f);
         }
         
         yield return new WaitForSeconds(1f);
         _animator.SetBool("Attack", false);
+        _isAttacking = false;
     }
 
 }
