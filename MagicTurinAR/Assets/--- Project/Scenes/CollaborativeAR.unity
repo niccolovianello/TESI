@@ -1155,6 +1155,10 @@ PrefabInstance:
       propertyPath: _manageUsingUnityLifecycle
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3041530420047957532, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5150496722276672610, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
       propertyPath: _manageUsingUnityLifecycle
       value: 0
@@ -1306,8 +1310,8 @@ MonoBehaviour:
   _keyFrameFrequency: 20
   _interpolation: 2
   _interpolationPreference: 0.9
-  _occlusionMode: 3
-  _textureFilterMode: 0
+  _occlusionMode: 1
+  _textureFilterMode: 1
 --- !u!114 &1714427103
 MonoBehaviour:
   m_ObjectHideFlags: 0
