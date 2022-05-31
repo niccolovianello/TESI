@@ -645,25 +645,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 3363422157329644171, guid: e91d6d15f11cc4ad29bb1a41ae9aa381, type: 3}
   m_PrefabInstance: {fileID: 909465767}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &909465771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909465769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80198c6deee0a4c5c9096accbcac4119, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _manageUsingUnityLifecycle: 1
-  _arCamera: {fileID: 909465770}
-  _keyFrameFrequency: 20
-  _interpolation: 2
-  _interpolationPreference: 0.9
-  _occlusionMode: 3
-  _textureFilterMode: 0
 --- !u!114 &909465772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,7 +702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera: {fileID: 909465770}
   spawnedObjectParent: {fileID: 1110558457}
-  HitTestType: -1
+  HitTestType: 16
   PlacementObjectPf: {fileID: 4065617981142174932, guid: 345876c1c26e1c943a39707a4b84ce03, type: 3}
   offsetY: 0
 --- !u!136 &909465777

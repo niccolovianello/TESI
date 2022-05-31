@@ -40,7 +40,7 @@ namespace Niantic.ARDKExamples.Helpers
         private IARSession _session;
 
         [SerializeField] private float offsetY;
-        private bool letTouch = false;
+        private bool letTouch = true;
 
         public bool LetTouch
         {
@@ -105,7 +105,6 @@ namespace Niantic.ARDKExamples.Helpers
             {
                 ClearObjects();
                 TouchBegan(touch);
-               
             }
         }
 

@@ -67,10 +67,12 @@ public class Demon : MonoBehaviour
         _isAttacking = false;
         _renderers = GetComponentsInChildren<Renderer>();
 
+        /*
         foreach (var rend in _renderers)
         {
             rend.material.shader = Shader.Find("Shader Graphs/Skeleton_Alpha");
         }
+        */
 
         arPlayerHealthManager = FindObjectOfType<HealthManager>();
 
