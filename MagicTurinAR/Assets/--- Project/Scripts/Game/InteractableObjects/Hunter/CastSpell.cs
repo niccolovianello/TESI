@@ -19,15 +19,31 @@ public class CastSpell : MonoBehaviour
     {
         _hunter = FindObjectOfType<Hunter>();
 
-        
-        if (_hunter.CurrentMana < spellSo.Cost)
+        if(_hunter)
         {
-            StartCoroutine(ManaWarning());
+            if (_hunter.CurrentMana < spellSo.Cost)
+            {
+                StartCoroutine(ManaWarning());
+            }
+            
+            
+            else
+            
+            {
+                _force = CalculateForce(timer);
+                _torque = Random.Range(1, 3);
+
+                Spell spell = Instantiate(spellToCast, spellCastPoint.position, spellCastPoint.rotation);
+                spell.SetSpellToCast(spellSo);
+
+                spell.Cast(_force, _torque);
+            
+                _hunter.DecreaseMana(spellSo.Cost);
+            }
+            
         }
-        
-        
+
         else
-        
         {
             _force = CalculateForce(timer);
             _torque = Random.Range(1, 3);
@@ -36,8 +52,6 @@ public class CastSpell : MonoBehaviour
             spell.SetSpellToCast(spellSo);
 
             spell.Cast(_force, _torque);
-        
-            _hunter.DecreaseMana(spellSo.Cost);
         }
     }
     
