@@ -37,7 +37,7 @@ public class Rotate : MonoBehaviour
             //np.CmdRotateLockWheel(name);
 
             //chestBehaviour.RotateRound(indexRound);
-            NetworkPlayer.localPlayer.CmdRotateLockWheel("Round" + indexRound);
+            NetworkPlayer.localPlayer.CmdRotateLockWheel("Round" + (indexRound + 1));
         }
     }
 
