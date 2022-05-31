@@ -12179,6 +12179,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6705705224081499195, guid: 16d92c7d08bd60445b4ea068f97f14c8, type: 3}
+      propertyPath: sensitivityAngle
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705705224081499195, guid: 16d92c7d08bd60445b4ea068f97f14c8, type: 3}
       propertyPath: maxCameraDistance
       value: 350
       objectReference: {fileID: 0}
