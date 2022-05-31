@@ -71,24 +71,19 @@ namespace MirrorBasics
         [Command]
         public void CmdAskForUsername()
         {
-           // Debug.Log("CmdUsername");
+            // Debug.Log("CmdUsername");
             RpcAskForUsername();
         }
 
         [ClientRpc]
         public void RpcAskForUsername()
         {
+            NetworkPlayer.localPlayer.username = "";
+            Debug.Log(firebaseManager);
+            Debug.Log(FindObjectOfType<FirebaseManager>());
+            NetworkPlayer.localPlayer.username = FindObjectOfType<FirebaseManager>().username;
             //Debug.Log("RpcUsername");
-            foreach (LobbyNetworkPlayer lnp in FindObjectsOfType<LobbyNetworkPlayer>())
-            {
-                if (lnp.isLocalPlayer)
-                {
-                    lnp.username = "";
-                    Debug.Log(firebaseManager);
-                    Debug.Log(FindObjectOfType<FirebaseManager>());
-                    lnp.username = FindObjectOfType<FirebaseManager>().username;
-                }
-            }
+           
         }
 
         void SetUsername(string oldUserName, string newUserName)
@@ -160,6 +155,7 @@ namespace MirrorBasics
                 Debug.Log(networkMatch.matchId);
                 TargetJoinGame(true, _matchID, playerIndex);
                 
+                
             }
             else
             {
@@ -175,10 +171,12 @@ namespace MirrorBasics
             matchID = _matchID;
             //Debug.Log($"MatchId: {matchID} == {_matchID}");
             UILobby.istance.JoinSucces(success, _matchID, playerIndex);
+            CmdAskForUsername();
         }
 
         #endregion
 
+        
         #region BEGIN GAME
 
         public void BeginStoryTelling()

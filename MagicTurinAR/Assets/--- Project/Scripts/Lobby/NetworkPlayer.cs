@@ -382,7 +382,12 @@ namespace MirrorBasics
         private void RpcRotateLockWheel(string wheelName)
         {
 
-            GameObject.Find(wheelName).GetComponent<Rotate>().RotateWheel();
+            GameObject go = GameObject.Find(wheelName);
+
+            if (go == null)
+                Debug.LogWarning("No wheel find! check if the chest is spawn or the wheel exists");
+            else
+                go.GetComponent<Rotate>().RotateWheel();
         }
 
         [Command]
