@@ -71,7 +71,7 @@ namespace MirrorBasics
         [Command]
         public void CmdAskForUsername()
         {
-            // Debug.Log("CmdUsername");
+            Debug.Log("CmdUsername");
             RpcAskForUsername();
         }
 
