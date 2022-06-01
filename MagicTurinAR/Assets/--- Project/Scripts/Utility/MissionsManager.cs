@@ -393,7 +393,7 @@ public class MissionsManager : MonoBehaviour
             yield return new WaitForSeconds(checkFrequencyIsBusy);
 
         _networkPlayer.CmdBeginNextMission();
-        Debug.Log("Cmd begin next mission");
+       
     }
     private bool CheckIfSomeoneIsBusy()
     {

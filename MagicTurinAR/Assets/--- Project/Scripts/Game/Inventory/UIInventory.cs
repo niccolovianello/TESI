@@ -180,7 +180,7 @@ public class UIInventory : MonoBehaviour
         gameManager.audioListener.enabled = false;
         gameManager.DisableMainGame();
         Debug.Log(itemToSeeInAr);
-        NetworkPlayer.localPlayer.CmdSetBusy(false);
+        NetworkPlayer.localPlayer.CmdSetBusy(true);
 
         CloseWindowToAr();
        

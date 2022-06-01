@@ -233,7 +233,7 @@ namespace MirrorBasics
         [Command]
         public void CmdBeginNextMission()
         {
-            
+            Debug.Log("Cmd begin next mission");
             RcpBeginNextMission();
         }
 
