@@ -41,6 +41,7 @@ public class Enemy : Item
         SceneManager.LoadScene("AR_EnemyFight", LoadSceneMode.Additive);
         gameManager.PlayerCameraObject.SetActive(false);
         gameManager.DisableMainGame();
+        NetworkPlayer.localPlayer.Is_Busy = true;
         
         foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
         {

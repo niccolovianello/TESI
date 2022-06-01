@@ -18,6 +18,10 @@ namespace MirrorBasics
         [SyncVar(hook = nameof(SetTypeRole))]
         public int TypePlayerIndex = 3;
 
+        [SyncVar]
+        public bool Is_Busy = false;
+
+
         public TypePlayer TypePlayerEnum = TypePlayer.Default;
 
 
@@ -107,6 +111,8 @@ namespace MirrorBasics
                 //    uiPlayer.SetUsername(username);
             }
         }
+
+        
 
         [Command]
 
@@ -227,7 +233,7 @@ namespace MirrorBasics
         [Command]
         public void CmdBeginNextMission()
         {
-
+            
             RcpBeginNextMission();
         }
 

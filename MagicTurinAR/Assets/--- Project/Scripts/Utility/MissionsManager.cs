@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using NetworkPlayer = MirrorBasics.NetworkPlayer;
 using Mapbox.Unity.Map;
 using Mapbox.Utils;
+using System.Collections;
 
 public class MissionsManager : MonoBehaviour
 {
@@ -30,6 +31,9 @@ public class MissionsManager : MonoBehaviour
     [Header("ExplorerPrefabs")]
     public GameObject parentTarget;
     public Vector3 offsetTargetExplorer;
+
+    [Range(1f, 5f)]
+    [SerializeField] private float checkFrequencyIsBusy = 2f;
 
 
     private void Start()
@@ -312,13 +316,45 @@ public class MissionsManager : MonoBehaviour
                     throw new ArgumentOutOfRangeException();
             }
             CloseFinishMissionWindow();
-            _networkPlayer.CmdBeginNextMission();
+
+            MissionSO.PlayerType typePlayerNextMission = magicTurinLevels.missions[currentMissionIndex + 1].playerType;
+            switch (typePlayerNextMission)
+            {
+                case MissionSO.PlayerType.All:
+                    if (CheckIfSomeoneIsBusy())
+                    {
+                        StartCoroutine(CheckBusyPlayerCoroutine());
+                    }
+                    else
+                        _networkPlayer.CmdBeginNextMission();
+                    break;
+                default:
+                    bool playerFound = false;
+                    foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+                    {
+                        if ((int)np.TypePlayerEnum == (int)typePlayerNextMission)
+                        {
+                            playerFound = true;
+                            if (np.Is_Busy)
+                            {                              
+                                StartCoroutine(CheckBusyPlayerCoroutine(np));
+                            }
+                        }
+                        
+                    }
+
+                    if (playerFound == false)
+                        Debug.LogError("Player supposed to be busy not found!");
+                    break;
+            
+            }
+            //_networkPlayer.CmdBeginNextMission();
         }
 
         else
         {
 
-            NetworkPlayer.localPlayer.CmdGoToStats();
+            _networkPlayer.CmdGoToStats();
         }
         
     }
@@ -342,5 +378,31 @@ public class MissionsManager : MonoBehaviour
     private void CloseFinishMissionWindow()
     {
         windowFinishLevel.enabled = false;
+    }
+    private IEnumerator CheckBusyPlayerCoroutine(NetworkPlayer np)
+    {
+        while (np.Is_Busy)
+            yield return new WaitForSeconds(checkFrequencyIsBusy);
+
+        _networkPlayer.CmdBeginNextMission();
+    }
+    private IEnumerator CheckBusyPlayerCoroutine()
+    {
+        while (CheckIfSomeoneIsBusy())
+            yield return new WaitForSeconds(checkFrequencyIsBusy);
+
+        _networkPlayer.CmdBeginNextMission();
+    }
+    private bool CheckIfSomeoneIsBusy()
+    {
+        bool result = false;
+        foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
+        { 
+            if(np.Is_Busy)
+            {
+                result = true;
+            }
+        }
+        return result;
     }
 }
