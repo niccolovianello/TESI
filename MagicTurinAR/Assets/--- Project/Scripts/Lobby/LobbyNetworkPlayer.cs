@@ -69,6 +69,14 @@ namespace MirrorBasics
         }
 
         [Command]
+        public void CmdChangeUsername(string username)
+        {
+            Debug.Log("CmdChangeUsername");
+            this.username = username;
+        }
+
+
+        [Command]
         public void CmdAskForUsername()
         {
             Debug.Log("CmdUsername");
@@ -81,7 +89,7 @@ namespace MirrorBasics
             NetworkPlayer.localPlayer.username = "";
             Debug.Log(firebaseManager);
             Debug.Log(FindObjectOfType<FirebaseManager>());
-            NetworkPlayer.localPlayer.username = FindObjectOfType<FirebaseManager>().username;
+            CmdChangeUsername(FindObjectOfType<FirebaseManager>().username);
             //Debug.Log("RpcUsername");
            
         }

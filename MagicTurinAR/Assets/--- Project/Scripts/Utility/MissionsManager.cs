@@ -335,11 +335,12 @@ public class MissionsManager : MonoBehaviour
                         if ((int)np.TypePlayerEnum == (int)typePlayerNextMission)
                         {
                             playerFound = true;
-                            if (np.Is_Busy)
-                            {
-                                Debug.Log("Start Coroutine check player");
-                                StartCoroutine(CheckBusyPlayerCoroutine(np));
-                            }
+                            
+                            Debug.Log("Start Coroutine check player");
+                            StartCoroutine(CheckBusyPlayerCoroutine(np));
+                            
+                            
+                               
                         }
                         
                     }

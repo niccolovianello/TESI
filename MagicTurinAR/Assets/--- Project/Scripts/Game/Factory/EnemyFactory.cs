@@ -22,10 +22,6 @@ public class EnemyFactory : Singleton<EnemyFactory>
 
     public Enemy SelectedEnemy => selectedEnemy;
 
-    
-
-   
-
     void Start()
     {
         minRange = 5;

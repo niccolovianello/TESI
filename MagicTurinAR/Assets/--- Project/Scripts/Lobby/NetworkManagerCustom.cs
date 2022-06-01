@@ -11,7 +11,6 @@ public class NetworkManagerCustom : NetworkManager
     public override void Start()
     {
         base.Start();
-
     }
 
     public override void OnStartServer()
