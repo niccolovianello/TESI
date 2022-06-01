@@ -60,7 +60,7 @@ public class UI_EnemyFight : MonoBehaviour
             GameManager gm = FindObjectOfType<GameManager>();
             gm.PlayerCameraObject.SetActive(true);
             gm.EnableMainGame();
-            NetworkPlayer.localPlayer.Is_Busy = false;
+            NetworkPlayer.localPlayer.CmdSetBusy(false);
         }
     }
 }

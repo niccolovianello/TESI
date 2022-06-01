@@ -33,7 +33,7 @@ public class UILookAtItemAR : MonoBehaviour
         gm.networkPlayerCamera.enabled = true;
         gm.audioListener.enabled = true;
         gm.EnableMainGame();
-        NetworkPlayer.localPlayer.Is_Busy = false;
+        NetworkPlayer.localPlayer.CmdSetBusy(false);
         foreach (NetworkPlayer np in FindObjectsOfType<NetworkPlayer>())
         {
             np.RenderPlayerBody();

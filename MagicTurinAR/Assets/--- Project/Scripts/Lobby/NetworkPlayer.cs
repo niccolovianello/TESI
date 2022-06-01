@@ -246,6 +246,12 @@ namespace MirrorBasics
            
         }
 
+        [Command]
+        public void CmdSetBusy(bool isBusy)
+        {
+            Is_Busy = isBusy;
+        }
+
         public void RenderPlayerBody()
         {
             playerBody.SetActive(true);
