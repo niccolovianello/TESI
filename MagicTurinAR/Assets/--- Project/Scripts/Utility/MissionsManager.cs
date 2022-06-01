@@ -336,7 +336,8 @@ public class MissionsManager : MonoBehaviour
                         {
                             playerFound = true;
                             if (np.Is_Busy)
-                            {                              
+                            {
+                                Debug.Log("Start Coroutine check player");
                                 StartCoroutine(CheckBusyPlayerCoroutine(np));
                             }
                         }
@@ -392,6 +393,7 @@ public class MissionsManager : MonoBehaviour
             yield return new WaitForSeconds(checkFrequencyIsBusy);
 
         _networkPlayer.CmdBeginNextMission();
+        Debug.Log("Cmd begin next mission");
     }
     private bool CheckIfSomeoneIsBusy()
     {
