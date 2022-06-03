@@ -190,7 +190,7 @@ public class Demon : MonoBehaviour
         GameManager gm = FindObjectOfType<GameManager>();
         
         NetworkPlayer networkPlayer = null;
-        if (gm.GetIsMission())
+        if (gm.IsMission())
             mm.OpenFinishMissionWindow();
         else
         {

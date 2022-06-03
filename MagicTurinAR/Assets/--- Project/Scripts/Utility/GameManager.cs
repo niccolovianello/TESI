@@ -262,7 +262,7 @@ public class GameManager : Singleton<GameManager>
         networkPlayer.RenderPlayerBody();
     }
 
-    public bool GetIsMission()
+    public bool IsMission()
     {
         return isMission;
     }
