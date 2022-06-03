@@ -29,7 +29,7 @@ public class Demon : MonoBehaviour
     
     private CapsuleCollider _collider;
     
-    public HealthManager arPlayerHealthManager;
+    private HealthManager _arPlayerHealthManager;
 
     private bool _hit, _isAttacking;
     
@@ -74,7 +74,7 @@ public class Demon : MonoBehaviour
         }
         */
 
-        arPlayerHealthManager = FindObjectOfType<HealthManager>();
+        _arPlayerHealthManager = FindObjectOfType<HealthManager>();
 
     }
 
@@ -93,9 +93,9 @@ public class Demon : MonoBehaviour
                 _animator.SetBool("Aware", true);
                 _animator.SetBool("Run", runSpeed > 0);
                 
-                if ((transform.position - arPlayerHealthManager.transform.position).magnitude > attackDistance)
+                if ((transform.position - _arPlayerHealthManager.transform.position).magnitude > attackDistance)
                 {
-                    var targetDirection = arPlayerHealthManager.transform.position - transform.position;
+                    var targetDirection = _arPlayerHealthManager.transform.position - transform.position;
                     targetDirection.y = 0;
                     transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetDirection), 0.1f);
                     transform.Translate(0, 0, runSpeed);
@@ -107,7 +107,7 @@ public class Demon : MonoBehaviour
                 }
 
 
-                if (!((transform.position - arPlayerHealthManager.transform.position).magnitude < attackDistance) ||
+                if (!((transform.position - _arPlayerHealthManager.transform.position).magnitude < attackDistance) ||
                     _isAttacking) return;
                 Attack();
                 _isAttacking = true;
@@ -140,7 +140,7 @@ public class Demon : MonoBehaviour
 
     private bool IsAware()
     {
-        var playerPosition = arPlayerHealthManager.transform.position;
+        var playerPosition = _arPlayerHealthManager.transform.position;
         var thisPosition = transform.position;
         
         Vector3 targetDirection = thisPosition - playerPosition;
