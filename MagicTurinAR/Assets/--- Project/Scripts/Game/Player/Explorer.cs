@@ -1,24 +1,23 @@
 using Mapbox.Unity.MeshGeneration.Factories;
 using Mapbox.Unity.MeshGeneration.Modifiers;
-using UnityEditor;
 using UnityEngine;
 
 [RequireComponent(typeof(ManaManager))]
 public class Explorer : MagicPlayer
 {
-    private float powerCost = .05f;
-    private DirectionsFactory directions;
-    private GameObject directionMesh;
+    private const float PowerCost = .2f;
+    private DirectionsFactory _directions;
+    private GameObject _directionMesh;
     public GameObject parentDirections;
-    private bool wasActive = false;
+    private bool _wasActive = false;
 
-    private Material directionMaterial;
-    private MeshModifier directionsMeshModifier;
+    private Material _directionMaterial;
+    private MeshModifier _directionsMeshModifier;
 
     private void Start()
     {
-        directionMaterial = ItemAssets.Instance.directionMaterial;
-        directionsMeshModifier = ItemAssets.Instance.meshModifier;
+        _directionMaterial = ItemAssets.Instance.directionMaterial;
+        _directionsMeshModifier = ItemAssets.Instance.meshModifier;
         parentDirections = ItemAssets.Instance.DirectionsParent;
         
         manaManager = GetComponent<ManaManager>();
@@ -33,7 +32,7 @@ public class Explorer : MagicPlayer
 
     public DirectionsFactory GetDirections()
     {
-        return directions;
+        return _directions;
     }
 
     private void Update()
@@ -45,28 +44,28 @@ public class Explorer : MagicPlayer
             
             if (HasMana())
             {
-                DecreaseMana(powerCost);
+                DecreaseMana(PowerCost);
             }
 
             else
             {
                     
-                if (directionMesh != null)
+                if (_directionMesh != null)
                     parentDirections.SetActive(false);
                 ToggleNavigation();
-                wasActive = false;
+                _wasActive = false;
                 
 
             }
-            if (wasActive == false)
-                wasActive = true;
+            if (_wasActive == false)
+                _wasActive = true;
         }
-        else if (!parentDirections.gameObject.activeSelf && wasActive == true) 
+        else if (!parentDirections.gameObject.activeSelf && _wasActive) 
         {
             
-            if (directionMesh != null)
+            if (_directionMesh != null)
                 parentDirections.SetActive(false);
-            wasActive = false;
+            _wasActive = false;
         }
 
 
@@ -105,7 +104,7 @@ public class Explorer : MagicPlayer
     
     public void ToggleNavigation()
     {
-        MissionsManager mm = FindObjectOfType<MissionsManager>();
+        var mm = FindObjectOfType<MissionsManager>();
 
         if (mm.currentMission.playerType == MissionSO.PlayerType.Explorer)
         {
@@ -117,12 +116,14 @@ public class Explorer : MagicPlayer
     private void InitializeNavigationPower()
     {
 
-        directions = new GameObject("Directions").AddComponent<DirectionsFactory>();
-        directions._waypoints[0] = transform;
-        directions._waypoints[1] = transform ;
+        _directions = new GameObject("Directions").AddComponent<DirectionsFactory>();
         
-        directions.GetComponent<DirectionsFactory>().SetMeshModifier(directionsMeshModifier);
-        directions.GetComponent<DirectionsFactory>().SetDirectionMaterial(directionMaterial);
+        var explorerTransform = transform;
+        _directions._waypoints[0] = explorerTransform;
+        _directions._waypoints[1] = explorerTransform ;
+        
+        _directions.GetComponent<DirectionsFactory>().SetMeshModifier(_directionsMeshModifier);
+        _directions.GetComponent<DirectionsFactory>().SetDirectionMaterial(_directionMaterial);
        
 
         //directions.gameObject.SetActive(false);
@@ -134,10 +135,10 @@ public class Explorer : MagicPlayer
     public void SetMissionTarget(Transform missionTargetTransform)
     {
 
-        directions._waypoints[1] = missionTargetTransform;
-        Debug.Log(directions._waypoints[1]);
+        _directions._waypoints[1] = missionTargetTransform;
+        Debug.Log(_directions._waypoints[1]);
 
-        directions.gameObject.SetActive(false);
+        _directions.gameObject.SetActive(false);
 
     }
 
