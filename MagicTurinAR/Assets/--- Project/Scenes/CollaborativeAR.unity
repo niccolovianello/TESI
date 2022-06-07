@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseIndicator: {fileID: 8782936031143310191, guid: 18575a7bb1bf79e43a97049695e06f0e, type: 3}
-  offsetPoseIndicator: {x: 0, y: 1.5, z: 0}
+  offsetPoseIndicator: {x: 0, y: 0.25, z: 0}
   preloadManager: {fileID: 253635436}
   chest: {fileID: 6539795342943687653, guid: bce19212227bb8d4183c41a4e10d6acf, type: 3}
   _isSynced: 0
@@ -313,7 +313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253635431}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.18201017, y: -0.638556, z: 3.635852}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1169,11 +1169,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5650170115564024859, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 402
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5650170115564024859, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 288
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5650170115564024859, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
       propertyPath: m_LocalPosition.z
