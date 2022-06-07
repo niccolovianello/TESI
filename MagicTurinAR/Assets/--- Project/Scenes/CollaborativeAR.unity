@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17907833, g: 0.21857832, b: 0.27346036, a: 1}
+  m_IndirectSpecularColor: {r: 0.17905408, g: 0.21854448, b: 0.2733927, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1347,7 +1347,7 @@ MonoBehaviour:
   PlaceMultipleObjects: 0
   offsetSpawnObject: {x: 0, y: -0.5, z: 0}
   HitTestType: -1
-  PlacementObjectPf: {fileID: 8464579915162550168, guid: 07289745c5bcb31488d8117ab1880fa4, type: 3}
+  PlacementObjectPf: {fileID: 1380775038002242999, guid: c7c884ff937c8ac459b127016ee33fa2, type: 3}
   flagInteraction: 0
 --- !u!114 &1714427111
 MonoBehaviour:
