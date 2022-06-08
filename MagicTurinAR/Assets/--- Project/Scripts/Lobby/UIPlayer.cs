@@ -109,7 +109,7 @@ namespace MirrorBasics
                     break;
                 }
                 else {
-                    NetworkPlayer.localPlayer.CmdAskForUsername();
+                    NetworkPlayer.localPlayer.CmdChangeUsername(FindObjectOfType<FirebaseManager>().username);
                     
                     
                 }

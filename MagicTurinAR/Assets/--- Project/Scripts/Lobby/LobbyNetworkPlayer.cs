@@ -54,8 +54,9 @@ namespace MirrorBasics
 
             if (isLocalPlayer)
             {
-                username = firebaseManager.username;
-                CmdAskForUsername();
+                CmdChangeUsername(firebaseManager.username);
+                
+                
             }
                 
 
@@ -76,26 +77,26 @@ namespace MirrorBasics
         }
 
 
-        [Command]
-        public void CmdAskForUsername()
-        {
-            //Debug.Log("CmdUsername");
-            RpcAskForUsername();
-        }
+        //[Command]
+        //public void CmdAskForUsername()
+        //{
+        //    //Debug.Log("CmdUsername");
+        //    RpcAskForUsername();
+        //}
 
-        [ClientRpc]
-        public void RpcAskForUsername()
-        {
-            NetworkPlayer.localPlayer.username = "";
-            Debug.Log(firebaseManager);
-            Debug.Log(FindObjectOfType<FirebaseManager>());
+        //[ClientRpc]
+        //public void RpcAskForUsername()
+        //{
+        //    NetworkPlayer.localPlayer.username = "";
+        //    Debug.Log(firebaseManager);
+        //    Debug.Log(FindObjectOfType<FirebaseManager>());
 
-            if(NetworkPlayer.localPlayer)
-                CmdChangeUsername(FindObjectOfType<FirebaseManager>().username);
+        //    if(NetworkPlayer.localPlayer)
+        //        CmdChangeUsername(FindObjectOfType<FirebaseManager>().username);
 
-            //Debug.Log("RpcUsername");
+        //    //Debug.Log("RpcUsername");
 
-        }
+        //}
 
         void SetUsername(string oldUserName, string newUserName)
         {
@@ -182,7 +183,7 @@ namespace MirrorBasics
             matchID = _matchID;
             //Debug.Log($"MatchId: {matchID} == {_matchID}");
             UILobby.istance.JoinSucces(success, _matchID, playerIndex);
-            CmdAskForUsername();
+            //CmdAskForUsername();
         }
 
         #endregion
