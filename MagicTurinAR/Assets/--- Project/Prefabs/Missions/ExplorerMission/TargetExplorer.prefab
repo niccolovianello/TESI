@@ -109,4 +109,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78837e6467f1fba45b80c2f44a024a7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceToEnableRender: 20
+  children: []
+  distanceToEnableRender: 1

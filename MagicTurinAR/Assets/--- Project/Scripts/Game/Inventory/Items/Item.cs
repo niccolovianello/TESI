@@ -12,7 +12,7 @@ using UnityEngine.UI;
 
 public abstract class Item : MonoBehaviour, ItemInterface
 {
-    public float maxClickDistance = 50;
+    public float maxClickDistance = 10;
 
     [SerializeField] private float rotateSpeed = 30.0f;
     [SerializeField] private float floatAmplitude = 0.01f;

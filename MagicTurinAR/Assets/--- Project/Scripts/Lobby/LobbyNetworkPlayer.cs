@@ -79,7 +79,7 @@ namespace MirrorBasics
         [Command]
         public void CmdAskForUsername()
         {
-            Debug.Log("CmdUsername");
+            //Debug.Log("CmdUsername");
             RpcAskForUsername();
         }
 
@@ -89,9 +89,12 @@ namespace MirrorBasics
             NetworkPlayer.localPlayer.username = "";
             Debug.Log(firebaseManager);
             Debug.Log(FindObjectOfType<FirebaseManager>());
-            CmdChangeUsername(FindObjectOfType<FirebaseManager>().username);
+
+            if(NetworkPlayer.localPlayer)
+                CmdChangeUsername(FindObjectOfType<FirebaseManager>().username);
+
             //Debug.Log("RpcUsername");
-           
+
         }
 
         void SetUsername(string oldUserName, string newUserName)
