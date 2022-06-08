@@ -178,7 +178,7 @@ public class MagicItem : Item
             {
                 Vibration.VibrateNope();
                 //StartCoroutine(FindObjectOfType<UIManager>().DistanceWarningScreenSpace("You're too far away from this collectable.\nGet closer to catch it!"));
-                magicPlayer.ActivateRadarEffect(maxClickDistance);
+                magicPlayer.ActivateRadarEffect(MaxClickDistance);
 
             }
         }

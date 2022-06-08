@@ -12,7 +12,8 @@ using UnityEngine.UI;
 
 public abstract class Item : MonoBehaviour, ItemInterface
 {
-    public float maxClickDistance = 5;
+    
+    private float maxClickDistance = 20;
 
     [SerializeField] private float rotateSpeed = 30.0f;
     [SerializeField] private float floatAmplitude = 0.01f;
@@ -37,6 +38,10 @@ public abstract class Item : MonoBehaviour, ItemInterface
         transform.position = tempPos;
     }
 
+    public float MaxClickDistance
+    {
+        get => maxClickDistance;
+    }
 
     public bool IsClickable()
     {
