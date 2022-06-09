@@ -10,6 +10,7 @@ public class MagicPlayer : Player
     // [SerializeField] private List<MagicItem> items = new List<MagicItem>();
     
     public MagicInventory inventory;
+    private bool radarActiveFlag = false;
     public UIManager _uiManager;
     public NetworkPlayer networkPlayer;
     public int maxDistanceFromTheOthers = 50;
@@ -118,8 +119,12 @@ public class MagicPlayer : Player
 
     public void ActivateRadarEffect(float scaleMultiplier)
     {
-        GameObject radar = Instantiate(ItemAssets.Instance.prefabRadarVfx, this.gameObject.transform);
-        radar.transform.localScale = (radar.transform.localScale * scaleMultiplier)/ transform.localScale.x;
-        radar.transform.localPosition += new Vector3(0, 0.1f, 0);
+        if (!FindObjectOfType<UIRadar>())
+        {
+            GameObject radar = Instantiate(ItemAssets.Instance.prefabRadarVfx, this.gameObject.transform);
+            radar.transform.localScale = (radar.transform.localScale * scaleMultiplier) / transform.localScale.x;
+            radar.transform.localPosition += new Vector3(0, 0.1f, 0);
+        }
+                    
     }
 }

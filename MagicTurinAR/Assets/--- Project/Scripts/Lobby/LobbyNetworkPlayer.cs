@@ -207,6 +207,10 @@ namespace MirrorBasics
             UILobby uiLobby = FindObjectOfType<UILobby>();
             uiLobby.ClientUI.gameObject.SetActive(false);
             uiLobby.storyTelling.gameObject.SetActive(true);
+            foreach (var uiPlayer in FindObjectsOfType<UIPlayer>())
+            {
+                uiPlayer.Destroy();
+            }
 
 
 

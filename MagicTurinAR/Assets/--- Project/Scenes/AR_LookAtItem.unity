@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -611,8 +611,27 @@ MonoBehaviour:
   PlaceMultipleObjects: 0
   offsetSpawnObject: {x: 0, y: -0.8, z: 0}
   HitTestType: -1
-  PlacementObjectPf: {fileID: 0}
+  PlacementObjectPf: {fileID: 1518009236}
   flagInteraction: 0
+--- !u!114 &909465773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909465768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80198c6deee0a4c5c9096accbcac4119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manageUsingUnityLifecycle: 1
+  _arCamera: {fileID: 909465771}
+  _keyFrameFrequency: 20
+  _interpolation: 2
+  _interpolationPreference: 0.9
+  _occlusionMode: 1
+  _textureFilterMode: 1
 --- !u!114 &909465774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,6 +912,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142496445}
   m_CullTransparentMesh: 1
+--- !u!1 &1518009236 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1342483017374888, guid: a87e4c0a995ae4977ac2a1256b837e0f, type: 3}
+  m_PrefabInstance: {fileID: 1610175667}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1610175667
 PrefabInstance:
   m_ObjectHideFlags: 0
