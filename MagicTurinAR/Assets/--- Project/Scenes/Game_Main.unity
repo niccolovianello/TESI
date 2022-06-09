@@ -1341,7 +1341,7 @@ MonoBehaviour:
   audioListener: {fileID: 0}
   mainGame: {fileID: 775760852}
   prefabToShowInAR: {fileID: 0}
-  abstractMap: {fileID: 0}
+  abstractMap: {fileID: 114478715806792212}
   PlayerCameraObject: {fileID: 0}
 --- !u!4 &152449624
 Transform:
