@@ -28,6 +28,8 @@ public class GameManager : Singleton<GameManager>
     public GameObject prefabToShowInAR;
     private UIButtonsForTouchControl uiButtonsForTouchControl;
     UnityEvent playerEnterInGameEvent;
+    [SerializeField]
+    private AbstractMap abstractMap;
 
 
 
@@ -38,11 +40,13 @@ public class GameManager : Singleton<GameManager>
     public void SetPrefabToShowInAR(GameObject prefab) => prefabToShowInAR = prefab;
     public void DisableMainGame()
     {
+        abstractMap.gameObject.SetActive(false);
         mainGame.SetActive(false);
     }
     public void EnableMainGame()
     {
         mainGame.SetActive(true);
+        abstractMap.gameObject.SetActive(true);
     }
     
     /*
@@ -175,10 +179,10 @@ public class GameManager : Singleton<GameManager>
 
 
                 gemFactory.SetItemPrefab(itemAssets.gem);
-                gemFactory.waitTime = 60;
+                gemFactory.waitTime = 45;
                 gemFactory.startingItems = 1;
-                gemFactory.minRange = 15;
-                gemFactory.maxRange = 45;
+                gemFactory.minRange = 5;
+                gemFactory.maxRange = 25;
 
 
                 networkPlayer.gameObject.AddComponent<Explorer>();
@@ -205,10 +209,10 @@ public class GameManager : Singleton<GameManager>
 
 
                 whiteFragmentFactory.SetItemPrefab(itemAssets.whiteFragment);
-                whiteFragmentFactory.waitTime = 45;
+                whiteFragmentFactory.waitTime = 23;
                 whiteFragmentFactory.startingItems = 1;
-                whiteFragmentFactory.minRange = 10;
-                whiteFragmentFactory.maxRange = 50;
+                whiteFragmentFactory.minRange = 5;
+                whiteFragmentFactory.maxRange = 25;
 
                 networkPlayer.gameObject.AddComponent<Wiseman>();
                 Wiseman wiseman = networkPlayer.GetComponent<Wiseman>();
