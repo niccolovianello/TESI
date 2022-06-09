@@ -13,7 +13,7 @@ public class MagicPlayer : Player
     private bool radarActiveFlag = false;
     public UIManager _uiManager;
     public NetworkPlayer networkPlayer;
-    public int maxDistanceFromTheOthers = 50;
+    public int maxDistanceFromTheOthers = 20;
 
     public Slider manaBar;
     
