@@ -9,10 +9,10 @@ public class EnemyFactory : Singleton<EnemyFactory>
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private Enemy enemyPrefabScript;
     [SerializeField] private MagicPlayer player;
-    [SerializeField] private float waitTime = 120f;
-    [SerializeField] private int startingEnemies = 1;
-    [SerializeField] private float minRange = 5.0f;
-    [SerializeField] private float maxRange = 50.0f;
+    [SerializeField] private float waitTime = 150f;
+    [SerializeField] private int startingEnemies = 0;
+    [SerializeField] private float minRange = 20.0f;
+    [SerializeField] private float maxRange = 60.0f;
     [SerializeField] private GameObject parentObjectsFactory;
 
     private List<Enemy> aliveEnemies = new List<Enemy>();

@@ -22,10 +22,10 @@ MonoBehaviour:
     fight with the hiding Demon.
   missionCompleted: 0
   demonVelocity: 0
-  latitudeArea: 45.072636
-  longitudeArea: 7.6652126
+  latitudeArea: 45.069973
+  longitudeArea: 7.6630855
   goalExplorerMissionAreaPrefab: {fileID: 3590798186009698721, guid: 0d1a1a82c5f3bfd47bbff6c5d032f1a8, type: 3}
-  latitudeTarget: 45.07264
-  longitudeTarget: 7.665213
+  latitudeTarget: 45.06997
+  longitudeTarget: 7.663085
   goalExplorerMissionPrefab: {fileID: 5400985734620608659, guid: 62441ea14ec15411d9362f443272cab7, type: 3}
   finalCode: 

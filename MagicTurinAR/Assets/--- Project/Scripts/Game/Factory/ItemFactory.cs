@@ -5,10 +5,10 @@ using UnityEngine.Assertions;
 
 public abstract class ItemFactory : Singleton<ItemFactory>
 {
-    [SerializeField] public float waitTime;
+    [SerializeField] public float waitTime = 30f;
     [SerializeField] public int startingItems;
-    [SerializeField] public float minRange;
-    [SerializeField] public float maxRange;
+    [SerializeField] public float minRange = 15;
+    [SerializeField] public float maxRange = 50;
     
     [SerializeField] public GameObject itemPrefab;
 
@@ -23,9 +23,9 @@ public abstract class ItemFactory : Singleton<ItemFactory>
 
     void Start()
     {
-        minRange = 5;
-        maxRange = 20;
-        waitTime = 30f;
+        //minRange = 5;
+        //maxRange = 20;
+        //waitTime = 30f;
         player = FindObjectOfType<MagicPlayer>();
         parentObjectsFactory = GameObject.Find("ParentItems");
         for (int i = 0; i < startingItems; i++)

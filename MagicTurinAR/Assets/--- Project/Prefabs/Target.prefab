@@ -4948,4 +4948,4 @@ MonoBehaviour:
   children:
   - {fileID: 5400985732773938946}
   - {fileID: 1071908358969883308}
-  distanceToEnableRender: 20
+  distanceToEnableRender: 30

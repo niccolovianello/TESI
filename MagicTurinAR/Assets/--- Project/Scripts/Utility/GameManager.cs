@@ -175,10 +175,10 @@ public class GameManager : Singleton<GameManager>
 
 
                 gemFactory.SetItemPrefab(itemAssets.gem);
-                gemFactory.waitTime = 3;
-                gemFactory.startingItems = 0;
-                gemFactory.minRange = 0;
-                gemFactory.maxRange = 15;
+                gemFactory.waitTime = 60;
+                gemFactory.startingItems = 1;
+                gemFactory.minRange = 15;
+                gemFactory.maxRange = 45;
 
 
                 networkPlayer.gameObject.AddComponent<Explorer>();
@@ -205,10 +205,10 @@ public class GameManager : Singleton<GameManager>
 
 
                 whiteFragmentFactory.SetItemPrefab(itemAssets.whiteFragment);
-                whiteFragmentFactory.waitTime = 6;
-                whiteFragmentFactory.startingItems = 0;
-                whiteFragmentFactory.minRange = 0;
-                whiteFragmentFactory.maxRange = 15;
+                whiteFragmentFactory.waitTime = 45;
+                whiteFragmentFactory.startingItems = 1;
+                whiteFragmentFactory.minRange = 10;
+                whiteFragmentFactory.maxRange = 50;
 
                 networkPlayer.gameObject.AddComponent<Wiseman>();
                 Wiseman wiseman = networkPlayer.GetComponent<Wiseman>();
