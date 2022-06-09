@@ -159,8 +159,8 @@ public class MagicItem : Item
                             }
                             else if (!magicPlayer.IsCloseToTeamMembers())
                             {
-                            FindObjectOfType<UIManager>().ScaleSprite();
-                            Vibration.VibrateNope();
+                                FindObjectOfType<UIManager>().ScaleSprite();
+                                Vibration.VibrateNope();
                             }
 
 
@@ -202,7 +202,7 @@ public class MagicItem : Item
             foreach (Renderer renderer in _renderers)
             {
                 renderer.material.SetFloat("_Alpha", 1);
-                renderer.material.SetInt("_HasTexture", 1);
+                // renderer.material.SetInt("_HasTexture", 1);
             }
         }
 
@@ -211,9 +211,9 @@ public class MagicItem : Item
         {
             foreach (Renderer renderer in _renderers)
             {
-                renderer.material.SetFloat("_Alpha", .5f);
-                renderer.material.SetInt("_HasTexture", 0);
-                renderer.material.SetColor("_AlbedoPlain", Color.gray);
+                renderer.material.SetFloat("_Alpha", .3f);
+                //renderer.material.SetInt("_HasTexture", 0);
+                // renderer.material.SetColor("_AlbedoPlain", Color.gray);
             }
         }
 
