@@ -1,5 +1,4 @@
 using UnityEngine;
-using System;
 
 [CreateAssetMenu(fileName = "NewMission", menuName = "MagicItems/Mission")]
 public class MissionSO : ScriptableObject
@@ -18,6 +17,9 @@ public class MissionSO : ScriptableObject
     public string sceneName;
     public string textBeginMission;
     public string textFinishMission;
+
+    public Sprite placeImage;
+    
     public bool missionCompleted;
 
 

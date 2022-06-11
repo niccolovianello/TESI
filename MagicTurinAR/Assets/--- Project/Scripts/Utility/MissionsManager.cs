@@ -22,6 +22,7 @@ public class MissionsManager : MonoBehaviour
     [Header("WindowFinishLevel")]
     public Canvas windowFinishLevel;
     public Text textFinishLevel;
+    public Image imageFinishLevel;
     
     [Header("WindowStartLevel")]
     public Canvas windowToStartMission;
@@ -338,9 +339,6 @@ public class MissionsManager : MonoBehaviour
                             
                             Debug.Log("Start Coroutine check player");
                             StartCoroutine(CheckBusyPlayerCoroutine(np));
-                            
-                            
-                               
                         }
                         
                     }
@@ -375,6 +373,12 @@ public class MissionsManager : MonoBehaviour
     {
         windowFinishLevel.enabled = true;
         textFinishLevel.text = currentMission.textFinishMission;
+
+        imageFinishLevel.enabled = true;
+
+        if (currentMission.placeImage)
+            imageFinishLevel.sprite = currentMission.placeImage;
+        else imageFinishLevel.enabled = false;
     }
 
     private void CloseFinishMissionWindow()

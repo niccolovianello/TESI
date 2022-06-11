@@ -15,12 +15,13 @@ MonoBehaviour:
   index: 3
   narratorText: Great Master of White Magic
   fragmentTitle: 
-  fragmentText: '[user], you are the Hunter, the most dynamic member of this magic
-    team. Your most important goal is to defeat the Demons you will find around you
-    using your magic powers. Pay attention to your energy because every spell you
-    cast reduces your Mana: you have to try to maintain a pretty high accuracy level
-    to complete every mission. You can be asked to destroy a Gem by the Wiseman,
-    to generate some fresh White Magic Fragments. On the map, you can see some monsters
-    to fight and collect Runes.'
+  fragmentText: "[user], tu sei il Cacciatore, il membro pi\xF9 dinamico del team.
+    Il tuo obiettivo pi\xF9 importante \xE8 uccidere i Demoni che cercheranno di
+    ostacolarvi usando i tuoi poteri magici. Fai attenzione alla tua energia, perch\xE9
+    ogni incantesimo che lanci riduce il tuo Mana: devi cercare di mantenere un livello
+    di precisione piuttosto alto per completare ogni missione. Il Saggio potr\xE0
+    eventualmente chiederti di distruggere una Gemma, per generare alcuni Frammenti
+    di Magia Bianca. Sulla mappa puoi trovate mostri con cui combattere e collezionare
+    Rune."
   fragmentImage: {fileID: 21300000, guid: 33ce223f7233f4c08b106d52eff7c0d0, type: 3}
   fragmentDestinataryType: 1

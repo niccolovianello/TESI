@@ -15,6 +15,7 @@ MonoBehaviour:
   id: 12
   itemType: 2
   isStackable: 0
-  description: 'This rune means disclosure: an occult mistery will be revealed soon.'
+  description: "Questa runa simboleggia la scoperta: un antico mistero sar\xE0 svelato
+    presto."
   Sprite: {fileID: 21300000, guid: 30f8b3b84fde5b4498d6d0729b0754db, type: 3}
   prefab: {fileID: 2111386588671115546, guid: 921ceb745bae6a34bbbe783abd01d223, type: 3}

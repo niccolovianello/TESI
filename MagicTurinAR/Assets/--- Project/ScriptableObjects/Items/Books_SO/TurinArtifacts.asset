@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 4
   itemType: 1
   isStackable: 0
-  description: The eldest handmade artifacts you can find in Turin.
+  description: "Descrizione dettagliata delle attrazioni magiche pi\xF9 note a Torino."
   Sprite: {fileID: 21300000, guid: 17d21f9b506c6ac489f088a9775fb02c, type: 3}
   prefab: {fileID: 3326784960797452783, guid: eee13c130fc0d2c468e6e4c4ee985f34, type: 3}

@@ -15,6 +15,7 @@ MonoBehaviour:
   id: 7
   itemType: 0
   isStackable: 0
-  description: Nefertiti's bust, directly from 1345 BC.
+  description: Busto di Nefertiti, direttamente dal 1345 a.C. Forse andrebbe restituito
+    al Museo Egizio...
   Sprite: {fileID: 21300000, guid: 44792ea18ccd570408e2c2575de998b6, type: 3}
   prefab: {fileID: 3238800672194036725, guid: 8e039308d91dc3b44b353f3bdb6f2041, type: 3}

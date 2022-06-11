@@ -15,16 +15,20 @@ MonoBehaviour:
   id: 1
   playerType: 2
   sceneName: AR_EnemyFight
-  textBeginMission: It's your turn! After spawning the demon on the ground, cast
-    your spells and try to kill it. The basic spell (left button) is less powerful
-    but subtracts 10 mana points. The other spell (right button) is super powerful
-    but it will cost you 50 mana points.
-  textFinishMission: You made it! Now the wiseman will try to solve his enigma and
-    discover the location of the next demon's hideout!
+  textBeginMission: "\xC8 il tuo turno! Inquadra una superficie piana: non appena
+    vedi una mesh bianca che si muove, toccala per trovare il demone. Lancia i tuoi
+    incantesimi e cerca di ucciderlo. L'incantesimo di base (pulsante sinistro) \xE8
+    meno potente ma sottrae 10 punti mana. L'altra magia (tasto destro) arreca un
+    danno molto pi\xF9 grave ma ti coster\xE0 50 punti mana."
+  textFinishMission: "Ce l'hai fatta! Ora il Saggio cercher\xE0 di risolvere il suo
+    enigma per scoprire dove si trova il nascondiglio del prossimo demone!"
+  placeImage: {fileID: 0}
   missionCompleted: 0
+  demonVelocity: 0
   latitudeArea: 0
   longitudeArea: 0
   goalExplorerMissionAreaPrefab: {fileID: 0}
   latitudeTarget: 0
   longitudeTarget: 0
   goalExplorerMissionPrefab: {fileID: 0}
+  finalCode: 

@@ -36,8 +36,6 @@ public class MagicInventory : Inventory
         else
         {
             itemList.Add(item);
-            
-
         }
         OnItemListChanged?.Invoke(this, EventArgs.Empty);
 

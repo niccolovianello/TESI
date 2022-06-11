@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 14
   itemType: 2
   isStackable: 0
-  description: The union of all the runes. It's power is unbelievable.
+  description: "La madre di tutte le rune: il suo potere \xE8 incredibile."
   Sprite: {fileID: 21300000, guid: 5e5868b619133e741a79be88ed5c4350, type: 3}
   prefab: {fileID: 6753668841984866042, guid: 2e068045e325c2a48843ab420705a030, type: 3}

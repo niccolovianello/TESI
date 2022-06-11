@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 8
   itemType: 0
   isStackable: 0
-  description: A map of the surrounding universe, made with the finest metals.
+  description: "Una mappa dell'universo, realizzata con i metalli pi\xF9 pregiati."
   Sprite: {fileID: 21300000, guid: a2d942f4a09e07744919f8df9084a8fa, type: 3}
   prefab: {fileID: 6808268213758444078, guid: 7892a0062d9f89f4cbca3a5262c8c6cb, type: 3}

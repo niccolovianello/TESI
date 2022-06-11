@@ -27,7 +27,7 @@ public class UIManagerSharedAR : MonoBehaviour
         switch (args.State)
         {
             case PeerState.WaitingForLocalizationData:
-                textState.text = isHost ? "Scan an object." : "Wait for the leader to complete the scanning process.";
+                textState.text = isHost ? "Scannerizza l'oggetto." : "Attendi che il leader completi la scansione.";
                 break;
             
             case PeerState.Unknown:
@@ -37,14 +37,14 @@ public class UIManagerSharedAR : MonoBehaviour
                 break;
             
             case PeerState.Localizing:
-                textState.text = isHost ? "Scan an object." : "Keep scanning.";
+                textState.text = isHost ? "Scannerizza l'oggetto." : "Continua a scannerizzare...";
                 break;
             
             case PeerState.Stabilizing:
                 break;
             
             case PeerState.Stable:
-                textState.text = isHost ? "Wait for the others to complete the scanning process." : "Scan completed.";
+                textState.text = isHost ? "Attendi che gli altri completino la scansione." : "Scansione completata.";
                 break;
             
             case PeerState.Limited:
@@ -78,21 +78,17 @@ public class UIManagerSharedAR : MonoBehaviour
         
     }
 
-    public IEnumerator HintToUse()
+    private IEnumerator HintToUse()
     {
-        foreach (String s in hints)
+        yield return new WaitForSeconds(60f);
+        
+        foreach (var s in hints)
         {
             textState.text = s;
             Vibration.VibratePeek();
             
-            yield return new WaitForSeconds(30f);
+            yield return new WaitForSeconds(45f);
         }
     }
-
-    //private IEnumerator HintSizeFX()
-    //{ 
-    //    textState.fontSize.Lerp()
-    
-    //}
 
 }

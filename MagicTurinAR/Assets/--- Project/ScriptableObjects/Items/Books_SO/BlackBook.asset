@@ -15,6 +15,7 @@ MonoBehaviour:
   id: 0
   itemType: 1
   isStackable: 0
-  description: 
+  description: "Tristemente noto come il pi\xF9 completo manuale di Magia Oscura.
+    Meglio evitare che se ne appropri qualche malintenzionato"
   Sprite: {fileID: 21300000, guid: a81d95950dfd32645875b6dae423daab, type: 3}
   prefab: {fileID: 5450339153427731536, guid: 0215454e306769c4684862b1fc017fc7, type: 3}

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Scan the environment to find an appropriate surface.
+  m_Text: Scannerizza l'ambiente per trovare una superficie appropriata.
 --- !u!222 &170696199
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -272,7 +272,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hit "Start" when you see an accurate mesh on the ground.
+  m_Text: Premi "Start" quando vedi una superficie adeguatamente grande sul terreno.
 --- !u!222 &295946326
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -694,8 +694,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The scan wasn't that big, and the Gem has been lost. Make sure your scan
-    is big enough before placing the Gem on the ground.
+  m_Text: "La superficie non era adeguatamente grande e la gemma \xE8 stata persa.
+    Riprova, assicurandoti che la scansione sia accurata prima di piazzare la gemma
+    sul terreno."
 --- !u!222 &545598267
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1203,7 +1204,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Great job! Now the Wisemen will receive some fresh white fragments.
+  m_Text: "Bel lavoro! Ora il Wiseman ricever\xE0 alcuni frammenti di Magia Bianca."
 --- !u!222 &765459986
 CanvasRenderer:
   m_ObjectHideFlags: 0

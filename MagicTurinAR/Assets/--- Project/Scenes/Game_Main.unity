@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15478736, g: 0.15250534, b: 0.18415473, a: 1}
+  m_IndirectSpecularColor: {r: 0.14602235, g: 0.13166624, b: 0.18064734, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -193,8 +193,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This button gives you more control on the map. It enables and disables
-    the automatic GPS based rotation.
+  m_Text: 'Questo bottone ti da maggior controllo sulla mappa: usalo per abilitare
+    e disabilitare la rotazione GPS (se disattiva, usa due dita per ruotare la mappa).'
 --- !u!222 &8110575
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1478,7 +1478,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Do you want to see this artifact in AR?
+  m_Text: "Vuoi vedere questo artefatto in Realt\xE0 Aumentata?"
 --- !u!222 &181114145
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1636,8 +1636,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This button enables the Navigation System. Use it when you cannot find
-    the way for the location. Pay attention, it burns your mana out.
+  m_Text: 'Questo bottone attiva il Navigatore: usalo quando non riesci a trovare
+    la strada giusta. Fai attenzione, consuma energia.'
 --- !u!222 &197419566
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1910,11 +1910,11 @@ RectTransform:
   m_Children:
   - {fileID: 611184852}
   m_Father: {fileID: 2085181457}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -400}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 350}
   m_SizeDelta: {x: 256, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &233273212
@@ -2337,7 +2337,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Books
+  m_Text: Libri
 --- !u!222 &265421793
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3352,7 +3352,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 87.849, y: -356}
+  m_AnchoredPosition: {x: 87.849, y: -434}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &438470104
@@ -3846,9 +3846,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This icon shows if the team members are close to each other. If it turns
-    red, it means that you are phisically too far away from each other: if so, you
-    cannot do almost anything.'
+  m_Text: 'Questa icona mostra se siete tutti vicini uno all''altro. Se diventa rossa,
+    significa che siete fisicamente troppo distanti: in questo caso, non potete fare
+    quasi nulla.'
 --- !u!222 &507698347
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4370,8 +4370,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use this button to access your backpack. This is where you can take a look
-    at the collectables you have found so far and manage the Inventory.
+  m_Text: "Usa questo bottone per accedere allo zaino. \xC8 qui che puoi consultare
+    i collezionabili raccolti e gestire il tuo inventario."
 --- !u!222 &559694990
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4450,8 +4450,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use this button to access your backpack. This is where you can take a look
-    at the collectables you have found so far and manage the Inventory.
+  m_Text: "Usa questo bottone per accedere allo zaino. \xC8 qui che puoi consultare
+    i collezionabili raccolti e gestire il tuo inventario."
 --- !u!222 &566588361
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4530,7 +4530,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The accuracy of your GPS. For best result, turn your WiFi on.
+  m_Text: "L'accuratezza del GPS. Per una migliore stabilit\xE0, accendi il WiFi."
 --- !u!222 &567907997
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6381,7 +6381,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Do you want to see this rune in AR?
+  m_Text: "Vuoi vedere questa Runa in Realt\xE0 Aumentata?"
 --- !u!222 &775694981
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6465,8 +6465,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 123.99597, y: 19.246643}
-  m_SizeDelta: {x: 321.2521, y: 221.141}
+  m_AnchoredPosition: {x: 123.99597, y: 57}
+  m_SizeDelta: {x: 321.2521, y: 267.0709}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &790486800
 CanvasRenderer:
@@ -6846,6 +6846,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 806568894}
   m_CullTransparentMesh: 1
+--- !u!1 &809291885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 809291886}
+  - component: {fileID: 809291888}
+  - component: {fileID: 809291887}
+  m_Layer: 5
+  m_Name: Tip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &809291886
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809291885}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2085181457}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 550}
+  m_SizeDelta: {x: -100, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &809291887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809291885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 9525209a56a30c346bd7c9ef982b328e, type: 3}
+    m_FontSize: 42
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 96
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Premi "Ok" per lasciare che il Cacciatore abbatta quel dannato demone.
+--- !u!222 &809291888
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809291885}
+  m_CullTransparentMesh: 1
 --- !u!1 &810563502
 GameObject:
   m_ObjectHideFlags: 0
@@ -6916,8 +6995,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use this button to access your backpack. This is where you can take a look
-    at the collectables you have found so far and manage the Inventory.
+  m_Text: "Usa questo bottone per accedere allo zaino. \xC8 qui che puoi consultare
+    i collezionabili raccolti e gestire il tuo inventario."
 --- !u!222 &810563505
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7223,9 +7302,9 @@ RectTransform:
   m_Father: {fileID: 280295927}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 465, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 465, y: -698}
   m_SizeDelta: {x: 930, y: 930}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &820804463
@@ -7299,7 +7378,7 @@ GameObject:
   - component: {fileID: 828554474}
   - component: {fileID: 828554473}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Place Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7317,12 +7396,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2085181457}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 250}
-  m_SizeDelta: {x: -100.00001, y: 800}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -500}
+  m_SizeDelta: {x: -100, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &828554473
 MonoBehaviour:
@@ -7346,7 +7425,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9525209a56a30c346bd7c9ef982b328e, type: 3}
-    m_FontSize: 48
+    m_FontSize: 56
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
@@ -7357,7 +7436,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Great! You have completed this mission!
+  m_Text: '[place description]'
 --- !u!222 &828554474
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7512,7 +7591,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Do you want to see this book in AR?
+  m_Text: "Vuoi vedere questo libro in Realt\xE0 Aumentata?"
 --- !u!222 &855506320
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7629,9 +7708,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This icon shows if the team members are close to each other. If it turns
-    red, it means that you are phisically too far away from each other: if so, you
-    cannot do almost anything.'
+  m_Text: 'Questa icona mostra se siete tutti vicini uno all''altro. Se diventa rossa,
+    significa che siete fisicamente troppo distanti: in questo caso, non potete fare
+    quasi nulla.'
 --- !u!222 &876801628
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7710,8 +7789,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Do you want to send a gem to the hunter? He can destroy it and maybe generate
-    some fresh White Magic Fragments.
+  m_Text: "Vuoi consegnare una gemma al Cacciatore? Pu\xF2 distruggerla e generare
+    nuovi Frammenti di Magia Bianca."
 --- !u!222 &883061421
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8775,7 +8854,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The accuracy of your GPS. For best result, turn your WiFi on.
+  m_Text: "L'accuratezza del GPS. Per una migliore stabilit\xE0, accendi il WiFi."
 --- !u!222 &1001287758
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8854,7 +8933,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BACKPACK
+  m_Text: ZAINO
 --- !u!222 &1006985461
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10631,6 +10710,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231315740}
   m_CullTransparentMesh: 1
+--- !u!1 &1231357157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1231357158}
+  - component: {fileID: 1231357160}
+  - component: {fileID: 1231357159}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1231357158
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231357157}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2085181457}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -100}
+  m_SizeDelta: {x: -200, y: 750}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1231357159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231357157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: c2103bdd982e845a0a07bc8ee6649a17, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1231357160
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231357157}
+  m_CullTransparentMesh: 1
 --- !u!1 &1250631581
 GameObject:
   m_ObjectHideFlags: 0
@@ -10701,8 +10855,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This button gives you more control on the map. It enables and disables
-    the automatic GPS based rotation.
+  m_Text: 'Questo bottone ti da maggior controllo sulla mappa: usalo per abilitare
+    e disabilitare la rotazione GPS (se disattiva, usa due dita per ruotare la mappa).'
 --- !u!222 &1250631584
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12511,8 +12665,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The wiseman sent you a Gem. Do you want to destroy it in AR to generate
-    energy? The Gem will be lost if you don't complete this task.
+  m_Text: "Il Saggio ti ha consegnato una Gemma. Vuoi distruggerla per provare a
+    generare Frammenti di Magia Bianca? Se ti rifiuti di farlo, la Gemma andr\xE0
+    persa."
 --- !u!222 &1407563508
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12948,9 +13103,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: White Magic Fragments are crucial to mantain your mates' Mana high. If
-    anyone runs out of energy, just touch the specific character on the map to send
-    some fresh fragments.
+  m_Text: I Frammenti di Magia Bianca sono essenziali per mantenere alta l'energia
+    dei tuoi compagni. Se uno di loro dovesse trovarsi a corto di forze, tocca il
+    suo personaggio per inviargliene un po'.
 --- !u!222 &1467765533
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15234,7 +15389,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The accuracy of your GPS. For best result, turn your WiFi on.
+  m_Text: "L'accuratezza del GPS. Per una migliore stabilit\xE0, accendi il WiFi."
 --- !u!222 &1788089777
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16010,7 +16165,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 87.849, y: -111.67236}
-  m_SizeDelta: {x: 175.698, y: 223.3447}
+  m_SizeDelta: {x: 175.698, y: 355.3932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1869710601
 MonoBehaviour:
@@ -16949,7 +17104,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 87.849, y: -111.67236}
-  m_SizeDelta: {x: 175.698, y: 223.3447}
+  m_SizeDelta: {x: 175.698, y: 366.8759}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1966932157
 MonoBehaviour:
@@ -17059,10 +17214,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This buttons give you more control on the map. The upper one enables and
-    disables the automatic GPS based rotation. The other one constraints the camera
-    to your charachter: when disabled, you can freely move the camera around in the
-    map.'
+  m_Text: 'Questi bottoni ti dannomaggior controllo sulla mappa. Quello sopra abilita
+    e disabilita la rotazione GPS (se disattiva, usa due dita per ruotare la mappa).
+    L''altro vincola la camera al tuo personaggio: se disabilitato, puoi muovere
+    la camera liberamente sulla mappa.'
 --- !u!222 &1990986874
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17726,6 +17881,7 @@ MonoBehaviour:
   currentMissionIndex: 0
   windowFinishLevel: {fileID: 1217707880}
   textFinishLevel: {fileID: 828554473}
+  imageFinishLevel: {fileID: 1231357159}
   windowToStartMission: {fileID: 1888885375}
   textWindowStartLevel: {fileID: 1671421322}
   btnStartWindow: {fileID: 1651995944}
@@ -18226,8 +18382,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 233273211}
   - {fileID: 828554472}
+  - {fileID: 1231357158}
+  - {fileID: 809291886}
+  - {fileID: 233273211}
   m_Father: {fileID: 1217707883}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18389,7 +18547,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 87.849, y: -356}
+  m_AnchoredPosition: {x: 87.849, y: -422}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2091332068
@@ -18631,9 +18789,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This icon shows if the team members are close to each other. If it turns
-    red, it means that you are phisically too far away from each other: if so, you
-    cannot do almost anything.'
+  m_Text: 'Questa icona mostra se siete tutti vicini uno all''altro. Se diventa rossa,
+    significa che siete fisicamente troppo distanti: in questo caso, non potete fare
+    quasi nulla.'
 --- !u!222 &2102749040
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18712,7 +18870,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: How many White Magic Fragments do you want to send?
+  m_Text: Quanti Frammenti di Magia Bianca vuoi inviare?
 --- !u!222 &2111515962
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19021,10 +19179,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Gems are really precious and powerful magic pieces. You should collect
-    as many as you can and keep them toroughly. If needed, they can be destroyed
-    by the hunter to generate White Magic Fragments: just touch this icon to send
-    a gem to the hunter.'
+  m_Text: "Le gemme sono oggetti molto preziosi e potenti. Dovresti raccoglierne
+    il pi\xF9 possibile e conservarle gelosamente. Se necessario, possono essere
+    distrutte dal Cacciatore per generare Frammenti di Magia Bianca: tocca quest'icona
+    per dargliene una."
 --- !u!222 &2145252976
 CanvasRenderer:
   m_ObjectHideFlags: 0

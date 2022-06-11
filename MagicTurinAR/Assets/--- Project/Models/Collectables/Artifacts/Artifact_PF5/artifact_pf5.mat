@@ -127,7 +127,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DitherSize: 1
     - _DstBlend: 0
-    - _EmissionMultiplier: 0.4
+    - _EmissionMultiplier: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0

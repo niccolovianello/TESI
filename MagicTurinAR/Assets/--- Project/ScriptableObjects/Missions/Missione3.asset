@@ -15,13 +15,18 @@ MonoBehaviour:
   id: 2
   playerType: 1
   sceneName: MazeGame
-  textBeginMission: This is an AR labyrinth! Use the controls on the UI to lead the
-    blue sphere to the target.
-  textFinishMission: You solved it! The Explorer now knows the next location to reach!
+  textBeginMission: "Questo \xE8 un labirinto in Realt\xE0 Aumentata! Inquadra una
+    superficie piana: non appena vedi una mesh bianca che si muove, toccala per individuare
+    il labirinto. Usa i controlli sull'interfaccia utente per guidare la sfera blu
+    verso il punto di arrivo."
+  textFinishMission: Risolto! Ora l'esploratore sa dove portarvi!
+  placeImage: {fileID: 0}
   missionCompleted: 0
+  demonVelocity: 0
   latitudeArea: 0
   longitudeArea: 0
   goalExplorerMissionAreaPrefab: {fileID: 0}
   latitudeTarget: 0
   longitudeTarget: 0
   goalExplorerMissionPrefab: {fileID: 0}
+  finalCode: 

@@ -15,6 +15,7 @@ MonoBehaviour:
   id: 6
   itemType: 0
   isStackable: 0
-  description: High quality devil head, with high quality magic powers.
+  description: "Riproduzione fedele della testa del diavolo. Oro di qualit\xE0, magia
+    nera di qualit\xE0."
   Sprite: {fileID: 21300000, guid: fb6a43c81a1528140ac09576162289ab, type: 3}
   prefab: {fileID: 8270834496314205526, guid: 4755defc655dd314cb0307c08dadceb4, type: 3}

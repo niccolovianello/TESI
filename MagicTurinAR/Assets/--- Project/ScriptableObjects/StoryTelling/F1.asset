@@ -15,9 +15,9 @@ MonoBehaviour:
   index: 0
   narratorText: Great Master of White Magic
   fragmentTitle: 'Important message:'
-  fragmentText: After thousands of years of peace and wealth, the perfect alignment
-    of the Solar System planets represents the occasion, for some members of the
-    Dark Order, for a reunion. They are going to re-invoke the Dark King, who used
-    to be in power many years ago, spreading fear, chaos and death.
+  fragmentText: Dopo migliaia di anni di pace e ricchezza, il perfetto allineamento
+    dei pianeti del Sistema Solare rappresenta l'occasione, per alcuni membri dell'Ordine
+    Oscuro, per riunirsi. Invocheranno nuovamente il Re Oscuro, che era al potere
+    molti anni fa, diffondendo paura, caos e morte.
   fragmentImage: {fileID: 21300000, guid: 33ce223f7233f4c08b106d52eff7c0d0, type: 3}
   fragmentDestinataryType: 3

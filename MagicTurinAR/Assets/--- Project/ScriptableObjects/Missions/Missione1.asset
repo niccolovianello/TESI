@@ -15,17 +15,20 @@ MonoBehaviour:
   id: 0
   playerType: 0
   sceneName: 
-  textBeginMission: Hey man, here comes the first task. Let's see if you can lead
-    the group to the right location. If you get lost, use your Power to enable the
-    navigation system (be careful, it burns your Mana).
-  textFinishMission: Amazing, you have found the place! Hit "Ok" to let the Hunter
-    fight with the hiding Demon.
+  textBeginMission: Ehi amico, ecco il primo compito. Vediamo se riesci a condurre
+    il gruppo nel posto giusto. Se ti perdi, usa il tuo potere per abilitare il Navigatore
+    (ricorda, consuma Mana).
+  textFinishMission: "Hai trovato il Museo Egizio! \xC8 considerato il nucleo magico
+    della citt\xE0: sembra infatti contenere molti esemplari di magia sia bianca
+    che oscura, come i reperti dei faraoni Tuthmosi e Tutankhamon. Qualcuno ha giurato
+    di aver visto un busto di Nefertiti nelle vicinanze..."
+  placeImage: {fileID: 21300000, guid: b0842904f65a0cd4eb6804e55ee7c9f1, type: 3}
   missionCompleted: 0
   demonVelocity: 0
-  latitudeArea: 45.069973
-  longitudeArea: 7.6630855
+  latitudeArea: 45.06834
+  longitudeArea: 7.6860423
   goalExplorerMissionAreaPrefab: {fileID: 3590798186009698721, guid: 0d1a1a82c5f3bfd47bbff6c5d032f1a8, type: 3}
-  latitudeTarget: 45.06997
-  longitudeTarget: 7.663085
+  latitudeTarget: 45.0686
+  longitudeTarget: 7.684283
   goalExplorerMissionPrefab: {fileID: 5400985734620608659, guid: 62441ea14ec15411d9362f443272cab7, type: 3}
   finalCode: 

@@ -15,9 +15,9 @@ MonoBehaviour:
   index: 5
   narratorText: Great Master of White Magic
   fragmentTitle: 
-  fragmentText: 'We are about to start the mission! There is some advice for you.
-    Your magic power works only if you are all close to each other: you cannot do
-    anything alone. And if you run out of Mana, try to ask the Wiseman for some White
-    Magic Fragments. I think that''s all! Try not to die and make the difference!'
+  fragmentText: 'Stiamo per iniziare! Solo qualche ultimo consiglio. La vostra magia
+    funziona solo se siete tutti vicini: non potete fare niente da soli. E se per
+    caso doveste essere a corto di Mana, chiedete al Saggio alcuni Frammenti di Magia
+    Bianca. Penso sia tutto! Cercate di non morire e fate la differenza!'
   fragmentImage: {fileID: 21300000, guid: 33ce223f7233f4c08b106d52eff7c0d0, type: 3}
   fragmentDestinataryType: 3

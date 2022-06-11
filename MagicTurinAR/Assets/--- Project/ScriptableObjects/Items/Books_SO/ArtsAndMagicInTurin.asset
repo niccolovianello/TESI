@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 1
   itemType: 1
   isStackable: 0
-  description: 'A deep catalogue containing every kind of '
+  description: "Catalogo delle pi\xF9 strane botteghe di magia di Torino."
   Sprite: {fileID: 21300000, guid: e2d53698e9ab4fc4c9c64fb9a658b915, type: 3}
   prefab: {fileID: 6403894582573245323, guid: 71a01487d61a36b49903e73965e23428, type: 3}

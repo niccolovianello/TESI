@@ -15,12 +15,13 @@ MonoBehaviour:
   index: 4
   narratorText: Great Master of White Magic
   fragmentTitle: 
-  fragmentText: 'Last but not least, [user], you are the Wiseman. You hold a very
-    important position because you can manage the inventory and you have the needed
-    skills to solve the enigmas you will be facing. Inventory management is crucial
-    for the flux of this experience: you need to balance the needs of your teammates
-    and give them the essential amount of White Magic Fragments and manage Gems thoroughly
-    to avoid running out of energy for the team. On the map, you can find and collect
-    Wite Magic Fragments themselves and ancient Magic Books.'
+  fragmentText: "Ultimo, ma non meno importante, [user], tu sei il Saggio. Ricopri
+    una posizione molto importante perch\xE9 puoi gestire l'inventario e hai le competenze
+    necessarie per risolvere gli enigmi che dovrai affrontare. La gestione dell'inventario
+    \xE8 fondamentale per il successo della squadra: devi bilanciare le esigenze
+    dei tuoi compagni fornendo loro adeguati Frammenti di Magia Bianca e gestire
+    attentamente le gemme per evitare di rimanere senza fonti di energia. Oltre ai
+    Frammenti di Magia Bianca, sulla mappa potrai trovare e collezionare anche alcuni
+    antichi Libri di Magia."
   fragmentImage: {fileID: 21300000, guid: 33ce223f7233f4c08b106d52eff7c0d0, type: 3}
   fragmentDestinataryType: 2

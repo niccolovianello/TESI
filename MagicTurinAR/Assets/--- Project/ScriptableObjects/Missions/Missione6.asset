@@ -15,12 +15,15 @@ MonoBehaviour:
   id: 5
   playerType: 1
   sceneName: AR_Wiseman_Memory
-  textBeginMission: There is a fresh enigma for you. Go ahead and try to solve it!
-  textFinishMission: Great job! You rock!
+  textBeginMission: Ecco un nuovo enigma per te, prova a risolverlo!
+  textFinishMission: Ottimo lavoro!
+  placeImage: {fileID: 0}
   missionCompleted: 0
+  demonVelocity: 0
   latitudeArea: 0
   longitudeArea: 0
   goalExplorerMissionAreaPrefab: {fileID: 0}
   latitudeTarget: 0
   longitudeTarget: 0
   goalExplorerMissionPrefab: {fileID: 0}
+  finalCode: 

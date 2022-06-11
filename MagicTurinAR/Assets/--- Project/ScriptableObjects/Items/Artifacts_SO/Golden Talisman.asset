@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Golden Talisman
   m_EditorClassIdentifier: 
   id: 5
-  itemTypeIndex: 0
+  itemType: 0
   isStackable: 0
-  description: Historic Turin talisman. Unfortunately someone vandalized it.
+  description: Storico talismano di Torino. Sfortunatamente qualche vandalo lo ha
+    rovinato.
   Sprite: {fileID: 21300000, guid: 676d22fac55149543805d2fcf256a2bf, type: 3}
   prefab: {fileID: 3540636763510334360, guid: 5375bde8710883448bbb2e7276406e1d, type: 3}

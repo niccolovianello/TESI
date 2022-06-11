@@ -15,8 +15,9 @@ MonoBehaviour:
   id: 4
   playerType: 2
   sceneName: AR_EnemyFight
-  textBeginMission: You ready?
-  textFinishMission: You made it see the stars from pain!
+  textBeginMission: Pronto per un altro demone?
+  textFinishMission: Grande, gli hai fatto vedere i sorci verdi!
+  placeImage: {fileID: 0}
   missionCompleted: 0
   demonVelocity: 0.008
   latitudeArea: 0

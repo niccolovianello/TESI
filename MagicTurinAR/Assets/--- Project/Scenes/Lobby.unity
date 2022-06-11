@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1364127122}
-  m_IndirectSpecularColor: {r: 0.06386751, g: 0.073460914, b: 0.17254122, a: 1}
+  m_IndirectSpecularColor: {r: 0.04997754, g: 0.07872725, b: 0.1761039, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1922,7 +1922,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.092518516, y: 0.053583335}
   m_AnchorMax: {x: 0.4591852, y: 0.10558334}
-  m_AnchoredPosition: {x: 2.7338867, y: 37.000244}
+  m_AnchoredPosition: {x: 2.7338867, y: 37.000305}
   m_SizeDelta: {x: 5.467514, y: -4.2092133}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &456102823
@@ -2394,7 +2394,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 325, y: 0}
-  m_SizeDelta: {x: 600, y: 180}
+  m_SizeDelta: {x: 600, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &541889655
 MonoBehaviour:
@@ -2418,20 +2418,20 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9525209a56a30c346bd7c9ef982b328e, type: 3}
-    m_FontSize: 30
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The most dynamic and tough member of the group. She is the only one who
-    can defeat the Demons with her magic. Without her, the team has no possibilities
-    against the Black Magic.
+  m_Text: "Il membro pi\xF9 dinamico e tosto del gruppo. \xC8 l'unica in grado di
+    distruggere i demoni con i propri incantesimi. Senza di lei, il team non avrebbe
+    alcuna possibilit\xE0 contro la Magia Nera."
 --- !u!222 &541889656
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2510,7 +2510,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use
+  m_Text: Usa
 --- !u!222 &554607789
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2728,18 +2728,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9525209a56a30c346bd7c9ef982b328e, type: 3}
-    m_FontSize: 43
+    m_FontSize: 56
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
-    m_MaxSize: 43
+    m_MaxSize: 56
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hunter
+  m_Text: Cacciatore
 --- !u!222 &738321991
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2965,18 +2965,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9525209a56a30c346bd7c9ef982b328e, type: 3}
-    m_FontSize: 43
+    m_FontSize: 56
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
-    m_MaxSize: 43
+    m_MaxSize: 56
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Wiseman
+  m_Text: Saggio
 --- !u!222 &791109744
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4127,7 +4127,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 325, y: 0}
-  m_SizeDelta: {x: 600, y: 180}
+  m_SizeDelta: {x: 600, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1106866794
 MonoBehaviour:
@@ -4151,20 +4151,20 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9525209a56a30c346bd7c9ef982b328e, type: 3}
-    m_FontSize: 30
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Great sense of direction. You should follow him if you don't want to get
-    lost. He can see and collect the Gems, but he is  probably also in search of
-    some ancient forgotten artifacts.
+  m_Text: "Ottimo senso dell'orientamento. Bisognerebbe sempre seguirlo se non ci
+    si vuole perdere. Pu\xF2 vedere e collezionare le Gemme, ma si dice che sia anche
+    in cerca di qualche antico artefatto."
 --- !u!222 &1106866795
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4243,7 +4243,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Host a private lobby and generate your lobby code
+  m_Text: Genera il tuo team e ottieni il rispettivo codice di accesso.
 --- !u!222 &1114546980
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5399,7 +5399,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use
+  m_Text: Usa
 --- !u!222 &1463269374
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5697,7 +5697,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use
+  m_Text: Usa
 --- !u!222 &1479531947
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5776,7 +5776,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Join a private lobby with the lobby code
+  m_Text: Entra in un team esistente inserendo il codice nel campo sottostante.
 --- !u!222 &1606311740
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6126,18 +6126,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9525209a56a30c346bd7c9ef982b328e, type: 3}
-    m_FontSize: 43
+    m_FontSize: 56
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
-    m_MaxSize: 43
+    m_MaxSize: 56
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Explorer
+  m_Text: Esploratore
 --- !u!222 &1660677591
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6736,7 +6736,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -325, y: 0}
-  m_SizeDelta: {x: 600, y: 180}
+  m_SizeDelta: {x: 600, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1764897926
 MonoBehaviour:
@@ -6760,7 +6760,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9525209a56a30c346bd7c9ef982b328e, type: 3}
-    m_FontSize: 30
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -6771,9 +6771,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The sage part of the team. Everyone should ask him before making any decision.
-    He is the only responsible for the Inventory. Someone thinks he is looking for
-    some old books. Who knows?
+  m_Text: "Il membro esperto del gruppo. Tutti dovrebbero consultarsi con lui prima
+    di prendere strane decisioni. \xC8 l'unico gestore dell'inventario. Qualcuno
+    crede sia in cerca di antichi manoscritti, chi lo sa?"
 --- !u!222 &1764897927
 CanvasRenderer:
   m_ObjectHideFlags: 0

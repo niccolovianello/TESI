@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 1000
   itemType: 3
   isStackable: 1
-  description: An ancient piece of magic. Someone says that some gems are a rich
-    source of energy.
-  Sprite: {fileID: 21300000, guid: 13597b049430824468ca1d48477afb9b, type: 3}
+  description: Un antico pezzo di magia. Qualcuno dice che alcune gemme sono una
+    ricca fonte di energia.
+  Sprite: {fileID: 21300000, guid: 6ddc90d8c39b78646bbbd43080923846, type: 3}
   prefab: {fileID: 8134186224298519009, guid: 1d61eb0c3e3034937a0c428a490fc617, type: 3}

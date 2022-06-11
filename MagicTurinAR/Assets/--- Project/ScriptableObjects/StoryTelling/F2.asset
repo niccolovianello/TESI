@@ -15,10 +15,10 @@ MonoBehaviour:
   index: 1
   narratorText: Great Master of White Magic
   fragmentTitle: 
-  fragmentText: Therefore, the White Order sent the three of you to prevent this
-    from happening. You have to explore the city to discover the Great Darkness,
-    which is the place where the members of the Dark Order will perform the obscure
-    ritual. Solve enigmas and collect handmade artifacts, runes, books and everything
-    that could potentially be helpful. Every clue can be crucial.
+  fragmentText: "L'Ordine Bianco ha quindi inviato voi tre per evitare che ci\xF2
+    accada. Dovete esplorare la citt\xE0 per scoprire il Grande Buio, ovvero il luogo
+    in cui i membri dell'Ordine Oscuro eseguiranno il rituale. Risolvi enigmi e colleziona
+    manufatti, rune, libri e tutto ci\xF2 che potrebbe essere utile. Ogni indizio
+    pu\xF2 essere cruciale."
   fragmentImage: {fileID: 21300000, guid: 33ce223f7233f4c08b106d52eff7c0d0, type: 3}
   fragmentDestinataryType: 3
