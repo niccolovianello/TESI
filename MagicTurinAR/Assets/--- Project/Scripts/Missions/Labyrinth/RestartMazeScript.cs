@@ -3,15 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MemoryUIManager : MonoBehaviour
+public class RestartMazeScript : MonoBehaviour
 {
-    [SerializeField] private CanvasRenderer helpUiPanel;
     private MissionsManager mm;
-    public void CloseHelpUiPanel()
-    {
-        helpUiPanel.gameObject.SetActive(false);
-    }
-
     public void RestartLevel()
     {
         mm = FindObjectOfType<MissionsManager>();

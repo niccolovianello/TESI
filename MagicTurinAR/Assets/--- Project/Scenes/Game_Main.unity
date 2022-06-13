@@ -17887,7 +17887,7 @@ MonoBehaviour:
   windowFinishLevel: {fileID: 1217707880}
   textFinishLevel: {fileID: 828554473}
   imageFinishLevel: {fileID: 1231357159}
-  tipFinishMission: {fileID: 0}
+  tipFinishMission: {fileID: 809291887}
   windowToStartMission: {fileID: 1888885375}
   textWindowStartLevel: {fileID: 1671421322}
   btnStartWindow: {fileID: 1651995944}
