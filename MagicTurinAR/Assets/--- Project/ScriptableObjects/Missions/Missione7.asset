@@ -18,8 +18,8 @@ MonoBehaviour:
   textBeginMission: "Squadra! Adesso \xE8 il momento di collaborare: cercate il baule
     segreto e apritelo per impedire l'esecuzione del rituale."
   textFinishMission: Ben fatto ragazzi, avete completato questa demo.
-  placeImage: {fileID: 0}
-  tipFinishLevelWindow: Premi "Ok" per consultare le statistiche.
+  placeImage: {fileID: 21300000, guid: aa965e586fe8b4742a595564f1171515, type: 3}
+  tipFinishLevelWindow: Premi "Ok" per consultare le statistiche finali.
   missionCompleted: 0
   demonVelocity: 0
   latitudeArea: 0

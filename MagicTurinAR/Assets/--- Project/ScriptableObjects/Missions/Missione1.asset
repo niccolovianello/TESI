@@ -23,11 +23,11 @@ MonoBehaviour:
     che oscura, come i reperti dei faraoni Tuthmosi e Tutankhamon. Qualcuno ha giurato
     di aver visto un busto di Nefertiti nelle vicinanze..."
   placeImage: {fileID: 21300000, guid: b0842904f65a0cd4eb6804e55ee7c9f1, type: 3}
-  tipFinishLevelWindow: Premi "Ok" per permettere al cacciatore di stanare il demone!
+  tipFinishLevelWindow: Premi "Ok" per permettere al cacciatore di stanare il demone.
   missionCompleted: 0
   demonVelocity: 0
-  latitudeArea: 45.068485
-  longitudeArea: 7.68434
+  latitudeArea: 45.067398
+  longitudeArea: 7.683908
   goalExplorerMissionAreaPrefab: {fileID: 3590798186009698721, guid: 0d1a1a82c5f3bfd47bbff6c5d032f1a8, type: 3}
   latitudeTarget: 45.06849
   longitudeTarget: 7.68434

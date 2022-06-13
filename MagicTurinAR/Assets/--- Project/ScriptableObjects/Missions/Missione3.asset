@@ -20,8 +20,8 @@ MonoBehaviour:
     il labirinto. Usa i controlli sull'interfaccia utente per guidare la sfera blu
     verso il punto di arrivo."
   textFinishMission: Risolto! Ora l'esploratore sa dove portarvi!
-  placeImage: {fileID: 0}
-  tipFinishLevelWindow: Premi "Ok" per iniziare la ricerca del prossimo luogo infestato!
+  placeImage: {fileID: 21300000, guid: aa965e586fe8b4742a595564f1171515, type: 3}
+  tipFinishLevelWindow: Premi "Ok" per iniziare la ricerca del prossimo luogo infestato.
   missionCompleted: 0
   demonVelocity: 0
   latitudeArea: 0

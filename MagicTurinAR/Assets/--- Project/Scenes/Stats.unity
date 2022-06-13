@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 669298784}
   m_HandleRect: {fileID: 669298783}
   m_Direction: 2
-  m_Value: 0.5
+  m_Value: 1
   m_Size: 0.3899836
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -319,7 +319,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Collected runes
+  m_Text: Rune collezionate
 --- !u!222 &20896094
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -766,7 +766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -14.445, y: 0}
+  m_AnchoredPosition: {x: -14.445, y: -743}
   m_SizeDelta: {x: -28.8898, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &122720933
@@ -1426,7 +1426,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 543254371}
   m_HandleRect: {fileID: 543254370}
   m_Direction: 2
-  m_Value: 0.5
+  m_Value: 1
   m_Size: 0.3899836
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1880,7 +1880,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Collected books
+  m_Text: Libri collezionati
 --- !u!222 &784104292
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2426,7 +2426,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -14.445, y: 0}
+  m_AnchoredPosition: {x: -14.445, y: -743}
   m_SizeDelta: {x: -28.8898, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1087137795
@@ -2854,7 +2854,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0, y: -150}
+  m_AnchoredPosition: {x: -0, y: -200}
   m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1209808017
@@ -3526,7 +3526,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -14.445, y: -0.000061035156}
+  m_AnchoredPosition: {x: -14.445, y: -743.00006}
   m_SizeDelta: {x: -28.8898, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1485110743
@@ -4295,7 +4295,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 677175616}
   m_HandleRect: {fileID: 677175615}
   m_Direction: 2
-  m_Value: 0.5
+  m_Value: 1
   m_Size: 0.3899836
   m_NumberOfSteps: 0
   m_OnValueChanged:
