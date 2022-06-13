@@ -10615,7 +10615,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217707879}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -17887,6 +17887,7 @@ MonoBehaviour:
   windowFinishLevel: {fileID: 1217707880}
   textFinishLevel: {fileID: 828554473}
   imageFinishLevel: {fileID: 1231357159}
+  tipFinishMission: {fileID: 0}
   windowToStartMission: {fileID: 1888885375}
   textWindowStartLevel: {fileID: 1671421322}
   btnStartWindow: {fileID: 1651995944}
