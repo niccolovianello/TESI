@@ -67,20 +67,20 @@ public class PlayerMazeMovement : MonoBehaviour
             if (down.GetComponent<MazeMovementHandler>().isPressed == true)
             {
                 move += Vector3.back;
-               //move = new Vector3(transform.position.x, initialTransform.position.y, transform.position.z);
-
+                //move = new Vector3(transform.position.x, initialTransform.position.y, transform.position.z);
+                Debug.Log("Down");
             }
 
             if (left.GetComponent<MazeMovementHandler>().isPressed == true)
             {
                 move += Vector3.left;
-                
+                Debug.Log("left");
             }
 
             if (right.GetComponent<MazeMovementHandler>().isPressed == true)
             {
                 move += Vector3.right;
-                
+                Debug.Log("Right");
 
             }
             transform.rotation = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0);

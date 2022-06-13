@@ -18,6 +18,7 @@ MonoBehaviour:
   textBeginMission: Ecco un nuovo enigma per te, prova a risolverlo!
   textFinishMission: Ottimo lavoro!
   placeImage: {fileID: 0}
+  tipFinishLevelWindow: Premi "Ok" per scoprire cosa cela il forziere della fontana!
   missionCompleted: 0
   demonVelocity: 0
   latitudeArea: 0

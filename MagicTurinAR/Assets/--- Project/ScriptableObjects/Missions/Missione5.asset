@@ -18,6 +18,7 @@ MonoBehaviour:
   textBeginMission: Pronto per un altro demone?
   textFinishMission: Grande, gli hai fatto vedere i sorci verdi!
   placeImage: {fileID: 0}
+  tipFinishLevelWindow: Premi "Ok" per scoprire il mistero della fontana!
   missionCompleted: 0
   demonVelocity: 0.008
   latitudeArea: 0

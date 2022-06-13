@@ -19,6 +19,7 @@ public class MissionSO : ScriptableObject
     public string textFinishMission;
 
     public Sprite placeImage;
+    public string tipFinishLevelWindow;
     
     public bool missionCompleted;
 

@@ -23,12 +23,13 @@ MonoBehaviour:
     fontana sarebbe una Grotta Alchemica, ovvero un passaggio che consente di passare
     da una dimensione materiale ad una immateriale.  "
   placeImage: {fileID: 21300000, guid: 1891cd157f962e74683f0a6bb2dc3e2b, type: 3}
+  tipFinishLevelWindow: Premi "Ok" e che la caccia abbia inizio!
   missionCompleted: 0
   demonVelocity: 0
-  latitudeArea: 45.0728
-  longitudeArea: 7.665356
+  latitudeArea: 45.07244
+  longitudeArea: 7.6650667
   goalExplorerMissionAreaPrefab: {fileID: 3590798186009698721, guid: 0d1a1a82c5f3bfd47bbff6c5d032f1a8, type: 3}
-  latitudeTarget: 45.0728
-  longitudeTarget: 7.665356
+  latitudeTarget: 45.07244
+  longitudeTarget: 7.665067
   goalExplorerMissionPrefab: {fileID: 5400985734620608659, guid: 62441ea14ec15411d9362f443272cab7, type: 3}
   finalCode: 

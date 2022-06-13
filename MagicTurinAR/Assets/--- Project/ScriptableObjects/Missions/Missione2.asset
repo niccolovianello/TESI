@@ -23,6 +23,8 @@ MonoBehaviour:
   textFinishMission: "Ce l'hai fatta! Ora il Saggio cercher\xE0 di risolvere il suo
     enigma per scoprire dove si trova il nascondiglio del prossimo demone!"
   placeImage: {fileID: 0}
+  tipFinishLevelWindow: Premi "Ok" per far si che il saggio possa risolvere l'enigma
+    del Museo!
   missionCompleted: 0
   demonVelocity: 0
   latitudeArea: 0

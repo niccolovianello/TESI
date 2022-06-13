@@ -23,6 +23,7 @@ public class MissionsManager : MonoBehaviour
     public Canvas windowFinishLevel;
     public Text textFinishLevel;
     public Image imageFinishLevel;
+    [SerializeField] private Text tipFinishMission;
     
     [Header("WindowStartLevel")]
     public Canvas windowToStartMission;
@@ -373,6 +374,8 @@ public class MissionsManager : MonoBehaviour
     {
         windowFinishLevel.enabled = true;
         textFinishLevel.text = currentMission.textFinishMission;
+
+        tipFinishMission.text = currentMission.tipFinishLevelWindow;
 
         imageFinishLevel.enabled = true;
 

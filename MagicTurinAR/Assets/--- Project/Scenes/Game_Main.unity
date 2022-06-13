@@ -7911,7 +7911,7 @@ MonoBehaviour:
   textGems: {fileID: 0}
   textWhiteFragment: {fileID: 0}
   textWhiteMagicToSend: {fileID: 0}
-  windowToAR: {fileID: 0}
+  windowToAR: {fileID: 766767274}
   windowToSendWhiteMagic: {fileID: 0}
   confirmSendWhiteMagic: {fileID: 0}
   descriptionItemInAR: {fileID: 1201676945}
@@ -10615,7 +10615,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217707879}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -12846,7 +12846,7 @@ MonoBehaviour:
   textGems: {fileID: 0}
   textWhiteFragment: {fileID: 0}
   textWhiteMagicToSend: {fileID: 0}
-  windowToAR: {fileID: 0}
+  windowToAR: {fileID: 1830927059}
   windowToSendWhiteMagic: {fileID: 0}
   confirmSendWhiteMagic: {fileID: 0}
   descriptionItemInAR: {fileID: 1813658086}
@@ -17790,7 +17790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2035515288
 RectTransform:
   m_ObjectHideFlags: 0
