@@ -22,6 +22,8 @@ public class UIInventory : MonoBehaviour
     public Image windowToSendWhiteMagic;
     public Button confirmSendWhiteMagic;
 
+    [SerializeField] private Text descriptionItemInAR;
+
 
 
     public GameObject itemToSeeInAr;
@@ -111,7 +113,8 @@ public class UIInventory : MonoBehaviour
 
     public void OpenWindowToAr(MagicItemSO item)
     {
-        itemToSeeInAr = item.prefab;        
+        itemToSeeInAr = item.prefab;
+        descriptionItemInAR.text = item.description;
         windowToAR.gameObject.SetActive(true);
     }
 

@@ -89,7 +89,11 @@ public class SharedARManagerScript : MonoBehaviour
     private void Update()
     {
         //if(Input.GetKeyDown(KeyCode.A))
-       
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Debug.Log("isGameStarted: " + _isGameStarted + "\nStablePeerCount: " + stablePeerCount + "\nchestLocationset: " + chestLocationSet);
+        
+        }
         // start game conditions
         if ( _isGameStarted == false && stablePeerCount == 3 && chestLocationSet)
         {

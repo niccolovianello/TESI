@@ -148,7 +148,9 @@ namespace Niantic.ARDKExamples.Helpers
                 }
 
                 _placedObjects.Add(GO);
-                FindObjectOfType<ARItemManager>().CollectablePrefab = GO;
+
+                if(FindObjectOfType<ARItemManager>())
+                    FindObjectOfType<ARItemManager>().CollectablePrefab = GO;
                 Vibration.VibratePop();
 
                 var anchor = result.Anchor;

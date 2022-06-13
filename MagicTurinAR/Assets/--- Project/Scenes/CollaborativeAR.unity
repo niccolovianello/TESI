@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17905408, g: 0.21854448, b: 0.2733927, a: 1}
+  m_IndirectSpecularColor: {r: 0.17905384, g: 0.2185444, b: 0.27339214, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -248,6 +248,7 @@ MonoBehaviour:
   - Notate qualcosa in comune tra le cifre dei due fogli?
   - Fate attenzione a ogni riga...
   - Osservate la posizione di ogni cifra...
+  - Inserite i numeri che hanno la stessa posizione su ogni riga dei due fogli.
 --- !u!1 &253635431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,25 +1291,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3061143500043066512, guid: 903492e152bd34b2b8e964fe195297e8, type: 3}
   m_PrefabInstance: {fileID: 1297370588}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1714427102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714427100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80198c6deee0a4c5c9096accbcac4119, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _manageUsingUnityLifecycle: 1
-  _arCamera: {fileID: 1714427107}
-  _keyFrameFrequency: 20
-  _interpolation: 2
-  _interpolationPreference: 0.9
-  _occlusionMode: 1
-  _textureFilterMode: 1
 --- !u!114 &1714427103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1377,7 +1359,6 @@ MonoBehaviour:
   - {fileID: 1714427108}
   - {fileID: 1714427111}
   - {fileID: 1714427103}
-  - {fileID: 1714427102}
 --- !u!1 &1784395298
 GameObject:
   m_ObjectHideFlags: 0
