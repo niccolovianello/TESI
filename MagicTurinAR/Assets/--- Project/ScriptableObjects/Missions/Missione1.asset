@@ -26,10 +26,10 @@ MonoBehaviour:
   tipFinishLevelWindow: Premi "Ok" per permettere al cacciatore di stanare il demone!
   missionCompleted: 0
   demonVelocity: 0
-  latitudeArea: 45.06855
-  longitudeArea: 7.6843686
+  latitudeArea: 45.068485
+  longitudeArea: 7.68434
   goalExplorerMissionAreaPrefab: {fileID: 3590798186009698721, guid: 0d1a1a82c5f3bfd47bbff6c5d032f1a8, type: 3}
-  latitudeTarget: 45.06855
-  longitudeTarget: 7.684369
+  latitudeTarget: 45.06849
+  longitudeTarget: 7.68434
   goalExplorerMissionPrefab: {fileID: 5400985734620608659, guid: 62441ea14ec15411d9362f443272cab7, type: 3}
   finalCode: 
