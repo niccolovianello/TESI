@@ -26,10 +26,10 @@ MonoBehaviour:
   tipFinishLevelWindow: Premi "Ok" e che la caccia abbia inizio!
   missionCompleted: 0
   demonVelocity: 0
-  latitudeArea: 45.07244
-  longitudeArea: 7.6650667
+  latitudeArea: 45.07216
+  longitudeArea: 7.688077
   goalExplorerMissionAreaPrefab: {fileID: 3590798186009698721, guid: 0d1a1a82c5f3bfd47bbff6c5d032f1a8, type: 3}
-  latitudeTarget: 45.07244
-  longitudeTarget: 7.665067
+  latitudeTarget: 45.07216
+  longitudeTarget: 7.688077
   goalExplorerMissionPrefab: {fileID: 5400985734620608659, guid: 62441ea14ec15411d9362f443272cab7, type: 3}
   finalCode: 
