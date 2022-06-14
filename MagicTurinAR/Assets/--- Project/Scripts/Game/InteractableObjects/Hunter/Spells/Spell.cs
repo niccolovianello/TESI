@@ -42,6 +42,7 @@ public class Spell : MonoBehaviour
         
     }
 
+    /*
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.gameObject.CompareTag("PlaneMesh"))
@@ -49,6 +50,7 @@ public class Spell : MonoBehaviour
         
         Destroy(gameObject);
     }
+    */
     
     
 
