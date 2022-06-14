@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4434210087481407841}
   m_Layer: 0
   m_Name: PlanePrefabCollider
-  m_TagString: Untagged
+  m_TagString: PlaneMesh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

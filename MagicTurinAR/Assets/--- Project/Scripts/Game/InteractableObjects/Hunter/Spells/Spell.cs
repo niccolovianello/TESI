@@ -33,7 +33,7 @@ public class Spell : MonoBehaviour
             
         }
 
-        if (other.gameObject.CompareTag("MainCamera"))
+        if (other.gameObject.CompareTag("MainCamera") || other.gameObject.CompareTag("PlaneMesh"))
         {
             return;
         }
@@ -41,18 +41,15 @@ public class Spell : MonoBehaviour
         Destroy(gameObject);
         
     }
-    
 
-    /*
-    
     private void OnCollisionEnter(Collision collision)
     {
-        // Hit FX (sound, particles, ...)
-        //Destroy(gameObject);
+        if (collision.collider.gameObject.CompareTag("PlaneMesh"))
+            return;
         
         Destroy(gameObject);
     }
-    */
+    
     
 
     public void Cast(float force, float torque)
