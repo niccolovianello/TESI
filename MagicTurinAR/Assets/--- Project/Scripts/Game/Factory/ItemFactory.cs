@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
+
 public abstract class ItemFactory : Singleton<ItemFactory>
 {
     [SerializeField] public float waitTime = 30f;
@@ -47,8 +48,8 @@ public abstract class ItemFactory : Singleton<ItemFactory>
 
     private void InstantiateItem()
     {
-        if (aliveItems.Count >= 10)
-            aliveItems.RemoveAt(0);
+        //if (aliveItems.Count >= 10)
+        //    aliveItems.RemoveAt(0);
 
         float x = player.transform.position.x + GenerateRange();
         float y = player.transform.position.y + 2f;

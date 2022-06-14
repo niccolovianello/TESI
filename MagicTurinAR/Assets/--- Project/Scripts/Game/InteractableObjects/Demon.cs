@@ -56,7 +56,7 @@ public class Demon : MonoBehaviour
                 if (mm.currentMissionIndex < 2)
                     runSpeed = 0;
                 else
-                    runSpeed = mm.currentMissionIndex * 0.002f;
+                    runSpeed = mm.currentMissionIndex * 0.025f;
             }
         }
         

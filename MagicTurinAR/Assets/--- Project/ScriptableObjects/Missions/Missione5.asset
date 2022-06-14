@@ -20,7 +20,7 @@ MonoBehaviour:
   placeImage: {fileID: 21300000, guid: aa965e586fe8b4742a595564f1171515, type: 3}
   tipFinishLevelWindow: Premi "Ok" per scoprire il mistero della fontana.
   missionCompleted: 0
-  demonVelocity: 0.008
+  demonVelocity: 0.025
   latitudeArea: 0
   longitudeArea: 0
   goalExplorerMissionAreaPrefab: {fileID: 0}

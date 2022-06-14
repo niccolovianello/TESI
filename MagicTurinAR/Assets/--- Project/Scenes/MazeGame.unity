@@ -363,8 +363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61bf4ce2bc345a74abd1be6ed9eb0774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mazeRows: 6
-  mazeColumns: 10
+  mazeRows: 10
+  mazeColumns: 14
   wall: {fileID: 5043742062216685141, guid: ef0483a2c1a9c8743ace3a7d89c34995, type: 3}
   size: 6
   floorMaterial: {fileID: 2100000, guid: 2908915a8d7b8ff40a7f852bcd9577bb, type: 2}

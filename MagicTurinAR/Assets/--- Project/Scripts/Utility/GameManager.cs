@@ -209,7 +209,7 @@ public class GameManager : Singleton<GameManager>
 
 
                 whiteFragmentFactory.SetItemPrefab(itemAssets.whiteFragment);
-                whiteFragmentFactory.waitTime = 23;
+                whiteFragmentFactory.waitTime = 45;
                 whiteFragmentFactory.startingItems = 1;
                 whiteFragmentFactory.minRange = 5;
                 whiteFragmentFactory.maxRange = 25;
