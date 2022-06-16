@@ -17,7 +17,7 @@ public class MissionsManager : MonoBehaviour
     private NetworkPlayer _networkPlayer;
     private MagicPlayer _magicPlayer;
     private GameManager _gameManager;
-    private SpawnOnMapCustom _spawnOnMapCustom;
+    private SpawnTargetOnMap _spawnOnMapCustom;
 
     [Header("WindowFinishLevel")]
     public Canvas windowFinishLevel;
@@ -181,7 +181,7 @@ public class MissionsManager : MonoBehaviour
                 {
                     var map = FindObjectOfType<AbstractMap>();
                     
-                    _spawnOnMapCustom = map.GetComponent<SpawnOnMapCustom>();
+                    _spawnOnMapCustom = map.GetComponent<SpawnTargetOnMap>();
                     _spawnOnMapCustom.SetNewTargetLocation(currentMission.latitudeArea, currentMission.longitudeArea, currentMission.latitudeTarget, currentMission.longitudeTarget, offsetTargetExplorer);
 
                     var areaPos = map.GeoToWorldPosition(new Vector2d(currentMission.latitudeArea, currentMission.longitudeArea));
@@ -265,14 +265,14 @@ public class MissionsManager : MonoBehaviour
                         //Destroy(areaTargetExplorerPrefab);
                         //Destroy(targetExplorerPrefab);
 
-                        _spawnOnMapCustom = FindObjectOfType<AbstractMap>().GetComponent<SpawnOnMapCustom>();
+                        _spawnOnMapCustom = FindObjectOfType<AbstractMap>().GetComponent<SpawnTargetOnMap>();
                         _spawnOnMapCustom.DestroyTargetLocation();
                         foreach (var t in parentTarget.GetComponentsInChildren<Transform>())
                         {
                             if (t.gameObject.name != parentTarget.gameObject.name)
                                 Destroy(t.gameObject);
                         }
-                        SpawnOnMapCustom.SetNavigationPower(_magicPlayer.gameObject.transform);
+                        SpawnTargetOnMap.SetNavigationPower(_magicPlayer.gameObject.transform);
 
                     }
                     break;

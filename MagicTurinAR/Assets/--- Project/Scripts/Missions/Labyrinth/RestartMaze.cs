@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class RestartMazeScript : MonoBehaviour
+public class RestartMaze : MonoBehaviour
 {
     private MissionsManager mm;
     public void RestartLevel()

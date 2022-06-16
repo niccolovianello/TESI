@@ -16,7 +16,7 @@ public class GraphicInterctionBetweenPlayers : MonoBehaviour
     {
         GameObject go = Instantiate(prefabWhiteMagicParticleSystem, netplay1.gameObject.transform.position, Quaternion.identity);
         go.transform.localScale *= scaleMultiplier;
-        StartCoroutine(go.GetComponent<GemFragmentVFXScript>().TransitionPrtycleSystemCoroutine(go, netplay1, netplay2));
+        StartCoroutine(go.GetComponent<GemFragmentVFX>().TransitionPrtycleSystemCoroutine(go, netplay1, netplay2));
         Debug.Log("Visual effetc white magic: player1" + netplay1 + "    player2" + netplay2);
         
 
@@ -26,7 +26,7 @@ public class GraphicInterctionBetweenPlayers : MonoBehaviour
     {
         GameObject go = Instantiate(prefabGemParticleSystem, netplay1.gameObject.transform.position, Quaternion.identity);
         go.transform.localScale *= scaleMultiplier;
-        StartCoroutine(go.GetComponent<GemFragmentVFXScript>().TransitionPrtycleSystemCoroutine(go, netplay1, netplay2));
+        StartCoroutine(go.GetComponent<GemFragmentVFX>().TransitionPrtycleSystemCoroutine(go, netplay1, netplay2));
         Debug.Log("Visual effetc gem: player1" + netplay1 + "    player2" + netplay2);
     }
 

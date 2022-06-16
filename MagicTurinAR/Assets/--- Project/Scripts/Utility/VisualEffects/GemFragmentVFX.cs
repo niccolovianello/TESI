@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GemFragmentVFXScript : MonoBehaviour
+public class GemFragmentVFX : MonoBehaviour
 {
     [SerializeField]
     private float velocity = 20f;

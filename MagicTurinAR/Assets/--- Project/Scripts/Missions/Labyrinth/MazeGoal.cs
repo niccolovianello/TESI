@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MazeGoalScript : MonoBehaviour
+public class MazeGoal : MonoBehaviour
 {
     private PlayerMazeMovement mp;
     private void OnTriggerEnter(Collider other)

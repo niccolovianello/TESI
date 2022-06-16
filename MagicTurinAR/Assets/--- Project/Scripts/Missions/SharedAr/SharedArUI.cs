@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SharedArUIScript : MonoBehaviour
+public class SharedArUI : MonoBehaviour
 {
     public float waitTime = 2f;
 

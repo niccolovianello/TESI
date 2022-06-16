@@ -20,7 +20,7 @@ public class MazeLoader : MonoBehaviour
 
     public void InstantiateMaze()
     {
-        MazeParent = FindObjectOfType<MazeParentScript>().gameObject;
+        MazeParent = FindObjectOfType<MazeParent>().gameObject;
         InitializeMaze();
         MazeParent.transform.localScale *= MazeScaleFactor;
         MazeAlgorithm ma = new HuntAndKillMazeAlgorithm(mazeCells);

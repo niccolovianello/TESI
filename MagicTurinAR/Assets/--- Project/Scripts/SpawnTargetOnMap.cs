@@ -4,17 +4,15 @@ using UnityEngine;
 
 namespace ____Project.Scripts
 {
-	public class SpawnOnMapCustom : MonoBehaviour
+	public class SpawnTargetOnMap : MonoBehaviour
 	{
 		[SerializeField] private AbstractMap map;
 
 		[SerializeField] private float areaRadius = 100f, targetSize = 1f;
 		
-		private GameObject _areaPrefab, _targetPrefab;
+		private GameObject _areaPrefab, _targetPrefab, _area, _target;
 
 		public GameObject parentObjectAreaTarget;
-
-		private GameObject _area, _target; 
 
 		public void SetNewTargetLocation(float areaLat, float areaLon, float targetLat, float targetLon, Vector3 offset)
 		{
@@ -49,7 +47,6 @@ namespace ____Project.Scripts
 
 		public static void SetNavigationPower(Transform target)
 		{
-
 			var ex = FindObjectOfType<Explorer>();
 
 			if (ex != null)

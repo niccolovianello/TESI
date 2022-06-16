@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DebugManagerScript : MonoBehaviour
+public class DebugManager : MonoBehaviour
 {
     // Start is called before the first frame update
     private void Update()

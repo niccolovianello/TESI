@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetExplorerScript : MonoBehaviour
+public class TargetExplorer : MonoBehaviour
 {
     [SerializeField] private GameObject[] children;
     
