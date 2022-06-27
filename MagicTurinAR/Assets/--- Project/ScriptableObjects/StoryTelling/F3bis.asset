@@ -21,4 +21,4 @@ MonoBehaviour:
     opere d''arte fatte a mano, che puoi conservare come ricordo di questa meravigliosa
     esperienza.'
   fragmentImage: {fileID: 21300000, guid: 33ce223f7233f4c08b106d52eff7c0d0, type: 3}
-  fragmentDestinataryType: 0
+  fragmentDestinataryType: 3
