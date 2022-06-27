@@ -17,11 +17,11 @@ MonoBehaviour:
   sceneName: 
   textBeginMission: Nuovo luogo disponibile! Il Saggio ha risolto l'enigma. Ora puoi
     guidare la squadra verso il prossimo obiettivo!
-  textFinishMission: "Hai trovato la Fontana delle Nereidi e dei Tritoni, il cuore
-    pulsante della Magia Bianca. Siamo infatti vicini a Palazzo Reale, che rappresenta
-    il confine tra la Citt\xE0 Bianca e la Citt\xE0 Nera. Secondo la leggenda, la
-    fontana sarebbe una Grotta Alchemica, ovvero un passaggio che consente di passare
-    da una dimensione materiale ad una immateriale.  "
+  textFinishMission: "Perfetto! Ti trovi nei pressi della Fontana delle Nereidi e
+    dei Tritoni, il cuore pulsante della Magia Bianca. Siamo infatti vicini a Palazzo
+    Reale, che rappresenta il confine tra la Citt\xE0 Bianca e la Citt\xE0 Nera.
+    Secondo la leggenda, la fontana sarebbe una Grotta Alchemica, ovvero un passaggio
+    che consente di passare da una dimensione materiale ad una immateriale.  "
   placeImage: {fileID: 21300000, guid: 1891cd157f962e74683f0a6bb2dc3e2b, type: 3}
   tipFinishLevelWindow: "Premi \"Ok\" perch\xE9 la caccia abbia inizio!"
   missionCompleted: 0
