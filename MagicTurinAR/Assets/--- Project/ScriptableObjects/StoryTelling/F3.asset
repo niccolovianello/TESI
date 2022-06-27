@@ -22,10 +22,6 @@ MonoBehaviour:
     questa funzione brucia il tuo Mana, quindi vacci piano e non sprecare troppa
     energia. Ricorda inoltre che queste sono mappe antiche di Torino, quindi le strade
     spesso non coincidono con quelle che ci sono oggi e il navigatore potrebbe farti
-    fare percorsi pi\xF9 lunghi. Puoi vedere (e collezionare) due tipi di oggetti:
-    Gemme e Artefatti. Le gemme sono pezzi magici preziosi e potenti, che possono
-    essere distrutti dal cacciatore per produrre Frammenti di Magia Bianca. I manufatti
-    sono pregevoli opere d'arte fatte a mano, che puoi conservare come ricordo di
-    questa meravigliosa esperienza."
+    fare percorsi pi\xF9 lunghi."
   fragmentImage: {fileID: 21300000, guid: 33ce223f7233f4c08b106d52eff7c0d0, type: 3}
   fragmentDestinataryType: 0
