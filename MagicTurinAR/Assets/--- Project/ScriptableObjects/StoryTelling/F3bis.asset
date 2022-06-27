@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bcb90f2614b24b429fd00848088034f, type: 3}
-  m_Name: F6
+  m_Name: F3bis
   m_EditorClassIdentifier: 
-  index: 6
+  index: 3
   narratorText: Gran Maestro della Magia Bianca
   fragmentTitle: 
-  fragmentText: 'Stiamo per iniziare! Solo qualche ultimo consiglio. La vostra magia
-    funziona solo se siete tutti vicini: non potete fare niente da soli. E se per
-    caso doveste essere a corto di Mana, chiedete al Saggio alcuni Frammenti di Magia
-    Bianca. Penso sia tutto! Cercate di non morire e fate la differenza!'
+  fragmentText: 'Puoi vedere (e collezionare) due tipi di oggetti: Gemme e Artefatti.
+    Le gemme sono pezzi magici preziosi e potenti, che possono essere distrutti dal
+    cacciatore per produrre Frammenti di Magia Bianca. I manufatti sono pregevoli
+    opere d''arte fatte a mano, che puoi conservare come ricordo di questa meravigliosa
+    esperienza.'
   fragmentImage: {fileID: 21300000, guid: 33ce223f7233f4c08b106d52eff7c0d0, type: 3}
-  fragmentDestinataryType: 3
+  fragmentDestinataryType: 0

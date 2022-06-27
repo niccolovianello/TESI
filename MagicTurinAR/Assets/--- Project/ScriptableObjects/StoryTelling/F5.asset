@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bcb90f2614b24b429fd00848088034f, type: 3}
   m_Name: F5
   m_EditorClassIdentifier: 
-  index: 4
+  index: 5
   narratorText: Gran Maestro della Magia Bianca
   fragmentTitle: 
   fragmentText: "Ultimo, ma non meno importante, [user], tu sei il Saggio. Ricopri

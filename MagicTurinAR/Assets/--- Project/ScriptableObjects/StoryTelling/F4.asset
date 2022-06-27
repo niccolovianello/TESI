@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bcb90f2614b24b429fd00848088034f, type: 3}
   m_Name: F4
   m_EditorClassIdentifier: 
-  index: 3
+  index: 4
   narratorText: Gran Maestro della Magia Bianca
   fragmentTitle: 
   fragmentText: "[user], tu sei il Cacciatore, il membro pi\xF9 dinamico del team.
