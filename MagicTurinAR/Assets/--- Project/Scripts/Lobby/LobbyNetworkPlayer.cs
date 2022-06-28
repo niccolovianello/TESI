@@ -30,7 +30,13 @@ namespace MirrorBasics
         public AudioListener audioListener;
         FirebaseManager firebaseManager;
 
+        private int missionIndex = 0;
 
+
+        public int MissionIndex
+        {
+            get => missionIndex;
+        }
         internal virtual void Start()
         {
             
@@ -188,8 +194,20 @@ namespace MirrorBasics
 
         #endregion
 
-        
+
         #region BEGIN GAME
+        [Command]
+        public void CmdSetMission(int i)
+        {
+            RpcSetMission(i);
+        }
+
+        [ClientRpc]
+        public void RpcSetMission(int i)
+        {
+            missionIndex = i;
+        }
+
 
         public void BeginStoryTelling()
         {
@@ -220,7 +238,7 @@ namespace MirrorBasics
         {
             TargetBeginStoryTelling(players);
         }
-        public void BeginGame()
+        public void BeginGame( )
         {
 
             CmdBeginGame();

@@ -29,6 +29,9 @@ namespace MirrorBasics
         [SerializeField] GameObject UIPlayerPrefab;
         [SerializeField] Text matchIDText;
         [SerializeField] GameObject beginGameButton;
+        [SerializeField] GameObject selectLevel;
+        [SerializeField] Text levelText;
+
 
         [Header("DescriptionBox")]
         [SerializeField] Canvas boxDescription;
@@ -89,6 +92,7 @@ namespace MirrorBasics
                 if(playerIndex != -1 )
                     SpawnPlayerUIPrefab(NetworkPlayer.localPlayer);               
                 beginGameButton.SetActive(true);
+                selectLevel.SetActive(true);
 
                 //Debug.Log(lobbyCanvas.enabled);
             }
@@ -194,6 +198,25 @@ namespace MirrorBasics
             lobbyCanvas.enabled = false;
             totalLobbyUI.enabled = false;
             NetworkPlayer.localPlayer.BeginStoryTelling();
+        }
+
+        public void SetNextMission()
+        {
+            int i;
+            i = int.Parse(levelText.text);
+            i++;
+            levelText.text = i.ToString();
+            NetworkPlayer.localPlayer.CmdSetMission(i);
+
+        }
+
+        public void SetBackMission()
+        {
+            int i;
+            i = int.Parse(levelText.text);
+            i--;
+            levelText.text = i.ToString();
+            NetworkPlayer.localPlayer.CmdSetMission(i);
         }
 
 

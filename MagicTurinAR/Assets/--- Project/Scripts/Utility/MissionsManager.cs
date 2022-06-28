@@ -40,6 +40,7 @@ public class MissionsManager : MonoBehaviour
 
     private void Start()
     {
+        currentMissionIndex = NetworkPlayer.localPlayer.MissionIndex;
         currentMission = magicTurinLevels.missions[currentMissionIndex];
         var networkPlayers = FindObjectsOfType<NetworkPlayer>();
         _gameManager = FindObjectOfType<GameManager>();
