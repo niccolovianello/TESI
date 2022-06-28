@@ -204,9 +204,17 @@ namespace MirrorBasics
         {
             int i;
             i = int.Parse(levelText.text);
-            if (i < 0 || i > 6)
-                return;
             i++;
+            if (i < 0)
+            {
+                i = 0;
+                return;
+            }
+            if (i > 6)
+            {
+                i = 6;
+                return;
+            }
             levelText.text = i.ToString();
             NetworkPlayer.localPlayer.CmdSetMissionForAll(i);
 
@@ -216,9 +224,19 @@ namespace MirrorBasics
         {
             int i;
             i = int.Parse(levelText.text);
-            if (i < 0 || i > 6)
-                return;
             i--;
+            if (i < 0)
+            {
+                i = 0;
+                return;
+            }
+            if (i > 6)
+            {
+                i = 6;
+                return;
+            }
+                
+            
             levelText.text = i.ToString();
             NetworkPlayer.localPlayer.CmdSetMissionForAll(i);
         }
