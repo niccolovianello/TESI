@@ -208,8 +208,8 @@ namespace MirrorBasics
         public void RpcSetMission(int i)
         {
             
-            CmdSetMission(i);
-
+            NetworkPlayer.localPlayer.CmdSetMission(i);
+            Debug.Log(i);
            
         }
 
@@ -218,6 +218,7 @@ namespace MirrorBasics
         public void CmdSetMission(int i)
         {
             missionIndex = i;
+            Debug.Log("SetMission");
         }
 
 
