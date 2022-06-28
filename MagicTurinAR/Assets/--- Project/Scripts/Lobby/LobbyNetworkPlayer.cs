@@ -30,7 +30,8 @@ namespace MirrorBasics
         public AudioListener audioListener;
         FirebaseManager firebaseManager;
 
-        private int missionIndex = 0;
+        [SyncVar]
+        public int missionIndex = 0;
 
 
         public int MissionIndex
@@ -197,13 +198,24 @@ namespace MirrorBasics
 
         #region BEGIN GAME
         [Command]
-        public void CmdSetMission(int i)
+        public void CmdSetMissionForAll(int i)
         {
             RpcSetMission(i);
+            
         }
 
         [ClientRpc]
         public void RpcSetMission(int i)
+        {
+            
+            CmdSetMission(i);
+
+           
+        }
+
+        [Command]
+
+        public void CmdSetMission(int i)
         {
             missionIndex = i;
         }
